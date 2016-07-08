@@ -105,6 +105,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="News\News.cs" />
     <Compile Include="TomAbpConsts.cs" />
     <Compile Include="TomAbpCoreModule.cs" />
     <Compile Include="TomAbpDomainServiceBase.cs" />
@@ -157,6 +158,7 @@
     <Compile Include="Storage\BinaryObject.cs" />
     <Compile Include="Timing\ITimeZoneService.cs" />
     <Compile Include="Timing\TimeZoneService.cs" />
+    <Compile Include="WebConfig\WebConfig.cs" />
     <Compile Include="Web\IWebUrlService.cs" />
     <Compile Include="Web\WebUrlService.cs" />
   </ItemGroup>

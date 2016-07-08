@@ -332,6 +332,7 @@
       <DependentUpon>detailModal.css</DependentUpon>
     </Content>
     <Content Include="App\common\views\common\lookupModal.js" />
+    <Content Include="App\common\views\gld\config.js" />
     <Content Include="App\common\views\languages\editTextModal.js" />
     <Content Include="App\common\views\languages\createOrEditModal.js" />
     <Content Include="App\common\views\layout\header.css">
@@ -1987,6 +1988,7 @@
     <Content Include="Abp\Framework\styles\abp.less" />
     <Content Include="Abp\Framework\styles\abp.css.map" />
     <Content Include="Areas\Product\Views\web.config" />
+    <Content Include="App\common\views\gld\config.cshtml" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -2825,6 +2827,7 @@
     <Compile Include="Areas\Mpa\MpaAreaRegistration.cs" />
     <Compile Include="Areas\Mpa\Startup\MpaBundleConfig.cs" />
     <Compile Include="Areas\Mpa\Startup\MpaNavigationProvider.cs" />
+    <Compile Include="Areas\Product\Controllers\ConfigController.cs" />
     <Compile Include="Areas\Product\Controllers\ProdectManage.cs" />
     <Compile Include="Areas\Product\ProductAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />

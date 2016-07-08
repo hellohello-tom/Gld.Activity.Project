@@ -671,4 +671,9 @@ D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\bin\
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\obj\Debug\TomTeam.Project.Web.csprojResolveAssemblyReference.cache
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\obj\Debug\TomTeam.Project.Web.dll
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\obj\Debug\TomTeam.Project.Web.pdb
-D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\bin\AutoMapper.Net4.dll
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\bin\zh-Hans\System.Web.Helpers.resources.dll
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\bin\zh-Hans\System.Web.Mvc.resources.dll
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\bin\zh-Hans\System.Web.Razor.resources.dll
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\bin\zh-Hans\System.Web.WebPages.resources.dll
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll

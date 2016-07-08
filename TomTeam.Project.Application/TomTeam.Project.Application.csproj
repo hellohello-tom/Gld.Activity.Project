@@ -121,6 +121,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gld\IWebConfigAppService.cs" />
+    <Compile Include="Gld\WebConfigAppService.cs" />
     <Compile Include="TomAbpAppApplicationModule.cs" />
     <Compile Include="TomAbpAppAppServiceBase.cs" />
     <Compile Include="AppConsts.cs" />
@@ -272,6 +274,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Gld\Dto\" />
+    <Folder Include="Gld\News\" />
     <Folder Include="Product\Dto\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
