@@ -7,13 +7,13 @@ namespace TomTeam.Project.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Added_ApplicationLanguage_Entity : IMigrationMetadata
+    public sealed partial class AddSource : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Added_ApplicationLanguage_Entity));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddSource));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510270717447_Added_ApplicationLanguage_Entity"; }
+            get { return "201607080629271_AddSource"; }
         }
         
         string IMigrationMetadata.Source

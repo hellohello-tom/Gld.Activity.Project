@@ -13,7 +13,7 @@ namespace TomTeam.Project.Migrations
 
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "TomAbp";
             SeedMode = SeedMode.Host;
         }

@@ -531,6 +531,7 @@
     <Content Include="Common\Images\app-logo-on-dark.png" />
     <Content Include="Common\Images\app-logo-on-light.png" />
     <Content Include="Common\Images\default-profile-picture.png" />
+    <Content Include="Common\Images\logo.png" />
     <Content Include="Common\Images\SampleProfilePics\sample-profile-08.jpg" />
     <Content Include="Common\Images\SampleProfilePics\sample-profile-01.jpg" />
     <Content Include="Common\Images\SampleProfilePics\sample-profile-02.jpg" />

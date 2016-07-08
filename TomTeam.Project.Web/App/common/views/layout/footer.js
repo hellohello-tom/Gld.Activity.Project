@@ -9,11 +9,7 @@
             });
 
             vm.getProductNameWithEdition = function() {
-                var productName = 'TomAbp';
-                if (appSession.tenant && appSession.tenant.editionDisplayName) {
-                    productName = productName + ' ' + appSession.tenant.editionDisplayName;
-                }
-
+                var productName = 'TomTeam——团队全程打造';
                 return productName;
             }
         }

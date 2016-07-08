@@ -44,8 +44,6 @@ namespace TomTeam.Project.Web
             Configuration.Modules.Zero().LanguageManagement.EnableDbLocalization();
 
             Configuration.Modules.AbpConfiguration.MultiTenancy.IsEnabled = false;
-            
-
             //Configure navigation/menu
             Configuration.Navigation.Providers.Add<AppNavigationProvider>();
             Configuration.Navigation.Providers.Add<FrontEndNavigationProvider>();

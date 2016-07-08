@@ -152,8 +152,9 @@
     <text name="ProfilePicture_Change_Error" value="头像修改错误." />
     <text name="ProfilePicture_Warn_SizeLimit" value="只能选择1mb内的JPG/JPEG图片，请重新选择头像文件." />
     <text name="ProfilePicture_Warn_FileType" value="只能选择1mb内的JPG/JPEG图片，请重新选择头像文件." />
-    <text name="Dashboard" value="工作台" />
-    <text name="DashboardHeaderInfo" value="分析与报告" />
+    <text name="LoginAttempts" value="登录信息记录"/>
+    <text name="Dashboard" value="首页" />
+    <text name="DashboardHeaderInfo" value="" />
     <text name="GoToApplication" value="登录系统" />
     <text name="TenantInformations" value="租户信息" />
     <text name="PersonalInformations" value="个人信息" />
@@ -169,7 +170,7 @@
     <text name="Error" value="错误!" />
     <text name="OopsYouAreLost" value="噢! 失踪了." />
     <text name="WeCanNotFindThePage" value="我们无法提供您想要访问的页面." />
-    <text name="DashboardDemo_Note_Title" value="欢迎使用ASP.NET Zero启动项目!" />
+    <text name="DashboardDemo_Note_Title" value="欢迎使用广联达项目后台管理系统！" />
     <text name="DashboardDemo_Note_Info">
       在这个演示系统，您可以使用左边的菜单功能，测试和了解以下模块的全部功能：用户管理、角色管理、系统设置。
       主面板(Dashboard)页面只是用于演示目的，文本和数据没有什么含义(所有数据都是硬编码在浏览器客户端程序；

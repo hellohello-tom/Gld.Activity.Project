@@ -110,8 +110,6 @@
         @if (Model.IsSelfRegistrationEnabled)
         {
             <a href="@Url.Action("Register", "Account")" id="register-btn" class="uppercase">@L("CreateAnAccount")</a>
-            <span class="pipe-divider"> | </span>
         }
-        <a href="@Url.Action("EmailActivation", "Account")" id="email-activation-btn" class="uppercase">@L("EmailActivation")</a>
     </p>
 </div>
