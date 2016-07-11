@@ -38,10 +38,45 @@ namespace TomTeam.Project.Web.Navigation
         {
             public const string Home = "Frontend.Home";
             public const string About = "Frontend.About";
+
+
+            public const string ActivityManage = "Frontend.ActivityManage";
+
             /// <summary>
-            /// 产品详情
+            /// 个人中心
             /// </summary>
-            public const string ProductDetail = "Frontend.ProductDetail";
+            public const string PersonalCenter = "Frontend.PersonalCenter";
+
+
+            /// <summary>
+            /// 乡试
+            /// </summary>
+            public const string ProvincialExamination = "Frontend.ProvincialExamination";
+
+            /// <summary>
+            /// 会试
+            /// </summary>
+            public const string MetropolitanExamination = "Frontend.MetropolitanExamination";
+
+            /// <summary>
+            /// 殿试
+            /// </summary>
+            public const string PalaceExamination = "Frontend.PalaceExamination";
+
+            /// <summary>
+            /// 信息汇总
+            /// </summary>
+            public const string UserInfo = "Frontend.UserInfo";
+
+            /// <summary>
+            /// 网站配置管理
+            /// </summary>
+            public const string WebConfig = "Frontend.WebConfig";
+
+            /// <summary>
+            /// 赛事新闻管理
+            /// </summary>
+            public const string News = "Frontend.News";
         }
     }
 }

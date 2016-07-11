@@ -97,6 +97,47 @@ namespace TomTeam.Project.Web.Areas.Mpa.Startup
                         requiredPermissionName: AppPermissions.Pages_Administration_Tenant_Settings
                         )
                     )
+                ).AddItem(new MenuItemDefinition(
+                        PageNames.Frontend.ActivityManage,
+                        L("ActivityManage"),
+                        icon: "icon-settings",
+                        requiredPermissionName: AppPermissions.Pages_Manager_News
+                    ).AddItem(new MenuItemDefinition(
+                        PageNames.Frontend.ProvincialExamination,
+                        L("ProvincialExamination"),
+                        url: "activity.pe",
+                        icon: "icon-pencil",
+                        requiredPermissionName: AppPermissions.Pages_Manager_News
+                        )
+                    ).AddItem(new MenuItemDefinition(
+                        PageNames.Frontend.MetropolitanExamination,
+                        L("MetropolitanExamination"),
+                        url: "activity.me",
+                        icon: "icon-pencil",
+                        requiredPermissionName: AppPermissions.Pages_Manager_News
+                        )
+                    ).AddItem(new MenuItemDefinition(
+                        PageNames.Frontend.PalaceExamination,
+                        L("PalaceExamination"),
+                        url: "activity.palace",
+                        icon: "icon-pencil",
+                        requiredPermissionName: AppPermissions.Pages_Manager_News
+                        )
+                    ).AddItem(new MenuItemDefinition(
+                        PageNames.Frontend.PersonalCenter,
+                        L("PersonalCenter"),
+                        url: "activity.person",
+                        icon: "icon-users",
+                        requiredPermissionName: AppPermissions.Pages_Manager_News
+                        )
+                    ).AddItem(new MenuItemDefinition(
+                        PageNames.Frontend.UserInfo,
+                        L("UserInfo"),
+                        url: "activity.userInfo",
+                        icon: "icon-bar-chart",
+                        requiredPermissionName: AppPermissions.Pages_Manager_News
+                        )
+                    )
                 );
         }
 

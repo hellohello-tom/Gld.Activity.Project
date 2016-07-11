@@ -2828,7 +2828,6 @@
     <Compile Include="Areas\Mpa\Startup\MpaBundleConfig.cs" />
     <Compile Include="Areas\Mpa\Startup\MpaNavigationProvider.cs" />
     <Compile Include="Areas\Product\Controllers\ConfigController.cs" />
-    <Compile Include="Areas\Product\Controllers\ProdectManage.cs" />
     <Compile Include="Areas\Product\ProductAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />

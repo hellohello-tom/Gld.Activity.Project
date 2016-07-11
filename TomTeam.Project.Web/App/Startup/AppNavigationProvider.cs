@@ -99,6 +99,54 @@ namespace TomTeam.Project.Web.App.Startup
                         requiredPermissionName: AppPermissions.Pages_Administration_Tenant_Settings
                         )
                     )
+                ).AddItem(new MenuItemDefinition(
+                        PageNames.Frontend.ActivityManage,
+                        L("ActivityManage"),
+                        icon: "icon-settings",
+                        requiredPermissionName: AppPermissions.Pages_Activity_Manager
+                    ).AddItem(new  MenuItemDefinition(
+                        PageNames.Frontend.ProvincialExamination,
+                        L("ProvincialExamination"),
+                        url: "activity.pe",
+                        icon: "icon-pencil",
+                        requiredPermissionName: AppPermissions.Pages_Activity_PalaceExamination
+                        )
+                    ).AddItem(new MenuItemDefinition(
+                        PageNames.Frontend.MetropolitanExamination,
+                        L("MetropolitanExamination"),
+                        url: "activity.me",
+                        icon: "icon-pencil",
+                        requiredPermissionName: AppPermissions.Pages_Activity_MetropolitanExamination
+                        )
+                    ).AddItem(new MenuItemDefinition(
+                        PageNames.Frontend.PalaceExamination,
+                        L("PalaceExamination"),
+                        url: "activity.palace",
+                        icon: "icon-pencil",
+                        requiredPermissionName: AppPermissions.Pages_Activity_ProvincialExamination
+                        )
+                    ).AddItem(new MenuItemDefinition(
+                        PageNames.Frontend.UserInfo,
+                        L("UserInfo"),
+                        url: "activity.userInfo",
+                        icon: "icon-bar-chart",
+                        requiredPermissionName: AppPermissions.Pages_Activity_UserInfo
+                        )
+                    ).AddItem(new MenuItemDefinition(
+                        PageNames.Frontend.News,
+                        L("News"),
+                        url: "activity.userInfo",
+                        icon: "fa fa-newspaper-o",
+                        requiredPermissionName: AppPermissions.Pages_Manager_News
+                        )
+                    ).AddItem(new MenuItemDefinition(
+                        PageNames.Frontend.WebConfig,
+                        L("WebConfig"),
+                        url: "activity.userInfo",
+                        icon: "fa fa-cogs",
+                        requiredPermissionName: AppPermissions.Pages_Activity_WebConfig
+                        )
+                    )
                 );
         }
 

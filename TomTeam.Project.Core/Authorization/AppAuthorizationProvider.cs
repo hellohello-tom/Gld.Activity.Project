@@ -39,9 +39,19 @@ namespace TomTeam.Project.Authorization
 
             administration.CreateChildPermission(AppPermissions.Pages_Administration_AuditLogs, L("AuditLogs"));
 
+            var activity = administration.CreateChildPermission(AppPermissions.Pages_Activity_Manager, L("ActivityManage"));
+            activity.CreateChildPermission(AppPermissions.Pages_Activity_PalaceExamination, L("ProvincialExamination"));
+            activity.CreateChildPermission(AppPermissions.Pages_Activity_MetropolitanExamination, L("MetropolitanExamination"));
+            activity.CreateChildPermission(AppPermissions.Pages_Activity_ProvincialExamination, L("PalaceExamination"));
+            activity.CreateChildPermission(AppPermissions.Pages_Activity_UserInfo, L("UserInfo"));
+            activity.CreateChildPermission(AppPermissions.Pages_Manager_News, L("News"));
+            activity.CreateChildPermission(AppPermissions.Pages_Activity_WebConfig, L("WebConfig"));
+
             var organizationUnits = administration.CreateChildPermission(AppPermissions.Pages_Administration_OrganizationUnits, L("OrganizationUnits"));
             organizationUnits.CreateChildPermission(AppPermissions.Pages_Administration_OrganizationUnits_ManageOrganizationTree, L("ManagingOrganizationTree"));
             organizationUnits.CreateChildPermission(AppPermissions.Pages_Administration_OrganizationUnits_ManageMembers, L("ManagingMembers"));
+
+            
 
             //TENANT-SPECIFIC PERMISSIONS
 
@@ -65,6 +75,7 @@ namespace TomTeam.Project.Authorization
 
             administration.CreateChildPermission(AppPermissions.Pages_Administration_Host_Settings, L("Settings"), multiTenancySides: MultiTenancySides.Host);
             administration.CreateChildPermission(AppPermissions.Pages_Administration_Host_Maintenance, L("Maintenance"), multiTenancySides: MultiTenancySides.Host);
+
         }
 
         private static ILocalizableString L(string name)

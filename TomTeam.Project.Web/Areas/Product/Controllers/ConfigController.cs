@@ -12,9 +12,13 @@ namespace TomTeam.Project.Web.Areas.Product.Controllers
 
     public class ConfigController:AbpController
     {
+        /// <summary>
+        /// p配置项的内容
+        /// </summary>
         IRepository<WebConfig> _IWebConfigRepository;
         public ConfigController(IRepository<WebConfig> _IWebConfigRepository)
         {
+            
             this._IWebConfigRepository = _IWebConfigRepository;
         }
     }

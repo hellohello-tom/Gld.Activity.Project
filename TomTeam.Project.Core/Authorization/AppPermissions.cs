@@ -9,7 +9,7 @@
         //COMMON PERMISSIONS (FOR BOTH OF TENANTS AND HOST)
 
         public const string Pages = "Pages";
-        
+
         public const string Pages_Administration = "Pages.Administration";
 
         public const string Pages_Administration_Roles = "Pages.Administration.Roles";
@@ -41,7 +41,7 @@
         public const string Pages_Tenant_Dashboard = "Pages.Tenant.Dashboard";
 
         public const string Pages_Administration_Tenant_Settings = "Pages.Administration.Tenant.Settings";
-        
+
         //HOST-SPECIFIC PERMISSIONS
 
         public const string Pages_Editions = "Pages.Editions";
@@ -60,11 +60,19 @@
 
         public const string Pages_Administration_Host_Settings = "Pages.Administration.Host.Settings";
 
-
-        //商品编辑权限
-        public const string Pages_Product = "Pages.Product";
-        public const string Pages_Product_Create = "Pages.Product.Create";
-        public const string Pages_Product_Edit = "Pages.Product.Edit";
-        public const string Pages_Product_Delete = "Pages.Product.Delete";
+        //活动管理
+        public const string Pages_Activity_Manager = "Pages.Activity.Manager";
+        //乡试
+        public const string Pages_Activity_PalaceExamination = "Pages.Activity.PalaceExamination";
+        //殿试
+        public const string Pages_Activity_ProvincialExamination = "Pages.Activity.ProvincialExamination";
+        //会试
+        public const string Pages_Activity_MetropolitanExamination = "Pages.Activity.MetropolitanExamination";
+        //个人中心
+        public const string Pages_Activity_UserInfo = "Pages.Activity.UserInfo";
+        //网站配置
+        public const string Pages_Activity_WebConfig = "Pages.Activity.WebConfig";
+        //赛事管理
+        public const string Pages_Manager_News = "Pages.Activity.News";
     }
 }

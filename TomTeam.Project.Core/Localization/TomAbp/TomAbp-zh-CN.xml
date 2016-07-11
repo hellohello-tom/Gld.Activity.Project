@@ -282,5 +282,17 @@
     <text name="LookingForMpaVersion" value="查找多页面应用版本号" />
     <text name="LookingForSpaVersion" value="查找单页面应用版本号" />
     <text name="ThisLanguageAlreadyExists" value="这种语言已经存在!" />
+
+    <![CDATA[
+      广联达项目涉及相关语言转换
+      ]]>
+    <text name="ProvincialExamination" value="乡试" />
+    <text name="MetropolitanExamination" value="会试" />
+    <text name="PalaceExamination" value="殿试" />
+    <text name="PersonalCenter" value="个人中心" />
+    <text name="UserInfo" value="用户信息" />
+    <text name="News" value="新闻管理" />
+    <text name="WebConfig" value="网站配置" />
+    <text name="ActivityManage" value="活动管理" />
   </texts>
 </localizationDictionary>
