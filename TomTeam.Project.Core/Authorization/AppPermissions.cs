@@ -62,6 +62,9 @@
 
         //活动管理
         public const string Pages_Activity_Manager = "Pages.Activity.Manager";
+        //活动配置
+        public const string Pages_Activity_Config = "Pages.Activity.Config";
+
         //乡试
         public const string Pages_Activity_PalaceExamination = "Pages.Activity.PalaceExamination";
         //殿试
@@ -73,6 +76,6 @@
         //网站配置
         public const string Pages_Activity_WebConfig = "Pages.Activity.WebConfig";
         //赛事管理
-        public const string Pages_Manager_News = "Pages.Activity.News";
+        public const string Pages_Activity_News = "Pages.Activity.News";
     }
 }

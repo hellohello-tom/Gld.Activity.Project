@@ -333,6 +333,7 @@
     </Content>
     <Content Include="App\common\views\common\lookupModal.js" />
     <Content Include="App\common\views\gld\config.js" />
+    <Content Include="App\common\views\gld\news.js" />
     <Content Include="App\common\views\languages\editTextModal.js" />
     <Content Include="App\common\views\languages\createOrEditModal.js" />
     <Content Include="App\common\views\layout\header.css">
@@ -1989,6 +1990,7 @@
     <Content Include="Abp\Framework\styles\abp.css.map" />
     <Content Include="Areas\Product\Views\web.config" />
     <Content Include="App\common\views\gld\config.cshtml" />
+    <Content Include="App\common\views\gld\news.cshtml" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />

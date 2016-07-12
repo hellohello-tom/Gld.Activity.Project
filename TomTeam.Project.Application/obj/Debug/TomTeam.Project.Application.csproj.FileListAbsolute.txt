@@ -171,4 +171,7 @@ D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Applicat
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\obj\Debug\TomTeam.Project.Application.csprojResolveAssemblyReference.cache
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\obj\Debug\TomTeam.Project.Application.dll
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\obj\Debug\TomTeam.Project.Application.pdb
-D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Debug\AutoMapper.Net4.dll
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Debug\System.Net.Http.Formatting.dll
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Debug\System.Web.Http.dll
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Debug\System.Net.Http.Formatting.xml
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Debug\System.Web.Http.xml

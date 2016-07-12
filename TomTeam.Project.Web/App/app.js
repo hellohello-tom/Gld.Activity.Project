@@ -111,6 +111,12 @@ appModule.config([
             });
         }
 
+        //gld activity menu
+        $stateProvider.state('gldnews', {
+            url: '/gldnews',
+            templateUrl: '~/App/common/views/gld/news.cshtml'
+        });
+
         $stateProvider.state('notifications', {
             url: '/notifications',
             templateUrl: '~/App/common/views/notifications/index.cshtml'

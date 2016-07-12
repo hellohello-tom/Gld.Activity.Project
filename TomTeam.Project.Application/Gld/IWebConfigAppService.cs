@@ -9,6 +9,6 @@ namespace TomTeam.Project.Gld
 {
     public interface IWebConfigAppService : IApplicationService
     {
-        
+
     }
 }

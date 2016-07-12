@@ -47,6 +47,10 @@ namespace TomTeam.Project.Web.Navigation
             /// </summary>
             public const string PersonalCenter = "Frontend.PersonalCenter";
 
+            /// <summary>
+            /// ªÓ∂Ø≈‰÷√
+            /// </summary>
+            public const string ActivityConfig = "Frontend.ActivityConfig";
 
             /// <summary>
             /// œÁ ‘

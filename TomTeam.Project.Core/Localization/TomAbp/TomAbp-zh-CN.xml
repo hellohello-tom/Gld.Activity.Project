@@ -293,6 +293,7 @@
     <text name="UserInfo" value="用户信息" />
     <text name="News" value="新闻管理" />
     <text name="WebConfig" value="网站配置" />
+    <text name="ActivityConfig" value="活动配置" />
     <text name="ActivityManage" value="活动管理" />
   </texts>
 </localizationDictionary>

@@ -10,6 +10,8 @@ namespace TomTeam.Project.News
 {
     public class News : FullAuditedEntity
     {
+        public virtual string DefaultImg { get; set; }
+
         public virtual string Title { get; set; }
 
         public virtual string Content { get; set; }
