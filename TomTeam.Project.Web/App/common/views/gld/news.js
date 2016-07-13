@@ -14,7 +14,6 @@
                 sorting: null
             };
 
-
             vm.userGridOptions = {
                 enableHorizontalScrollbar: uiGridConstants.scrollbars.WHEN_NEEDED,
                 enableVerticalScrollbar: uiGridConstants.scrollbars.WHEN_NEEDED,
@@ -23,7 +22,6 @@
                 useExternalPagination: true,
                 useExternalSorting: true,
                 appScopeProvider: vm,
-                rowTemplate: '<div ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.colDef.name" class="ui-grid-cell" ng-class="{ \'ui-grid-row-header-cell\': col.isRowHeader, \'text-muted\': !row.entity.isActive }"  ui-grid-cell></div>',
                 columnDefs: [
                     {
                         name: app.localize('Actions'),
@@ -34,33 +32,15 @@
                             '  <div class="btn-group dropdown" uib-dropdown="">' +
                             '    <button class="btn btn-xs btn-primary blue" uib-dropdown-toggle="" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog"></i> ' + app.localize('Actions') + ' <span class="caret"></span></button>' +
                             '    <ul uib-dropdown-menu>' +
-                            '      <li><a ng-if="grid.appScope.permissions.impersonation && row.entity.id != grid.appScope.currentUserId" ng-click="grid.appScope.impersonate(row.entity)">' + app.localize('LoginAsThisUser') + '</a></li>' +
-                            '      <li><a ng-if="grid.appScope.permissions.edit" ng-click="grid.appScope.editUser(row.entity)">' + app.localize('Edit') + '</a></li>' +
-                            '      <li><a ng-if="grid.appScope.permissions.changePermissions" ng-click="grid.appScope.editPermissions(row.entity)">' + app.localize('Permissions') + '</a></li>' +
-                            '      <li><a ng-if="grid.appScope.permissions.delete" ng-click="grid.appScope.deleteUser(row.entity)">' + app.localize('Delete') + '</a></li>' +
+                            '      <li><a ng-click="grid.appScope.editNews(row.entity)">编辑</a></li>' +
+                            '      <li><a  ng-click="grid.appScope.deleteNews(row.entity)">删除</a></li>' +
                             '    </ul>' +
                             '  </div>' +
                             '</div>'
                     },
                     {
-                        name: app.localize('UserName'),
-                        field: 'userName',
-                        cellTemplate:
-                            '<div class=\"ui-grid-cell-contents\">' +
-                            '  <img ng-if="row.entity.profilePictureId" ng-src="' + abp.appPath + 'Profile/GetProfilePictureById?id={{row.entity.profilePictureId}}" width="22" height="22" class="img-rounded img-profile-picture-in-grid" />' +
-                            '  <img ng-if="!row.entity.profilePictureId" src="' + abp.appPath + 'Common/Images/default-profile-picture.png" width="22" height="22" class="img-rounded" />' +
-                            '  {{COL_FIELD CUSTOM_FILTERS}} &nbsp;' +
-                            '</div>',
-                        minWidth: 140
-                    },
-                    {
                         name: '标题',
                         field: 'title',
-                        minWidth: 120
-                    },
-                    {
-                        name: '默认图片',
-                        field: 'defaultImg',
                         minWidth: 120
                     },
                     {
@@ -97,14 +77,50 @@
                     skipCount: requestParams.skipCount,
                     maxResultCount: requestParams.maxResultCount,
                     sorting: requestParams.sorting,
-                    filter: vm.filterText
+                    searchTitle: vm.filterText
                 }).success(function (result) {
                     vm.userGridOptions.totalItems = result.totalCount;
-                    vm.userGridOptions.data = addRoleNamesField(result.items);
+                    vm.userGridOptions.data = result.items;
                 }).finally(function () {
                     vm.loading = false;
                 });
             };
+
+            vm.createNews = function () {
+                openCreateOrEditUserModal(null)
+            }
+
+            vm.editNews = function (news) {
+                openCreateOrEditUserModal(news)
+            }
+
+            vm.deleteNews = function (news) {
+                vm.loading = true;
+                newsService.deleteNews({
+                    id: news.id
+                }).success(function (result) {
+                    vm.getNewsList();
+                }).finally(function () {
+                    vm.loading = false;
+                });
+            }
+            function openCreateOrEditUserModal(news) {
+                var modalInstance = $uibModal.open({
+                    templateUrl: '~/App/common/views/gld/addnews.cshtml',
+                    controller: 'common.views.gld.addnews as vm',
+                    backdrop: 'static',
+                    resolve: {
+                        news: function () {
+                            return news;
+                        }
+                    }
+                });
+
+                modalInstance.result.then(function (result) {
+                    vm.getNewsList();
+                });
+            }
+
             vm.getNewsList();
         }]);
 })();

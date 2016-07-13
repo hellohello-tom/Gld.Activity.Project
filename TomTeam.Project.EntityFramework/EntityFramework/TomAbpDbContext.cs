@@ -5,6 +5,7 @@ using TomTeam.Project.Authorization.Roles;
 using TomTeam.Project.Authorization.Users;
 using TomTeam.Project.MultiTenancy;
 using TomTeam.Project.Storage;
+using TomTeam.Project.Config;
 
 namespace TomTeam.Project.EntityFramework
 {
@@ -13,7 +14,7 @@ namespace TomTeam.Project.EntityFramework
         /* Define an IDbSet for each entity of the application */
 
         public virtual IDbSet<News.News> NewsDbSet { get; set; }
-
+        public virtual IDbSet<WebConfig> WebConfigDbSet { get; set; }
         public virtual IDbSet<BinaryObject> BinaryObjects { get; set; }
 
         /* Setting "Default" to base class helps us when working migration commands on Package Manager Console.

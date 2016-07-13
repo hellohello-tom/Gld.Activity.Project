@@ -10,7 +10,7 @@ namespace TomTeam.Project.Config
     /// <summary>
     /// 站点配置表
     /// </summary>
-    public class WebConfig : AuditedEntity
+    public class WebConfig : FullAuditedEntity
     {
         /// <summary>
         /// 微信二维码地址

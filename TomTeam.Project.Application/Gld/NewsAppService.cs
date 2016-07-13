@@ -15,7 +15,7 @@ using Abp.Linq.Extensions;
 
 namespace TomTeam.Project.Gld
 {
-
+    [AbpAuthorize(AppPermissions.Pages_Activity_Manager)]
     public class NewsAppService : TomAbpAppServiceBase, INewsAppService
     {
         IRepository<News.News> _newsRepository;
@@ -50,15 +50,31 @@ namespace TomTeam.Project.Gld
 
         public async Task<PagedResultOutput<GetNewsListOutput>> GetNewsList(SearchNewsInput searchInput)
         {
-            var query = _newsRepository.GetAll().Where(news => news.IsDeleted == true);
+            var query = _newsRepository.GetAll().Where(news => !news.IsDeleted);
             if (!string.IsNullOrEmpty(searchInput.SearchTitle))
             {
                 query = query.Where(news => news.Title.Contains(searchInput.SearchTitle));
             }
             var listCount = await query.CountAsync();
-            var list = await query.OrderByDescending(x=>x.CreationTime).PageBy(searchInput).ToListAsync();
+            var list = await query.OrderByDescending(x => x.CreationTime).PageBy(searchInput).ToListAsync();
             var newsListDto = list.MapTo<List<GetNewsListOutput>>();
             return new PagedResultOutput<GetNewsListOutput>(listCount, newsListDto);
+        }
+
+        public async Task<GetNewsListOutput> GetNews(NullableIdInput input)
+        {
+            GetNewsListOutput newsDetail;
+            if (input.Id.HasValue)
+            {
+                var news = await _newsRepository.GetAsync(input.Id.Value);
+                newsDetail = news.MapTo<GetNewsListOutput>();
+            }
+
+            else
+            {
+                newsDetail = new GetNewsListOutput();
+            }
+            return newsDetail;
         }
     }
 }

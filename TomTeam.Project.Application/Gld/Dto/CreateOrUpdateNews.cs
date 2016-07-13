@@ -13,17 +13,17 @@ using System.Threading.Tasks;
 namespace TomTeam.Project.Gld.Dto
 {
     [AutoMap(typeof(News.News))]
-    public class CreateOrUpdateNewsInput : IInputDto, IValidate
+    public class CreateOrUpdateNewsInput : IInputDto
     {
         public int? Id { get; set; }
         
         public string DefaultImg { get; set; }
 
-        [Required]
-        [StringLength(50)]
+        [Required(ErrorMessage ="标题必填")]
+        [StringLength(50,ErrorMessage ="标题长度请输入在50个字符以内")]
         public string Title { get; set; }
 
-        [Required]
         public string Content { get; set; }
+
     }
 }

@@ -104,12 +104,3 @@
         </ul>
     </div>
 }
-
-<div class="create-account">
-    <p>
-        @if (Model.IsSelfRegistrationEnabled)
-        {
-            <a href="@Url.Action("Register", "Account")" id="register-btn" class="uppercase">@L("CreateAnAccount")</a>
-        }
-    </p>
-</div>

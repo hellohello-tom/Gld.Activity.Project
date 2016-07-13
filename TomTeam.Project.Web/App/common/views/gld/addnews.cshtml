@@ -1,0 +1,22 @@
+﻿<div>
+    <form name="newsCreateOrEditForm" role="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span>赛事新闻管理</span>
+            </h4>
+        </div>
+        <div class="modal-body" busy-if="vm.loading">
+            <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                <input class="form-control" ng-class="{'edited':vm.news.title}" type="text" name="title" ng-model="vm.news.title" required maxlength="20">
+                <label>新闻标题</label>
+            </div>
+            <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                <textarea class="ceditor form-control" type="text" name="content" ng-model="vm.news.content" k-editor></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">取消</button>
+            <button type="submit" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="newsCreateOrEditForm.$invalid"><i class="fa fa-save"></i> <span>保存</span></button>
+        </div>
+    </form>
+</div>

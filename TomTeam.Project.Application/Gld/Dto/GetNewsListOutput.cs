@@ -1,4 +1,6 @@
 ﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
+using Abp.Domain.Entities.Auditing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace TomTeam.Project.Gld.Dto
 {
-    public class GetNewsListOutput : IHasTotalCount,IOutputDto
+    [AutoMapFrom(typeof(News.News))]
+    public class GetNewsListOutput:IOutputDto, IHasCreationTime
     {
         public int Id { get; set; }
         public  string DefaultImg { get; set; }
@@ -15,7 +18,8 @@ namespace TomTeam.Project.Gld.Dto
         public  string Title { get; set; }
 
         public  string Content { get; set; }
-        public int TotalCount
+
+        public DateTime CreationTime
         {
             get;
 

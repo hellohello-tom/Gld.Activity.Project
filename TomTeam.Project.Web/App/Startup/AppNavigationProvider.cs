@@ -149,7 +149,7 @@ namespace TomTeam.Project.Web.App.Startup
                     ).AddItem(new MenuItemDefinition(
                         PageNames.Frontend.WebConfig,
                         L("WebConfig"),
-                        url: "userInfo",
+                        url: "gldconfig",
                         icon: "fa fa-cogs",
                         requiredPermissionName: AppPermissions.Pages_Activity_WebConfig
                         )

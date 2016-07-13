@@ -32,5 +32,12 @@ namespace TomTeam.Project.Gld
         /// <param name="createOrUpdateNewsInput"></param>
         /// <returns></returns>
         Task<int> AddOrUpdate(CreateOrUpdateNewsInput createOrUpdateNewsInput);
+
+        /// <summary>
+        /// 获取新闻实体Model
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<GetNewsListOutput> GetNews(NullableIdInput input);
     }
 }
