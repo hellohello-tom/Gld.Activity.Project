@@ -1,0 +1,80 @@
+﻿<div ng-controller="common.views.gld.activityConfig as vm">
+    <form name="activityConfigForm" activity="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span>活动配置管理</span>
+            </h4>
+        </div>
+        <div class="modal-body" busy-if="vm.loading">
+            <uib-tabset class="tab-container tabbable-line">
+                <uib-tab heading="乡试">
+                    <div class="form-group">
+                        <label class="control-label">乡试活动开始至结束时间</label>
+                        <input id="dateprovincial" date-range-picker type="text" options="vm.provincial_dateRangeOptions" min="vm.provincial_dateRangeOptions.min" max="vm.provincial_dateRangeOptions.max" class="form-control date-picker" ng-model="vm.provincial_dateRangeModel" />
+                    </div>
+                    <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                        <input class="form-control edited" type="text" name="examCount" ng-model="vm.activity.examCount" maxlength="5" required>
+                        <label>随机出的题目数目</label>
+                    </div>
+                    <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                        <input class="form-control edited" type="text" name="examTime" ng-model="vm.activity.examTime" maxlength="5" required>
+                        <label>乡试考试持续时长（分钟）</label>
+                    </div>
+                    <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                        <input class="form-control edited" maxlength="5" type="text" name="EveryExamIntegral"  ng-model="vm.activity.everyExamIntegral" required>
+                        <label>每题分数</label>
+                    </div>
+                    <div class="md-checkbox-list">
+                        <div class="md-checkbox">
+                            <input id="ProvincialState" name="ProvincialState" class="md-check" type="checkbox" ng-model="vm.activity.provincialState">
+                            <label for="ProvincialState">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                开放
+                            </label>
+                            <span class="help-block">活动状态</span>
+                        </div>
+                    </div>
+                </uib-tab>
+                <uib-tab heading="会试">
+                    <div class="form-group">
+                        <label class="control-label">会试活动开始至结束时间</label>
+                        <input date-range-picker type="text" id="datemetropolitan" options="vm.metropolitan_dateRangeOptions" min="vm.metropolitan_dateRangeOptions.min" max="vm.metropolitan_dateRangeOptions.max" class="form-control date-picker" ng-model="vm.metropolitan_dateRangeModel" />
+                    </div>
+                    <div class="md-checkbox-list">
+                        <div class="md-checkbox">
+                            <input id="MetropolitanState" name="MetropolitanState"  class="md-check" type="checkbox" ng-model="vm.activity.metropolitanState">
+                            <label for="MetropolitanState">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                开放
+                            </label>
+                            <span class="help-block">活动状态</span>
+                        </div>
+                    </div>
+                </uib-tab>
+                <uib-tab heading="殿试">
+                    <label class="control-label">殿试活动开始至结束时间</label>
+                    <input date-range-picker type="text" options="vm.palace_dateRangeOptions" min="vm.palace_dateRangeOptions.min" max="vm.palace_dateRangeOptions.max" class="form-control date-picker" ng-model="vm.palace_dateRangeModel"  id="datepalace"/>
+                    <div class="md-checkbox-list">
+                        <div class="md-checkbox">
+                            <input id="PalaceState" name="PalaceState" class="md-check" type="checkbox" ng-model="vm.activity.palaceState">
+                            <label for="PalaceState">
+                                <span class="inc"></span>
+                                <span class="check"></span>
+                                <span class="box"></span>
+                                开放
+                            </label>
+                            <span class="help-block">活动状态</span>
+                        </div>
+                    </div>
+                </uib-tab>
+            </uib-tabset>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="activityConfigForm.$invalid"><i class="fa fa-save"></i> <span>保存</span></button>
+        </div>
+    </form>
+</div>

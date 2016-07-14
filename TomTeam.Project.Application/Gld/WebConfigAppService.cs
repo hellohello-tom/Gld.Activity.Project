@@ -25,6 +25,7 @@ namespace TomTeam.Project.Gld
         public async Task<int> AddOrUpdate(WebConfig config)
         {
             if (config == null) throw new UserFriendlyException("传递的数据不正确");
+            
             return await _webconfigRepository.InsertOrUpdateAndGetIdAsync(config);
         }
 
@@ -38,7 +39,7 @@ namespace TomTeam.Project.Gld
 
             else
             {
-                configDetail = await _webconfigRepository.GetAll().FirstOrDefaultAsync() ?? new WebConfig();
+                configDetail = await _webconfigRepository.GetAll().OrderByDescending(x => x.CreationTime).FirstOrDefaultAsync() ?? new WebConfig();
             }
             return configDetail;
         }

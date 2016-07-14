@@ -29,7 +29,7 @@
     </div>
 }
 
-<form class="login-form" action="@Url.Action("Login")?returnUrl=@ViewBag.ReturnUrl" method="post">
+<form class="login-form" action="/Account/Login?returnUrl=@ViewBag.ReturnUrl" method="post">
     <input type="hidden" name="returnUrlHash" />
     @if (ViewBag.IsMultiTenancyEnabled)
     {

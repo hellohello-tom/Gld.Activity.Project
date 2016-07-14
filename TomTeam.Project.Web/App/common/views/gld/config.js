@@ -9,7 +9,8 @@
 
             vm.save = function () {
                 vm.saving = true;
-                webconfigService.addOrUpdate(vm.webconfig).success(function () {
+                webconfigService.addOrUpdate(vm.webconfig).success(function (result) {
+                    vm.webconfig.id = result;
                     abp.notify.info(app.localize('SavedSuccessfully'));
                 }).finally(function () {
                     vm.saving = false;

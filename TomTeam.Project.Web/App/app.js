@@ -122,6 +122,10 @@ appModule.config([
             templateUrl: '~/App/common/views/gld/config.cshtml'
         });
         
+        $stateProvider.state('config', {
+            url: '/config',
+            templateUrl: '~/App/common/views/gld/activityConfig.cshtml'
+        });
 
 
         $stateProvider.state('notifications', {

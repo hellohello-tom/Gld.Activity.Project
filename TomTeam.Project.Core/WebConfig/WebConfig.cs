@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Abp.Domain.Entities.Auditing;
+using System.ComponentModel.DataAnnotations;
 
 namespace TomTeam.Project.Config
 {
@@ -20,6 +21,8 @@ namespace TomTeam.Project.Config
         /// <summary>
         /// 网站名称
         /// </summary>
+        [Required(ErrorMessage ="网站名称必填")]
+        [StringLength(10,ErrorMessage ="网站名称不能超过10个字符")]
         public string WebName { get; set; }
 
         /// <summary>
@@ -30,6 +33,7 @@ namespace TomTeam.Project.Config
         /// <summary>
         /// 活动介绍
         /// </summary>
+        [Required(ErrorMessage = "活动介绍必填")]
         public string ActivityInfo { get; set; }
     }
 }

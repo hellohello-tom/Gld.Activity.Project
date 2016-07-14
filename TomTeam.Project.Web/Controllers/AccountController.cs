@@ -97,7 +97,7 @@ namespace TomTeam.Project.Web.Controllers
         }
 
         #region Login / Logout
-
+        [Route("login.html")]
         public ActionResult Login(string userNameOrEmailAddress = "", string returnUrl = "", string successMessage = "")
         {
             if (string.IsNullOrWhiteSpace(returnUrl))

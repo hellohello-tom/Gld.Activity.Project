@@ -46,7 +46,7 @@
                     {
                         name: '创建时间',
                         field: 'creationTime',
-                        cellFilter: 'momentFormat: \'L\'',
+                        cellFilter:'date:\'yyyy年MM月dd日 HH:mm\'',
                         minWidth: 100
                     }
                 ],

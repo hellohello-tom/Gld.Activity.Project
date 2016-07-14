@@ -16,8 +16,23 @@ namespace TomTeam.Project.Authorization.Users
 
         public virtual bool ShouldChangePasswordOnNextLogin { get; set; }
         
+        /// <summary>
+        /// 公司名称
+        /// </summary>
+        public virtual string CompanyName { get; set; }
+
+        /// <summary>
+        /// 电话
+        /// </summary>
+        public virtual string Phone { get; set; }
+
+        /// <summary>
+        /// 专业
+        /// </summary>
+        public virtual string Major { get; set; }
+
         //Can add application specific user properties here
-        
+
         /// <summary>
         /// Creates admin <see cref="User"/> for a tenant.
         /// </summary>

@@ -9,7 +9,7 @@ namespace TomTeam.Project.Web.Routing
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            routes.MapMvcAttributeRoutes();
             //ASP.NET Web API Route Config
             routes.MapHttpRoute(
                 name: "DefaultApi",
