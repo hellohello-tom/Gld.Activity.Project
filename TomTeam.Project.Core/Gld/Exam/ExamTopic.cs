@@ -14,6 +14,16 @@ namespace TomTeam.Project.Gld.Exam
         /// </summary>
         public string TopicName { get; set; }
 
-        
+        /// <summary>
+        /// 题目类型0单选 1多选
+        /// </summary>
+        public int ExamType { get; set; }
+
+        /// <summary>
+        /// 答案
+        /// </summary>
+        public string AnswerContent { get; set; }
+
+        public List<Answer> Answers { get; set; }
     }
 }

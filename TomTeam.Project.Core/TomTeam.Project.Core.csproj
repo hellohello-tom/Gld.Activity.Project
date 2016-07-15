@@ -105,6 +105,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gld\Exam\Answer.cs" />
     <Compile Include="Gld\Exam\ExamTopic.cs" />
     <Compile Include="News\News.cs" />
     <Compile Include="TomAbpConsts.cs" />

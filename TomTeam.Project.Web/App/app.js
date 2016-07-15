@@ -112,16 +112,22 @@ appModule.config([
         }
 
         //gld activity menu
+        //新闻管理
         $stateProvider.state('gldnews', {
             url: '/gldnews',
             templateUrl: '~/App/common/views/gld/news.cshtml'
         });
-
+        //网站配置
         $stateProvider.state('gldconfig', {
             url: '/gldconfig',
             templateUrl: '~/App/common/views/gld/config.cshtml'
         });
-        
+        //乡试
+        $stateProvider.state('pe', {
+            url: '/pe',
+            templateUrl: '~/App/common/views/exam/provincial.cshtml'
+        });
+        //活动配置
         $stateProvider.state('config', {
             url: '/config',
             templateUrl: '~/App/common/views/gld/activityConfig.cshtml'

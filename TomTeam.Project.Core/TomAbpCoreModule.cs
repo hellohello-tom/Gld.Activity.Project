@@ -18,6 +18,7 @@ using TomTeam.Project.Debugging;
 using TomTeam.Project.Features;
 using TomTeam.Project.MultiTenancy;
 using TomTeam.Project.Notifications;
+using System.Transactions;
 
 namespace TomTeam.Project
 {
@@ -30,6 +31,9 @@ namespace TomTeam.Project
         public override void PreInitialize()
         {
             Configuration.Auditing.IsEnabledForAnonymousUsers = true;
+
+            Configuration.UnitOfWork.IsolationLevel = IsolationLevel.ReadCommitted;
+            Configuration.UnitOfWork.Timeout = TimeSpan.FromMinutes(30);
 
             //Declare entity types
             Configuration.Modules.Zero().EntityTypes.Tenant = typeof (Tenant);

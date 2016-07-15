@@ -15,6 +15,13 @@ namespace TomTeam.Project.Config
     public class ActivityConfig : FullAuditedEntity, IInputDto
     {
         /// <summary>
+        /// 试卷题目
+        /// </summary>
+        [Required(ErrorMessage ="试卷标题必填")]
+        [StringLength(15,ErrorMessage = "试卷标题必填")]
+        public string ExamTtile { get; set; }
+
+        /// <summary>
         /// 乡试开始时间
         /// </summary>
         [Required(ErrorMessage ="乡试开始时间必填")]

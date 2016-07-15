@@ -13,6 +13,10 @@
                         <input id="dateprovincial" date-range-picker type="text" options="vm.provincial_dateRangeOptions" min="vm.provincial_dateRangeOptions.min" max="vm.provincial_dateRangeOptions.max" class="form-control date-picker" ng-model="vm.provincial_dateRangeModel" />
                     </div>
                     <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                        <input class="form-control edited" type="text" name="examTtile" ng-model="vm.activity.examTtile" maxlength="15" required>
+                        <label>试卷标题</label>
+                    </div>
+                    <div class="form-group form-md-line-input form-md-floating-label no-hint">
                         <input class="form-control edited" type="text" name="examCount" ng-model="vm.activity.examCount" maxlength="5" required>
                         <label>随机出的题目数目</label>
                     </div>
