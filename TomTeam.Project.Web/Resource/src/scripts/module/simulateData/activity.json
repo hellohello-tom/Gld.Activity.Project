@@ -1,0 +1,235 @@
+module.exports = {
+    "code": "0",
+    "data": [
+        {
+            "list": [
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000001067381",
+                    "appName": "打的就是小人",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/VillainHitting/bg.png",
+                    "appType": "VillainHitting",
+                    "appTypeName": "打的就是小人",
+                    "id": "1000001067381"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000004937",
+                    "appName": "命悬一线",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/HangingByAThread/kaishi.jpg",
+                    "appType": "HangingByAThread",
+                    "appTypeName": "命悬一线",
+                    "id": "1000000004937"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000004956",
+                    "appName": "牛郎织女跳跳跳",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/valentine-jump/bg.png",
+                    "appType": "ValentineJump",
+                    "appTypeName": "牛郎织女跳跳跳",
+                    "id": "1000000004956"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000004960",
+                    "appName": "胸口碎大石",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/broken-stone/res/big_bg.png",
+                    "appType": "BrokenStone",
+                    "appTypeName": "胸口碎大石",
+                    "id": "1000000004960"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000004966",
+                    "appName": "挑战大胃王",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/eat-buns/c1.jpg",
+                    "appType": "EatBuns",
+                    "appTypeName": "挑战大胃王",
+                    "id": "1000000004966"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000004990",
+                    "appName": "万圣节点亮南瓜灯",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/hallowmas/bg.jpg",
+                    "appType": "Hallowmas",
+                    "appTypeName": "万圣节点亮南瓜灯",
+                    "id": "1000000004990"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000004994",
+                    "appName": "抢金币",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/find-out-single-dog/game_bg.jpg",
+                    "appType": "RedEnvelope",
+                    "appTypeName": "抢金币",
+                    "id": "1000000004994"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000004998",
+                    "appName": "疯狂打鬼子",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/kill-devil/background_1.png",
+                    "appType": "DozenDevil",
+                    "appTypeName": "疯狂打鬼子",
+                    "id": "1000000004998"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000004909 ",
+                    "appName": "微投票",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/vote/share.png",
+                    "appType": "WeChatVote",
+                    "appTypeName": "微投票",
+                    "id": "1000000004909 "
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000005004",
+                    "appName": "寻找单身狗",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/find-out-single-dog/game_bg.jpg",
+                    "appType": "FindOutSingleDog",
+                    "appTypeName": "寻找单身狗",
+                    "id": "1000000005004"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000005009",
+                    "appName": "摇钱树",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/gold/bg.png",
+                    "appType": "MoneyTree",
+                    "appTypeName": "摇钱树",
+                    "id": "1000000005009"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000005014",
+                    "appName": "挑月饼",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/pick-mooncakes/mooncakeBg.jpg",
+                    "appType": "PickMoonCakes",
+                    "appTypeName": "挑月饼",
+                    "id": "1000000005014"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000005027",
+                    "appName": "嫦娥打月饼",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/kill-mooncakes/kill-mooncake-bg.png",
+                    "appType": "KillMoonCakes",
+                    "appTypeName": "嫦娥打月饼",
+                    "id": "1000000005027"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000005031",
+                    "appName": "中秋吃月饼",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/bg.png",
+                    "appType": "EatMoonCakes",
+                    "appTypeName": "中秋吃月饼",
+                    "id": "1000000005031"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000004914",
+                    "appName": "土豪送我车",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/parkingSpace/sd-bg.jpg",
+                    "appType": "ParkingSpace",
+                    "appTypeName": "土豪送我车",
+                    "id": "1000000004914"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000004918",
+                    "appName": "送我圣诞礼物",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/chrismas-gift/sd-bg.jpg",
+                    "appType": "ChristmasGift",
+                    "appTypeName": "送我圣诞礼物",
+                    "id": "1000000004918"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000005020",
+                    "appName": "幸运拆礼盒",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/remove-box/bg_default.jpg",
+                    "appType": "OpenBox",
+                    "appTypeName": "幸运拆礼盒",
+                    "id": "1000000005020"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000004913",
+                    "appName": "祝福贺卡",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/GreetingCardProject/dist/images/share.png",
+                    "appType": "GreetingCard",
+                    "appTypeName": "祝福贺卡",
+                    "id": "1000000004913"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000004923",
+                    "appName": "圣诞老人来了",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/santaClaus/share.png",
+                    "appType": "CrossScreenChristmas",
+                    "appTypeName": "圣诞老人来了",
+                    "id": "1000000004923"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000004941",
+                    "appName": "微信神秘消息",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/weChat-talk/share.jpg",
+                    "appType": "WeChatTalk",
+                    "appTypeName": "微信神秘消息",
+                    "id": "1000000004941"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000004942",
+                    "appName": "明星朋友圈",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/circle-of-friends/share.jpg",
+                    "appType": "CircleOfFriends",
+                    "appTypeName": "明星朋友圈",
+                    "id": "1000000004942"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000004924",
+                    "appName": "幸运大转盘",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/BigWheel/big-wheel-bg.jpg",
+                    "appType": "BigWheel",
+                    "appTypeName": "幸运大转盘",
+                    "id": "1000000004924"
+                },
+                {
+                    "appDemoUrl": "http://acthd.yqydev.wkey.cn/act/dispatcher.html?actId=1000000004932",
+                    "appName": "刮刮卡",
+                    "appPicUrl": "http://acthd.yqydev.wkey.cn/images/act/ScratchCard/main1.jpg",
+                    "appType": "ScratchCard",
+                    "appTypeName": "刮刮卡",
+                    "id": "1000000004932"
+                }
+            ],
+            "modelText": "互动游戏",
+            "modelType": "INTERACTIVE_GAME"
+        },
+        {
+            "list": [
+                {
+                    "appDemoUrl": "www.seckill.com",
+                    "appName": "秒杀案例模板",
+                    "appTypeName": "秒杀案例模板",
+                    "appPicUrl": "group1/M00/01/24/wKj5L1dCWveAPKRfAAHSt1tmDdc262.png",
+                    "appType": "SECKILL"
+                },
+                {
+                    "appDemoUrl": "www.bargain.com",
+                    "appName": "砍价案例模板",
+                    "appTypeName": "砍价案例模板",
+                    "appPicUrl": "group1/M00/01/24/wKj5LVdCWniAN093AAIUDX2LfaU048.png",
+                    "appType": "BARGAIN"
+                }
+            ],
+            "modelText": "促销",
+            "modelType": "PROMOTION"
+        },
+        {
+            "list": [
+                {
+                    "appDemoUrl": "http://test.yqxiu.cn/s/E2OPfq4X",
+                    "appName": "易企秀案例模板",
+                    "appTypeName": "易企秀案例模板",
+                    "appPicUrl": "group1/M00/01/24/wKj5L1dCW0aAaf8RAALFyEzBraQ569.png",
+                    "appType": "EQXIU_H5_SCENE"
+                }
+            ],
+            "modelText": "易企秀H5场景",
+            "modelType": "EQXIU"
+        },
+        {
+            "list": [],
+            "modelText": "网站页面",
+            "modelType": "WEBSITE"
+        }
+    ],
+    "message": "success",
+    "success": true
+}

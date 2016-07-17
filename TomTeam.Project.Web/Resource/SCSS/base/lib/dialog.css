@@ -1,0 +1,270 @@
+.ui-popup-backdrop {
+  opacity: 0.5 !important;
+}
+
+.ui-popup-show {
+  box-shadow: 0 0 6px #666;
+  -webkit-animation: popup-zoom .2s;
+  animation: popup-zoom .2s;
+  will-change: transform;
+}
+
+.ui-popup-show table {
+  border-spacing: 0;
+}
+
+.ui-popup-show .ui-dialog {
+  background: #fff;
+  font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.ui-popup-show .ui-dialog .ui-dialog-header {
+  position: relative;
+  height: 36px;
+  padding: 0 10px;
+  line-height: 36px;
+  font-size: 16px;
+  background: #e8e8e8;
+  border-bottom: 0;
+  cursor: move;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.ui-popup-show .ui-dialog .ui-dialog-header .ui-dialog-title {
+  padding: 0;
+  line-height: inherit;
+  font-weight: 400;
+  color: #333;
+}
+
+.ui-popup-show .ui-dialog .ui-dialog-header .ui-dialog-close {
+  position: absolute;
+  right: 6px;
+  top: 5px;
+  top: 3px\0;
+  padding: 3px 6px;
+  border: 0;
+  font-weight: 400;
+  font-size: 24px;
+  font-family: Helvetica, arial, sans-serif;
+  color: #999;
+  background: transparent;
+  opacity: 1;
+}
+
+.ui-popup-show .ui-dialog .ui-dialog-header .ui-dialog-close:hover {
+  color: #08a7ec;
+}
+
+.ui-popup-show .ui-dialog .ui-dialog-header .ui-dialog-close:active {
+  box-shadow: none;
+  top: 6px;
+  right: 5px;
+  top: 3px\0;
+  right: 6px\0;
+}
+
+.ui-popup-show .ui-dialog .ui-dialog-body {
+  position: relative;
+  padding: 20px;
+}
+
+.ui-popup-show .ui-dialog .ui-dialog-body .ui-dialog-content {
+  min-width: 200px;
+}
+
+.ui-popup-show .ui-dialog .ui-dialog-footer {
+  padding: 10px;
+  padding-top: 0;
+}
+
+.ui-popup-show .ui-dialog .ui-dialog-footer .ui-dialog-button {
+  float: none;
+  margin-bottom: 10px;
+  text-align: center;
+  direction: rtl;
+}
+
+.ui-popup-show .ui-dialog .ui-dialog-footer .ui-dialog-button button {
+  float: none;
+  padding: 0 24px;
+  margin: 8px;
+  margin-top: 0;
+  border: 1px solid #e0e0e0;
+  line-height: 34px;
+  font-size: 16px;
+  font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #555;
+  background: #fff;
+}
+
+.ui-popup-show .ui-dialog .ui-dialog-footer .ui-dialog-button button:hover {
+  background: #e8e8e8;
+}
+
+.ui-popup-show .ui-dialog .ui-dialog-footer .ui-dialog-button [i-id=ok],
+.ui-popup-show .ui-dialog .ui-dialog-footer .ui-dialog-button .ui-dialog-autofocus {
+  background: #08a7ec;
+  color: #fff;
+  border-color: #0799d8;
+}
+
+.ui-popup-show .ui-dialog .ui-dialog-footer .ui-dialog-button [i-id=ok]:hover,
+.ui-popup-show .ui-dialog .ui-dialog-footer .ui-dialog-button .ui-dialog-autofocus:hover {
+  background: #0799d8;
+}
+
+.ui-popup-show .ui-dialog .ui-dialog-footer .ui-dialog-button [i-id='确定'][autofocus] {
+  float: left;
+}
+
+.ui-popup-show .ui-dialog.mini .ui-dialog-header, .ui-popup-show .ui-dialog.mini-tips .ui-dialog-header {
+  display: block !important;
+  background-color: transparent;
+}
+
+.ui-popup-show .ui-dialog.mini .ui-dialog-title, .ui-popup-show .ui-dialog.mini-tips .ui-dialog-title {
+  height: 36px;
+  background: transparent;
+  text-indent: -99999px;
+  overflow: hidden;
+}
+
+.ui-popup-show .ui-dialog.mini .ui-dialog-content, .ui-popup-show .ui-dialog.mini-tips .ui-dialog-content {
+  text-align: center;
+}
+
+.ui-popup-show .ui-dialog.mini .ui-dialog-footer .ui-dialog-button, .ui-popup-show .ui-dialog.mini-tips .ui-dialog-footer .ui-dialog-button {
+  margin-bottom: 4px;
+}
+
+.ui-popup-show .ui-dialog.mini .ui-dialog-footer .ui-dialog-button button, .ui-popup-show .ui-dialog.mini-tips .ui-dialog-footer .ui-dialog-button button {
+  margin: 6px;
+  font-size: 12px;
+  line-height: 26px;
+}
+
+@-webkit-keyframes ui-dialog-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes ui-dialog-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ui-dialog-loading {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  text-indent: -999em;
+}
+
+.ui-dialog-loading:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 3px;
+  height: 3px;
+  margin: 14.5px 0 0 14.5px;
+  border-radius: 100%;
+  box-shadow: 0 -10px 0 1px #ccc, 10px 0px #ccc, 0 10px #ccc, -10px 0 #ccc, -7px -7px 0 0.5px #ccc, 7px -7px 0 1.5px #ccc, 7px 7px #ccc, -7px 7px #ccc;
+  -webkit-transform: rotate(360deg);
+  -webkit-animation: ui-dialog-loading 1.5s infinite linear;
+  transform: rotate(360deg);
+  animation: ui-dialog-loading 1.5s infinite linear;
+}
+
+@-webkit-keyframes popup-zoom {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popup-zoom {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes popup-goup {
+  from {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+  }
+  opacity: .3;
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  opacity: 1;
+}
+
+@keyframes popup-goup {
+  from {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: .3;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes popup-godown {
+  from {
+    -webkit-transform: translateY(-250px);
+    transform: translateY(-250px);
+  }
+  opacity: .3;
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  opacity: 1;
+}
+
+@keyframes popup-godown {
+  from {
+    -webkit-transform: translateY(-250px);
+    transform: translateY(-250px);
+    opacity: .3;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

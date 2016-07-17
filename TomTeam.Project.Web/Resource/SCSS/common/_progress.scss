@@ -1,0 +1,159 @@
+@import 'base/_variables';
+.progress {
+    @include dis-flex;
+    position: relative;
+    padding: 60px 0;
+    margin: 0 120px;
+    counter-reset: steps;
+    >.item {
+        position: relative;
+        @include flex();
+        counter-increment: steps;
+        transition: .2s;
+        transform-origin: left;
+        // -webkit-animation: progress-item-am .2s;
+        // -o-animation: progress-item-am .2s;
+        // animation: progress-item-am .2s;
+        >.bar {
+            display: block;
+            position: relative;
+            height: 8px;
+            width: 100%;
+            // width: 0;
+            background: transparent;
+            &:before {
+                content: counter(steps);
+                position: absolute;
+                top: 50%;
+                padding: 8px 12px;
+                font-size: 16px;
+                line-height: 1;
+                color: #fff;
+                background: $color-primary;
+                -webkit-border-radius: 100%;
+                -moz-border-radius: 100%;
+                border-radius: 100%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                z-index: 5;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                background: $color-primary;
+                transition: .3s;
+                -webkit-transform-origin: left;
+                transform-origin: left;
+                -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+                -webkit-animation-name: progress-bar-am;
+                animation-name: progress-bar-am;
+                -webkit-animation-duration: .5s;
+                animation-duration: .5s;
+                -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
+            }
+        }
+        @for $i from 1 to 5 {
+            &:nth-child(#{$i+1}) {
+                >.bar:after {
+                    -webkit-animation-delay: #{$i}s;
+                    animation-delay: #{$i}s;
+                }
+            }
+        }
+        >.tips {
+            position: absolute;
+            bottom: -45px;
+            color: #999;
+            font-size: 18px;
+            -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+        }
+        &.now {
+            .bar:after,
+            &:before,
+            &~.item>.bar:after,
+            &~.item>.bar:before {
+                background: $progress-bg;
+                color: #999;
+            }
+            &.item>.bar,
+            &~.item>.bar {
+                &:after {
+                    background: $progress-bg;
+                }
+            }
+        }
+        &:last-child {
+            position: absolute;
+            right: 0;
+            width: auto!important;
+            white-space: nowrap;
+            -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+        }
+    }
+    &.col3 {
+        >.item {
+            width: 50%;
+        }
+    }
+    &.col4 {
+        >.item {
+            width: 33.333%;
+        }
+    }
+    &.col5 {
+        >.item {
+            width: 25%;
+        }
+    }
+    &.col6 {
+        >.item {
+            width: 20%;
+        }
+    }
+}
+
+@-webkit-keyframes progress-item-am {
+    from {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    to {}
+}
+
+@keyframes progress-item-am {
+    from {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    to {}
+}
+
+@-webkit-keyframes progress-bar-am {
+    from {
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+    }
+    to {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+}
+
+@keyframes progress-bar-am {
+    from {
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+    }
+    to {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+}

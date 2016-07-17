@@ -1,0 +1,28 @@
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=submit],
+input[type=password],
+input[type=number],
+input[type=date],
+input[type=color],
+input[type=time],
+input[type=email],
+button,
+select {
+  line-height: 1\0;
+  padding: 8px 4px\0;
+}
+
+.search-field .icon-search.btn-search {
+  padding-top: 7px\0;
+}
+
+@-moz-document url-prefix() {
+  .info-express {
+    padding-left: 0!important;
+    .tab-switcher-vertical {
+      left: 0!important;
+    }
+  }
+}

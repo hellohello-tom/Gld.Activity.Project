@@ -1,0 +1,361 @@
+@charset "utf-8";
+@import "variables";
+@import "mixin";
+hr {
+  height: 1px;
+  border: 0;
+  background: $color-border;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+ol,
+dl,
+dt,
+dd,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+i,
+em,
+label {
+  font-style: normal;
+  font-weight: 400;
+}
+
+$color-input-border:#e0e0e0!default;
+$color-input-focus-border:$color-primary!default;
+$color-input-invalid:$color-danger!default;
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=submit],
+input[type=password],
+input[type=number],
+input[type=date],
+input[type=color],
+input[type=time],
+input[type=url],
+input:not([type]),
+button,
+textarea,
+select,
+.com-input {
+  border: 1px solid $color-input-border;
+  padding: 4px;
+  font-size: inherit;
+  -webkit-appearance: none;
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  border-radius: $border-radius;
+  @include tap-highlight-color(rgba(0, 0, 0, 0));
+  &:focus {
+    border-color: $color-input-focus-border;
+    outline: 0;
+    &:invalid {
+      background: #FFF1F1;
+      //border-color: $color-input-invalid;
+    }
+  }
+  &:active {
+    box-shadow: inset 0 1px 3px rgba(56, 56, 56, .2);
+  }
+  &.error {
+    border-color: $color-input-invalid;
+  }
+}
+
+input[readonly] {
+  background: #eee;
+  &:focus,
+  &:active {
+    border-color: $color-border;
+  }
+}
+
+input.ipt-s {
+  width: 100px;
+}
+
+select {
+  max-width: 18em;
+  -webkit-appearance: menulist;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  vertical-align: -2px;
+}
+
+.align-ipt {
+  line-height: 32px;
+}
+
+.align-btn {
+  line-height: 28px;
+}
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+.m5 {
+  margin: 5px;
+}
+
+.mt5 {
+  margin-top: 5px;
+}
+
+.mb5 {
+  margin-bottom: 5px;
+}
+
+.ml5 {
+  margin-left: 5px;
+}
+
+.mr5 {
+  margin-right: 5px;
+}
+
+.m10 {
+  margin: 10px;
+}
+
+.ml10 {
+  margin-left: 10px;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.p5 {
+  padding: 5px;
+}
+
+.p10 {
+  padding: 10px;
+}
+
+.pl10 {
+  padding-left: 10px;
+}
+
+.pr10 {
+  padding-right: 10px;
+}
+
+.pt10 {
+  padding-top: 10px;
+}
+
+.pb10 {
+  padding-bottom: 10px;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.row {
+  // padding: 10px;
+}
+
+[hidden],
+template,
+.hidden {
+  display: none;
+}
+
+.clearfix:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.dis-flex {
+  @include dis-flex;
+  >.item {
+    @include flex;
+    margin: 0;
+  }
+}
+
+.flex-center {
+  @include flex-center;
+}
+
+.dis-inline-block {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
+  >.item {
+    display: table-cell;
+  }
+}
+
+.col2 {
+  >.col-item {
+    width: 50%;
+  }
+}
+
+.main {
+  position: relative;
+}
+
+.required-mark {
+  &:before {
+    content: '*';
+    color: #f00;
+    margin: 1px;
+  }
+}
+
+.simplehidden {
+  position: absolute!important;
+  width: 1px!important;
+  height: 1px!important;
+  overflow: hidden!important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  line-height: 0 !important;
+  opacity: 0!important;
+  pointer-events: none;
+  z-index: -3;
+}
+
+.superhidden {
+  @extend .simplehidden;
+  clip: rect(0, 0, 0, 0)!important;
+  visibility: hidden!important;
+}
+
+$cursor-disabled:not-allowed!default;
+.disabled {
+  opacity: .7;
+  pointer-events: none;
+}
+
+.split {
+  >.item {
+    line-height: 32px;
+    >.title {
+      float: left;
+      line-height: inherit;
+      font-weight: 400;
+    }
+    >.content {
+      display: block;
+      overflow: hidden;
+      font-weight: 400;
+      line-height: inherit;
+    }
+  }
+}
+
+//展开、折叠
+.folder {
+  @include trf-style();
+  >.folder-content {
+    // display: none;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    @include trans(.2s);
+    @include trf-origin(top);
+    @include trf-rotateX(-90deg);
+    will-change: transform;
+  }
+  &.on {
+    >.folder-content {
+      // display: block;
+      opacity: 1;
+      height: auto;
+      @include trf-rotateX(0);
+    }
+  }
+}
+
+//vue 数据区域编译前隐藏
+[v-cloak] {
+  display: none;
+}
+
+html {
+  min-height: 100%;
+  font-size: 100%;
+}
+
+@-webkit-keyframes loading {
+  0%,
+  40% {
+    content: '.'
+  }
+  41%,
+  66% {
+    content: '..'
+  }
+  70%,
+  100% {
+    content: '...'
+  }
+}
+
+@keyframes loading {
+  0%,
+  40% {
+    content: '.'
+  }
+  41%,
+  66% {
+    content: '..'
+  }
+  70%,
+  100% {
+    content: '...'
+  }
+}
+
+@import "btn";
+@import "bg";
+@import "text";

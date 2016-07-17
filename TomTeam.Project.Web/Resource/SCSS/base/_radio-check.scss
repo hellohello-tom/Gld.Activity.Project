@@ -1,0 +1,172 @@
+@import 'variables';
+@import 'mixin';
+//单选、多选样式
+.radio {
+    position: relative;
+    >input[type=radio] {
+        position: relative;
+        margin-right: 5px;
+        visibility: hidden;
+        z-index: 2;
+        &:checked {
+            ~.icon{
+                border-color: $color-border;
+                &:before {
+                visibility: visible;
+            }
+        }
+        }
+    }
+    .icon {
+        position: absolute;
+        top: .7em;
+        left: 5px;
+        width: 14px;
+        height: 14px;
+        padding: 3px;
+        border: 1px solid $color-border;
+        background-color: #fff;
+        @include trf-translate(0, -50%);
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        &:before{
+            content: '';
+            position: absolute;
+            left: 3px;
+            right: 3px;
+            top: 3px;
+            bottom: 3px;
+            background:$color-primary;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            border-radius: 100%;
+            visibility: hidden;
+        }
+    }
+    &:hover{
+        .icon{
+            border-color: #ccc;
+        }
+    }
+}
+
+.radio-simulate{
+    padding-left: 23px;
+    &.on{
+        .icon{
+            &:before{
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.checkbox {
+    display: inline;
+    position: relative;
+    .icon {
+        position: absolute;
+        left: 4px;
+        top: .05em;
+        width: 14px;
+        height: 14px;
+        border: 1px solid $color-border;
+        background:#fff;
+        pointer-events:none;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 1px;
+            top: 2px;
+            width: 11px;
+            height: 5px;
+            border: 2px solid $color-primary;
+            border-width: 0 0 1px 1px;
+            visibility: hidden;
+            @include trf(rotateZ(-45deg));
+        }
+    }
+    &:hover{
+        .icon{
+            border-color:#ccc;
+        }
+    }
+    input[type=checkbox] {
+        position: relative;
+        margin: 0;
+        margin-right: 10px;
+        visibility: hidden;
+        z-index: 2;
+        &:checked {
+            ~.icon:before {
+                visibility: visible;
+            }
+        }
+        &[disabled]{
+            ~.icon:before{
+                border-color: $color-border;
+            }
+        }
+    }
+}
+
+//开关，模拟安卓等
+.switcher {
+    position: relative;
+    input[type=checkbox] {
+        visibility: hidden;
+        &~.icon {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 26px;
+        height: 26px;
+        @include trf-translate(0,-50%);
+        &:before {
+            content: '';
+            position: absolute;
+            top: 7px;
+            bottom: 7px;
+            left: 0;
+            right: 0;
+            border: 1px solid $color-border;
+            background: #eee;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            @include trans(.3s);
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border: 1px solid $color-border;
+            background: #eee;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+            border-radius: 100%;
+            @include trans(.3s);
+        }
+    }
+    &:checked{
+        &~.icon{
+            &:before {
+                background: lighten($color-primary, 30%);
+                border-color: lighten($color-primary, 30%);
+            }
+            &:after {
+                //left: 1rem;
+                @include trf-translate(10px, 0);
+                background: $color-primary;
+                border-color: $color-primary;
+                box-shadow: 0 2px 1px #ddd;
+            }
+        }
+    }
+    }
+    
+}

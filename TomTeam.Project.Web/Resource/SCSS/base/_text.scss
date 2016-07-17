@@ -1,0 +1,74 @@
+@import 'variables';
+@import 'mixin';
+
+//align
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right!important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+//color
+.text-default {
+    color: $color;
+}
+
+.text-muted {
+    color: $color-muted;
+}
+
+.text-primary {
+    color: $color-primary;
+}
+
+.text-info {
+    color: $color-info;
+}
+
+.text-ok {
+    color: $color-ok;
+}
+
+.text-warning {
+    color: $color-warning;
+}
+
+.text-danger {
+    color: $color-danger;
+}
+
+
+//
+.text-nowrap{
+    white-space: nowrap;
+}
+.text-ellipsis{
+    @extend .text-nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+//size
+
+.font-small {
+    font-size: $size-font-small;
+    line-height: 1;
+}
+
+.font-big {
+    font-size: $size-font-big;
+}
+
+.font-bigger {
+    font-size: $size-font-bigger;
+}
+
+.font-biggest {
+    font-size: $size-font-biggest;
+}

@@ -1,0 +1,213 @@
+@mixin anim($content...) {
+  -webkit-animation: $content;
+  animation: $content;
+}
+
+@mixin border-radius($r: 4px) {
+  -webkit-border-radius: $r;
+  border-radius: $r;
+}
+
+@mixin box-shadow($content...) {
+  -webkit-box-shadow: $content;
+  box-shadow: $content;
+}
+
+@mixin dis-tableCell {
+  display: table-cell;
+}
+
+@mixin dis-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin col3() {
+  @include dis-tc;
+  width: 100%/3;
+}
+
+@mixin col4() {
+  @include dis-tc;
+  width: 25%;
+}
+
+@mixin flex-center() {
+  -webkit-align-self: center;
+  align-self: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+@mixin flex($r: 1) {
+  -webkit-box-flex: $r;
+  -webkit-flex: $r;
+  flex: $r;
+}
+
+@mixin mul-line($num: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $num;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+@mixin trf($var) {
+  -webkit-transform: $var;
+  transform: $var;
+}
+
+@mixin trf-origin($var) {
+  -webkit-transform-origin: $var;
+  transform-origin: $var;
+}
+
+@mixin trf-style($var:preserve-3d) {
+  -webkit-transform-style: $var;
+  transform-style: $var;
+}
+
+@mixin trf-translate($x: 0, $y: -50%) {
+  -webkit-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+@mixin trf-scale($r: .8) {
+  -webkit-transform: scale($r);
+  transform: scale($r);
+}
+
+@mixin trf-rotate($x: 0) {
+  -webkit-transform: rotate($x);
+  transform: rotate($x);
+}
+
+@mixin trf-rotateX($x: 0) {
+  -webkit-transform: rotateX($x);
+  transform: rotateX($x);
+}
+
+@mixin trf-rotateY($y:0) {
+  -webkit-transform: rotateY($y);
+  transform: rotateY($y);
+}
+
+@mixin trans($args...) {
+  -webkit-transition: $args;
+  transition: $args;
+}
+
+@mixin trans-transform($time: .3s, $tf: linear) {
+  -webkit-transtion: -webkit-transform $time $tf;
+  transition: transform $time $tf;
+}
+
+@mixin tap-highlight-color($c: rgba(0, 0, 0, 0.1)) {
+  -webkit-tap-highlight-color: $c;
+}
+
+@mixin user-select-none {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@mixin vertical-middle {
+  @include dis-tc;
+  vertical-align: middle;
+}
+
+@mixin overflow-scroll-touch {
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin basePC {
+  color: $color;
+  font-size: $font-size;
+  font-family: $font-family;
+  line-height: $line-height;
+}
+
+@mixin baseMobile {
+  color: $color;
+  font-family: $font-family-mobile;
+  line-height: $line-height-mobile;
+}
+
+@mixin pcBody {
+  @include basePC;
+  // word-break: break-all;
+}
+
+@mixin PCanchor {
+  color: $color-anchor;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@mixin mobileAnchor {
+  color: #333;
+  &:visited,
+  &:hover,
+  &:active {
+    color: #333;
+  }
+  @at-root button,
+  & {
+    @include wthc();
+  }
+}
+
+@mixin loading {
+  position: relative;
+  text-align: center;
+  pointer-events: none;
+  >* {
+    opacity: 0;
+  }
+  &:after {
+    content: '...';
+    width: 1em;
+    @include anim(loading 1.5s infinite);
+  }
+}
+
+@mixin loadmore {
+  position: relative;
+  border: 0;
+  color: #666;
+  &:hover {
+    background: #fff;
+  }
+  &.spinner-loadmore {
+    text-indent: -2000px;
+  }
+}
+
+//convert px into rem
+@function px2rem($px, $font-size:16px) {
+  @if(unitless($px)) {
+    @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+    @return px2rem($px + 0px); // That may fail.
+  }
+  @else if(unit($px)==px) {
+    @return ($px/$font-size)*1rem;
+  }
+  @else {
+    @return $px;
+  }
+}
+
+@mixin font-dpr($font-size) {
+  font-size: $font-size;
+  [data-dpr="2"] & {
+    font-size: $font-size*2;
+  }
+  [data-dpd="3"] & {
+    font-size: $font-size*3;
+  }
+}

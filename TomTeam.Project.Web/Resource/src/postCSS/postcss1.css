@@ -1,0 +1,10 @@
+
+:root{
+	bg:black
+};
+
+.precss{
+	@if 3<5{
+		background: green;
+	}
+}

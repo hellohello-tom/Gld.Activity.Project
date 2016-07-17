@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="author" content="Z">
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+  <link rel="stylesheet" href="../dist/iconfonts/style.css">
+  <link rel="stylesheet" href="../dist/CSS/common.css">
+  <title>小功能汇总</title>
+  <style>
+  .row {
+    padding: 10px;
+    counter-reset: contentTitleL2;
+  }
+  
+  .row .content-title-l2 {
+    font-weight: 400;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .row .content-title-l2+div {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .row .content-title-l2:before {
+    counter-increment: contentTitleL2;
+    content: counter(contentTitle)'.'counter(contentTitleL2)' ';
+  }
+  
+  .main .body {
+    counter-reset: contentTitle;
+  }
+  
+  .main .body .content-title:before {
+    counter-increment: contentTitle;
+    content: counter(contentTitle)'. ';
+  }
+  
+  .H1 {
+    font-size: 20px;
+  }
+  
+  .drag-zone {
+    height: 60px;
+    margin-top: 6px;
+    border: 2px dashed #ccc;
+    line-height: 60px;
+    color: #ccc;
+    font-size: 20px;
+    text-align: center;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+  }
+  
+  #upload {
+    display: none;
+  }
+  
+  .drag {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 2px solid #ccc;
+    text-align: center;
+    box-shadow: inset 0 0 50px #999;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+  
+  #drag .title {
+    background: #999;
+    color: #fff;
+    border-bottom: 1px solid #666;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="time" data-time='undifined'></div>
+  <div class="time" data-time='500'></div>
+  <div class="time" data-time='20'></div>
+  <div class="wrapper">
+    <div class="main">
+      <article class="body">
+        <div class="row">
+          <h2 class="content-title h1">标签切换</h2>
+          <div class="l2">
+            <h3 class="content-title-l2">
+                            文字标签型切换
+                        </h3>
+            <div class="tab-switcher-horizontal js-switcher">
+              <div class="title group-status ">
+                <a href="javascript:;" class="item on" @click="this.view=''">标签切换菜单1</a>
+                <a href="javascript:;" class="item" @click="this.view='list'">标签切换菜单2</a>
+              </div>
+              <div class="content">
+                <div class="split align-ipt item on mt5">
+                  <dl class="item">
+                    <dd class="fr">
+                      已选择对象
+                      <a href="javascript:;" class="p5 num-selected" data-dialog-title="已选粉丝列表" data-dialog-content="user-selected">123555</a>个
+                    </dd>
+                    <dt class="title mr10">
+                      群发对象
+                    </dt>
+                    <dd class="content group-obj-filter js-toggle-class-clear">
+                      <span class="title">
+                                               <button class="btn-tag btn-tag-primary item on">全部已关注对象</button>
+                                                <button class="btn-tag btn-tag-primary item filter-by-tag">按标签选择</button>
+                                                </span>
+                    </dd>
+                  </dl>
+                </div>
+                <div class="item mt10">
+                  我是标签2中内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="l2">
+            <h3 class="content-title-l2">按钮型切换</h3>
+            <div class="radio-switcher js-switcher mt5">
+              <div class="title">
+                <label class="item radio radio-simulate on">
+                  图片<span class="icon"></span></label>
+                <label class="item radio radio-simulate">
+                  音乐<span class="icon"></span></label>
+              </div>
+              <div class="content mt10">
+                <div class="item on">
+                  图片图片内容内容
+                </div>
+                <div class="item">
+                  音乐音乐内容内容
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="l2">
+            <h3 class="content-title-l2">标签型切换（暂时未整理）</h3>
+            <div>
+              <div class="tab-switcher js-switcher">
+                <span class="title">
+                                    <label class="item">
+                                        签1
+                                    </label>
+                                    <label class="item">签2</label>
+                                </span>
+                <div class="content">
+                  <div class="item on">
+                    签一内容
+                  </div>
+                  <div class="item">
+                    签2内容
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="l2">
+            <h3 class="content-title-l2">
+                            按钮型切换
+                        </h3>
+            <div>
+              <div class="btn-switcher js-switcher">
+                <span class="title">
+                                    <a href="javascript:;" class="item on">按时间</a><a href="javascript:;" class="item">按销量</a>
+                                </span>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <h2 class="content-title">全选功能</h2>
+          <div class="mt10">
+            <div class="chks">
+              <label class="checkbox">
+                <input type="checkbox" class="chk-all" name="" id="" checked>全选<span class="icon"></span></label>
+              <label class="checkbox">
+                <input type="checkbox" class="chk" name="" id="" checked>等级1<span class="icon"></span></label>
+              <label class="checkbox">
+                <input type="checkbox" class="chk" name="" id="">等级2<span class="icon"></span></label>
+            </div>
+            <div class="chks">
+              <label class="checkbox">
+                <input type="checkbox" class="chk-all" name="" id="" checked>全选<span class="icon"></span></label>
+              <label class="checkbox">
+                <input type="checkbox" class="chk" name="" id="">标签1<span class="icon"></span></label>
+              <label class="checkbox">
+                <input type="checkbox" class="chk" name="" id="" checked>标签2<span class="icon"></span></label>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <h2 class="content-title">
+                        滑动删除
+                    </h2>
+          <div class="l2">
+            <h3 class="content-title-l2">左滑的一些（有交互标签）</h3>
+            <div class="tags tags-action">
+              <span class="tag js-slide-del" data-del-direction='left'><span class="">标签1</span><i class="icon"></i></span>
+              <span class="tag js-slide-del" data-del-direction='left'><span class="">标签2</span><i class="icon"></i></span>
+              <span class="tag js-slide-del" data-del-direction='left'><span class="">标签3</span><i class="icon"></i></span>
+              <span class="tag js-slide-del" data-del-direction='left'><span class="">标签4</span><i class="icon"></i></span>
+              <span class="tag js-slide-del" data-del-direction='left'><span class="">标签5</span><i class="icon"></i></span>
+            </div>
+          </div>
+          <div class="l2">
+            <h3 class="content-title-l2">右滑（无交互型标签）</h3>
+            <div class="tags">
+              <span class="tag js-slide-del tag-info" data-del-direction="right">标签1</span>
+              <span class="tag js-slide-del tag-warning" data-del-direction="right">标签2</span>
+              <span class="tag js-slide-del tag-danger" data-del-direction="right">标签3</span>
+              <span class="btn-tag js-slide-del btn-tag-info on" data-del-direction="right">标签4</span>
+              <span class="btn-tag js-slide-del btn-tag-info-o" data-del-direction="right">标签5</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h2 class="content-title">
+                        分页封一下
+                    </h2>
+          <div class="l2">
+            <div id="pagination">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="content-title">
+            文件拖拽上传等
+          </div>
+          <div class="upload-wrapper">
+            <button class="btn btn-upload">上传文件</button>
+            <input type="file" multiple name="" id="upload">
+          </div>
+          <div class="drag-zone" id='dragZone'>
+            将文件拖拽于些
+          </div>
+          <h4>图片展示</h4>
+          <div class="output" id="output">
+            <img src="" alt="" class="preview">
+          </div>
+        </div>
+        <div class="row">
+          <div class="content-title">
+            HTML5拖拽
+          </div>
+          <div>
+            <ul id="drag">
+              <li class="item drag" data-index='i0' draggable="true">
+                <div class="title">项1</div>
+              </li>
+              <li class="item drag" data-index='i1' draggable="true">
+                <div class="title">项2</div>
+              </li>
+              <li class="item drag" data-index='i2' draggable="true">
+                <div class="title">项3</div>
+              </li>
+              <li class="item drag" data-index='i3' draggable="true">
+                <div class="title">项4</div>
+              </li>
+              <li class="item drag" data-index='i4' draggable="true">
+                <div class="title">项5</div>
+              </li>
+            </ul>
+            <input type="text" id='iptSelect' value='Slecet alert'>
+          </div>
+        </div>
+        <div class="row">
+          <div class="content-title">
+            进度条
+          </div>
+          <div>
+            <progress min=0 max=100 value=36></progress>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="popup-html superhidden">
+    <div class="user-selected">
+      <div class="content user-selected-list">
+        <div class="user-selected-pagination text-center"></div>
+      </div>
+    </div>
+  </div>
+  <script src="../dist/scripts/lib/jquery-1.11.3.js"></script>
+  <!-- <script src="../dist/scripts/lib/jquery.twbsPagination.js"></script> -->
+  <!-- <script src="../dist/scripts/lib/vue.js"></script> -->
+  <!-- <script src="../dist/scripts/lib/vue-router.js"></script> -->
+  <!-- <script src="../dist/scripts/API/simulateData.js"></script> -->
+  <script src="../dist/scripts/bundle/doc.bundle.js"></script>
+  <!-- <script src="../dist/scripts/lib/require.js"></script>
+    <script>
+    require.config({
+        baseUrl:'../../../../src/scripts/module/',
+        // paths: {
+        //     'showTips':'showTipsState'
+        // }
+    });
+
+
+    require(['showTipsState'],function(showTips){
+        showTips('操作成功');
+    });
+    require(['waiting'],function(waiting){
+        waiting.show();
+    })
+    </script> -->
+  <script>
+  // $('#pagination').twbsPagination({
+  //   totalPages: 15,
+  //   visiblePages: 7
+  // });
+  </script>
+</body>
+
+</html>

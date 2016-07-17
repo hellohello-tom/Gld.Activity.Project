@@ -1,0 +1,16 @@
+//图片轮播区
+.swiper {
+    overflow: hidden;
+    >.item {
+        white-space: nowrap;
+        font-size: 0;
+        >.inner {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

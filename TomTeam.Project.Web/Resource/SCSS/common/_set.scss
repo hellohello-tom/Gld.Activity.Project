@@ -1,0 +1,43 @@
+@import 'base/_variables';
+.set {
+  >.item {
+    padding: 10px 0;
+    line-height: $height-input;
+    >.title,
+    >.name {
+      float: left;
+      min-width: 6em;
+      margin-right: 1em;
+      font-weight: 400;
+      line-height: inherit;
+      text-align: right;
+      white-space: nowrap;
+    }
+    >.content {
+      position: relative;
+      overflow: hidden;
+      line-height: inherit;
+      .ipt-large {
+        min-width: 260px;
+      }
+      .ipt-small {
+        min-width: 100px;
+      }
+    }
+  }
+  &.text-left {
+    >.item {
+      >.title,
+      >.name {
+        min-width: auto;
+        text-align: left;
+      }
+    }
+  }
+  &.thin {
+    >.item {
+      line-height: 20px;
+      padding: 5px 0;
+    }
+  }
+}
