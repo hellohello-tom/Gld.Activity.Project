@@ -29,7 +29,6 @@ namespace TomTeam.Project.Gld.Exam.Dto
         /// <summary>
         /// 答案
         /// </summary>
-        [Required(ErrorMessage = "答案字符不能为空")]
         [StringLength(500, ErrorMessage = "答案内容限制字符长度500以内")]
         public string AnswerContent { get; set; }
 

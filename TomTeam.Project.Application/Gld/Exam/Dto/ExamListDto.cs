@@ -13,6 +13,8 @@ namespace TomTeam.Project.Gld.Exam.Dto
     public class ExamListDto : IOutputDto, IHasCreationTime
     {
 
+        public int Id { get; set; }
+
         /// <summary>
         /// 题目
         /// </summary>

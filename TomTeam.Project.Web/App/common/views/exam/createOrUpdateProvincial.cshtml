@@ -1,5 +1,5 @@
-﻿<div ng-controller="common.views.exam.provincial as vm">
-    <form name="activityConfigForm" examTopic="form" novalidate class="form-validation">
+﻿<div>
+    <form name="provincialAddorUpdateForm" examTopic="form" novalidate class="form-validation">
         <div class="modal-header">
             <h4 class="modal-title">
                 <span>题目管理</span>
@@ -9,7 +9,7 @@
             <uib-tabset class="tab-container tabbable-line">
                 <uib-tab heading="试题">
                     <div class="form-group form-md-line-input form-md-floating-label no-hint">
-                        <input class="form-control edited" type="text" name="examTtile" ng-model="vm.provincial.examTopic.topicName" maxlength="200" required>
+                        <input class="form-control edited" type="text" name="topicName" ng-model="vm.provincial.examTopic.topicName" maxlength="200" required>
                         <label>题目</label>
                     </div>
                 </uib-tab>
@@ -17,100 +17,54 @@
                     <div class="row-fluid">
                         <div class="span12">
                             <!-- BEGIN EXAMPLE TABLE PORTLET-->
-                            <div class="portlet box blue">
+                            <div class="portlet box">
                                 <div class="portlet-body">
                                     <div class="clearfix">
                                         <div class="btn-group">
-                                            <button id="sample_editable_1_new" class="btn green">
+                                            <button ng-click="vm.addOptions()" id="sample_editable_1_new" class="btn green">
                                                 新增选项 <i class="icon-plus"></i>
-                                            </button>
-                                        </div>
-                                        <div class="btn-group pull-right">
-                                            <button class="btn dropdown-toggle" data-toggle="dropdown">
-                                                Tools <i class="icon-angle-down"></i>
                                             </button>
                                         </div>
                                     </div>
                                     <div id="sample_editable_1_wrapper" class="dataTables_wrapper form-inline" role="grid">
-                                        <table class="table table-striped table-hover table-bordered dataTable" id="sample_editable_1" aria-describedby="sample_editable_1_info" style="width: 802px;">
+                                        <table class="table table-striped table-bordered table-hover dataTable" id="sample_editable_1" aria-describedby="sample_editable_1_info">
                                             <thead>
-                                                <tr role="row"><th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" style="width: 135px;" aria-label="Username">Username</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" style="width: 193px;" aria-label="Full Name: activate to sort column ascending">Full Name</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" style="width: 89px;" aria-label="Points: activate to sort column ascending">Points</th><th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" style="width: 131px;" aria-sort="ascending" aria-label="Notes: activate to sort column descending">Notes</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" style="width: 59px;" aria-label="Edit: activate to sort column ascending">Edit</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" style="width: 92px;" aria-label="Delete: activate to sort column ascending">Delete</th></tr>
-
+                                                <tr role="row">
+                                                    <th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" style="width: 135px;" aria-label="Username">
+                                                        选项
+                                                    </th>
+                                                    <th class="" role="columnheader" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" style="width: 59px;" aria-label="Edit: activate to sort column ascending">
+                                                        内容
+                                                    </th>
+                                                    <th class="" role="columnheader" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" style="width: 59px;" aria-label="Edit: activate to sort column ascending">
+                                                        是否正确答案
+                                                    </th>
+                                                    <th class="" role="columnheader" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" style="width: 92px;">
+                                                        操作
+                                                    </th>
+                                                </tr>
                                             </thead>
-
-
-
                                             <tbody role="alert" aria-live="polite" aria-relevant="all">
-                                                <tr class="odd"><td class=""></td><td class=""></td><td class=""></td><td class=" sorting_1"></td><td class=""><a class="edit" href="">Edit</a></td><td class=""><a class="cancel" data-mode="new" href="">Cancel</a></td></tr>
-                                                <tr class="even">
+                                                <tr class="even" ng-repeat="item in vm.provincial.answers">
 
-                                                    <td class=""><input type="text" class="m-wrap small" value="goldweb"></td>
+                                                    <td><input type="text" required ng-model="item.options" class="m-wrap small" maxlength="10"/></td>
 
-                                                    <td class=" "><input type="text" class="m-wrap small" value="Sergio Jackson"></td>
-
-                                                    <td class=" "><input type="text" class="m-wrap small" value="132"></td>
-
-                                                    <td class="center  sorting_1"><input type="text" class="m-wrap small" value="elite user"></td>
-
-                                                    <td class=" "><a class="edit" href="">Save</a></td>
-
-                                                    <td class=" "><a class="cancel" href="">Cancel</a></td>
-
-                                                </tr>
-                                                <tr class="odd">
-
-                                                    <td class="">gist124</td>
-
-                                                    <td class=" ">Nick Roberts</td>
-
-                                                    <td class=" ">62</td>
-
-                                                    <td class="center  sorting_1">new user</td>
-
-                                                    <td class=" "><a class="edit" href="javascript:;">Edit</a></td>
-
-                                                    <td class=" "><a class="delete" href="javascript:;">Delete</a></td>
-
-                                                </tr>
-                                                <tr class="even">
-
-                                                    <td class="">lisa</td>
-
-                                                    <td class=" ">Lisa Wong</td>
-
-                                                    <td class=" ">434</td>
-
-                                                    <td class="center  sorting_1">new user</td>
-
-                                                    <td class=" "><a class="edit" href="javascript:;">Edit</a></td>
-
-                                                    <td class=" "><a class="delete" href="javascript:;">Delete</a></td>
-
-                                                </tr>
-                                                <tr class="odd">
-
-                                                    <td class="">webriver</td>
-
-                                                    <td class=" ">Antonio Sanches</td>
-
-                                                    <td class=" ">462</td>
-
-                                                    <td class="center  sorting_1">new user</td>
-
-                                                    <td class=" "><a class="edit" href="javascript:;">Edit</a></td>
-
-                                                    <td class=" "><a class="delete" href="javascript:;">Delete</a></td>
-
+                                                    <td><input type="text" required ng-model="item.content" class="m-wrap small" maxlength="200"/></td>
+                                                    <td>
+                                                            <input type="checkbox" ng-model="item.isTrueAnswer">
+                                                    </td>
+                                                    <td>
+                                                        <a class="delete" href="javascript:;" ng-click="vm.delOptions($index)">删除</a>
+                                                    </td>
                                                 </tr>
                                             </tbody>
-                                        </table><div class="row-fluid"><div class="span6"><div class="dataTables_info" id="sample_editable_1_info">Showing 1 to 5 of 7 entries</div></div><div class="span6"><div class="dataTables_paginate paging_bootstrap pagination"><ul><li class="prev disabled"><a href="#">← <span class="hidden-480">Prev</span></a></li><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li class="next"><a href="#"><span class="hidden-480">Next</span> → </a></li></ul></div></div></div>
+                                        </table>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
 
-                    </div>    
+                    </div>
 
 
 
@@ -119,7 +73,7 @@
         </div>
         <div class="modal-footer">
             <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">取消</button>
-            <button type="submit" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="activityConfigForm.$invalid"><i class="fa fa-save"></i> <span>保存</span></button>
+            <button type="submit" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="provincialAddorUpdateForm.$invalid"><i class="fa fa-save"></i> <span>保存</span></button>
         </div>
     </form>
 </div>

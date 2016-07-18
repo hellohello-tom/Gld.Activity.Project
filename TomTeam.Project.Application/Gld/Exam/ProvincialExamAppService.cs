@@ -40,12 +40,21 @@ namespace TomTeam.Project.Gld.Exam
             }
             input.ExamTopic.MapTo(examTopic);
             var id = await _examTopicRepository.InsertOrUpdateAndGetIdAsync(examTopic);
+            string trueContent = string.Empty;
             //操作选项
             foreach (var item in input.Answers)
             {
+                if (item.IsTrueAnswer)
+                {
+                    trueContent += item.Content + "；";
+                }
                 var answer = item.MapTo<Answer>();
+                answer.ExamTopicId = id;
                 await _answerRepository.InsertAsync(answer);
             }
+            examTopic.AnswerContent = trueContent;
+            examTopic.Id = id;
+            await _examTopicRepository.UpdateAsync(examTopic);
             return id;
         }
 
@@ -73,11 +82,12 @@ namespace TomTeam.Project.Gld.Exam
         public async Task<GetExamForEditOutput> GetExam(NullableIdInput input)
         {
             GetExamForEditOutput dataDetail = new GetExamForEditOutput();
-            if (input.Id.HasValue)
+            if (input.Id.HasValue && input.Id > 0)
             {
                 var detail = await _examTopicRepository.GetAsync(input.Id.Value);
                 dataDetail.ExamTopic = detail.MapTo<ExamTopicDto>();
-                dataDetail.Answers = _answerRepository.GetAllListAsync(x => x.ExamTopicId == input.Id.Value).MapTo<List<AnswerDto>>();
+                var answers =await _answerRepository.GetAllListAsync(x => x.ExamTopicId == input.Id.Value);
+                dataDetail.Answers = answers.MapTo<List<AnswerDto>>();
             }
             return dataDetail;
         }

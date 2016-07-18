@@ -9,6 +9,12 @@ namespace TomTeam.Project.Gld.Exam.Dto
 {
     public class GetExamForEditOutput : IOutputDto
     {
+        public GetExamForEditOutput()
+        {
+            ExamTopic = new ExamTopicDto();
+            Answers = new List<AnswerDto>();
+        }
+
         public ExamTopicDto ExamTopic { get; set; }
 
         public List<AnswerDto> Answers { get; set; }

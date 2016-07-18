@@ -2,7 +2,7 @@
 
     appModule.controller('common.views.exam.provincial', [
         '$scope', '$uibModal', '$stateParams', 'uiGridConstants', 'abp.services.app.provincialExam',
-        function ($scope, $uibModal, $stateParams, uiGridConstants, newsService) {
+        function ($scope, $uibModal, $stateParams, uiGridConstants, provincialService) {
             var vm = this;
 
             vm.loading = false;
@@ -40,12 +40,12 @@
                     },
                     {
                         name: '题目',
-                        field: 'title',
+                        field: 'topicName',
                         minWidth: 120
                     },
                     {
                         name: '正确答案',
-                        field: 'title',
+                        field: 'answerContent',
                         minWidth: 120
                     },
                     {
@@ -78,7 +78,7 @@
 
             vm.getExamList = function () {
                 vm.loading = true;
-                newsService.getExamList({
+                provincialService.getExamList({
                     skipCount: requestParams.skipCount,
                     maxResultCount: requestParams.maxResultCount,
                     sorting: requestParams.sorting,
@@ -92,16 +92,16 @@
             };
 
             vm.createProvincial = function () {
-                openCreateOrEditUserModal(null)
+                openCreateOrEditUserModal(0)
             }
 
             vm.editProvincial = function (provincial) {
-                openCreateOrEditUserModal(provincial)
+                openCreateOrEditUserModal(provincial.id)
             }
 
             vm.deleteProvincial = function (provincial) {
                 vm.loading = true;
-                newsService.deleteNews({
+                provincialService.deleteProvincial({
                     id: provincial.id
                 }).success(function (result) {
                     vm.getExamList();
@@ -109,18 +109,17 @@
                     vm.loading = false;
                 });
             }
-            function openCreateOrEditUserModal(provincial) {
+            function openCreateOrEditUserModal(provincialId) {
                 var modalInstance = $uibModal.open({
                     templateUrl: '~/App/common/views/exam/createOrUpdateProvincial.cshtml',
-                    controller: 'common.views.exam.provincial as vm',
+                    controller: 'common.views.exam.createOrUpdateProvincial as vm',
                     backdrop: 'static',
                     resolve: {
-                        provincial: function () {
-                            return provincial;
+                        provincialId: function () {
+                            return provincialId;
                         }
                     }
                 });
-
                 modalInstance.result.then(function (result) {
                     vm.getExamList();
                 });

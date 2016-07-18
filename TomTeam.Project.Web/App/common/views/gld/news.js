@@ -115,7 +115,6 @@
                         }
                     }
                 });
-
                 modalInstance.result.then(function (result) {
                     vm.getNewsList();
                 });

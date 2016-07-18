@@ -1,11 +1,13 @@
 ﻿(function () {
-    appModule.controller('common.views.exam.provincial', [
-        '$scope', '$timeout', 'abp.services.app.provincialExam',
-        function ($scope, $timeout, provincialService) {
+    appModule.controller('common.views.exam.createOrUpdateProvincial', [
+        '$scope', '$timeout', '$uibModalInstance', 'abp.services.app.provincialExam', 'provincialId',
+        function ($scope, $timeout, $uibModalInstance, provincialService, provincialId) {
             var vm = this;
 
             vm.saving = false;
-            vm.provincial = {};
+            vm.provincial = {
+                answers: []
+            };
 
      
 
@@ -14,21 +16,33 @@
                 vm.saving = true;
             
                 provincialService.addOrUpdate(vm.provincial).success(function (json) {
-                    vm.provincial.examTopic.id = json;
                     abp.notify.info(app.localize('SavedSuccessfully'));
+                    $uibModalInstance.close();
                 }).finally(function () {
                     vm.saving = false;
                 });
             };
 
             vm.addOptions = function () {
-                //vm.
+                vm.provincial.answers.push({
+                    options: "A",
+                    content: "答案内容",
+                    isTrueAnswer: false
+                })
             }
+
+            vm.delOptions = function (index) {
+                vm.provincial.answers.splice(index, 1);
+            }
+
+            vm.cancel = function () {
+                $uibModalInstance.dismiss();
+            };
 
             function init() {
                 vm.loading = true;
                 provincialService.getExam({
-                    id: 0
+                    id: provincialId
                 }).success(function (result) {
                     vm.provincial = result;
                 }).finally(function () {
