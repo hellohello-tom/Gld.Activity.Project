@@ -15,7 +15,6 @@ using Abp.Linq.Extensions;
 
 namespace TomTeam.Project.Gld
 {
-    [AbpAuthorize(AppPermissions.Pages_Activity_Manager)]
     public class NewsAppService : TomAbpAppServiceBase, INewsAppService
     {
         IRepository<News.News> _newsRepository;
@@ -28,6 +27,7 @@ namespace TomTeam.Project.Gld
         {
         }
 
+        [AbpAuthorize(AppPermissions.Pages_Activity_Manager)]
         public async Task<int> AddOrUpdate(CreateOrUpdateNewsInput createOrUpdateNewsInput)
         {
             var newsModel = new News.News();
@@ -39,6 +39,7 @@ namespace TomTeam.Project.Gld
             return await _newsRepository.InsertOrUpdateAndGetIdAsync(newsModel);
         }
 
+        [AbpAuthorize(AppPermissions.Pages_Activity_Manager)]
         public async Task DeleteNews(IdInput<int> input)
         {
             if (input.Id <= 0)

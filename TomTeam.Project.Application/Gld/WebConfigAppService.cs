@@ -14,7 +14,6 @@ using System.Data.Entity;
 
 namespace TomTeam.Project.Gld
 {
-    [AbpAuthorize(AppPermissions.Pages_Activity_Manager)]
     public class WebConfigAppService : TomAbpAppServiceBase, IWebConfigAppService
     {
         IRepository<WebConfig> _webconfigRepository;
@@ -22,6 +21,8 @@ namespace TomTeam.Project.Gld
         {
             this._webconfigRepository = _webconfigRepository;
         }
+
+        [AbpAuthorize(AppPermissions.Pages_Activity_Manager)]
         public async Task<int> AddOrUpdate(WebConfig config)
         {
             if (config == null) throw new UserFriendlyException("传递的数据不正确");

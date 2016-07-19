@@ -2184,7 +2184,6 @@
     <Content Include="Resource\dist\scripts\lib\datetimepicker\jquery.datetimepicker.full.js" />
     <Content Include="Resource\dist\scripts\lib\datetimepicker\jquery.datetimepicker.full.min.js" />
     <Content Include="Resource\dist\scripts\lib\datetimepicker\jquery.datetimepicker.min.js" />
-    <Content Include="Resource\dist\scripts\lib\dragsort\example.aspx" />
     <Content Include="Resource\dist\scripts\lib\dragsort\example.html" />
     <Content Include="Resource\dist\scripts\lib\dragsort\jquery.dragsort-0.5.2.js" />
     <Content Include="Resource\dist\scripts\lib\dragsort\jquery.dragsort-0.5.2.min.js" />
@@ -3418,10 +3417,6 @@
     <Compile Include="Models\Account\SendPasswordResetLinkViewModel.cs" />
     <Compile Include="Models\Layout\HeaderViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resource\dist\scripts\lib\dragsort\example.aspx.cs">
-      <DependentUpon>example.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Views\TomAbpWebViewPageBase.cs" />
     <Compile Include="Views\UrlChecker.cs" />
   </ItemGroup>

@@ -22,7 +22,7 @@ namespace TomTeam.Project.Config
         /// 网站名称
         /// </summary>
         [Required(ErrorMessage ="网站名称必填")]
-        [StringLength(10,ErrorMessage ="网站名称不能超过10个字符")]
+        [StringLength(30,ErrorMessage ="网站名称不能超过30个字符")]
         public string WebName { get; set; }
 
         /// <summary>
