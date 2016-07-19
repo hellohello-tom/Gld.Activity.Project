@@ -37,14 +37,14 @@ namespace TomTeam.Project.Web.Controllers
                 headerModel.LoginInformations = AsyncHelper.RunSync(() => _sessionAppService.GetCurrentLoginInformations());
             }
 
-            headerModel.Languages = LocalizationManager.GetAllLanguages();
-            headerModel.CurrentLanguage = LocalizationManager.CurrentLanguage;
+            //headerModel.Languages = LocalizationManager.GetAllLanguages();
+            //headerModel.CurrentLanguage = LocalizationManager.CurrentLanguage;
             
             headerModel.Menu = AsyncHelper.RunSync(() => _userNavigationManager.GetMenuAsync(FrontEndNavigationProvider.MenuName, AbpSession.ToUserIdentifier()));
             headerModel.CurrentPageName = currentPageName;
 
-            headerModel.IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled;
-            headerModel.TenantRegistrationEnabled = SettingManager.GetSettingValue<bool>(AppSettings.TenantManagement.AllowSelfRegistration);
+            //headerModel.IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled;
+            //headerModel.TenantRegistrationEnabled = SettingManager.GetSettingValue<bool>(AppSettings.TenantManagement.AllowSelfRegistration);
 
             return PartialView("~/Views/Layout/_Header.cshtml", headerModel);
         }
