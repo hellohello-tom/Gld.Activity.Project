@@ -8,8 +8,16 @@
     <div class="top divider wrapper">
         <div class="inner">
             <div class="login fr">
-                <a href="javascript:;" class="signin  bg-group" title="点击登录">登录</a>
-                <a href="javascript:;" class="reg  bg-group" title="点击注册">注册</a>
+                @if (Model.LoginInformations != null)
+                {
+                    <a href="javascript:;" style="color:white">欢迎您，@Model.GetShownLoginName()</a>
+                    <a href="javascript:;">退出</a>
+                }
+                else
+                {
+                    <a href="javascript:;" class="signin bg-group" title="点击登录">登录</a>
+                    <a href="@Url.Action("Register","Account")" class="reg  bg-group" title="点击注册">注册</a>
+                }
             </div>
             <a href="/" class="logo">
                 <img src="~/Common/Images/logo.png" alt="logo" />

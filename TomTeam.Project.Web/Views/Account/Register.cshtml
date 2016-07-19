@@ -10,7 +10,7 @@
 }
 <form class="register-form" action="@Url.Action("Register")" method="post">
 
-    <h3>@L("SignUp")</h3>
+    <h3>注册</h3>
 
     @if (@ViewBag.ErrorMessage != null)
     {
@@ -21,60 +21,38 @@
 
     @Html.AntiForgeryToken()
 
-    @if (ViewBag.IsMultiTenancyEnabled)
-    {
-        if (Model.TenancyName.IsNullOrEmpty())
-        {
-            <p class="hint">
-                @L("TenantInformations")
-            </p>
-            <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">@L("TenancyName")</label>
-                <input class="form-control placeholder-no-fix input-ltr" type="text" placeholder="@L("TenancyName")" name="TenancyName" value="@(Model.TenancyName ?? "")" required maxlength="@Tenant.MaxTenancyNameLength" />
-            </div>
-        }
-        else
-        {
-            <input type="hidden" name="TenancyName" value="@Model.TenancyName" />
-        }
-    }
-
     <input type="hidden" name="IsExternalLogin" value="@Model.IsExternalLogin.ToString()" />
-
+    <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
     <p class="hint">
-        @L("PersonalInformations")
+        用户信息
     </p>
     <div class="form-group">
-        <label class="control-label visible-ie8 visible-ie9">@L("Name")</label>
-        <input class="form-control placeholder-no-fix" type="text" placeholder="@L("Name")" name="Name" required value="@Model.Name" maxlength="@TomTeam.Project.Authorization.Users.User.MaxNameLength" />
-    </div>
-    <div class="form-group">
-        <label class="control-label visible-ie8 visible-ie9">@L("Surname")</label>
-        <input class="form-control placeholder-no-fix" type="text" placeholder="@L("Surname")" name="Surname" required value="@Model.Surname" maxlength="@TomTeam.Project.Authorization.Users.User.MaxSurnameLength" />
-    </div>
-    <div class="form-group">
-        <label class="control-label visible-ie8 visible-ie9">@L("EmailAddress")</label>
-        <input class="form-control placeholder-no-fix" type="email" placeholder="@L("EmailAddress")" name="EmailAddress" required value="@Model.EmailAddress" maxlength="@TomTeam.Project.Authorization.Users.User.MaxEmailAddressLength" />
+        <label class="control-label visible-ie8 visible-ie9">姓名</label>
+        <input class="form-control placeholder-no-fix" type="text" placeholder="姓名" name="Name" required value="@Model.Name" maxlength="10" />
     </div>
 
-    @if (!Model.IsExternalLogin)
-    {
-        <p class="hint">
-            @L("AccountSettings")
-        </p>
-        <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9">@L("UserName")</label>
-            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="@L("UserName")" name="UserName" value="@Model.UserName" required maxlength="@TomTeam.Project.Authorization.Users.User.MaxUserNameLength" />
-        </div>
-        <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9">@L("Password")</label>
-            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="RegisterPassword" placeholder="@L("Password")" name="Password" required maxlength="@TomTeam.Project.Authorization.Users.User.MaxPlainPasswordLength" minlength="@TomTeam.Project.Authorization.Users.User.MinPlainPasswordLength" />
-        </div>
-        <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9">@L("PasswordRepeat")</label>
-            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="@L("PasswordRepeat")" name="PasswordRepeat" required maxlength="@TomTeam.Project.Authorization.Users.User.MaxPlainPasswordLength" minlength="@TomTeam.Project.Authorization.Users.User.MinPlainPasswordLength" />
-        </div>
-    }
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">公司名称</label>
+        <input class="form-control placeholder-no-fix" placeholder="公司名称" name="CompanyName" required value="@Model.CompanyName" maxlength="100" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">专业</label>
+        <input class="form-control placeholder-no-fix" placeholder="专业" name="Major" required value="@Model.Major" maxlength="50" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">手机号</label>
+        <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="请填写您的手机号" name="UserName" value="@Model.UserName" required maxlength="11" />
+    </div>
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">密码</label>
+        <input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="RegisterPassword" placeholder="密码" name="Password" required maxlength="@TomTeam.Project.Authorization.Users.User.MaxPlainPasswordLength" minlength="@TomTeam.Project.Authorization.Users.User.MinPlainPasswordLength" />
+    </div>
+    <div class="form-group">
+        <label class="control-label visible-ie8 visible-ie9">确认密码</label>
+        <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="确认密码" name="PasswordRepeat" required maxlength="@TomTeam.Project.Authorization.Users.User.MaxPlainPasswordLength" minlength="@TomTeam.Project.Authorization.Users.User.MinPlainPasswordLength" />
+    </div>
 
     @if (ViewBag.UseCaptcha)
     {
@@ -87,7 +65,7 @@
     }
 
     <div class="form-actions">
-        <a href="@Url.Action("Login","Account")"><button type="button" id="register-back-btn" class="btn btn-default">@L("Back")</button></a>
-        <button type="submit" id="register-submit-btn" class="btn btn-success uppercase pull-right">@L("Submit")</button>
+        <a href="@(string.IsNullOrEmpty((string)ViewBag.ReturnUrl)?Url.Action("Index","Home"): ViewBag.ReturnUrl)"><button type="button" id="register-back-btn" class="btn btn-default">返回</button></a>
+        <button type="submit" id="register-submit-btn" class="btn btn-success uppercase pull-right">确定</button>
     </div>
 </form>

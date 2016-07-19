@@ -197,8 +197,9 @@ namespace TomTeam.Project.Web.Controllers
 
         #region Register
 
-        public ActionResult Register()
+        public ActionResult Register(string returnUrl="")
         {
+            ViewBag.ReturnUrl = returnUrl;
             return RegisterView(new RegisterViewModel
             {
                 TenancyName = _tenancyNameFinder.GetCurrentTenancyNameOrNull()
@@ -218,7 +219,7 @@ namespace TomTeam.Project.Web.Controllers
         [HttpPost]
         [UnitOfWork]
         [ValidateAntiForgeryToken]
-        public virtual async Task<ActionResult> Register(RegisterViewModel model)
+        public virtual async Task<ActionResult> Register(RegisterViewModel model,string returnUrl="")
         {
             try
             {
@@ -238,6 +239,11 @@ namespace TomTeam.Project.Web.Controllers
                     {
                         throw new UserFriendlyException(L("IncorrectCaptchaAnswer"));
                     }
+                }
+                var registerUser = _userManager.FindByName(model.UserName)??new User();
+                if (registerUser != null && registerUser.Id > 0)
+                {
+                    throw new UserFriendlyException("该手机号已被注册！");
                 }
 
                 if (!_multiTenancyConfig.IsEnabled)
@@ -268,8 +274,11 @@ namespace TomTeam.Project.Web.Controllers
                 {
                     TenantId = tenant.Id,
                     Name = model.Name,
-                    Surname = model.Surname,
-                    EmailAddress = model.EmailAddress,
+                    Surname = model.Surname ?? "temp",
+                    EmailAddress = model.EmailAddress ?? Guid.NewGuid().ToString("N")+"@qq.com",
+                    Major = model.Major,
+                    CompanyName = model.CompanyName,
+                    Phone = model.UserName,
                     IsActive = isNewRegisteredUserActiveByDefault
                 };
 
@@ -326,9 +335,9 @@ namespace TomTeam.Project.Web.Controllers
                 }
 
                 //Notifications
-                await _notificationSubscriptionManager.SubscribeToAllAvailableNotificationsAsync(user.ToUserIdentifier());
-                await _appNotifier.WelcomeToTheApplicationAsync(user);
-                await _appNotifier.NewUserRegisteredAsync(user);
+                //await _notificationSubscriptionManager.SubscribeToAllAvailableNotificationsAsync(user.ToUserIdentifier());
+                //await _appNotifier.WelcomeToTheApplicationAsync(user);
+                //await _appNotifier.NewUserRegisteredAsync(user);
 
                 //Directly login if possible
                 if (user.IsActive && (user.IsEmailConfirmed || !isEmailConfirmationRequiredForLogin))
@@ -346,21 +355,25 @@ namespace TomTeam.Project.Web.Controllers
                     if (loginResult.Result == AbpLoginResultType.Success)
                     {
                         await SignInAsync(loginResult.User, loginResult.Identity);
-                        return Redirect(Url.Action("Index", "Application"));
+                        return Redirect(Url.Action("Index", "Home"));
                     }
 
                     Logger.Warn("New registered user could not be login. This should not be normally. login result: " + loginResult.Result);
                 }
 
-                return View("RegisterResult", new RegisterResultViewModel
-                {
-                    TenancyName = tenant.TenancyName,
-                    NameAndSurname = user.Name + " " + user.Surname,
-                    UserName = user.UserName,
-                    EmailAddress = user.EmailAddress,
-                    IsActive = user.IsActive,
-                    IsEmailConfirmationRequired = isEmailConfirmationRequiredForLogin
-                });
+                if (!string.IsNullOrEmpty(returnUrl))
+                    return Redirect(returnUrl);
+                else
+                    return RedirectToAction("Index", "Home");
+                //        View("RegisterResult", new RegisterResultViewModel
+                //{
+                //    TenancyName = tenant.TenancyName,
+                //    NameAndSurname = user.Name + " " + user.Surname,
+                //    UserName = user.UserName,
+                //    EmailAddress = user.EmailAddress,
+                //    IsActive = user.IsActive,
+                //    IsEmailConfirmationRequired = isEmailConfirmationRequiredForLogin
+                //});
             }
             catch (UserFriendlyException ex)
             {

@@ -1,12 +1,9 @@
 ﻿var CurrentPage = function () {
 
-    jQuery.validator.addMethod("customUsername", function (value, element) {
-        if (value === $('input[name="EmailAddress"]').val()) {
-            return true;
-        }
-
-        return !$.validator.methods.email.apply(this, arguments);
-    }, abp.localization.localize("RegisterFormUserNameInvalidMessage"));
+    jQuery.validator.addMethod("isPhone", function (value, element) {
+        var tel = /^^(((1\d{2}))+\d{8})$$/;
+        return this.optional(element) || (tel.test(value));
+    }, "请正确填写您的手机号码");
 
     var handleRegister = function () {
 
@@ -21,7 +18,7 @@
                 },
                 UserName: {
                     required: true,
-                    customUsername: true
+                    isPhone:true
                 }
             },
 

@@ -16,5 +16,20 @@ namespace TomTeam.Project.Sessions.Dto
         public string EmailAddress { get; set; }
 
         public string ProfilePictureId { get; set; }
+
+        /// <summary>
+        /// 公司名称
+        /// </summary>
+        public virtual string CompanyName { get; set; }
+
+        /// <summary>
+        /// 电话
+        /// </summary>
+        public virtual string Phone { get; set; }
+
+        /// <summary>
+        /// 专业
+        /// </summary>
+        public virtual string Major { get; set; }
     }
 }
