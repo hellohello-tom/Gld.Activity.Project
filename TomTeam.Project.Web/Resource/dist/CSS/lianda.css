@@ -1509,6 +1509,47 @@ select {
   }
 }
 
+.set > .item {
+  padding: 10px 0;
+  line-height: 32px;
+}
+
+.set > .item > .title,
+.set > .item > .name {
+  float: left;
+  min-width: 6em;
+  margin-right: 1em;
+  font-weight: 400;
+  line-height: inherit;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.set > .item > .content {
+  position: relative;
+  overflow: hidden;
+  line-height: inherit;
+}
+
+.set > .item > .content .ipt-large {
+  min-width: 260px;
+}
+
+.set > .item > .content .ipt-small {
+  min-width: 100px;
+}
+
+.set.text-left > .item > .title,
+.set.text-left > .item > .name {
+  min-width: auto;
+  text-align: left;
+}
+
+.set.thin > .item {
+  line-height: 20px;
+  padding: 5px 0;
+}
+
 .col5 > .item {
   float: left;
   width: 20%;
@@ -1548,6 +1589,44 @@ select {
   background: url("../images/bgDivider.jpg") 50% no-repeat;
 }
 
+.popup-login {
+  position: fixed;
+  left: 50%;
+  top: 30%;
+  width: 260px;
+  padding: 30px 40px;
+  margin-left: -160px;
+  background: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  opacity: .97;
+  z-index: 5;
+}
+
+.popup-login.set > .item > .title {
+  min-width: 4em;
+}
+
+.popup-login .tips {
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  right: 40px;
+  text-align: center;
+  color: #fb6361;
+}
+
+.popup-login .close {
+  position: absolute;
+  top: -8px;
+  right: -4px;
+  padding: 14px;
+  line-height: 1;
+  font-family: verdana, tahoma;
+  text-decoration: none;
+}
+
 .nav {
   height: 80px;
   line-height: 80px;
@@ -1575,8 +1654,12 @@ select {
   font-family: 'Microsoft Yahei', STHeiti;
   text-align: center;
   color: #fff;
-  background: url("../images/bgGroup.png") no-repeat;
+  background-image: url("../images/bgGroup.png");
   cursor: pointer;
+}
+
+.btn-vote[disabled] {
+  background-image: none;
 }
 
 #header .top {
@@ -1614,6 +1697,10 @@ select {
   background: url("../images/slogan2.jpg") center no-repeat;
 }
 
+.num {
+  font-family: Helvetica, arial;
+}
+
 .main {
   margin-top: 16px;
 }
@@ -1622,6 +1709,33 @@ select {
   margin-bottom: 6px;
   line-height: 90px;
   background: #F5F4F2;
+}
+
+.main > .title .show {
+  font-size: 24px;
+  line-height: 54px;
+  padding: 20px 40px;
+}
+
+.main > .title .show h1 {
+  font-size: 34px;
+  margin-top: 34px;
+}
+
+.main > .title .show .vote {
+  font-size: 34px;
+}
+
+.main > .title .show .vote .num {
+  color: #C81010;
+}
+
+.main > .title .show .vote .btn-vote {
+  margin-top: 20px;
+}
+
+.main > .title .show .info .meta > span {
+  margin-right: 40px;
 }
 
 .main > .home {
@@ -1711,6 +1825,129 @@ select {
   width: 912px;
   padding: 50px 0;
   margin: 0 auto;
+}
+
+.js-go {
+  position: relative;
+}
+
+.js-go .operate > .item {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 86px;
+  height: 150px;
+  margin-top: -75px;
+  cursor: pointer;
+}
+
+.js-go .operate > .item:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #888;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+  opacity: .2;
+}
+
+.js-go .operate > .item:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 40px;
+  height: 110px;
+  margin-left: -20px;
+  margin-top: -55px;
+  background: url("../images/bgGroup.png") 0 -476px;
+}
+
+.js-go .operate > .item:hover:before {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+  opacity: .3;
+}
+
+.js-go .operate > .item.next {
+  left: auto;
+  right: 0;
+}
+
+.js-go .operate > .item.next:after {
+  background-position: 0 -590px;
+}
+
+.js-go .operate > .item2 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 40px;
+  height: 74px;
+  margin-top: -50px;
+  cursor: pointer;
+  background: url("../images/bgGroup.png") 0 -328px;
+}
+
+.js-go .operate > .item2.next {
+  left: auto;
+  right: 0;
+  background-position: 14px -402px;
+}
+
+.work-show {
+  position: relative;
+  height: 672px;
+  margin: 0 10px;
+  padding: 60px 20px;
+  border-bottom: 3px dotted #c6c6c6;
+  overflow: hidden;
+}
+
+.work-show > .content {
+  width: 500%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.work-show > .content > .item {
+  width: 20%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.work-show > .content > .item img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.work-show2 {
+  height: auto;
+  margin-top: 30px;
+  border-bottom: 0;
+}
+
+.work-show2 > .content > .item > .inner {
+  float: left;
+  width: 33.333%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.work-show2 > .content > .item img {
+  width: 100%;
+  height: 212px;
+}
+
+.work-show2 > .content > .item .name {
+  font-size: 26px;
+  line-height: 2;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 
 .progress {
