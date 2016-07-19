@@ -8,7 +8,6 @@ $.fn.sliding = function() {
       w = $list.width(),
       ratio = Math.ceil(w / wChild),
       cpr = Math.floor(children.length / ratio) - (children.length % ratio == 0 ? 1 : 0),
-
       l = parseInt($list.css('left')) || 0,
       absL = Math.abs(l);
     cpr = cpr < 0 ? 0 : cpr;

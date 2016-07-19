@@ -5,6 +5,7 @@
   <meta content="text/html;charset=utf-8" http-equiv="content-type">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+  <link rel="stylesheet" href="../../fonts/css/font-awesome.min.css" />
   <link rel="stylesheet" href="../../css/lianda.css">
   <title>首页</title>
 </head>
@@ -15,38 +16,17 @@
                                 为了更好的体验本网站，请尽量在Chrome系如360等浏览器下浏览。
                       </div>
     <![endif]-->
-  <div class="popup-login set">
-    <p class="tips">帐号与密码不匹配哦</p>
-    <dl class="item">
-      <dt class="title">
-        用户名：
-      </dt>
-      <dd class="content">
-        <input type="text" />
-      </dd>
-    </dl>
-    <dl class="item">
-      <dt class="title">
-        密码：
-      </dt>
-      <dd class="content">
-        <input type="text" />
-      </dd>
-    </dl>
-    <div class="item">
-      <span class="title">&nbsp;</span>
-      <p class="content">
-        <button class="btn btn-primary">登录</button>
-      </p>
-    </div>
-    <a href="javascript:;" class="close" title="关闭" onclick="javascript:this.parentNode.style.display='none';">x</a>
-  </div>
   <div id="header">
     <div class="top divider wrapper">
       <div class="inner">
         <div class="login fr">
           <a href="javascript:;" class="signin  bg-group" title="点击登录">登录</a>
           <a href="javascript:;" class="reg  bg-group" title="点击注册">注册</a>
+        </div>
+        <div class="user fr">
+          欢迎您：XXXX
+          <a href="javascript:;" title="点击进入用户中心"><i class="fa fa-user"></i>用户中心</a>
+          <a href="javascript:;" title="点击登出"><i class="fa fa-sign-out"></i>退出</a>
         </div>
         <a href="/" class="logo"><img src="/dist/images/logo.png" alt="logo"> </a>
       </div>
@@ -300,6 +280,28 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="popup-login">
+    <h3 class="title">
+      登录/注册
+    </h3>
+    <div class="content">
+      <p class="tips">帐号与密码不匹配哦</p>
+      <div>
+        <span class="text">用户名</span>
+        <input type="text" class="ipt" />
+        <span class="text">密码</span>
+        <input type="password" class="ipt" />
+        <span class="text">重复密码</span>
+        <input type="password" class="ipt" />
+        <label>
+          <input type="checkbox" name="" />记住用户名</label>
+      </div>
+      <div class="btn-area">
+        <button class="btn btn-primary">登录/注册</button>
+      </div>
+    </div>
+    <a href="javascript:;" class="close" title="关闭" onclick="javascript:this.parentNode.style.display='none';">x</a>
   </div>
 </body>
 
