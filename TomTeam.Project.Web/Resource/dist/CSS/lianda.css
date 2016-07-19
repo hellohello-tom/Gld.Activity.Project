@@ -1827,11 +1827,11 @@ select {
   margin: 0 auto;
 }
 
-.js-go {
+.js-slide {
   position: relative;
 }
 
-.js-go .operate > .item {
+.js-slide .operate > .item {
   position: absolute;
   top: 50%;
   left: 0;
@@ -1841,7 +1841,7 @@ select {
   cursor: pointer;
 }
 
-.js-go .operate > .item:before {
+.js-slide .operate > .item:before {
   content: '';
   position: absolute;
   width: 100%;
@@ -1852,7 +1852,7 @@ select {
   opacity: .2;
 }
 
-.js-go .operate > .item:after {
+.js-slide .operate > .item:after {
   content: '';
   position: absolute;
   left: 50%;
@@ -1864,22 +1864,22 @@ select {
   background: url("../images/bgGroup.png") 0 -476px;
 }
 
-.js-go .operate > .item:hover:before {
+.js-slide .operate > .item:hover:before {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
   filter: alpha(opacity=30);
   opacity: .3;
 }
 
-.js-go .operate > .item.next {
+.js-slide .operate > .item.next {
   left: auto;
   right: 0;
 }
 
-.js-go .operate > .item.next:after {
+.js-slide .operate > .item.next:after {
   background-position: 0 -590px;
 }
 
-.js-go .operate > .item2 {
+.js-slide .operate > .item2 {
   position: absolute;
   top: 50%;
   left: 0;
@@ -1890,9 +1890,9 @@ select {
   background: url("../images/bgGroup.png") 0 -328px;
 }
 
-.js-go .operate > .item2.next {
+.js-slide .operate > .item2.next {
   left: auto;
-  right: 0;
+  right: -6px;
   background-position: 14px -402px;
 }
 
@@ -1902,46 +1902,52 @@ select {
   margin: 0 10px;
   padding: 60px 20px;
   border-bottom: 3px dotted #c6c6c6;
-  overflow: hidden;
 }
 
 .work-show > .content {
-  width: 500%;
+  position: relative;
   height: 100%;
   overflow: hidden;
+}
+
+.work-show > .content > .lists {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  white-space: nowrap;
+  font-size: 0;
+}
+
+.work-show > .content > .lists > .item {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  font-size: 26px;
   text-align: center;
+  box-sizing: border-box;
 }
 
-.work-show > .content > .item {
-  width: 20%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.work-show > .content > .item img {
+.work-show > .content > .lists > .item img {
   max-width: 100%;
   max-height: 100%;
 }
 
 .work-show2 {
-  height: auto;
+  height: 270px;
   margin-top: 30px;
   border-bottom: 0;
 }
 
-.work-show2 > .content > .item > .inner {
-  float: left;
+.work-show2 > .content > .lists > .item {
   width: 33.333%;
-  padding: 0 20px;
-  box-sizing: border-box;
 }
 
-.work-show2 > .content > .item img {
+.work-show2 > .content > .lists > .item img {
   width: 100%;
   height: 212px;
 }
 
-.work-show2 > .content > .item .name {
+.work-show2 > .content > .lists > .item .name {
   font-size: 26px;
   line-height: 2;
   white-space: nowrap;

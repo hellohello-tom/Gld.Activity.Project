@@ -126,7 +126,7 @@ gulp.task('browserSync', ['sass', 'webpack'], function() {
     server: {
       baseDir: './'
     },
-    port: 2015
+    port: 2018
   });
   gulp.watch('./scss/**/*.scss', ['sass']);
   gulp.watch('./src/**/*.*', ['webpack']);
