@@ -159,6 +159,7 @@ $color-bg-content:#F5F4F2;
 }
 
 .user {
+  float: right;
   padding: 10px;
   line-height: 2;
   color: #fff;
@@ -196,12 +197,23 @@ $color-bg-content:#F5F4F2;
     }
   }
   .banner {
-    >.item {
+    >div {
       height: 750px;
+      position: relative;
+      a {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        text-indent: -10000px;
+        overflow: hidden;
+      }
+    }
+    >.item {
       background:url('#{$imgPath}slogan1.jpg') center no-repeat;
     }
     >.item2 {
-      height: 750px;
       background:url('#{$imgPath}slogan2.jpg') center no-repeat;
     }
   }
@@ -327,6 +339,37 @@ $color-title:#E9003C;
   }
   >.content {
     font-size: 16px;
+    min-height: 300px;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.pagination {
+  >.item {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    line-height: 40px;
+    font-size: 30px;
+    color: #888;
+    background: #ddd;
+    opacity: .8;
+    text-align: center;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    &:hover {
+      opacity: 1;
+    }
+    &.disabled {
+      opacity: .65;
+    }
+    .icon {
+      line-height: inherit;
+    }
   }
 }
 
@@ -629,70 +672,51 @@ $color-title:#E9003C;
 
 .footer {
   padding: 36px 0;
-  >.inner {
-    >.item {
-      position: relative;
-      float: left;
-      width: 22%;
+  background: #666;
+  color: #fff;
+  .social {
+    float: left;
+    margin-top: 20px;
+    .title {
+      font-size: 18px;
       text-align: center;
-      &.social {
-        width: 34%;
-        >.inner {
-          display: block;
-          padding: 0 40px;
-        }
-        .qr {
-          float: left;
-          img {
-            max-width: 140px;
-            max-height: 140px;
-          }
-          >p {
-            text-align: center;
-            i {
-              display: inline-block;
-              width: 30px;
-              height: 30px;
-              background-position: 0 -260px;
-            }
-          }
-          &.weibo {
-            float: right;
-            margin-right: 0;
-            i {
-              background-position: 0 -294px;
-            }
-          }
-        }
-      }
-      &:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 1px;
-        background: #aaa;
-      }
-      &:first-child {
-        &:after {
-          width: 0;
-        }
+      .fa {
+        margin-right: 4px;
       }
     }
-    .inner {
-      display: inline-block;
-      min-height: 176px;
-      padding: 0 40px;
-      text-align: left;
-      color: #555;
-      line-height: 2;
-      -ms-word-break: break-all;
-      word-break: break-all;
-      .title {
-        font-size: 24px;
-        font-weight: 400;
-        line-height: 3;
+    img {
+      max-width: 100px;
+      max-height: 100px;
+    }
+  }
+  .web-meta {
+    overflow: hidden;
+    padding: 20px;
+    line-height: 26px;
+    font-size: 15px;
+    font-family: Helvetica, arial, 'Microsoft Yahei';
+    a {
+      color: #fff;
+    }
+    .flink {
+      color: #aaa;
+      a {
+        position: relative;
+        margin-right: 20px;
+        color: inherit;
+        white-space: nowrap;
+        &:after {
+          content: '|';
+          position: absolute;
+          right: -12px;
+          top: 0;
+          line-height: 1;
+        }
+        &:last-child {
+          &:after {
+            content: '';
+          }
+        }
       }
     }
   }
@@ -745,7 +769,7 @@ $color-info-q:#c09853;
   }
   .main {
     margin-top: 0;
-    margin-bottom: 80px;
+    padding-bottom: 16px;
     .wrapper {
       border-bottom: 0;
       overflow: hidden;
@@ -836,6 +860,11 @@ $color-info-q:#c09853;
     border-top: 1px solid $color-q-border;
     line-height: 48px;
     background: #f9f9f9;
+    color: $color;
+    z-index: 5;
+    .countdown {
+      font-size: 20px;
+    }
     .btn {
       width: 120px;
       margin-top: 8px;

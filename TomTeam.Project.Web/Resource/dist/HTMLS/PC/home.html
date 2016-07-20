@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="banner wrapper">
-      <div class="item"></div>
+      <div class="item"><a href="javascript:;">报名</a></div>
     </div>
     <div class="nav divider text-center ">
       <div class="wrapper">
@@ -234,54 +234,39 @@
   <div class="nav divider"></div>
   <div class="wrapper footer">
     <div class="inner clearfix">
-      <div class="item">
-        <div class="inner">
-          <h3 class="title">
-      互动沟通
-      </h3>
-          <div class="content">
-            <p>电话&#12288;（0371）9980 9988</p>
-            电子邮件&#12288; satanzlb@sohu.com
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="inner">
-          <h3 class="title">
-    互动沟通
-    </h3>
-          <div class="content">
-            <p>电话&#12288;（0371）9980 9988</p>
-            电子邮件&#12288; satanzlb@sohu.com
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="inner">
-          <h3 class="title">
-    互动沟通
-    </h3>
-          <div class="content">
-            <p>电话&#12288;（0371）9980 9988</p>
-            电子邮件&#12288; satanzlb@sohu.com
-          </div>
-        </div>
-      </div>
       <div class="item social">
         <div class="inner">
           <div class="qr weixin" title="扫描微信操作">
+            <p class="title"><i class="fa fa-wechat"></i>微信</p>
             <img src="../../images/QrcodeWeixin.png" alt="" />
-            <p><i class="bg-group weixin"></i></p>
           </div>
           <div class="qr weibo" title="微博">
+            <p class="title"><i class="fa fa-weibo"></i>微博</p>
             <img src="../../images/QrcodeWeibo.png" alt="" />
-            <p><i class="bg-group"></i></p>
           </div>
+        </div>
+      </div>
+      <div class="web-meta">
+        <div class="flink">
+          广联达旗下：
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+        </div>
+        <div class="copy">
+          Copyright &copy; Glodon 1998-2015 <a href="javscript:;">广联达科技股份有限公司</a> 广联达科技股份有限公司 京ICP证010052号 京公网安备110108401214号 邮编：100193 中国-北京-海淀区东北旺西路10号院中关村软件园13号广联达信息大厦 电话010-56403000 电子邮件：<a href="mailto:webmaster@fwxgx.com">webmaster@fwxgx.com</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="popup-login">
+  <!--   <div class="popup-login">
     <h3 class="title">
       登录/注册
     </h3>
@@ -302,7 +287,21 @@
       </div>
     </div>
     <a href="javascript:;" class="close" title="关闭" onclick="javascript:this.parentNode.style.display='none';">x</a>
-  </div>
+  </div> -->
+  <a href="javascript:scrollTo(0,0);" class="gotop" title="滚到顶部" style="position: fixed;right: 20px;bottom: 40px;width: 46px;height: 46px;font-size: 40px;background: #666;background: rgba(100,100,100,.8);border-radius: 4px;color: #fff;text-align: center;display:none;">
+    <script>
+    window.addEventListener('scroll', function() {
+      var box = document.querySelector('.gotop');
+      var st = document.documentElement.scrollTop || document.body.scrollTop;
+      if (st > 500) {
+        box.style.display = 'block';
+      } else {
+        box.style.display = 'none';
+      }
+    });
+    </script>
+    <i class="fa fa-angle-up"></i>
+  </a>
 </body>
 
 </html>

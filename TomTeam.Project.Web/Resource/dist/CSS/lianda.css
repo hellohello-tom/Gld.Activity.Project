@@ -1709,6 +1709,7 @@ select {
 }
 
 .user {
+  float: right;
   padding: 10px;
   line-height: 2;
   color: #fff;
@@ -1748,13 +1749,26 @@ select {
   background-position: -90px -60px;
 }
 
-#header .banner > .item {
+#header .banner > div {
   height: 750px;
+  position: relative;
+}
+
+#header .banner > div a {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-indent: -10000px;
+  overflow: hidden;
+}
+
+#header .banner > .item {
   background: url("../images/slogan1.jpg") center no-repeat;
 }
 
 #header .banner > .item2 {
-  height: 750px;
   background: url("../images/slogan2.jpg") center no-repeat;
 }
 
@@ -1895,6 +1909,39 @@ select {
 
 .news > .content {
   font-size: 16px;
+  min-height: 300px;
+}
+
+.news > .content img {
+  max-width: 100%;
+}
+
+.pagination > .item {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  line-height: 40px;
+  font-size: 30px;
+  color: #888;
+  background: #ddd;
+  opacity: .8;
+  text-align: center;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+
+.pagination > .item:hover {
+  opacity: 1;
+}
+
+.pagination > .item.disabled {
+  opacity: .65;
+}
+
+.pagination > .item .icon {
+  line-height: inherit;
 }
 
 .js-slide {
@@ -2225,82 +2272,62 @@ select {
 
 .footer {
   padding: 36px 0;
+  background: #666;
+  color: #fff;
 }
 
-.footer > .inner > .item {
+.footer .social {
+  float: left;
+  margin-top: 20px;
+}
+
+.footer .social .title {
+  font-size: 18px;
+  text-align: center;
+}
+
+.footer .social .title .fa {
+  margin-right: 4px;
+}
+
+.footer .social img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.footer .web-meta {
+  overflow: hidden;
+  padding: 20px;
+  line-height: 26px;
+  font-size: 15px;
+  font-family: Helvetica, arial, 'Microsoft Yahei';
+}
+
+.footer .web-meta a {
+  color: #fff;
+}
+
+.footer .web-meta .flink {
+  color: #aaa;
+}
+
+.footer .web-meta .flink a {
   position: relative;
-  float: left;
-  width: 22%;
-  text-align: center;
+  margin-right: 20px;
+  color: inherit;
+  white-space: nowrap;
 }
 
-.footer > .inner > .item.social {
-  width: 34%;
-}
-
-.footer > .inner > .item.social > .inner {
-  display: block;
-  padding: 0 40px;
-}
-
-.footer > .inner > .item.social .qr {
-  float: left;
-}
-
-.footer > .inner > .item.social .qr img {
-  max-width: 140px;
-  max-height: 140px;
-}
-
-.footer > .inner > .item.social .qr > p {
-  text-align: center;
-}
-
-.footer > .inner > .item.social .qr > p i {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  background-position: 0 -260px;
-}
-
-.footer > .inner > .item.social .qr.weibo {
-  float: right;
-  margin-right: 0;
-}
-
-.footer > .inner > .item.social .qr.weibo i {
-  background-position: 0 -294px;
-}
-
-.footer > .inner > .item:after {
-  content: '';
+.footer .web-meta .flink a:after {
+  content: '|';
   position: absolute;
-  left: 0;
+  right: -12px;
   top: 0;
-  bottom: 0;
-  width: 1px;
-  background: #aaa;
+  line-height: 1;
 }
 
-.footer > .inner > .item:first-child:after {
-  width: 0;
-}
-
-.footer > .inner .inner {
-  display: inline-block;
-  min-height: 176px;
-  padding: 0 40px;
-  text-align: left;
-  color: #555;
-  line-height: 2;
-  -ms-word-break: break-all;
-  word-break: break-all;
-}
-
-.footer > .inner .inner .title {
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 3;
+.footer .web-meta .flink a:last-child:after {
+  content: '';
 }
 
 .nav-box {
@@ -2353,7 +2380,7 @@ select {
 
 .q .main {
   margin-top: 0;
-  margin-bottom: 80px;
+  padding-bottom: 16px;
 }
 
 .q .main .wrapper {
@@ -2455,6 +2482,12 @@ select {
   border-top: 1px solid #D9D9D9;
   line-height: 48px;
   background: #f9f9f9;
+  color: #333;
+  z-index: 5;
+}
+
+.q > .footer .countdown {
+  font-size: 20px;
 }
 
 .q > .footer .btn, .q > .footer .btn-switcher > .title > .item {

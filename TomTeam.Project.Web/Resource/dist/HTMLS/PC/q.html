@@ -10,174 +10,246 @@
   <title>试题</title>
 </head>
 
-<body class="q">
+<body>
   <!--[if lte ie 7]>
                       <div style="position:fixed;left:0;right:0;text-align:center;z-index:5;background:#f00;color:#fff">
                                 为了更好的体验本网站，请尽量在Chrome系如360等浏览器下浏览。
                       </div>
     <![endif]-->
-  <div class='header'>
-    <div class="top">
-      <div class="wrapper">
-        <div class="inner">
-          <div class="user">
-            欢迎您：XXXX
-            <a href="javascript:;" title="点击进入用户中心"><i class="fa fa-user"></i>用户中心</a>
-            <a href="javascript:;" title="点击登出"><i class="fa fa-sign-out"></i>退出</a>
-          </div>
+  <!-- <div class='header'>
+  <div class="top">
+    <div class="wrapper">
+      <div class="inner">
+        <div class="user">
+          欢迎您：XXXX
+          <a href="javascript:;" title="点击进入用户中心"><i class="fa fa-user"></i>用户中心</a>
+          <a href="javascript:;" title="点击登出"><i class="fa fa-sign-out"></i>退出</a>
         </div>
       </div>
-      <div class="wrapper nav-box">
-        <div class="inner">
-          <div class="fr nav">
-            <a href="/">主页</a>
-            <a href="javascript:;" class="on">在线考试</a>
-          </div>
-          <a href="/" class="logo"><img src="/dist/images/logo.png" alt="logo"> </a>
+    </div>
+    <div class="wrapper nav-box">
+      <div class="inner">
+        <div class="fr nav">
+          <a href="/">主页</a>
+          <a href="javascript:;" class="on">在线考试</a>
+        </div>
+        <a href="/" class="logo"><img src="/dist/images/logo.png" alt="logo"> </a>
+      </div>
+    </div>
+  </div>
+</div>
+ -->
+  <div id="header">
+    <div class="top divider wrapper">
+      <div class="inner">
+        <div class="login fr">
+          <a href="javascript:;" class="signin  bg-group" title="点击登录">登录</a>
+          <a href="javascript:;" class="reg  bg-group" title="点击注册">注册</a>
+        </div>
+        <div class="user fr">
+          欢迎您：XXXX
+          <a href="javascript:;" title="点击进入用户中心"><i class="fa fa-user"></i>用户中心</a>
+          <a href="javascript:;" title="点击登出"><i class="fa fa-sign-out"></i>退出</a>
+        </div>
+        <a href="/" class="logo"><img src="/dist/images/logo.png" alt="logo"> </a>
+      </div>
+    </div>
+    <div class="banner wrapper">
+      <div class="item"><a href="javascript:;">报名</a></div>
+    </div>
+    <div class="nav divider text-center ">
+      <div class="wrapper">
+        <div class="inner col5 clearfix">
+          <a href="javascript:;" class="item on">首页</a>
+          <a href="javascript:;" class="item">乡试</a>
+          <a href="javascript:;" class="item">会试</a>
+          <a href="javascript:;" class="item">殿试</a>
+          <a href="javascript:;" class="item">个人中心</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="main">
-    <div class="body">
-      <div class="wrapper">
-        <div class="inner q-list">
-          <h1 class="title text-center">
+  <div class="q">
+    <div class="main">
+      <div class="body">
+        <div class="wrapper">
+          <div class="inner q-list">
+            <h1 class="title text-center">
            工程试题模拟
           </h1>
-          <h3 class="q-type">
+            <h3 class="q-type">
             1、单选
           </h3>
-          <ul class="content">
-            <li class="item">
-              <div class="order">
-                <span class="num"></span>
-              </div>
-              <div class="title">
-                问车在哪修？
-              </div>
-              <ul class="content">
-                <li class="item">
-                  A、家
-                </li>
-                <li class="item">
-                  B、车站
-                </li>
-              </ul>
-              <p class="a">
-                <label>
-                  <input type="radio" name="q1" id="" />A</label>
-                <label>
-                  <input type="radio" name="q1" id="" />B</label>
-                <label>
-                  <input type="radio" name="q1" id="" />C</label>
-                <label>
-                  <input type="radio" name="q1" id="" />D</label>
-              </p>
-            </li>
-            <li class="item">
-              <div class="order">
-                <span class="num"></span>
-              </div>
-              <div class="title">
-                问车在哪修？
-              </div>
-              <ul class="content">
-                <li class="item">
-                  A、家
-                </li>
-                <li class="item">
-                  B、车站
-                </li>
-              </ul>
-              <p class="a">
-                <label>
-                  <input type="radio" name="q1" id="" />A</label>
-                <label>
-                  <input type="radio" name="q1" id="" />B</label>
-                <label>
-                  <input type="radio" name="q1" id="" />C</label>
-                <label>
-                  <input type="radio" name="q1" id="" />D</label>
-              </p>
-            </li>
-          </ul>
-          <h3 class="q-type">
+            <ul class="content">
+              <li class="item">
+                <div class="order">
+                  <span class="num"></span>
+                </div>
+                <div class="title">
+                  问车在哪修？
+                </div>
+                <ul class="content">
+                  <li class="item">
+                    A、家
+                  </li>
+                  <li class="item">
+                    B、车站
+                  </li>
+                </ul>
+                <p class="a">
+                  <label>
+                    <input type="radio" name="q1" id="" />A</label>
+                  <label>
+                    <input type="radio" name="q1" id="" />B</label>
+                  <label>
+                    <input type="radio" name="q1" id="" />C</label>
+                  <label>
+                    <input type="radio" name="q1" id="" />D</label>
+                </p>
+              </li>
+              <li class="item">
+                <div class="order">
+                  <span class="num"></span>
+                </div>
+                <div class="title">
+                  问车在哪修？
+                </div>
+                <ul class="content">
+                  <li class="item">
+                    A、家
+                  </li>
+                  <li class="item">
+                    B、车站
+                  </li>
+                </ul>
+                <p class="a">
+                  <label>
+                    <input type="radio" name="q1" id="" />A</label>
+                  <label>
+                    <input type="radio" name="q1" id="" />B</label>
+                  <label>
+                    <input type="radio" name="q1" id="" />C</label>
+                  <label>
+                    <input type="radio" name="q1" id="" />D</label>
+                </p>
+              </li>
+            </ul>
+            <h3 class="q-type">
             2、多选
           </h3>
-          <ul class="content">
-            <li class="item">
-              <div class="order">
-                <span class="num"></span>
-              </div>
-              <div class="title">
-                问车在哪修？
-              </div>
-              <ul class="content">
-                <li class="item">
-                  A、家
-                </li>
-                <li class="item">
-                  B、车站
-                </li>
-              </ul>
-              <p class="a">
-                <label>
-                  <input type="checkbox" name="q1" id="" />A</label>
-                <label>
-                  <input type="checkbox" name="q1" id="" />B</label>
-                <label>
-                  <input type="checkbox" name="q1" id="" />C</label>
-                <label>
-                  <input type="checkbox" name="q1" id="" />D</label>
-              </p>
-            </li>
-            <li class="item">
-              <div class="order">
-                <span class="num"></span>
-              </div>
-              <div class="title">
-                问车在哪修？
-              </div>
-              <ul class="content">
-                <li class="item">
-                  A、家
-                </li>
-                <li class="item">
-                  B、车站
-                </li>
-              </ul>
-              <p class="a">
-                <label>
-                  <input type="checkbox" name="q1" id="" />A</label>
-                <label>
-                  <input type="checkbox" name="q1" id="" />B</label>
-                <label>
-                  <input type="checkbox" name="q1" id="" />C</label>
-                <label>
-                  <input type="checkbox" name="q1" id="" />D</label>
-              </p>
-            </li>
-          </ul>
+            <ul class="content">
+              <li class="item">
+                <div class="order">
+                  <span class="num"></span>
+                </div>
+                <div class="title">
+                  问车在哪修？
+                </div>
+                <ul class="content">
+                  <li class="item">
+                    A、家
+                  </li>
+                  <li class="item">
+                    B、车站
+                  </li>
+                </ul>
+                <p class="a">
+                  <label>
+                    <input type="checkbox" name="q1" id="" />A</label>
+                  <label>
+                    <input type="checkbox" name="q1" id="" />B</label>
+                  <label>
+                    <input type="checkbox" name="q1" id="" />C</label>
+                  <label>
+                    <input type="checkbox" name="q1" id="" />D</label>
+                </p>
+              </li>
+              <li class="item">
+                <div class="order">
+                  <span class="num"></span>
+                </div>
+                <div class="title">
+                  问车在哪修？
+                </div>
+                <ul class="content">
+                  <li class="item">
+                    A、家
+                  </li>
+                  <li class="item">
+                    B、车站
+                  </li>
+                </ul>
+                <p class="a">
+                  <label>
+                    <input type="checkbox" name="q1" id="" />A</label>
+                  <label>
+                    <input type="checkbox" name="q1" id="" />B</label>
+                  <label>
+                    <input type="checkbox" name="q1" id="" />C</label>
+                  <label>
+                    <input type="checkbox" name="q1" id="" />D</label>
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="wrapper footer">
-    <div class="inner a-info">
-      <button href="javascript:;" class="btn btn-primary big fr ">交卷</button>
-      <a href="javascript:scrollTo(0,0)"><i class="fa fa-arrow-up"></i>回顶部</a>
-      <span class="statistics">
+    <div class="wrapper footer">
+      <div class="inner a-info">
+        <button href="javascript:;" class="btn btn-primary big fr ">交卷</button>
+        <span class="time-remain">剩余时间：<span class="countdown" data-time="10000"></span></span>
+        <span class="statistics">
         已做
         <span class="a-over num">
         3
       </span> 题 共
-      <span class="a-amount num">20 </span>题 总分 <span class="a-score num">
+        <span class="a-amount num">20 </span>题 总分 <span class="a-score num">
         50
       </span>分
-      </span>
+        </span>
+      </div>
     </div>
   </div>
+  <div class="wrapper footer">
+    <div class="inner clearfix">
+      <div class="item social">
+        <div class="inner">
+          <div class="qr weixin" title="扫描微信操作">
+            <p class="title"><i class="fa fa-wechat"></i>微信</p>
+            <img src="../../images/QrcodeWeixin.png" alt="" />
+          </div>
+          <div class="qr weibo" title="微博">
+            <p class="title"><i class="fa fa-weibo"></i>微博</p>
+            <img src="../../images/QrcodeWeibo.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="web-meta">
+        <div class="flink">
+          广联达旗下：
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+          <a href="javascript:;">广联达网站</a>
+        </div>
+        <div class="copy">
+          Copyright &copy; Glodon 1998-2015 <a href="javscript:;">广联达科技股份有限公司</a> 广联达科技股份有限公司 京ICP证010052号 京公网安备110108401214号 邮编：100193 中国-北京-海淀区东北旺西路10号院中关村软件园13号广联达信息大厦 电话010-56403000 电子邮件：<a href="mailto:webmaster@fwxgx.com">webmaster@fwxgx.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../scripts/lib/jquery-1.11.3.js"></script>
+  <script src="../../scripts/lib/countdown.js"></script>
+  <script>
+  $('.q').find('.countdown').countdown();
+  </script>
 </body>
 
 </html>

@@ -2,4 +2,5 @@
 # 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
 ################################################################################
 
-/TomTeam.Project.Web/upload/3bd61141-680f-4bab-954a-673b6955adde.jpg
+/TomTeam.Project.Web/upload/3bd61141-680f-4bab-954a-673b6955adde.jpg 
+node_modules
