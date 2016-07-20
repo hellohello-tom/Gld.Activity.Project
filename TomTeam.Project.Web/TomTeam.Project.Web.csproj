@@ -3617,6 +3617,7 @@
     <Content Include="Views\Home\Detail.cshtml" />
     <Content Include="Views\Provincial\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Provincial\_Header.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

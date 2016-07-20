@@ -28,17 +28,17 @@ namespace TomTeam.Project.Web.Navigation
                 ).AddItem(new MenuItemDefinition(
                     PageNames.Frontend.ProvincialExamination,
                     L("ProvincialExamination"),
-                    url: "ProvincialExamination"
+                    url: "Provincial"
                     )
                 ).AddItem(new MenuItemDefinition(
                     PageNames.Frontend.MetropolitanExamination,
                     L("MetropolitanExamination"),
-                    url: "MetropolitanExamination"
+                    url: "Metropolitan"
                     )
                 ).AddItem(new MenuItemDefinition(
                     PageNames.Frontend.PalaceExamination,
                     L("PalaceExamination"),
-                    url: "PalaceExamination"
+                    url: "Palace"
                     )
                 );
         }

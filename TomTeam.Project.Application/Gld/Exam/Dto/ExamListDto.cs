@@ -30,5 +30,8 @@ namespace TomTeam.Project.Gld.Exam.Dto
             get;
             set;
         }
+
+
+        public List<Answer> Answers { get; set; }
     }
 }

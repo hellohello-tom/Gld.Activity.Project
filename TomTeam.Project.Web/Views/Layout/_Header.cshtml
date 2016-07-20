@@ -35,7 +35,7 @@
             <div class="inner col5 clearfix">
                 @foreach (var menuItem in @Model.Menu.Items)
                 {
-                    <a href="/@menuItem.Url" class="@(menuItem.DisplayName == Model.CurrentPageName ? "item on" : "item")">@menuItem.DisplayName</a>
+                    <a target="_blank"   href="/@menuItem.Url" class="@(menuItem.DisplayName == Model.CurrentPageName ? "item on" : "item")">@menuItem.DisplayName</a>
                 }
             </div>
         </div>

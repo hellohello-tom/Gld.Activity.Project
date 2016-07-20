@@ -69,7 +69,8 @@ namespace TomTeam.Project.Gld.Exam
 
         public async Task<PagedResultOutput<ExamListDto>> GetExamList(SearchExamInput input)
         {
-            var query = _examTopicRepository.GetAll().Where(news => !news.IsDeleted);
+            var query = _examTopicRepository.GetAll()
+                .Where(news => !news.IsDeleted);
             if (!string.IsNullOrEmpty(input.SearchTitle))
             {
                 query = query.Where(x => x.TopicName.Contains(input.SearchTitle));
@@ -101,7 +102,7 @@ namespace TomTeam.Project.Gld.Exam
         /// <returns></returns>
         public async Task<PagedResultOutput<ExamListDto>> GetExamRadom(SearchExamInput input)
         {
-            var query = _examTopicRepository.GetAll();
+            var query = _examTopicRepository.GetAll().Include(x => x.Answers);
             if (!string.IsNullOrEmpty(input.SearchTitle))
             {
                 query = query.Where(x => x.TopicName.Contains(input.SearchTitle));
