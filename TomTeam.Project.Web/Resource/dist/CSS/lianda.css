@@ -1605,6 +1605,7 @@ select {
 }
 
 .popup-login .title {
+  position: relative;
   background: #06081D;
   color: #fff;
   text-align: center;
@@ -1617,6 +1618,7 @@ select {
 .popup-login .content {
   position: relative;
   padding: 30px 40px;
+  background: #fff;
 }
 
 .popup-login .tips {
@@ -1656,6 +1658,19 @@ select {
   line-height: 1;
   font-family: verdana, tahoma;
   text-decoration: none;
+}
+
+.popup-login:before {
+  content: '';
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #333;
+  background: rgba(0, 0, 0, 0.5);
+  filter: alpha(opacity=50);
+  opacity: .5;
 }
 
 .nav {
@@ -2225,12 +2240,16 @@ select {
 
 .footer > .inner > .item.social > .inner {
   display: block;
-  padding: 0 30px;
+  padding: 0 40px;
 }
 
 .footer > .inner > .item.social .qr {
   float: left;
-  margin-right: 10px;
+}
+
+.footer > .inner > .item.social .qr img {
+  max-width: 140px;
+  max-height: 140px;
 }
 
 .footer > .inner > .item.social .qr > p {

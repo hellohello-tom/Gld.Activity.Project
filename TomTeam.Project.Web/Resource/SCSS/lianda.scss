@@ -65,6 +65,7 @@ $color-bg-content:#F5F4F2;
   opacity: .97;
   z-index: 5;
   .title {
+    position: relative;
     background: #06081D;
     color: #fff;
     text-align: center;
@@ -76,6 +77,7 @@ $color-bg-content:#F5F4F2;
   .content {
     position: relative;
     padding: 30px 40px;
+    background: #fff;
   }
   .tips {
     position: absolute;
@@ -110,6 +112,18 @@ $color-bg-content:#F5F4F2;
     line-height: 1;
     font-family: verdana, tahoma;
     text-decoration: none;
+  }
+  &:before {
+    content: '';
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #333;
+    background: rgba(0, 0, 0, .5);
+    filter: alpha(opacity=50);
+    opacity: .5;
   }
 }
 
@@ -625,11 +639,14 @@ $color-title:#E9003C;
         width: 34%;
         >.inner {
           display: block;
-          padding: 0 30px;
+          padding: 0 40px;
         }
         .qr {
           float: left;
-          margin-right: 10px;
+          img {
+            max-width: 140px;
+            max-height: 140px;
+          }
           >p {
             text-align: center;
             i {
