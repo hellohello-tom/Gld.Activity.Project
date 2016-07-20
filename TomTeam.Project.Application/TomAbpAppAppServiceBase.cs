@@ -18,6 +18,7 @@ namespace TomTeam.Project
     {
         public TenantManager TenantManager { get; set; }
 
+        
         public UserManager UserManager { get; set; }
 
         protected TomAbpAppServiceBase()

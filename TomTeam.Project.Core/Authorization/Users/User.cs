@@ -31,6 +31,7 @@ namespace TomTeam.Project.Authorization.Users
         /// </summary>
         public virtual string Major { get; set; }
 
+
         //Can add application specific user properties here
 
         /// <summary>

@@ -7,10 +7,36 @@ namespace TomTeam.Project.Web.Controllers
 {
     public class HomeController : TomAbpControllerBase
     {
-        public  ActionResult Index()
+        private IWebConfigAppService _webConfigAppService;
+        private INewsAppService _newsAppService;
+        public HomeController(IWebConfigAppService _webConfigAppService, INewsAppService _newsAppService)
+        {
+            this._webConfigAppService = _webConfigAppService;
+            this._newsAppService = _newsAppService;
+        }
+
+        public async virtual Task<ActionResult> Index()
+        {
+            var webConfigModel = await _webConfigAppService.GetConfig(new NullableIdInput { Id = 0 });
+            ViewBag.NewsList = await _newsAppService.GetNewsList(new Gld.Dto.SearchNewsInput { MaxResultCount = 7 });
+            return View(webConfigModel);
+        }
+
+        public ActionResult Login()
         {
             return View();
-            //return View();
+        }
+
+
+        public ActionResult News()
+        {
+            return View();
+        }
+
+        public async virtual Task<ActionResult> Detail(int id)
+        {
+            var detail = await _newsAppService.GetNews(new NullableIdInput { Id = id }) ?? new Gld.Dto.GetNewsListOutput();
+            return View(detail);
         }
     }
 }

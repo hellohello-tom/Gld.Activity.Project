@@ -166,7 +166,7 @@ namespace TomTeam.Project.Web.Controllers
         public ActionResult Logout()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index","Home");
         }
 
         private async Task SignInAsync(User user, ClaimsIdentity identity = null, bool rememberMe = false)

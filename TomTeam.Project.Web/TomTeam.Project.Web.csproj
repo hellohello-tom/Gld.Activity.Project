@@ -339,6 +339,7 @@
     <Content Include="App\common\views\gld\addnews.js" />
     <Content Include="App\common\views\gld\config.js" />
     <Content Include="App\common\views\gld\news.js" />
+    <Content Include="App\common\views\gld\userInfo.js" />
     <Content Include="App\common\views\languages\editTextModal.js" />
     <Content Include="App\common\views\languages\createOrEditModal.js" />
     <Content Include="App\common\views\layout\header.css">
@@ -538,6 +539,7 @@
     <Content Include="Common\Images\app-logo-on-dark.png" />
     <Content Include="Common\Images\app-logo-on-light.png" />
     <Content Include="Common\Images\default-profile-picture.png" />
+    <Content Include="Common\Images\gldqrcode.jpg" />
     <Content Include="Common\Images\logo.png" />
     <Content Include="Common\Images\SampleProfilePics\sample-profile-08.jpg" />
     <Content Include="Common\Images\SampleProfilePics\sample-profile-01.jpg" />
@@ -2148,10 +2150,13 @@
     <Content Include="Resource\dist\fonts\css\font-awesome.min.css" />
     <Content Include="Resource\dist\fonts\fonts\fontawesome-webfont.svg" />
     <Content Include="Resource\dist\HTMLS\mobile\docs.html" />
+    <Content Include="Resource\dist\HTMLS\PC\a.html" />
     <Content Include="Resource\dist\HTMLS\PC\detailDianshi.html" />
     <Content Include="Resource\dist\HTMLS\PC\detailHuishi.html" />
     <Content Include="Resource\dist\HTMLS\PC\detailSaishi.html" />
     <Content Include="Resource\dist\HTMLS\PC\home.html" />
+    <Content Include="Resource\dist\HTMLS\PC\news.html" />
+    <Content Include="Resource\dist\HTMLS\PC\q.html" />
     <Content Include="Resource\dist\iconfonts\demo-files\demo.css" />
     <Content Include="Resource\dist\iconfonts\demo-files\demo.js" />
     <Content Include="Resource\dist\iconfonts\demo.html" />
@@ -2542,6 +2547,7 @@
     <Content Include="Resource\src\scripts\module\vue\components\footerMenu.vue" />
     <Content Include="Resource\src\scripts\module\vue\components\menu.vue" />
     <Content Include="Resource\src\scripts\module\vue\components\templateAdmin\menu.vue" />
+    <Content Include="App\common\views\gld\userInfo.cshtml" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -3386,6 +3392,7 @@
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Auth\ApplicationSignInManager.cs" />
     <Compile Include="Controllers\AttrFilesController.cs" />
+    <Compile Include="Controllers\ProvincialController.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FileController.cs" />
@@ -3607,6 +3614,9 @@
     <Content Include="Views\TenantRegistration\RegisterResult.cshtml" />
     <Content Include="Scripts\underscore.min.map" />
     <Content Include="Views\Error\_Layout.cshtml" />
+    <Content Include="Views\Home\Detail.cshtml" />
+    <Content Include="Views\Provincial\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

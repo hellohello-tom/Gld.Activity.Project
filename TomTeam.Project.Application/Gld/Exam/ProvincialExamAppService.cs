@@ -17,7 +17,6 @@ using Abp.Linq.Extensions;
 
 namespace TomTeam.Project.Gld.Exam
 {
-    [AbpAuthorize(AppPermissions.Pages_Activity_Manager)]
     public class ProvincialExamAppService : TomAbpAppServiceBase, IProvincialExamAppService
     {
 
@@ -29,6 +28,7 @@ namespace TomTeam.Project.Gld.Exam
             this._answerRepository = _answerRepository;
         }
 
+        [AbpAuthorize(AppPermissions.Pages_Activity_Manager)]
         [UnitOfWork]
         public async Task<int> AddOrUpdate(CreateOrUpdateExamInput input)
         {
@@ -58,6 +58,7 @@ namespace TomTeam.Project.Gld.Exam
             return id;
         }
 
+        [AbpAuthorize(AppPermissions.Pages_Activity_Manager)]
         [UnitOfWork]
         public async Task DeleteProvincial(IdInput<int> input)
         {
@@ -79,6 +80,7 @@ namespace TomTeam.Project.Gld.Exam
             return new PagedResultOutput<ExamListDto>(listCount, dataListDto);
         }
 
+        [AbpAuthorize(AppPermissions.Pages_Activity_Manager)]
         public async Task<GetExamForEditOutput> GetExam(NullableIdInput input)
         {
             GetExamForEditOutput dataDetail = new GetExamForEditOutput();
@@ -90,6 +92,25 @@ namespace TomTeam.Project.Gld.Exam
                 dataDetail.Answers = answers.MapTo<List<AnswerDto>>();
             }
             return dataDetail;
+        }
+
+        /// <summary>
+        /// 获取随机条数
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public async Task<PagedResultOutput<ExamListDto>> GetExamRadom(SearchExamInput input)
+        {
+            var query = _examTopicRepository.GetAll();
+            if (!string.IsNullOrEmpty(input.SearchTitle))
+            {
+                query = query.Where(x => x.TopicName.Contains(input.SearchTitle));
+            }
+            var listCount = await query.CountAsync();
+            query = query.OrderBy(x => Guid.NewGuid());
+            var list = await query.PageBy(input).ToListAsync();
+            var dataListDto = list.MapTo<List<ExamListDto>>();
+            return new PagedResultOutput<ExamListDto>(listCount, dataListDto);
         }
     }
 }

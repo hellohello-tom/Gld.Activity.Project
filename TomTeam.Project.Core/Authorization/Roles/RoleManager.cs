@@ -13,6 +13,7 @@ namespace TomTeam.Project.Authorization.Roles
     /// </summary>
     public class RoleManager : AbpRoleManager<Role, User>
     {
+        
         public RoleManager(
             RoleStore store,
             IPermissionManager permissionManager,

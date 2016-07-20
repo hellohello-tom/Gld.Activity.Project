@@ -132,6 +132,11 @@ appModule.config([
             url: '/config',
             templateUrl: '~/App/common/views/gld/activityConfig.cshtml'
         });
+        //用户管理
+        $stateProvider.state('userInfo', {
+            url: '/userInfo',
+            templateUrl: '~/App/common/views/gld/userinfo.cshtml'
+        });
 
 
         $stateProvider.state('notifications', {

@@ -132,9 +132,11 @@
   <ItemGroup>
     <Compile Include="Gld\Dto\CreateOrUpdateNews.cs" />
     <Compile Include="Gld\Dto\GetNewsListOutput.cs" />
+    <Compile Include="Gld\Dto\GetUserInfoInput.cs" />
     <Compile Include="Gld\Dto\NewsInput.cs" />
     <Compile Include="Gld\Dto\SearchNewsInput.cs" />
     <Compile Include="Gld\ActivityConfigAppService.cs" />
+    <Compile Include="Gld\Dto\UserInfoListDto.cs" />
     <Compile Include="Gld\Exam\Dto\AnswerDto.cs" />
     <Compile Include="Gld\Exam\Dto\CreateOrUpdateExamInput.cs" />
     <Compile Include="Gld\Exam\Dto\ExamListDto.cs" />
@@ -145,8 +147,10 @@
     <Compile Include="Gld\Exam\ProvincialExamAppService.cs" />
     <Compile Include="Gld\IActivityConfigAppService.cs" />
     <Compile Include="Gld\INewsAppService.cs" />
+    <Compile Include="Gld\IUserInfoAppService.cs" />
     <Compile Include="Gld\IWebConfigAppService.cs" />
     <Compile Include="Gld\NewsAppService.cs" />
+    <Compile Include="Gld\UserInfoAppService.cs" />
     <Compile Include="Gld\WebConfigAppService.cs" />
     <Compile Include="TomAbpAppApplicationModule.cs" />
     <Compile Include="TomAbpAppAppServiceBase.cs" />

@@ -40,11 +40,6 @@ namespace TomTeam.Project.Web.Navigation
                     L("PalaceExamination"),
                     url: "PalaceExamination"
                     )
-                ).AddItem(new MenuItemDefinition(
-                    PageNames.Frontend.PersonalCenter,
-                    L("PersonalCenter"),
-                    url: "PersonalCenter"
-                    )
                 );
         }
 

@@ -39,5 +39,12 @@ namespace TomTeam.Project.Gld.Exam
         /// <param name="input"></param>
         /// <returns></returns>
         Task DeleteProvincial(IdInput<int> input);
+
+        /// <summary>
+        /// 获取随机考试题目
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<PagedResultOutput<ExamListDto>> GetExamRadom(SearchExamInput input);
     }
 }

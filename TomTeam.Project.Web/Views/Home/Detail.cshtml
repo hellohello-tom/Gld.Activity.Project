@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.CurrentPageName = "新闻详情";
+    var list = ViewBag.NewsList as TomTeam.Project.Gld.Dto.GetNewsListOutput;
+}
+<div class="main">
+    <div class="body home detail event">
+        <div class="wrapper item">
+            <div class="inner">
+                <div class="news">
+                    <h1 class="title">
+                        @Model.Title
+                    </h1>
+                    <div class="content">
+                        @Html.Raw(Model.Content)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
