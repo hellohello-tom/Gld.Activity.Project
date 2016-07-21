@@ -13,6 +13,7 @@
     <meta content="广联达股份有限公司河南分公司" name="keywords">
     <meta content="广联达股份有限公司" name="author">
     <link rel="shortcut icon" href="~/favicon.ico">
+    <link rel="stylesheet" href="~/Resource/dist/fonts/css/font-awesome.min.css" />
     <link href="~/Resource/dist/CSS/lianda.css" rel="stylesheet" />
     @RenderSection("Styles", false)
 </head>
@@ -31,11 +32,11 @@
                 <p class="tips"></p>
                 <div>
                     <span class="text">用户名</span>
-                    <input type="text"  name="usernameOrEmailAddress" maxlength="11"  class="ipt required" />
+                    <input type="text" name="usernameOrEmailAddress" maxlength="11" class="ipt required" />
                     <span class="text">密码</span>
-                    <input type="password" name="password"  class="ipt required" />
+                    <input type="password" name="password" class="ipt required" />
                     <label>
-                        <input type="checkbox" data-test="123" name="rememberMe" value="true"/>记住我
+                        <input type="checkbox" data-test="123" name="rememberMe" value="true" />记住我
                     </label>
                 </div>
                 <div class="btn-area">
@@ -47,92 +48,138 @@
     </div>
     <script src="~/libs/jquery/jquery.min.js"></script>
     <script src="~/libs/jquery-validation/js/jquery.validate.min.js"></script>
+    <script src="~/libs/artdialog/dist/dialog-plus-min.js"></script>
+    <script src="~/Common/Scripts/waiting.js"></script>
     @RenderSection("Scripts", false)
     <script type="text/javascript">
-
-    function openLogin(e) {
-        $('#login-div').find("input").each(function () {
-            $(this).val('');
+        $(function () {
+            $(document).on("ajaxStart", function () {
+                PCwaiting.show();
+            }).on("ajaxStop", function () {
+                PCwaiting.hide();
+            });
         });
-        $('#login-div').show();
-        $('input[name=usernameOrEmailAddress]').focus();
-        $('input[name=rememberMe]').val(true);
-    }
-    function closeLogin() {
-        $('#login-div').hide();
-    }
-    $(function () {
-        var $loginForm = $('.login-form');
-
-        $loginForm.validate({
-            errorElement: 'span', //default input error message container
-            errorClass: 'help-block', // default input error message class
-            focusInvalid: false, // do not focus the last invalid input
-            rules: {
-                usernameOrEmailAddress: {
-                    required: true
-                },
-                password: {
-                    required: true
-                }
-            },
-            messages:{
-                usernameOrEmailAddress: {
-                    required:"用户名必填"
-                },
-                password: {
-                    required: "密码必填",
-                },
-            },
-
-            errorPlacement: function (error, element) {
-                $('.tips').html(error);
-            },
-
-            submitHandler: function (form) {
-                $loginForm.find('.tips').hide();
-            }
-        });
-
-        $loginForm.find('button[type=submit]').keypress(function (e) {
-            if (e.which == 13) {
-                if ($('.login-form').valid()) {
-                    $('.login-form').submit();
-                }
-                return false;
-            }
-        });
-
-        $loginForm.submit(function (e) {
-            $form = $('.login-form');
-            if (!$form.valid()) {
-                return false;
-            }
-            var button = $("button[type=submit]", $('.login-form'));
-            button.addClass("disabled");
-            $.ajax({
-                type: $form.method || 'POST',
-                url: $form.attr('action')+'?returnUrl=@(Request.RawUrl)',
-                data: $form.serializeArray(),
-                dataType: 'json',
-                cache: false,
-                success: function (json) {
-                    if (json.success) {
-                        closeLogin();
-                        window.location.href = json.targetUrl;
+        function alertMsg(msg, time, noMask, justNotice) {
+            var d = dialog;
+            if (justNotice) {
+                d = d({
+                    skin: 'mini',
+                    width: 400,
+                    title: "提示",
+                    fixed: true,
+                    content: '<div class="text-center">' + (msg || '操作失败.请稍后再试') + '</div>',
+                    okValue: '确认',
+                    ok: function () {
                     }
-                    else {
-                        $('.tips').html(json.error.details || json.error.message).show();
+                });
+            } else {
+                d = d({
+                    skin: 'mini',
+                    width: 400,
+                    title: '提示',
+                    fixed: true,
+                    content: '<div class="text-center">' + (msg || '操作失败.请稍后再试') + '</div>',
+                    okValue: '知道了',
+                    ok: function () {
                     }
-                    button.removeClass("disabled");
+                });
+            }
+            if (!noMask) {
+                d.showModal();
+            } else {
+                d.show();
+            }
+            if (Object.prototype.toString.call(time) === '[object Number]') {
+                setTimeout(function () {
+                    d.remove();
+                }, time || 2000);
+            }
+        }
+
+
+        function openLogin(e) {
+            $('#login-div').find("input").each(function () {
+                $(this).val('');
+            });
+            $('#login-div').show();
+            $('input[name=usernameOrEmailAddress]').focus();
+            $('input[name=rememberMe]').val(true);
+        }
+        function closeLogin() {
+            $('#login-div').hide();
+        }
+        $(function () {
+            var $loginForm = $('.login-form');
+
+            $loginForm.validate({
+                errorElement: 'span', //default input error message container
+                errorClass: 'help-block', // default input error message class
+                focusInvalid: false, // do not focus the last invalid input
+                rules: {
+                    usernameOrEmailAddress: {
+                        required: true
+                    },
+                    password: {
+                        required: true
+                    }
                 },
-                error: function () {
-                    button.removeClass("disabled");
+                messages: {
+                    usernameOrEmailAddress: {
+                        required: "用户名必填"
+                    },
+                    password: {
+                        required: "密码必填",
+                    },
+                },
+
+                errorPlacement: function (error, element) {
+                    $('.tips').html(error);
+                },
+
+                submitHandler: function (form) {
+                    $loginForm.find('.tips').hide();
                 }
             });
-            return false;
+
+            $loginForm.find('button[type=submit]').keypress(function (e) {
+                if (e.which == 13) {
+                    if ($('.login-form').valid()) {
+                        $('.login-form').submit();
+                    }
+                    return false;
+                }
+            });
+
+            $loginForm.submit(function (e) {
+                $form = $('.login-form');
+                if (!$form.valid()) {
+                    return false;
+                }
+                var button = $("button[type=submit]", $('.login-form'));
+                button.addClass("disabled");
+                $.ajax({
+                    type: $form.method || 'POST',
+                    url: $form.attr('action') + '?returnUrl=@(Request.RawUrl)',
+                    data: $form.serializeArray(),
+                    dataType: 'json',
+                    cache: false,
+                    success: function (json) {
+                        if (json.success) {
+                            closeLogin();
+                            window.location.href = json.targetUrl;
+                        }
+                        else {
+                            $('.tips').html(json.error.details || json.error.message).show();
+                        }
+                        button.removeClass("disabled");
+                    },
+                    error: function () {
+                        button.removeClass("disabled");
+                    }
+                });
+                return false;
+            });
         });
-    });
     </script>
 </body>
 </html>

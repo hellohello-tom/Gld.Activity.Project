@@ -22,31 +22,15 @@ namespace TomTeam.Project.Web.Controllers
     {
         private IProvincialExamAppService _provincialExamAppService;
         private IActivityConfigAppService _activityConfigAppService;
-        private readonly ISessionAppService _sessionAppService;
-        private readonly IUserNavigationManager _userNavigationManager;
-        private readonly IMultiTenancyConfig _multiTenancyConfig;
-        public ProvincialController(IProvincialExamAppService _provincialExamAppService, IActivityConfigAppService _activityConfigAppService, ISessionAppService sessionAppService, IUserNavigationManager userNavigationManager, IMultiTenancyConfig multiTenancyConfig)
+        private IExamCollectAppService _examCollectAppService;
+        public ProvincialController(IProvincialExamAppService _provincialExamAppService, IActivityConfigAppService _activityConfigAppService, IExamCollectAppService _examCollectAppService)
         {
             
             this._provincialExamAppService = _provincialExamAppService;
             this._activityConfigAppService = _activityConfigAppService;
-            _sessionAppService = sessionAppService;
-            _userNavigationManager = userNavigationManager;
-            _multiTenancyConfig = multiTenancyConfig;
+            this._examCollectAppService = _examCollectAppService;
         }
 
-        [ChildActionOnly]
-        public PartialViewResult Header()
-        {
-            var headerModel = new HeaderViewModel();
-
-            if (AbpSession.UserId.HasValue)
-            {
-                headerModel.LoginInformations = AsyncHelper.RunSync(() => _sessionAppService.GetCurrentLoginInformations());
-            }
-
-            return PartialView("~/Views/Provincial/_Header.cshtml", headerModel);
-        }
         // GET: Provincial
         public async Task<ActionResult> Index()
         {
@@ -60,6 +44,7 @@ namespace TomTeam.Project.Web.Controllers
                     MaxResultCount = activityConfig.ExamCount,
                 });
             }
+            ViewBag.UserExamCollect = await _examCollectAppService.GetUserExamCollect();
             return View(activityConfig);
         }
     }

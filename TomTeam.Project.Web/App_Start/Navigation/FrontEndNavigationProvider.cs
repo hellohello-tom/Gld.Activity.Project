@@ -27,6 +27,11 @@ namespace TomTeam.Project.Web.Navigation
                     )
                 ).AddItem(new MenuItemDefinition(
                     PageNames.Frontend.ProvincialExamination,
+                    L("HomeNews"),
+                    url: "News"
+                    )
+                ).AddItem(new MenuItemDefinition(
+                    PageNames.Frontend.ProvincialExamination,
                     L("ProvincialExamination"),
                     url: "Provincial"
                     )

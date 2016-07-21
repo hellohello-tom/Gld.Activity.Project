@@ -11,8 +11,8 @@ namespace TomTeam.Project.Web
     {
         protected override void Application_Start(object sender, EventArgs e)
         {
-            //Use UTC clock. Remove this to use local time for your applcation.
-            Clock.Provider = new UtcClockProvider();
+            
+            Clock.Provider = new LocalClockProvider();
 
             /* This line provides better startup performance for the application by disabling detailed assembly investigation.
              * If you need deeper assembly investigation, remove it. */

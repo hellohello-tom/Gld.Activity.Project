@@ -34,7 +34,7 @@
                     {
                     <li>
                         <span class="text">
-                            <a href="@Url.Action("Detail", new { id = item.Id })">@item.Title</a>
+                            <a href="@Url.Action("Detail","News", new { id = item.Id })">@item.Title</a>
                         </span>
                         <span class="time">
                             @string.Format("{0:yyyy-MM-dd HH:mm}", item.CreationTime)

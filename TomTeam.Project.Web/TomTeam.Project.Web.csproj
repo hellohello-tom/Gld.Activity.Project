@@ -608,6 +608,7 @@
     <Content Include="Common\Scripts\librarySettings.js" />
     <Content Include="Common\Scripts\ModalManager.js" />
     <Content Include="Common\Scripts\utils.js" />
+    <Content Include="Common\Scripts\waiting.js" />
     <Content Include="Common\Styles\core.css">
       <DependentUpon>core.less</DependentUpon>
     </Content>
@@ -634,6 +635,11 @@
     <Content Include="libs\angular-ui-grid\ui-grid.min.css" />
     <Content Include="libs\angular-ui-grid\ui-grid.min.js" />
     <Content Include="libs\angular-ui-grid\ui-grid.svg" />
+    <Content Include="libs\artdialog\css\ui-dialog.css" />
+    <Content Include="libs\artdialog\dist\dialog-min.js" />
+    <Content Include="libs\artdialog\dist\dialog-plus-min.js" />
+    <Content Include="libs\artdialog\dist\dialog-plus.js" />
+    <Content Include="libs\artdialog\dist\dialog.js" />
     <Content Include="libs\bootstrap-daterangepicker\daterangepicker.css" />
     <Content Include="libs\bootstrap-daterangepicker\daterangepicker.js" />
     <Content Include="libs\bootstrap-hover-dropdown\bootstrap-hover-dropdown.js" />
@@ -3392,6 +3398,7 @@
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Auth\ApplicationSignInManager.cs" />
     <Compile Include="Controllers\AttrFilesController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ProvincialController.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -3614,10 +3621,11 @@
     <Content Include="Views\TenantRegistration\RegisterResult.cshtml" />
     <Content Include="Scripts\underscore.min.map" />
     <Content Include="Views\Error\_Layout.cshtml" />
-    <Content Include="Views\Home\Detail.cshtml" />
+    <Content Include="Views\News\Detail.cshtml" />
     <Content Include="Views\Provincial\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Provincial\_Header.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

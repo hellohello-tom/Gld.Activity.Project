@@ -27,16 +27,5 @@ namespace TomTeam.Project.Web.Controllers
             return View();
         }
 
-
-        public ActionResult News()
-        {
-            return View();
-        }
-
-        public async virtual Task<ActionResult> Detail(int id)
-        {
-            var detail = await _newsAppService.GetNews(new NullableIdInput { Id = id }) ?? new Gld.Dto.GetNewsListOutput();
-            return View(detail);
-        }
     }
 }

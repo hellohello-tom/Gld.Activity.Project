@@ -7,7 +7,6 @@
 <div id="header">
     <div class="top divider wrapper">
         <div class="inner">
-            <div class="login fr">
                 @if (Model.LoginInformations != null)
                 {
                     <div class="user fr">
@@ -18,17 +17,19 @@
                 }
                 else
                 {
-                    <a href="javascript:openLogin();" class="signin bg-group" title="点击登录">登录</a>
-                    <a href="@Url.Action("Register","Account")" class="reg  bg-group" title="点击注册">注册</a>
+                    <div class="login fr">
+                        <a href="javascript:openLogin();" class="signin bg-group" title="点击登录">登录</a>
+                        <a href="@Url.Action("Register","Account")" class="reg  bg-group" title="点击注册">注册</a>
+
+                    </div>
                 }
-            </div>
             <a href="/" class="logo">
                 <img src="~/Common/Images/logo.png" alt="logo" />
             </a>
         </div>
     </div>
     <div class="banner wrapper">
-        <div class="item"></div>
+        <div class="item"><a href="@Url.Action("Register","Account")">立即报名</a></div>
     </div>
     <div class="nav divider text-center ">
         <div class="wrapper">

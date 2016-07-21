@@ -141,10 +141,15 @@
     <Compile Include="Gld\Exam\Dto\CreateOrUpdateExamInput.cs" />
     <Compile Include="Gld\Exam\Dto\ExamListDto.cs" />
     <Compile Include="Gld\Exam\Dto\ExamTopicDto.cs" />
+    <Compile Include="Gld\Exam\Dto\GetExamCollectOutput.cs" />
     <Compile Include="Gld\Exam\Dto\GetExamForEditOutput.cs" />
+    <Compile Include="Gld\Exam\Dto\ProvincialInput.cs" />
     <Compile Include="Gld\Exam\Dto\SearchExamInput.cs" />
+    <Compile Include="Gld\Exam\ExamCollectAppService.cs" />
+    <Compile Include="Gld\Exam\IExamCollectAppService.cs" />
     <Compile Include="Gld\Exam\IProvincialExamAppService.cs" />
     <Compile Include="Gld\Exam\ProvincialExamAppService.cs" />
+    <Compile Include="Gld\Exam\TempExamDto.cs" />
     <Compile Include="Gld\IActivityConfigAppService.cs" />
     <Compile Include="Gld\INewsAppService.cs" />
     <Compile Include="Gld\IUserInfoAppService.cs" />

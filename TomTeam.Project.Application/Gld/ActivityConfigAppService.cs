@@ -13,7 +13,7 @@ using TomTeam.Project.Config;
 
 namespace TomTeam.Project.Gld
 {
-    [AbpAuthorize(AppPermissions.Pages_Activity_Manager)]
+
     public class ActivityConfigAppService : TomAbpAppServiceBase, IActivityConfigAppService
     {
         IRepository<ActivityConfig> _activityConfigRepository;
@@ -21,6 +21,7 @@ namespace TomTeam.Project.Gld
         {
             this._activityConfigRepository = _activityConfigRepository;
         }
+        [AbpAuthorize(AppPermissions.Pages_Activity_Manager)]
         public async Task<int> AddOrUpdate(ActivityConfig config)
         {
             if (config == null) throw new UserFriendlyException("传递的数据不正确");
