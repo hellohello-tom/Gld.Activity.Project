@@ -1,4 +1,5 @@
-﻿using Abp.Application.Services.Dto;
+﻿using Abp.Application.Services;
+using Abp.Application.Services.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using TomTeam.Project.Gld.Metropolitan.Dto;
 
 namespace TomTeam.Project.Gld.Metropolitan
 {
-    public interface IMetropolitanAppService
+    public interface IMetropolitanAppService : IApplicationService
     {
         /// <summary>
         /// 添加工程
@@ -35,5 +36,12 @@ namespace TomTeam.Project.Gld.Metropolitan
         /// <param name="input"></param>
         /// <returns></returns>
         Task<GetMetropolitanOutput> GetMetropolitanById(NullableIdInput input);
+
+        /// <summary>
+        /// 删除信息
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task DeleteMetropolitan(IdInput<int> input);
     }
 }

@@ -34,6 +34,15 @@ namespace TomTeam.Project.Gld.Metropolitan
             await _metropolitanRepository.InsertOrUpdateAndGetIdAsync(model);
         }
 
+        public async Task DeleteMetropolitan(IdInput<int> input)
+        {
+            if (input.Id <= 0)
+            {
+                throw new UserFriendlyException("请传入正确的数值！");
+            }
+            await _metropolitanRepository.DeleteAsync(input.Id);
+        }
+
         public async Task<GetMetropolitanOutput> GetMetropolitanById(NullableIdInput input)
         {
             GetMetropolitanOutput newsDetail;

@@ -1,0 +1,34 @@
+﻿<div ng-controller="common.views.exam.me as vm">
+    <div class="row margin-bottom-5">
+        <div class="col-xs-6">
+            <div class="page-head">
+                <div class="page-title">
+                    <h1>
+                        <span>会试信息</span> <small>用户上传的工程数据管理</small>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portlet light">
+        <div class="portlet-title portlet-title-filter">
+            <div class="inputs inputs-full-width">
+                <div class="portlet-input">
+                    <form>
+                        <div class="input-group">
+                            <input ng-model="vm.filterText" auto-focus class="form-control" placeholder="请输入标题关键字" type="text" maxlength="100">
+                            <span class="input-group-btn">
+                                <button ng-click="vm.getMetropolitanList()" class="btn default" type="submit"><i class="icon-magnifier"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div busy-if="vm.loading">
+                <div ui-grid="vm.userGridOptions" ui-grid-pagination ui-grid-resize-columns></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -333,8 +333,10 @@
       <DependentUpon>detailModal.css</DependentUpon>
     </Content>
     <Content Include="App\common\views\common\lookupModal.js" />
+    <Content Include="App\common\views\exam\addme.js" />
     <Content Include="App\common\views\exam\createOrUpdateProvincial.js" />
     <Content Include="App\common\views\exam\collect.js" />
+    <Content Include="App\common\views\exam\me.js" />
     <Content Include="App\common\views\exam\provincial.js" />
     <Content Include="App\common\views\gld\activityConfig.js" />
     <Content Include="App\common\views\gld\addnews.js" />
@@ -2552,6 +2554,8 @@
     <Content Include="Resource\src\scripts\module\vue\components\templateAdmin\menu.vue" />
     <Content Include="App\common\views\gld\userInfo.cshtml" />
     <Content Include="App\common\views\exam\collect.cshtml" />
+    <Content Include="App\common\views\exam\me.cshtml" />
+    <Content Include="App\common\views\exam\addme.cshtml" />
     <None Include="Properties\PublishProfiles\1.pubxml" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
