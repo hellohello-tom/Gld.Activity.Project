@@ -57,6 +57,12 @@ namespace TomTeam.Project.Web.Navigation
             /// </summary>
             public const string ProvincialExamination = "Frontend.ProvincialExamination";
 
+
+            /// <summary>
+            /// 乡试人员信息汇总
+            /// </summary>
+            public const string ProvincialExaminationCollect = "Frontend.ProvincialExaminationCollect";
+
             /// <summary>
             /// 会试
             /// </summary>

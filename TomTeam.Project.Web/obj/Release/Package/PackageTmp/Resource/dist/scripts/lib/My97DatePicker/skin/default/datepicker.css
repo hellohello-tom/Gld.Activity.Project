@@ -1,0 +1,498 @@
+
+.WdateDiv{
+	width:280px;
+	background-color:#FFFFFF;
+	border:#F0F1F0 1px solid;
+	border-radius:3px;
+}
+
+.WdateDiv2{
+	width:360px;
+}
+.WdateDiv *{font-size:9pt;}
+
+.WdateDiv .NavImg a{
+	display:block;
+	cursor:pointer;
+	height:16px;
+	width:16px;
+}
+
+.WdateDiv .NavImgll a{
+	float:left;
+	margin-left: 10px;
+    margin-top: 9px;
+}
+.WdateDiv .NavImgl a{
+	float:left;
+	margin-left: 2px;
+    margin-top: 9px;
+}
+.WdateDiv .NavImgr a{
+	float:right;
+	margin-right: 2px;
+    margin-top: 9px;
+}
+.WdateDiv .NavImgrr a{
+	float:right;
+	margin-right: 10px;
+    margin-top: 9px;
+}
+
+.WdateDiv #dpTitle{
+	height:32px;
+	padding:3px;
+	background: #e8e8e8 !important;
+    color: #333 !important;
+}
+
+.WdateDiv .yminput{
+	margin-top:2px;
+	text-align:center;
+	height:20px;
+	border:0px;
+	width:50px;
+	cursor:pointer;
+	font-size:14px;
+	background-color: #e8e8e8;		
+}
+
+.WdateDiv .yminputfocus{
+	margin-top:2px;
+	text-align:center;
+	font-weight:bold;
+	height:20px;
+	color:blue;
+	border:#ccc 1px solid;
+	width:50px;
+}
+
+.WdateDiv .menuSel{
+	z-index:1;
+	position:absolute;
+	background-color:#FFFFFF;	
+	border:#ccc 1px solid;
+	display:none;
+}
+
+.WdateDiv .menu{
+	cursor:pointer;
+	background-color:#fff;
+}
+
+.WdateDiv .menuOn{
+	cursor:pointer;
+	background-color:#BEEBEE;
+}
+
+.WdateDiv .invalidMenu{
+	color:#aaa;
+}
+
+.WdateDiv .YMenu{
+	margin-top:30px;
+	margin-left:-6px;
+}
+
+.WdateDiv .MMenu{
+	margin-top:30px;
+	margin-left:-6px;
+	*width:62px;
+}
+
+.WdateDiv .hhMenu{
+	margin-top:-88px; 
+	margin-left:-15px;
+}
+
+.WdateDiv .mmMenu{
+	margin-top:-46px; 
+	margin-left:26px;
+	margin-left: 11px;
+}
+
+.WdateDiv .ssMenu{
+	margin-top:-28px; 
+	margin-left:53px;
+}
+
+ .WdateDiv .Wweek {
+ 	text-align:center;
+	background:#DAF3F5;
+	border-right:#BDEBEE 1px solid;
+ }
+
+.WdateDiv .MTitle{
+	background-color:#f0f0f0;
+	height: 30px;
+    color: #333;
+}
+.WdateDiv .WdayTable2{
+	border-collapse:collapse;
+	border:#c5d9e8 1px solid;
+}
+.WdateDiv .WdayTable2 table{
+	border:0;
+}
+
+.WdateDiv .WdayTable{
+	line-height:20px;
+}
+.WdateDiv .WdayTable td{
+	text-align:center;
+}
+
+.WdateDiv .Wday{
+	cursor:pointer;
+}
+
+.WdateDiv .WdayOn{
+	cursor:pointer;
+	background-color:#C0EBEF;
+	border-radius:50%;
+	color:#333;
+}
+
+.WdateDiv .Wwday{
+	cursor:pointer;
+	color:#FB6362;
+}
+
+.WdateDiv .WwdayOn{
+	cursor:pointer;
+	color:#333;
+	background-color:#C0EBEF;
+	border-radius:50%;
+}
+.WdateDiv .Wtoday{
+	cursor:pointer;
+	color:blue;
+}
+.WdateDiv .Wselday{
+	background-color: #fb6362;
+    border-radius: 50%;
+    color: #fff;
+}
+.WdateDiv .WspecialDay{
+	background-color:#66F4DF;
+}
+
+.WdateDiv .WotherDay{ 
+	cursor:pointer;
+	color:#6A6AFF;	
+}
+
+.WdateDiv .WotherDayOn{ 
+	cursor:pointer;
+	color:#333;
+	background-color:#C0EBEF;
+	border-radius:50%;	
+}
+
+.WdateDiv .WinvalidDay{
+	color:#aaa;
+}
+
+.WdateDiv #dpTime{
+	float:left;
+	margin-top:10px;
+	background-color:#F0F0F0;
+	margin-left: 25px;
+}
+
+.WdateDiv #dpTime #dpTimeStr{
+	margin-left:1px;
+	color:#999;
+}
+
+.WdateDiv #dpTime input{
+	width:18px;
+	height:20px;
+	text-align:center;
+	color:#999;
+	border:#ccc 1px solid;	
+}
+
+.WdateDiv #dpTime .tB{
+	border-right:0px;
+}
+
+.WdateDiv #dpTime .tE{
+	border-left:0;
+	border-right:0;
+}
+
+.WdateDiv #dpTime .tm{
+	width:7px;
+	border-left:0;
+	border-right:0;
+}
+
+.WdateDiv #dpTime #dpTimeUp{
+	height:10px;
+	width:13px;
+	border:0px;
+	color: #999;
+	background-color: #fff;
+	border-top-right-radius: 3px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.WdateDiv #dpTime #dpTimeDown{
+	height:10px;
+	width:13px;
+	border:0px;
+	color: #999;
+	background-color: #fff;
+	border-bottom-right-radius: 3px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.WdateDiv #dpTime #dpTimeUp:focus,.WdateDiv #dpTime #dpTimeDown:focus{
+	outline:none;
+}
+ .WdateDiv #dpQS {
+ 	float:left;
+	margin-right:3px;
+	margin-top:10px;
+	width:20px;
+	height:20px;
+	cursor:pointer;
+	margin-left: -133px;
+ }
+.WdateDiv #dpControl {
+	text-align:right;
+	background-color:#F0F0F0;	
+	height:38px;
+}
+.WdateDiv .dpButton{ 
+	height: 20px;
+    width: 35px;
+    border: #e0e0e0 1px solid;
+    margin-top: 10px;
+    margin-right: 3px;
+    background: #fff;
+    color:#333;
+}
+
+/* new add*/
+.nvallA{
+	margin-left: 10px;
+    margin-top: 5px;
+}
+.nvallA span{
+	font-size:16px;
+}
+.nvallA .nvallSpan01{
+	margin-right: -13px;
+}
+.nvalA span{
+	font-size:16px;
+}
+.nvairA span{
+	font-size:16px;
+}    
+.nvairA .nvaiSpan01{	
+    margin-left: -3px;
+}
+.nvairA .nvaiSpan02{	
+    margin-left: -13px;
+}
+.nvaiA span{
+	font-size:16px;
+}
+.tab02{
+	color: #999999;
+}
+.tab02 tr td{
+	height:22px;
+	min-width: 22px;
+}
+.dpTime #dpTimeStr{
+	color:#333;
+}
+.dpTime input{
+	color:#333;
+}
+#dpQS span{
+	font-size: 20px;
+    color: #999;
+}
+.WdateDiv .hhMenu table,.WdateDiv .mmMenu table,.WdateDiv .ssMenu table{
+	color:#999;
+}
+.upcaret{
+	margin-left: -5px;
+	display:inline-block;
+    border-bottom: 4px dashed;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+.caret{
+	margin-left: -5px;
+	display:inline-block;
+	border-top:4px dashed;
+	border-left:4px solid transparent;
+	border-right:4px solid transparent;
+	margin-top: -2px;
+}
+.caretTd:focus{
+	outline:none;
+}
+.upcaret:hover,.caret:hover{
+	color:#333;
+}
+.WdateDiv .hhMenu:before{
+    content: "";
+    position: absolute;
+    left: 48px;
+    top: 81px;
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border-width: 6px;
+    border-color: #ddd transparent transparent transparent;
+    border-style: solid;
+    z-index: 2;
+}
+.WdateDiv .hhMenu:after{
+    content: "";
+    position: absolute;
+    left: 48px;
+    top: 79px;
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border-width: 6px;
+    border-color: #fff transparent transparent transparent;
+    border-style: solid;
+    z-index: 2;
+    color: #fff;
+}
+
+.WdateDiv .mmMenu:before{
+	content: "";
+    position: absolute;
+    left: 48px;
+    top: 40px;
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border-width: 6px;
+    border-color: #ddd transparent transparent transparent;
+    border-style: solid;
+    z-index: 2;
+}
+.WdateDiv .mmMenu:after{
+	content: "";
+    position: absolute;
+    left: 48px;
+    top: 38px;
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border-width: 6px;
+    border-color: #fff transparent transparent transparent;
+    border-style: solid;
+    z-index: 2;
+    color: #fff;
+}
+.WdateDiv .ssMenu:before{
+	content: "";
+    position: absolute;
+    left: 28px;
+    top: 20px;
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border-width: 6px;
+    border-color: #ddd transparent transparent transparent;
+    border-style: solid;
+    z-index: 2;
+}
+.WdateDiv .ssMenu:after{
+	content: "";
+    position: absolute;
+    left: 28px;
+    top: 18px;
+    display: block;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border-width: 6px;
+    border-color: #fff transparent transparent transparent;
+    border-style: solid;
+    z-index: 2;
+    color: #fff;
+}
+.WdateDiv .YMenu:before{
+	content:'';
+	position:absolute;
+	left: 25px;
+    top: -13px;
+	display:block;
+	width:0;
+	height:0;
+	padding:0;
+	border-width:6px;
+	border-color:transparent transparent #ddd transparent;
+	border-style:solid;
+	z-index:2;
+	color:#fff;
+}
+.WdateDiv .YMenu:after{
+	content:'';
+	position:absolute;
+    left: 25px;
+    top: -11px;
+	display:block;
+	width:0;
+	height:0;
+	padding:0;
+	border-width:6px;
+	border-color:transparent transparent #fff transparent;
+	border-style:solid;
+	z-index:2;
+	color:#fff;
+}
+.WdateDiv .MMenu:before{
+	content:'';
+	position:absolute;
+	left: 25px;
+    top: -13px;
+	display:block;
+	width:0;
+	height:0;
+	padding:0;
+	border-width:6px;
+	border-color:transparent transparent #ddd transparent;
+	border-style:solid;
+	z-index:2;
+	color:#fff;
+}
+.WdateDiv .MMenu:after{
+	content:'';
+	position:absolute;
+    left: 25px;
+    top: -11px;
+	display:block;
+	width:0;
+	height:0;
+	padding:0;
+	border-width:6px;
+	border-color:transparent transparent #fff transparent;
+	border-style:solid;
+	z-index:2;
+	color:#fff;
+}

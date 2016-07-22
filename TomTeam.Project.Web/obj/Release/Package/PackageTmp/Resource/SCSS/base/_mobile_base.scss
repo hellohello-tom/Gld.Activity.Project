@@ -1,0 +1,561 @@
+@charset "utf-8";
+@import "variables";
+@mixin anim($content...) {
+    -webkit-animation: $content;
+    animation: $content;
+}
+
+@mixin border-radius($r: 4px) {
+    -webkit-border-radius: $r;
+    border-radius: $r;
+}
+
+@mixin box-shadow($content...) {
+    -webkit-box-shadow: $content;
+    box-shadow: $content;
+}
+
+@mixin dis-tableCell {
+    display: table-cell;
+}
+
+@mixin dis-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin col3() {
+    @include dis-tc;
+    width: 100%/3;
+}
+
+@mixin col4() {
+    @include dis-tc;
+    width: 25%;
+}
+
+@mixin flex-center() {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex($r: 1) {
+    display: block;
+    -webkit-box-flex: $r;
+    -webkit-flex: $r;
+    flex: $r;
+}
+
+@mixin mul-line($num: 2) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $num;
+    overflow: hidden;
+}
+
+@mixin trf($var) {
+    -webkit-transform: $var;
+    transform: $var;
+}
+
+@mixin trf-translate($x: 0, $y: -50%) {
+    -webkit-transform: translate($x, $y);
+    transform: translate($x, $y);
+}
+
+@mixin trf-scale($r: .8) {
+    -webkit-transform: scale($r);
+    transform: scale($r);
+}
+
+@mixin trf-rotate($x: 0) {
+    -webkit-transform: rotate($x);
+    transform: rotate($x);
+}
+
+@mixin trf-rotateX($x: 0) {
+    -webkit-transform: rotateX($x);
+    transform: rotateX($x);
+}
+
+@mixin trf-rotateY($y:0) {
+    -webkit-transform: rotateY($y);
+    transform: rotateY($y);
+}
+
+@mixin trans($args...) {
+    -webkit-transition: $args;
+    transition: $args;
+}
+
+@mixin trans-transform($time: .3s, $tf: linear) {
+    -webkit-transtion: -webkit-transform $time $tf;
+    transition: transform $time $tf;
+}
+
+@mixin tap-highlight-color($c: rgba(0, 0, 0, 0.1)) {
+    -webkit-tap-highlight-color: $c;
+}
+
+@mixin user-select-none {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+@mixin vertical-middle {
+    @include dis-tc;
+    vertical-align: middle;
+}
+
+@mixin overflow-scroll-touch {
+    -webkit-overflow-scroll: touch;
+}
+
+hr {
+    height: 1px;
+    margin: 10px auto;
+    border: 0;
+    background: #ddd;
+}
+
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+ol,
+dl,
+dt,
+dd,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+i,
+em,
+label {
+    font-style: normal;
+    font-weight: 400;
+}
+
+$color-input-border:#e0e0e0!default;
+$color-input-focus-border:$color-primary!default;
+$color-input-invalid:$color-danger!default;
+input[type=search],
+input[type=text],
+input[type=tel],
+input[type=submit],
+input[type=password],
+input[type=number],
+input[type=date],
+input[type=color],
+input[type=time],
+button,
+textarea,
+select {
+    border: 1px solid $color-input-border;
+    padding: 4px;
+    font-size: $font-size;
+    font-family: $font-family;
+    -webkit-appearance: none;
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    border-radius: $border-radius;
+    @include tap-highlight-color(rgba(0, 0, 0, 0));
+    &:focus {
+        border-color: $color-input-focus-border;
+        outline: 0;
+        &:invalid {
+            background: #FFF1F1;
+            //border-color: $color-input-invalid;
+        }
+    }
+    &:active {
+        box-shadow: inset 0 1px 3px rgba(56, 56, 56, .2);
+    }
+    &.error {
+        border-color: $color-input-invalid;
+    }
+}
+
+select {
+    -webkit-appearance: menulist;
+}
+
+input[type=checkbox],
+input[type=radio] {
+    vertical-align: -2px;
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+}
+
+.m5 {
+    margin: 5px;
+}
+
+.mt5 {
+    margin-top: 5px;
+}
+
+.mb5 {
+    margin-bottom: 5px;
+}
+
+.ml5 {
+    margin-left: 5px;
+}
+
+.mr5 {
+    margin-right: 5px;
+}
+.m10{
+    margin: 10px;
+}
+.ml10{
+    margin-left: 10px;
+}
+.mr10{
+    margin-right: 10px;
+}
+.mt10{
+    margin-top: 10px;
+}
+.p5 {
+    padding: 5px;
+}
+
+.p10 {
+    padding: 10px;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.row {
+    padding: 10px;
+}
+
+.clearfix:after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+.bru{
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    border-radius: $border-radius;
+}
+.block {
+    display: block;
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    display: table;
+    border-collapse: collapse;
+    >.item {
+        display: table-cell;
+    }
+}
+
+.required-mark {
+    &:before {
+        content: '*';
+        color: #f00;
+        margin: 1px;
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 0;
+    border: 1px solid $color-border;
+    font-size: $font-size;
+    font-weight: 400;
+    background: $color-btn-default;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    border-radius: $border-radius;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+        background: $color-btn-hover;
+    }
+}
+
+.btn.block {
+    display: block;
+    margin: 10px auto;
+    padding: 8px;
+    font-size: 18px;
+}
+
+$color-btn-default-bg:$color-btn-default!default;
+$color-btn-primary-bg:$color-primary!default;
+$color-btn-info-bg:$color-info!default;
+$color-btn-warning-bg:$color-warning!default;
+$color-btn-danger-bg:$color-danger!default;
+$color-btn-ok-bg:$color-ok!default;
+@each $btn-each,
+$btn-color in (btn-default:$color-btn-default-bg, btn-info:$color-btn-info-bg, btn-primary:$color-btn-primary-bg, btn-ok:$color-btn-ok-bg, btn-warning:$color-btn-warning-bg, btn-danger:$color-btn-danger-bg) {
+    .#{$btn-each} {
+        color: #fff;
+        background: $btn-color;
+        border-color: darken($btn-color, 4%);
+        &:hover {
+            background: darken($btn-color, 4%);
+        }
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+.btn-default {
+    color: $color;
+}
+
+.btn-disabled {
+    @extend .disabled;
+    color: #888;
+    background: #eee;
+    border-color: #e0e0e0;
+}
+
+@each $btn,
+$btn-color in (btn-info-o:$color-info) {
+    .#{$btn} {
+        color: $btn-color;
+        background: #fff;
+        border-color: darken($btn-color, 4%);
+        &:hover {
+            background: $color-info;
+            color: #fff;
+        }
+    }
+}
+
+$cursor-disabled:not-allowed!default;
+.disabled {
+    opacity: .7;
+    pointer-events: none;
+    &.btn {
+        cursor: $cursor-disabled;
+    }
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.font-small{
+    font-size: $size-font-small;
+    line-height: 1;
+}
+.font-big{
+    font-size: $size-font-big;
+}
+.font-bigger{
+    font-size: $size-font-bigger;
+    line-height: 2;
+}
+.font-biggest{
+    font-size:$size-font-biggest;
+    line-height: 2;
+}
+@each $bg,
+$bg-color,
+$bg-text-color in(bg-default, $color-bg-default, $color-bg-default-text),
+(bg-primary, $color-bg-primary, $color-bg-primary-text),
+(bg-ok, $color-bg-ok, $color-bg-ok-text),
+(bg-info, $color-bg-info, $color-bg-info-text),
+(bg-warning, $color-bg-warning, $color-bg-warning-text),
+(bg-danger, $color-bg-danger, $color-bg-danger-text) {
+    .#{$bg} {
+        border: 1px solid darken($bg-color, 10%);
+        background-color: $bg-color;
+        color: $bg-text-color;
+    }
+}
+
+.bg {
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    border-radius: $border-radius;
+}
+
+.text-muted {
+    color: $color-muted;
+}
+
+.text-muted.tips {
+    font-size: 13px;
+}
+
+.text-primary {
+    color: $color-primary;
+}
+
+.text-info {
+    color: $color-info;
+}
+
+.text-ok {
+    color: $color-ok;
+}
+
+.text-warning {
+    color: $color-warning;
+}
+
+.text-danger {
+    color: $color-danger;
+}
+
+html {
+    min-height: 100%;
+    font-size: 100%;
+}
+
+@mixin basePC {
+    color: $color;
+    font-size: $font-size;
+    font-family: $font-family;
+    line-height: $line-height;
+}
+
+@mixin baseMobile {
+    color: $color;
+    font: $mobile-def-font;
+    line-height: (24/15);
+}
+
+@mixin pcBody {
+    @include basePC;
+    word-break: break-all;
+}
+
+a {
+    text-decoration: none;
+}
+
+@mixin PCanchor {
+    color: $color-anchor;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@mixin mobileAnchor {
+    color: #333;
+    &:visited,
+    &:hover,
+    &:active {
+        color: #333;
+    }
+    @at-root button,
+    & {
+        @include wthc();
+    }
+}
+
+@mixin loading {
+    position: relative;
+    text-align: center;
+    pointer-events: none;
+    >* {
+        opacity: 0;
+    }
+    &:before,
+    &:after {
+        content: '\6570\636E\52A0\8F7D\4E2D';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -3em;
+        color: #888;
+        @include trf(translateY(-50%));
+    }
+    &:after {
+        content: '...';
+        width: 1em;
+        margin-left: 2em;
+        @include am(loading 1.5s infinite);
+    }
+}
+
+@mixin loadmore {
+    padding: 10px;
+    color: #666;
+}
+
+@-webkit-keyframes loading {
+    0%,
+    40% {
+        content: '.'
+    }
+    41%,
+    66% {
+        content: '..'
+    }
+    70%,
+    100% {
+        content: '...'
+    }
+}
+
+@keyframes loading {
+    0%,
+    40% {
+        content: '.'
+    }
+    41%,
+    66% {
+        content: '..'
+    }
+    70%,
+    100% {
+        content: '...'
+    }
+}

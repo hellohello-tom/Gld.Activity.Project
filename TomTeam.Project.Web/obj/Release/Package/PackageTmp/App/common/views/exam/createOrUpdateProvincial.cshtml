@@ -1,0 +1,79 @@
+﻿<div>
+    <form name="provincialAddorUpdateForm" examTopic="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span>题目管理</span>
+            </h4>
+        </div>
+        <div class="modal-body" busy-if="vm.loading">
+            <uib-tabset class="tab-container tabbable-line">
+                <uib-tab heading="试题">
+                    <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                        <input class="form-control edited" type="text" name="topicName" ng-model="vm.provincial.examTopic.topicName" maxlength="200" required>
+                        <label>题目</label>
+                    </div>
+                </uib-tab>
+                <uib-tab heading="选项管理">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                            <div class="portlet box">
+                                <div class="portlet-body">
+                                    <div class="clearfix">
+                                        <div class="btn-group">
+                                            <button ng-click="vm.addOptions()" id="sample_editable_1_new" class="btn green">
+                                                新增选项 <i class="icon-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="sample_editable_1_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                                        <table class="table table-striped table-bordered table-hover dataTable" id="sample_editable_1" aria-describedby="sample_editable_1_info">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" style="width: 135px;" aria-label="Username">
+                                                        选项
+                                                    </th>
+                                                    <th class="" role="columnheader" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" style="width: 59px;" aria-label="Edit: activate to sort column ascending">
+                                                        内容
+                                                    </th>
+                                                    <th class="" role="columnheader" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" style="width: 59px;" aria-label="Edit: activate to sort column ascending">
+                                                        是否正确答案
+                                                    </th>
+                                                    <th class="" role="columnheader" tabindex="0" aria-controls="sample_editable_1" rowspan="1" colspan="1" style="width: 92px;">
+                                                        操作
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                                <tr class="even" ng-repeat="item in vm.provincial.answers">
+
+                                                    <td><input type="text" required ng-model="item.options" class="m-wrap small" maxlength="10"/></td>
+
+                                                    <td><input type="text" required ng-model="item.content" class="m-wrap small" maxlength="200"/></td>
+                                                    <td>
+                                                            <input type="checkbox" ng-model="item.isTrueAnswer">
+                                                    </td>
+                                                    <td>
+                                                        <a class="delete" href="javascript:;" ng-click="vm.delOptions($index)">删除</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </uib-tab>
+            </uib-tabset>
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">取消</button>
+            <button type="submit" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="provincialAddorUpdateForm.$invalid"><i class="fa fa-save"></i> <span>保存</span></button>
+        </div>
+    </form>
+</div>

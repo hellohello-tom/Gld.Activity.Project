@@ -1,0 +1,22 @@
+@import '../base/_variables.scss';
+.ui-dialog-content {
+  .ztree {
+    max-height: 300px;
+    min-width: 250px;
+    overflow-x: hidden;
+  }
+}
+
+.ztree li a,
+.ztree li a.curSelectedNode,
+.ztree li span.button.switch {
+  height: 20px;
+}
+
+.ztree li a {
+  border: 1px solid transparent;
+}
+
+.ztree li a.curSelectedNode {
+  padding: 1px 3px 0 0;
+}

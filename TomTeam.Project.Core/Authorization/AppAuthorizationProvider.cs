@@ -47,6 +47,7 @@ namespace TomTeam.Project.Authorization
             activity.CreateChildPermission(AppPermissions.Pages_Activity_News, L("News"));
             activity.CreateChildPermission(AppPermissions.Pages_Activity_WebConfig, L("WebConfig"));
             activity.CreateChildPermission(AppPermissions.Pages_Activity_Config, L("ActivityConfig"));
+            activity.CreateChildPermission(AppPermissions.Pages_Activity_ProvincialExaminationCollect, L("ProvincialExaminationCollect"));
 
             var organizationUnits = administration.CreateChildPermission(AppPermissions.Pages_Administration_OrganizationUnits, L("OrganizationUnits"));
             organizationUnits.CreateChildPermission(AppPermissions.Pages_Administration_OrganizationUnits_ManageOrganizationTree, L("ManagingOrganizationTree"));

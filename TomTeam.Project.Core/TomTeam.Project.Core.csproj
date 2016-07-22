@@ -108,6 +108,9 @@
     <Compile Include="Gld\Exam\Answer.cs" />
     <Compile Include="Gld\Exam\ExamCollect.cs" />
     <Compile Include="Gld\Exam\ExamTopic.cs" />
+    <Compile Include="Gld\Exam\LikeInfo.cs" />
+    <Compile Include="Gld\Exam\Metropolitan.cs" />
+    <Compile Include="Gld\FileAttr.cs" />
     <Compile Include="News\News.cs" />
     <Compile Include="TomAbpConsts.cs" />
     <Compile Include="TomAbpCoreModule.cs" />

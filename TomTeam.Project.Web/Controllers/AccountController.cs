@@ -387,6 +387,7 @@ namespace TomTeam.Project.Web.Controllers
 
         private bool UseCaptchaOnRegistration()
         {
+            return false;
             if (DebugHelper.IsDebug)
             {
                 return false;

@@ -1,0 +1,245 @@
+@import '../base/_variables';
+.ui-popup-backdrop {
+  opacity: .5!important;
+}
+
+.ui-popup-show {
+  // position: fixed !important;
+  box-shadow: 0 0 6px #666;
+  -webkit-animation: popup-zoom .2s;
+  animation: popup-zoom .2s;
+  will-change: transform;
+  // -webkit-animation: popup-goup .2s;
+  // -o-animation: popup-goup .2s;
+  // animation: popup-goup .2s;
+  //
+  // -webkit-animation: popup-godown .3s;
+  // -o-animation: popup-godown .3s;
+  // animation: popup-godown .3s;
+  table {
+    border-spacing: 0;
+  }
+  .ui-dialog {
+    background: #fff;
+    font-family: $font-family;
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    border-radius: $border-radius;
+    .ui-dialog-header {
+      position: relative;
+      height: 36px;
+      padding: 0 10px;
+      line-height: 36px;
+      font-size: 16px;
+      background: #e8e8e8;
+      border-bottom: 0;
+      cursor: move;
+      -webkit-border-radius: $border-radius;
+      -moz-border-radius: $border-radius;
+      border-radius: $border-radius;
+      .ui-dialog-title {
+        padding: 0;
+        padding-right: 28px;
+        line-height: inherit;
+        font-weight: 400;
+        color: $color;
+      }
+      .ui-dialog-close {
+        position: absolute;
+        right: 6px;
+        top: 5px;
+        top: 3px\0;
+        padding: 3px 6px;
+        border: 0;
+        line-height: 1;
+        font-weight: 400;
+        font-size: 24px;
+        font-family: Helvetica, arial, sans-serif;
+        color: #999;
+        background: transparent;
+        opacity: 1;
+        &:hover {
+          color: $color-primary;
+        }
+        &:active {
+          box-shadow: none;
+          top: 6px;
+          right: 5px; //唉，IE依然有兼容性
+          top: 3px\0;
+          right: 6px\0;
+        }
+      }
+    }
+    .ui-dialog-body {
+      position: relative;
+      padding: 20px;
+      .ui-dialog-content {
+        min-width: 200px;
+        // max-height: 500px;
+        // overflow-x: hidden;
+        // &::-webkit-scrollbar{
+        //     width: 6px;
+        //     height: 6px;
+        //     background:$color-border;
+        //     -webkit-border-radius: 3px;
+        //     -moz-border-radius: 3px;
+        //     border-radius: 3px;
+        //     &:hover{
+        //         background:#ddd;
+        //     }
+        // }
+        // &::-webkit-scrollbar-thumb{
+        //     background:#bbb;
+        //     -webkit-border-radius: 3px;
+        //     -moz-border-radius: 3px;
+        //     border-radius: 3px;
+        //     &:hover{
+        //         background:#999;
+        //     }
+        //     &:active{
+        //         background:#777;
+        //     }
+        // }
+      }
+    }
+    .ui-dialog-footer {
+      padding: 10px;
+      padding-top: 0;
+      .ui-dialog-button {
+        float: none;
+        margin-bottom: 10px;
+        text-align: center;
+        direction: rtl;
+        button {
+          float: none;
+          padding: 0 24px;
+          margin: 8px;
+          margin-top: 0;
+          border: 1px solid $color-border;
+          line-height: 34px;
+          font-size: 16px;
+          font-family: $font-family;
+          color: #555;
+          background: #fff;
+          &:hover {
+            background: $color-btn-hover;
+          }
+        }
+        [i-id=ok],
+        .ui-dialog-autofocus {
+          background: $color-primary;
+          color: #fff;
+          border-color: darken($color-primary, 4%);
+          &:hover {
+            background: darken($color-primary, 4%);
+          }
+        }
+        //兼容他们写的弹窗，确定按钮靠左
+        [i-id='确定'][autofocus] {
+          float: left;
+        }
+      }
+    }
+    &.mini,
+    &.mini-tips {
+      .ui-dialog-header {
+        display: block !important;
+        background-color: transparent;
+      }
+      .ui-dialog-title {
+        height: 36px;
+        background: transparent;
+        text-indent: -99999px;
+        overflow: hidden;
+      }
+      .ui-dialog-content {
+        text-align: center;
+      }
+      .ui-dialog-footer {
+        .ui-dialog-button {
+          margin-bottom: 4px;
+          button {
+            margin: 6px;
+            font-size: 12px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+    &.mini-tips {
+      //position: fixed;
+      //top: 30%;
+      // left: 50%;
+      //@include trf-translate(-50%,0);
+      // @include trans(.2s);
+      // transform-origin:center;
+    }
+  }
+}
+
+@-webkit-keyframes ui-dialog-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes ui-dialog-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ui-dialog-loading {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  text-indent: -999em;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 3px;
+    height: 3px;
+    margin: 14.5px 0 0 14.5px;
+    border-radius: 100%;
+    box-shadow: 0 -10px 0 1px #ccc, 10px 0px #ccc, 0 10px #ccc, -10px 0 #ccc, -7px -7px 0 0.5px #ccc, 7px -7px 0 1.5px #ccc, 7px 7px #ccc, -7px 7px #ccc;
+    -webkit-transform: rotate(360deg);
+    -webkit-animation: ui-dialog-loading 1.5s infinite linear;
+    transform: rotate(360deg);
+    animation: ui-dialog-loading 1.5s infinite linear;
+  }
+}
+
+@-webkit-keyframes popup-zoom {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popup-zoom {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}

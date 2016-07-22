@@ -334,6 +334,7 @@
     </Content>
     <Content Include="App\common\views\common\lookupModal.js" />
     <Content Include="App\common\views\exam\createOrUpdateProvincial.js" />
+    <Content Include="App\common\views\exam\collect.js" />
     <Content Include="App\common\views\exam\provincial.js" />
     <Content Include="App\common\views\gld\activityConfig.js" />
     <Content Include="App\common\views\gld\addnews.js" />
@@ -2238,10 +2239,6 @@
     <Content Include="Resource\dist\scripts\lib\ZeroClipboard.js" />
     <Content Include="Resource\dist\scripts\lib\ZeroClipboard.min.js" />
     <Content Include="Resource\dist\scripts\lib\ZeroClipboard.swf" />
-    <Content Include="Resource\dist\scripts\member_admin.js" />
-    <Content Include="Resource\dist\scripts\member_common.js" />
-    <Content Include="Resource\dist\scripts\share_tips.js" />
-    <Content Include="Resource\dist\scripts\share_tips.min.js" />
     <Content Include="Resource\dist\scripts\waiting.js" />
     <Content Include="Resource\docs\show.html" />
     <Content Include="Resource\docs\showCSS.html" />
@@ -2554,6 +2551,8 @@
     <Content Include="Resource\src\scripts\module\vue\components\menu.vue" />
     <Content Include="Resource\src\scripts\module\vue\components\templateAdmin\menu.vue" />
     <Content Include="App\common\views\gld\userInfo.cshtml" />
+    <Content Include="App\common\views\exam\collect.cshtml" />
+    <None Include="Properties\PublishProfiles\1.pubxml" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />

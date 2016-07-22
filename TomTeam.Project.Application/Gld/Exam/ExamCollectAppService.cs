@@ -1,6 +1,8 @@
 ﻿using Abp.Application.Services.Dto;
+using Abp.Authorization;
 using Abp.AutoMapper;
 using Abp.Domain.Repositories;
+using Abp.Linq.Extensions;
 using Abp.UI;
 using System;
 using System.Collections.Generic;
@@ -8,6 +10,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TomTeam.Project.Authorization;
 using TomTeam.Project.Config;
 using TomTeam.Project.Gld.Exam.Dto;
 
@@ -24,6 +27,24 @@ namespace TomTeam.Project.Gld.Exam
             this._examCollectRepository = _examCollectRepository;
             this._provincialRepository = _provincialRepository;
         }
+
+        [AbpAuthorize(AppPermissions.Pages_Activity_ProvincialExaminationCollect)]
+        public async Task<PagedResultOutput<GetExamCollectOutput>> GetExamCollectList(SearchExamCollectInput searchInput)
+        {
+            var query = _examCollectRepository.GetAll().Where(collect => !collect.IsDeleted);
+            if (!string.IsNullOrEmpty(searchInput.SearchTitle))
+            {
+                query = query.Where(collect => collect.UserDisplayName.Contains(searchInput.SearchTitle));
+            }
+            var listCount = await query.CountAsync();
+            var list = await query.OrderByDescending(x => x.CreationTime).PageBy(searchInput).ToListAsync();
+            var newsListDto = list.MapTo<List<GetExamCollectOutput>>();
+            return new PagedResultOutput<GetExamCollectOutput>(listCount, newsListDto);
+        }
+
+
+
+
 
         public async Task<GetExamCollectOutput> GetUserExamCollect()
         {
@@ -42,6 +63,7 @@ namespace TomTeam.Project.Gld.Exam
             var userInit = await _examCollectRepository.FirstOrDefaultAsync(x => x.CreatorUserId == AbpSession.UserId.Value)??new ExamCollect();
             if (userInit.Id > 0)
                 throw new UserFriendlyException("您已初始化过考试信息，请直接进行考试！");
+            var user = await UserManager.GetUserByIdAsync(AbpSession.UserId.Value);
             await _examCollectRepository.InsertAsync(new ExamCollect
             {
                 IsCompleteProvincial = false,
@@ -49,7 +71,8 @@ namespace TomTeam.Project.Gld.Exam
                 IsMetropolitanStatus = false,
                 MetropolitanImg = "",
                 UserId = Convert.ToInt32(AbpSession.UserId.Value),
-                ProvincialIntegral = 0
+                ProvincialIntegral = 0,
+                UserDisplayName = user.Name
             });
         }
 
@@ -95,6 +118,19 @@ namespace TomTeam.Project.Gld.Exam
             userCollect.IsCompleteProvincial = true;
             userCollect.ProvincialIntegral = intergral;
             await _examCollectRepository.UpdateAsync(userCollect);
+        }
+
+        [AbpAuthorize(AppPermissions.Pages_Activity_ProvincialExaminationCollect)]
+
+        public async Task<ExamCollect> Update(CreateOrUpdateExamCollectInput updateCollectInput)
+        {
+            var model = new ExamCollect();
+            if (updateCollectInput.Id.HasValue && updateCollectInput.Id > 0)
+            {
+                model = await _examCollectRepository.GetAsync(updateCollectInput.Id.Value);
+            }
+            updateCollectInput.MapTo(model);
+            return await _examCollectRepository.UpdateAsync(model);
         }
     }
 }

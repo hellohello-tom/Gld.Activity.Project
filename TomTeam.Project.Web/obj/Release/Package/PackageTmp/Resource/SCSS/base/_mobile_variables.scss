@@ -1,0 +1,66 @@
+$border-radius:3px!default;
+$line-height: 1.6;
+$font-family:'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif!default;
+$mobile-def-font:15px "Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif!default;
+
+/*colors areas basis*/
+$color:#333!default;
+$color-muted:#999!default;
+$color-default:#333!default;
+$color-primary:#08a7ec!default;
+$color-info:#1fb5ac!default;
+$color-ok:#4DCD70!default;
+$color-warning:#ff9402!default;
+$color-danger:#fb6361!default;
+$color-btn-default:#fff!default;
+$color-btn-hover:#e8e8e8!default;
+$color-border:#e0e0e0!default;
+//Table area color
+$color-table-thead:#e8e8e8!default;
+$color-table-tr-hover:#F5F6FA!default;
+$color-table-border:$color-border!default;
+//Anchor area color
+$color-anchor:#098fc9!default;
+$color-anchor-visited:#609!default;
+$color-anchor-hover:#08a7ec!default;
+$color-anchor-active:$color-danger!default;
+//Text with background area color
+$color-bg-default:#eee!default;
+$color-bg-default-text:#555!default;
+$color-bg-primary:#fff2ec!default;
+$color-bg-primary-text:#a94442!default;
+$color-bg-ok:#dff0d8!default;
+$color-bg-ok-text:#3c763d!default;
+$color-bg-info:#effffe!default;
+$color-bg-info-text:#1fb5ac!default;
+$color-bg-warning:#fcf8e3!default;
+$color-bg-warning-text:#8a6d3b!default;
+$color-bg-danger:#fff6f3!default;
+$color-bg-danger-text:#fb6362!default;
+
+//Text size
+$size-font-default:14px!default;
+$size-font-title:17px!default;
+
+$size-font-btn-mini:14px!default;
+$size-font-btn-block:18px!default;
+
+$size-font-small:13px;
+$size-font-big:16px;
+$size-font-bigger:18px;
+$size-font-biggest:34px;
+
+//Height
+$height-input:32px;
+$height-btn:28px;
+$height-table-thead:34px;
+$height-table-tbody:44px;
+
+//progress
+$progress-bg:#e8e8e8;

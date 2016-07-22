@@ -65,9 +65,14 @@
         //活动配置
         public const string Pages_Activity_Config = "Pages.Activity.Config";
 
-        //乡试
-        public const string Pages_Activity_PalaceExamination = "Pages.Activity.PalaceExamination";
+
         //殿试
+        public const string Pages_Activity_PalaceExamination = "Pages.Activity.PalaceExamination";
+
+        //乡试人员信息汇总
+        public const string Pages_Activity_ProvincialExaminationCollect = "Pages.Activity.ProvincialExaminationCollect";
+
+        //乡试
         public const string Pages_Activity_ProvincialExamination = "Pages.Activity.ProvincialExamination";
         //会试
         public const string Pages_Activity_MetropolitanExamination = "Pages.Activity.MetropolitanExamination";

@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services;
+using Abp.Application.Services.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,5 +20,10 @@ namespace TomTeam.Project.Gld.Exam
         /// </summary>
         /// <returns></returns>
         Task<GetExamCollectOutput> GetUserExamCollect();
+
+        Task<ExamCollect> Update(CreateOrUpdateExamCollectInput updateCollectInput);
+
+
+        Task<PagedResultOutput<GetExamCollectOutput>> GetExamCollectList(SearchExamCollectInput input);
     }
 }

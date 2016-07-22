@@ -1,0 +1,75 @@
+@import 'variables';
+//字体fa切换至iconmoon重写
+.fa {
+    display: inline-block;
+    line-height: 1;
+    font-family: $font-icon;
+    font-size: inherit;
+    -webkit-font-smoothing:antialiased;
+    &:before {
+        content: '';
+    }
+    &-user {
+        &:before {
+            content: "\e625";
+        }
+    }
+    &-shopping-cart{
+    	&:before{
+    		content: "\e90c";
+    	}
+    }
+    &-calendar{
+        &:before{
+            content: "\e94f";
+        }
+    }
+
+    &-share-alt{
+    	&:before{
+    		content: "\e622";
+    	}
+    }
+    &-plus{
+    	&:before{
+    		content: "\e12a";
+    	}
+    }
+    &-trash{
+    	&:before{
+    		content: "\e629";
+    	}
+    }
+    &-search{
+    	&:before{
+    		content: "\e624";
+    	}
+    }
+    &-edit{
+    	&:before{
+    		content: "\e62d";
+    	}
+    }
+
+
+    &-check{
+    	&:before{
+    		content: "\e90b";
+    	}
+    }
+    &-info{
+    	&:before{
+    		content: "\e918";
+    	}
+    }
+    &-exclamation{
+    	&:before{
+    		content: "\e917";
+    	}
+    }
+    &-user{
+        &:before{
+            content: "\e604";
+        }
+    }
+}

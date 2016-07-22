@@ -1,0 +1,25 @@
+%scrollbar{
+	&::-webkit-scrollbar{
+		height: 5px;
+		width: 5px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		background:#e2e2e2;
+
+	}
+	&::-webkit-scrollbar-thumb{
+		width: 5px;
+		height: 5px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		background:#bbb;
+		&:hover{
+			background:#999;
+		}
+		&:active{
+			background:#777;
+		}
+	}
+}

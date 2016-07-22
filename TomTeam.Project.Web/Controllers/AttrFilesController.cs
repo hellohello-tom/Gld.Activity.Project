@@ -1,12 +1,15 @@
-﻿using Newtonsoft.Json;
+﻿using Abp.Domain.Repositories;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using TomTeam.Project.Gld;
 using TomTeam.Project.Web.Controllers;
 
 namespace TomTeam.Project.Web.Controllers
@@ -103,6 +106,13 @@ namespace TomTeam.Project.Web.Controllers
 
     public class AttrFilesController : TomAbpControllerBase
     {
+        IRepository<FileAttr> _fileAttrRepository;
+        IAppFolders _folders;
+        public AttrFilesController(IRepository<FileAttr> _fileAttrRepository, IAppFolders _folders)
+        {
+            this._fileAttrRepository= _fileAttrRepository;
+            this._folders = _folders;
+        }
 
         public async Task<ActionResult> UploadForEditor()
         {
@@ -186,10 +196,96 @@ namespace TomTeam.Project.Web.Controllers
                 }
                 return callbackList;
             });
+            result = await UploadToServer(context, result);
             return result;
         }
 
+        private async Task<List<UploadCallback>> UploadToServer(HttpContextBase context, List<UploadCallback> uploadList)
+        {
+            var serverCallBack = new List<UploadCallback>();
+            foreach (var callback in uploadList)
+            {
+                try
+                {
+                    if (callback.status == 1)
+                    {
+                        var filePath = context.Server.MapPath(callback.data.newFileName);
+                        //判断文件MD5是否已存入数据库
+                        var md5 = GetMD5(filePath);
+                        var listSource = await _fileAttrRepository.GetAllListAsync(x => x.FileMd5 == md5);
+                        if (listSource != null && listSource.Count > 0)
+                        {
+                            if (AbpSession.UserId.HasValue)
+                            {
+                                var fileFirstModel = listSource.FirstOrDefault(x => x.CreatorUserId == AbpSession.UserId.Value);
+                                if (fileFirstModel != null && fileFirstModel.Id > 0)
+                                {
+                                    fileFirstModel.IsDeleted = false;
+                                    fileFirstModel.FileExt = Path.GetExtension(filePath);
+                                    fileFirstModel.FileName = callback.data.originalFileName.Substring(0, callback.data.originalFileName.LastIndexOf('.'));
+                                    await _fileAttrRepository.InsertOrUpdateAndGetIdAsync(fileFirstModel);
+                                    DeleteFile(filePath);
+                                }
+                            }
+                            else
+                            {
+                                //复制一条现有的数据
+                                var fileFirstModel = listSource[0];
+                                var fileAttrModel = new FileAttr
+                                {
+                                    FileSize = fileFirstModel.FileSize,
+                                    FileMd5 = fileFirstModel.FileMd5,
+                                    Sort = fileFirstModel.Sort,
+                                    FilePath = fileFirstModel.FilePath,
+                                    FileName = callback.data.originalFileName.Substring(0, callback.data.originalFileName.LastIndexOf('.')),
+                                    FileExt = Path.GetExtension(filePath),
+                                    FileType = fileFirstModel.FileType
+                                };
+                                await _fileAttrRepository.InsertOrUpdateAndGetIdAsync(fileFirstModel);
+                                callback.data.newFileName = callback.data.thumbnailFileName = fileFirstModel.FilePath;
+                                callback.data.originalFileName = fileFirstModel.FileName + fileFirstModel.FileExt;
+                                DeleteFile(filePath);
+                            }
 
+                        }
+                        else
+                        {
+                            bool isImage = "*.png,*.jpg,*.bmp,*.jpeg,*.gif".Contains(Path.GetExtension(filePath).ToLower());
+                            //文件流
+                            var fileStream = System.IO.File.Open(filePath, FileMode.Open);
+                            var fileLength = fileStream.Length;
+                            fileStream.Close();
+                            //保存数据库
+                            var firstModel = new FileAttr();
+                            //插入一条记录
+                            firstModel.FileType = isImage ? 0 : 1;
+                            firstModel.FileName = callback.data.originalFileName;
+                            firstModel.FileExt = Path.GetExtension(filePath);
+                            firstModel.FileSize = (int)fileLength;
+                            firstModel.FilePath = callback.data.newFileName;
+                            firstModel.Sort = 0;
+                            firstModel.FileMd5 = GetMD5(filePath);
+                            await _fileAttrRepository.InsertOrUpdateAndGetIdAsync(firstModel);
+                            
+                        }
+                    }
+                    serverCallBack.Add(callback);
+                }
+                catch (Exception ex)
+                {
+                    callback.status = -1;
+                    callback.msg = ex.Message + ex.StackTrace;
+                    serverCallBack.Add(callback);
+                    continue;
+                }
+                finally
+                {
+                    //手动释放一下资源
+                    //GC.Collect();
+                }
+            }
+            return await Task.FromResult(serverCallBack);
+        }
         //
         // GET: /Common/AttrFiles/
         /// <summary>
@@ -202,8 +298,38 @@ namespace TomTeam.Project.Web.Controllers
             var result = await BaseUpload(isImage);
             return Json(result);
         }
+        private bool DeleteFile(string _filepath)
+        {
+            if (string.IsNullOrEmpty(_filepath))
+            {
+                return false;
+            }
+            if (System.IO.File.Exists(_filepath))
+            {
+                System.IO.File.Delete(_filepath);
+                return true;
+            }
+            return false;
+        }
 
-
+        private string GetMD5(string filepath)
+        {
+            string returnStr = "";
+            FileStream fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            byte[] md5byte = md5.ComputeHash(fs);
+            int i, j;
+            foreach (byte b in md5byte)
+            {
+                i = Convert.ToInt32(b);
+                j = i >> 4;
+                returnStr += Convert.ToString(j, 16);
+                j = ((i << 4) & 0x00ff) >> 4;
+                returnStr += Convert.ToString(j, 16);
+            }
+            fs.Dispose();
+            return returnStr;
+        }
         private  bool IsImage(string _fileExt)
         {
             ArrayList al = new ArrayList();

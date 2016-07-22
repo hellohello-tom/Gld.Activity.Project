@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.CurrentPageName = "赛事新闻";
+}
+@model Abp.Application.Services.Dto.PagedResultOutput<TomTeam.Project.Gld.Dto.GetNewsListOutput>
+<div class="body home detail event">
+    <div class="wrapper">
+        <div class="inner">
+            <ul class="list news">
+                @if (Model != null && Model.Items.Count > 0)
+                {
+                    foreach (var item in Model.Items)
+                    {
+                        <li>
+                            <span class="text">
+                                <a href="/News/Detail/@item.Id">@item.Title</a>
+                            </span>
+                            <span class="time">
+                                @string.Format("{0:yyyy-MM-dd HH:mm}", item.CreationTime)
+                            </span>
+                        </li>
+                    }
+                }
+            </ul>
+            <div class="text-center pagination">
+
+                <a href="/News/Index?pageIndex=@((int)ViewBag.PageIndex-1)" class="@(ViewBag.PageIndex==1?"prev item disabled":"prev item")"><i class="fa fa-angle-left icon"></i></a>
+                <a href="/News/Index?pageIndex=@((int)ViewBag.PageIndex+1)" class="@(ViewBag.PageIndex==Math.Ceiling((Model.TotalCount/ViewBag.PageSize)+0.1M)?"next item disabled":"next item")"><i class="fa fa-angle-right icon"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+

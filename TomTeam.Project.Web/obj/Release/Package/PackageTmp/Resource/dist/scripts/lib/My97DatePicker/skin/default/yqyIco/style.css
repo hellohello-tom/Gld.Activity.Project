@@ -1,0 +1,306 @@
+@font-face {
+    font-family: 'yqy';
+    src:    url('fonts/yqy.eot?yefddq');
+    src:    url('fonts/yqy.eot?yefddq#iefix') format('embedded-opentype'),
+        url('fonts/yqy.ttf?yefddq') format('truetype'),
+        url('fonts/yqy.woff?yefddq') format('woff'),
+        url('fonts/yqy.svg?yefddq#yqy') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="yqy-"], [class*=" yqy-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'yqy' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.yqy-notdef:before {
+    content: "\78";
+}
+.yqy-guanjiancihuifu:before {
+    content: "\e101";
+}
+.yqy-guanzhuhuifu:before {
+    content: "\e102";
+}
+.yqy-wenzhangguanli:before {
+    content: "\e103";
+}
+.yqy-liuyanguanli:before {
+    content: "\e104";
+}
+.yqy-pinglunguanli:before {
+    content: "\e105";
+}
+.yqy-luntanguanli:before {
+    content: "\e106";
+}
+.yqy-tupianguanli:before {
+    content: "\e107";
+}
+.yqy-shipinguanli:before {
+    content: "\e108";
+}
+.yqy-quanjingguanli:before {
+    content: "\e109";
+}
+.yqy-xinzengshangpin:before {
+    content: "\e10a";
+}
+.yqy-shangpinguanli:before {
+    content: "\e10b";
+}
+.yqy-dingdanguanli:before {
+    content: "\e10c";
+}
+.yqy-faqicuxiao:before {
+    content: "\e10d";
+}
+.yqy-cuxiaoguanli:before {
+    content: "\e10e";
+}
+.yqy-pingjiaguanli:before {
+    content: "\e10f";
+}
+.yqy-xiaoshoufenxi:before {
+    content: "\e110";
+}
+.yqy-fenxiaoxitong:before {
+    content: "\e111";
+}
+.yqy-dianpuguanli:before {
+    content: "\e112";
+}
+.yqy-yuangongguanli:before {
+    content: "\e113";
+}
+.yqy-fuwuguanli:before {
+    content: "\e114";
+}
+.yqy-yuyueguanli:before {
+    content: "\e115";
+}
+.yqy-huiyuanguanli:before {
+    content: "\e116";
+}
+.yqy-dengjishezhi:before {
+    content: "\e117";
+}
+.yqy-jifenguize:before {
+    content: "\e118";
+}
+.yqy-weixinhudongxiaoxi:before {
+    content: "\e119";
+}
+.yqy-huiyuanbiaoqian:before {
+    content: "\e11a";
+}
+.yqy-faqiyouxi:before {
+    content: "\e11b";
+}
+.yqy-youxiguanli:before {
+    content: "\e11c";
+}
+.yqy-zhongjiangguanli:before {
+    content: "\e11d";
+}
+.yqy-zhizuokaquan:before {
+    content: "\e11e";
+}
+.yqy-kaquanguanli:before {
+    content: "\e11f";
+}
+.yqy-kaquanhexiao:before {
+    content: "\e120";
+}
+.yqy-tuisonghongbao:before {
+    content: "\e121";
+}
+.yqy-jishihongbao:before {
+    content: "\e122";
+}
+.yqy-faqihixianchang:before {
+    content: "\e123";
+}
+.yqy-guanlihixianchang:before {
+    content: "\e124";
+}
+.yqy-yiqixiu:before {
+    content: "\e125";
+}
+.yqy-zhizuotuwen:before {
+    content: "\e126";
+}
+.yqy-tuwenguanli:before {
+    content: "\e127";
+}
+.yqy-tuisongtuwen:before {
+    content: "\e128";
+}
+.yqy-weimingpianzhizuo:before {
+    content: "\e129";
+}
+.yqy-zengjiaqudaoma:before {
+    content: "\e12a";
+}
+.yqy-yemiandingyi:before {
+    content: "\e12b";
+}
+.yqy-guanliqudaoma:before {
+    content: "\e12c";
+}
+.yqy-kaquanyingxiao:before {
+    content: "\e12d";
+}
+.yqy-daichuliyuyue:before {
+    content: "\e600";
+}
+.yqy-shousuo:before {
+    content: "\e601";
+}
+.yqy-zhankai:before {
+    content: "\e602";
+}
+.yqy-pwd:before {
+    content: "\e603";
+}
+.yqy-user:before {
+    content: "\e604";
+}
+.yqy-pushpin:before {
+    content: "\e605";
+}
+.yqy-chuanboshuju:before {
+    content: "\e606";
+}
+.yqy-shangchengshuju:before {
+    content: "\e607";
+}
+.yqy-yingxiaohuodong:before {
+    content: "\e608";
+}
+.yqy-yonghushuju:before {
+    content: "\e609";
+}
+.yqy-close:before {
+    content: "\e60a";
+}
+.yqy-pen:before {
+    content: "\e60b";
+}
+.yqy-fenxiang:before {
+    content: "\e60c";
+}
+.yqy-yonghu:before {
+    content: "\e60d";
+}
+.yqy-tuichu:before {
+    content: "\e60e";
+}
+.yqy-up:before {
+    content: "\e60f";
+}
+.yqy-down:before {
+    content: "\e610";
+}
+.yqy-right:before {
+    content: "\e611";
+}
+.yqy-left:before {
+    content: "\e612";
+}
+.yqy-lineleft:before {
+    content: "\e613";
+}
+.yqy-lineright:before {
+    content: "\e614";
+}
+.yqy-linedown:before {
+    content: "\e615";
+}
+.yqy-lineup:before {
+    content: "\e616";
+}
+.yqy-minus:before {
+    content: "\e617";
+}
+.yqy-plus:before {
+    content: "\e618";
+}
+.yqy-new:before {
+    content: "\e619";
+}
+.yqy-cir-close:before {
+    content: "\e61a";
+}
+.yqy-cir-prompt:before {
+    content: "\e61b";
+}
+.yqy-ok:before {
+    content: "\e61c";
+}
+.yqy-check:before {
+    content: "\e61d";
+}
+.yqy-suo:before {
+    content: "\e61e";
+}
+.yqy-xinfeng:before {
+    content: "\e61f";
+}
+.yqy-shangzhuang:before {
+    content: "\e620";
+}
+.yqy-quan2:before {
+    content: "\e621";
+}
+.yqy-fenxiang2:before {
+    content: "\e622";
+}
+.yqy-huabi:before {
+    content: "\e623";
+}
+.yqy-sousuo:before {
+    content: "\e624";
+}
+.yqy-yonghu1:before {
+    content: "\e625";
+}
+.yqy-xiaolian:before {
+    content: "\e626";
+}
+.yqy-jianpan:before {
+    content: "\e627";
+}
+.yqy-link:before {
+    content: "\e628";
+}
+.yqy-shanchu:before {
+    content: "\e629";
+}
+.yqy-shengyin:before {
+    content: "\e62a";
+}
+.yqy-shipin2:before {
+    content: "\e62b";
+}
+.yqy-upload:before {
+    content: "\e62c";
+}
+.yqy-bianji2:before {
+    content: "\e62d";
+}
+.yqy-mulu:before {
+    content: "\e62e";
+}
+

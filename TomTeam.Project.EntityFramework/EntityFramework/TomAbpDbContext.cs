@@ -7,6 +7,7 @@ using TomTeam.Project.MultiTenancy;
 using TomTeam.Project.Storage;
 using TomTeam.Project.Config;
 using TomTeam.Project.Gld.Exam;
+using TomTeam.Project.Gld;
 
 namespace TomTeam.Project.EntityFramework
 {
@@ -22,6 +23,10 @@ namespace TomTeam.Project.EntityFramework
         public virtual IDbSet<ExamTopic> ExamTopicDbSet { get; set; }
         public virtual IDbSet<Answer> AnswerDbSet { get; set; }
         public virtual IDbSet<ExamCollect> ExamCollectDbSet { get; set; }
+        public virtual IDbSet<Metropolitan> MetropolitanDbSet { get; set; }
+        
+        public virtual IDbSet<LikeInfo> LikeInfoDbSet { get; set; }
+        public virtual IDbSet<FileAttr> FileAttrDbSet { get; set; }
         
 
         /* Setting "Default" to base class helps us when working migration commands on Package Manager Console.

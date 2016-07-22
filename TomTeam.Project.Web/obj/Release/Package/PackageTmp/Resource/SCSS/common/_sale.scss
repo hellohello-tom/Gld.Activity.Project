@@ -1,0 +1,106 @@
+@import "../base/_variables";
+.text-center {
+  text-align: center;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+body {
+  color: #333;
+  font-size: 12px;
+  font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #f0f0f0;
+  word-break: break-all;
+}
+
+.wrapper {
+  position: relative;
+  padding: 0 30px;
+  &.limited {
+    max-width: 1260px;
+    margin: 0 auto;
+  }
+  .main {
+    margin: 30px 0;
+    padding: 10px;
+  }
+}
+
+.main {
+  position: relative;
+  border: 1px solid $color-border;
+  background: #fff;
+  >.nav {
+    position: absolute;
+    top: 20px;
+    right: 100%;
+    >.item {
+      display: inline-block;
+      padding: 10px;
+      margin: 2px 4px;
+      border: 1px solid $color-border;
+      color: #333;
+      background: #fff;
+      text-decoration: none;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      -webkit-transition: all .2s;
+      -moz-transition: all .2s;
+      -ms-transition: all .2s;
+      -o-transition: all .2s;
+      transition: all .2s;
+      &:hover {
+        color: #fff;
+        background: $color-primary;
+        border-color: darken($color-primary, 4%);
+        .ico {
+          color: inherit;
+        }
+      }
+      .ico {
+        color: #999;
+        font-size: 20px;
+      }
+      .title {
+        width: 2em;
+        margin: 0;
+        margin-top: 2px;
+        line-height: 1;
+      }
+      &.on {
+        color: #fff;
+        background: $color-primary;
+        border-color: darken($color-primary, 4%);
+        .ico {
+          color: inherit;
+        }
+      }
+    }
+  }
+  >.body {
+    position: relative;
+    min-height: 600px;
+    padding: 10px;
+    overflow: hidden;
+    background: inherit;
+    z-index: 2;
+  }
+  >.side {
+    &+.body {
+      border-left: 1px solid $color-border;
+      //@include anim(fadeInRight .2s);
+    }
+  }
+  &.sale {
+    margin-left: 22px;
+  }
+}
+
+@media screen and (min-width:1350) {
+  .main {
+    >.nav {}
+  }
+}

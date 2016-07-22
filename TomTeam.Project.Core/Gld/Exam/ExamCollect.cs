@@ -42,5 +42,10 @@ namespace TomTeam.Project.Gld.Exam
         /// </summary>
         public string MetropolitanFile { get; set; }
 
+        /// <summary>
+        /// 用户名
+        /// </summary>
+        public string UserDisplayName { get; set; }
+
     }
 }

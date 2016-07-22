@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+  <title>展</title>
+  <link rel="stylesheet" href="../dist/iconfonts/style.css">
+  <link rel="stylesheet" href="../dist/css/common.css">
+  <style>
+  .row {
+    padding: 10px;
+    counter-reset: contentTitleL2;
+  }
+  
+  .row .content-title-l2 {
+    font-weight: 400;
+    margin-left: 10px;
+  }
+  
+  .row .content-title-l2+div {
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .row .content-title-l2:before {
+    counter-increment: contentTitleL2;
+    content: counter(contentTitle)'.'counter(contentTitleL2)' ';
+  }
+  
+  .main .body {
+    counter-reset: contentTitle;
+  }
+  
+  .main .body .content-title:before {
+    counter-increment: contentTitle;
+    content: counter(contentTitle)'. ';
+  }
+  
+  .pie {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: yellowgreen;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+  }
+  
+  .pie:before {
+    content: '';
+    display: block;
+    height: 100%;
+    background-color: inherit;
+    background-image: linear-gradient(to right, transparent 50%, #655 0);
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    transform: rotate(.2turn);
+  }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <article class="main">
+      <div class="row">
+        <h2 class="content-title">
+                饼图
+            </h2>
+      </div>
+      <div class="pie">
+      </div>
+      <section class="body">
+        <div class="row">
+          <h2 class="content-title">按钮篇</h2>
+          <div class="l2">
+            <h3 class="content-title-l2">
+                        单纯的按钮
+                    </h3>
+            <div class="btn-group mt5">
+              <div class="fr search-field">
+                <input type="search" class='ipt-search kw' required>
+                <button class="btn-search icon-search"><i class="fa fa-search"></i></button>
+              </div>
+              <button class="btn">普通</button>
+              <button class="btn btn-default">默认</button>
+              <button class="btn btn-primary">首选</button>
+              <button class="btn btn-info">信息</button>
+              <a class="btn btn-warning">警示</a>
+              <button class="btn btn-danger">危险</button>
+              <button class="btn btn-disabled">不可用</button>
+              <button class="btn btn-primary-o">首选-透</button>
+              <a href="http://www.zhihu.com" class="btn btn-info-o">信息-透明</a>
+              <button class="btn btn-warning-o">提示-空</button>
+              <a class="btn btn-danger-o">警告-空</a>
+              <br>
+              <button class="btn big btn-info">大信息</button>
+              <button class="btn btn-primary bigger">更大首选</button>
+            </div>
+          </div>
+          <div class="l2">
+            <h3 class="content-title-l2">
+                        带选中状态标签型按钮
+                    </h3>
+            <div class="mt5">
+              <div class="btn-tag btn-tag-info">
+                实型标签可选中1
+              </div>
+              <div class="btn-tag btn-tag-primary on">
+                实型首选中2
+              </div>
+              <div class="btn-tag btn-tag-info on">
+                实型信息选中3
+              </div>
+              <div class="btn-tag btn-tag-warning on">
+                实型警示选中4
+              </div>
+              <div class="btn-tag btn-tag-danger on">
+                实型危险选中5
+              </div>
+              <div class="btn-tag  btn-tag-info btn-tag-info-o">
+                空型未选中1
+              </div>
+              <div class="btn-tag btn-tag-info btn-tag-info-o on">
+                空型信息选中2
+              </div>
+              <div class="btn-tag  btn-tag-primary btn-tag-primary-o">
+                空型首未选中2
+              </div>
+              <div class="btn-tag  btn-tag-primary btn-tag-primary-o on">
+                空型选中信息2
+              </div>...
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <h2 class="content-title">输入区</h2>
+          <div class="input-area mt5">
+            <input type="search">
+            <input type="text" class='error'>
+            <input type="number">
+            <input type="color">
+            <input type="date">
+            <input type="time">
+            <input type="text" required>
+            <select name="" id="">
+              <option value="">下拉</option>
+              <option value="">下拉</option>
+              <option value="">下拉</option>
+            </select>
+            <br>
+            <textarea name="" id="" cols="30" rows="3"></textarea>
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <h2 class="content-title">文本色</h2>
+          <div class="text-area">
+            <h3 class="p10 text-info">信息类</h3>
+            <h4 class="p5 text-warning">警示类</h4>
+            <h2 class="p5 text-danger">危险</h2>
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <h2 class="content-title">背景区</h2>
+          <div class="bg-area">
+            <h3 class="bg bg-info p10 text-center">居中信息类</h3>
+            <h3 class="bg bg-warning p10  mt5">靠左警示类</h3>
+            <h3 class="bg bg-danger p10 text-center mt5">危险类</h3>
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <h2 class="content-title">部分字体图标</h2>
+          <div class="font-bigger text-danger">
+            <i class="fa fa-user"></i>
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <h2 class="content-title">分页（引用jQuery，pagination插件，结构不用写，只用样式）</h2>
+          <div id="pagination" class="text-center">
+            <ul class="pagination">
+              <li class="first disabled"><a href="javascript:;">首页</a></li>
+              <li class="prev disabled"><a href="javascript:;">&lt;</a></li>
+              <li class="page active"><a href="javascript:;">1</a></li>
+              <li class="page"><a href="javascript:;">2</a></li>
+              <li class="page"><a href="javascript:;">3</a></li>
+              <li class="page"><a href="javascript:;">4</a></li>
+              <li class="page"><a href="javascript:;">5</a></li>
+              <li class="split">...</li>
+              <li class="page"><a href="javascript:;">7</a></li>
+              <li class="next"><a href="javascript:;">&gt;</a></li>
+              <li class="last"><a href="javascript:;">末页</a></li>
+            </ul>
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <h2 class="content-title">进度</h2>
+          <section class="progress col5">
+            <dl class="item">
+              <dt class="bar">
+              </dt>
+              <dd class="tips">
+                买家下单
+              </dd>
+            </dl>
+            <dl class="item now">
+              <dt class="bar">
+              </dt>
+              <dd class="tips">
+                买家付款
+              </dd>
+            </dl>
+            <dl class="item">
+              <dt class="bar">
+              </dt>
+              <dd class="tips">
+                发货
+              </dd>
+            </dl>
+            <dl class="item">
+              <dt class="bar">
+              </dt>
+              <dd class="tips">
+                确认收货
+              </dd>
+            </dl>
+            <dl class="item">
+              <dt class="bar">
+              </dt>
+              <dd class="tips">
+                评价
+              </dd>
+            </dl>
+          </section>
+          <section class="progress col3">
+            <p class="item">
+              <span class="bar">
+                        </span>
+              <span class="tips">
+                            买家下单
+                        </span>
+            </p>
+            <p class="item now">
+              <span class="bar">
+                        </span>
+              <span class="tips">
+                            买家付款
+                        </span>
+            </p>
+            <p class="item">
+              <span class="bar">
+                        </span>
+              <span class="tips">
+                            完成
+                        </span>
+            </p>
+          </section>
+          <hr>
+        </div>
+        <div class="row">
+          <h2 class="content-title">信息展示带按钮</h2>
+          <div class="info-list">
+            <section class="item info-warning">
+              <header class="title">
+                <b>当前订单状态：</b>
+                <b class="text-warning">待发货</b>
+                <span class='tag'><button class="btn btn-warning">立即发货</button></span>
+              </header>
+              <div class="content col2">
+                <dl class='item'>
+                  <dt class="title">订单号：</dt>
+                  <dd class='content'>9393933993200100019005</dd>
+                </dl>
+                <dl class='item'>
+                  <dt class="title">订单类型：</dt>
+                  <dd class="content">商城/秒杀</dd>
+                </dl>
+                <dl class='item'>
+                  <dt class="title">下单时间：</dt>
+                  <dd class="content">2016-01-01</dd>
+                </dl>
+                <dl class='item'>
+                  <dt class="title">付款时间：</dt>
+                  <dd class="content">2016-01-01 18：00：02</dd>
+                </dl>
+                <dl class='item'>
+                  <dt class="title">发货时间：</dt>
+                  <dd class="content">2016-01-02 10：00</dd>
+                </dl>
+                <dl class='item'>
+                  <dt class="title">完成/取消时间：</dt>
+                  <dd class="content">2016-01-05 19：00</dd>
+                </dl>
+                <dl class='item'>
+                  <dt class="title">订单积分：</dt>
+                  <dd class="content">153454544</dd>
+                </dl>
+              </div>
+            </section>
+            <section class="item">
+              <header class="title">
+                <b>收货信息/自提信息</b>
+                <span class='tag'>运单号：<sub class="text-danger font-biggest">92656444646445</sub></span>
+                <span class="tag">申通</span>
+                <a href="javascript:;" class="tag">查看物流信息</a>
+              </header>
+              <div class="content">
+                <dl class='item'>
+                  <dt class="title">收货人：</dt>
+                  <dd class='content'>呆呵呵呆</dd>
+                </dl>
+                <dl class='item'>
+                  <dt class="title">电话：</dt>
+                  <dd class="content">13803800138</dd>
+                </dl>
+                <dl class='item'>
+                  <dt class="title">收货地址：</dt>
+                  <dd class="content">永和国际2708</dd>
+                </dl>
+                <dl class='item'>
+                  <dt class="title">买家留言：</dt>
+                  <dd class="content">请发顺丰，谢谢</dd>
+                </dl>
+                <dl class='item'>
+                  <dt class="title">发票信息：</dt>
+                  <dd class="content">北龙中网科技有限公司</dd>
+                </dl>
+              </div>
+            </section>
+            <section class="item">
+              <header class="title">
+                <b>商品信息</b>
+              </header>
+              <div class='info-product'>
+                <table class="table text-center">
+                  <thead>
+                    <tr>
+                      <td>名称</td>
+                      <td>型号</td>
+                      <td>原价（元）</td>
+                      <td>购买价（元）</td>
+                      <td>数量</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>APPLEAPPLEAPPLEAPPLEAPPLEAPPLEAPPLE</td>
+                      <td>iOS1000</td>
+                      <td>6666.66</td>
+                      <td><b class='text-danger'>5555.55</b></td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>APPLEAPPLEAPPLEAPPLEAPPLEAPPLEAPPLE</td>
+                      <td>iOS1000</td>
+                      <td>6666.66</td>
+                      <td><b class='text-danger'>5555.55</b></td>
+                      <td>2</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <h2 class="content-title">
+                    不带按钮设置
+                </h2>
+          <div class="div info-list thin">
+            <section class="item">
+              <header class="title">
+                自提地址设置
+                <span class='text-muted font-small ml5'>(设置后，将在卖家自提商品订单内显示)</span>
+              </header>
+              <div class="content contact">
+                <div class='item'>
+                  <span class="title phone">联系电话</span>
+                  <span class='content address'>自提地址</span>
+                </div>
+                <ul class='item'>
+                  <li>
+                    <input type="tel" class="phone" required pattern="^1\d{10}" placeholder="输入电话">
+                    <input type="text" class="address" placeholder="请输入详细地址">
+                    <button class="btn btn-primary">保存</button>
+                    <button class="btn">删除</button>
+                  </li>
+                </ul>
+                <div>
+                  <button class="btn mt10">+ 新增一个</button>
+                </div>
+              </div>
+            </section>
+            <section class="item">
+              <header class="title">
+                新增订单提醒设置
+                <span class='text-muted font-small ml5'>(当有新订单时，发送短信提醒)</span>
+              </header>
+              <div class="content">
+                <label>
+                  <input type="checkbox" name="" id="">开启订单提醒，并发送到以下手机号</label>
+                <input type="tel" required placeholder="输入接收短信的手机号" pattern='^1\d{10}$'>
+                <div class='action-field'>
+                  <button class="btn btn-primary">保存</button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="row">
+          <h2 class="content-title">
+                    标签类
+                </h2>
+          <div class="l2">
+            <h3 class="content-title-l2">
+                        <span>小标签</span>
+                    </h3>
+            <div class="tags mt5">
+              <span class="tag">标签</span>
+              <span class="tag tag-warning">警告类</span>
+              <span class="tag tag-danger">危险类</span>
+              <span class="tag tag-info">信息</span>
+              <span class="tag tag-danger-o">危险-空</span>
+              <span class="tag tag-info-o">信息-空</span>
+              <span class="tag tag tag-warning-o">警告-空</span>
+            </div>
+          </div>
+          <div class="l2">
+            <h3 class="content-title-l2"><span>带删除按钮标签</span></h3>
+            <div class="tags tags-action mt5">
+              <span class="tag">
+                            分类1
+                            <i class="icon"></i>
+                        </span><span class="tag">
+                            分类2
+                            <i class="icon"></i>
+                        </span><span class="tag">
+                            等级3
+                            <i class="icon"></i>
+                        </span>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <h2 class="content-title">左右两侧设置</h2>
+          <div class="set">
+            <dl class='item'>
+              <dt class="title">商品名称</dt>
+              <dd class="content">
+                <input type="text" required placeholder='请输入商品名称'>
+                <p class="text-muted text-tips font-small">（最多50字）</p>
+              </dd>
+            </dl>
+            <div class='item'>
+              <span class="title">选择分类</span>
+              <span class="content">
+                            <select name="" id="cat">
+                                <option value="">选择可用分类</option>
+                                <option value="">选择可用分类</option>
+                                <option value="">选择可用分类</option>
+                                <option value="">选择可用分类</option>
+                                <option value="">选择可用分类</option>
+                            </select>
+                        </span>
+            </div>
+            <dl class='item'>
+              <dt class="title">商品图片</dt>
+              <dd class="content"><span class='upload-wrapper'>
+                        <button class="btn">上传</button>
+                        <input type="file" class='btn' value='上传'></span>
+                <span class="ml5 text-muted font-small">（最多上传5张图片，大小请不要超过1M，支持jpg、gif、png格式）</span>
+                <div class="img-list upload mt10">
+                  <div class="img-wrapper">
+                    <img src="" alt="图1">
+                    <sup class="action" title="删除">X</sup>
+                  </div>
+                  <div class="img-wrapper">
+                    <img src="" alt="图2">
+                    <sup class="action" title="删除">X</sup>
+                  </div>
+                  <div class="img-wrapper">
+                    <img src="" alt="图3">
+                    <sup class="action" title="删除">X</sup>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class='item'>
+              <dt class="title">型号</dt>
+              <dd class="content">
+                <button class="btn btn-primary">
+                  <span>+ </span>新增型号
+                </button>
+                <table class="table table-bordered table-radian text-center mt10">
+                  <thead>
+                    <tr>
+                      <th>名称</th>
+                      <th>价格（元）</th>
+                      <th>库存</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <input type="text" placeholder='输入商品名称'>
+                      </td>
+                      <td>
+                        <input type="text" class='ipt-s' placeholder='商品价格'>
+                      </td>
+                      <td>
+                        <input type="text" class='ipt-s' placeholder='库存量'>
+                      </td>
+                      <td>
+                        <div class='action-field'><a class='item' href='javascript:;'>删除</a></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </dd>
+            </dl>
+            <dl class='item'>
+              <dt class="title">&#12288;</dt>
+              <dd class="content mt10">
+                <button class="btn big btn-primary">保存</button>
+                <button class="btn big">取消</button>
+              </dd>
+            </dl>
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+          <h2 class="content-title">弹窗样式（修改artDialog为中文，外边不用套）</h2>
+          <div style='position: relative;height: 350px;background: rgba(0,0,0,.5);'>
+            <div tabindex="-1" aria-labelledby="title:1457487245873" aria-describedby="content:1457487245873" class="ui-popup ui-popup-modal ui-popup-show ui-popup-focus" role="alertdialog" style="position: absolute!important; outline: 0px; left: 30%; top: 10px; z-index: 1026;">
+              <div i="dialog" class="ui-dialog">
+                <div class="ui-dialog-arrow-a"></div>
+                <div class="ui-dialog-arrow-b"></div>
+                <table class="ui-dialog-grid">
+                  <tbody>
+                    <tr>
+                      <td i="header" class="ui-dialog-header">
+                        <button i="close" class="ui-dialog-close" title="关闭">×</button>
+                        <div i="title" class="ui-dialog-title" id="title:1457487245873">添加分类</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td i="body" class="ui-dialog-body">
+                        <div i="content" class="ui-dialog-content" id="content:1457487245873">
+                          <div class="row set popup-set">
+                            <dl class="item">
+                              <dt class="name"><i class="required-mark"></i>分类名称</dt>
+                              <dd class="content">
+                                <input type="text" required="" placeholder="请输入分类名称">
+                                <p class="text-muted text-tips font-small">分类长度限定20字以内，中英文、数字</p>
+                              </dd>
+                            </dl>
+                            <dl class="item">
+                              <dt class="name">显示顺序</dt>
+                              <dd class="content">
+                                <input type="number" class="ipt-s" placeholder="显示顺序">
+                              </dd>
+                            </dl>
+                            <dl class="item">
+                              <dt class="name">前台展示</dt>
+                              <dd class="content">
+                                <label>
+                                  <input type="radio" name="show" id="">展示</label>
+                                <label class="ml5">
+                                  <input type="radio" name="show" id="">不展示</label>
+                              </dd>
+                            </dl>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td i="footer" class="ui-dialog-footer">
+                        <div i="statusbar" class="ui-dialog-statusbar" style="display: none;"></div>
+                        <div i="button" class="ui-dialog-button">
+                          <button type="button" i-id="cancel">取消</button>
+                          <button type="button" i-id="ok" autofocus="" class="ui-dialog-autofocus">确定</button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div style="position: relative;height: 400px;background: rgba(0,0,0,.5);">
+            <div tabindex="-1" aria-labelledby="title:1457487553668" aria-describedby="content:1457487553668" class="ui-popup ui-popup-modal ui-popup-show ui-popup-focus" role="alertdialog" style="position: absolute!important; outline: 0px; left: 30%; top: 10px; z-index: 1025;">
+              <div i="dialog" class="ui-dialog">
+                <div class="ui-dialog-arrow-a"></div>
+                <div class="ui-dialog-arrow-b"></div>
+                <table class="ui-dialog-grid">
+                  <tbody>
+                    <tr>
+                      <td i="header" class="ui-dialog-header">
+                        <button i="close" class="ui-dialog-close" title="关闭">×</button>
+                        <div i="title" class="ui-dialog-title" id="title:1457487553668">投放活动</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td i="body" class="ui-dialog-body">
+                        <div i="content" class="ui-dialog-content" id="content:1457487553668" style="width: 400px;">
+                          <div class="popup-spread">
+                            <h4>
+                    <b>你可以通过以下方式投放</b>
+                    </h4>
+                            <div>
+                              <ol>
+                                <li class="clearfix">
+                                  <img src="" alt="二维码" class="fr qrcode"> 下载二维码
+                                  <p class="text-muted font-s">
+                                    下载活动二维码，通过打印张贴或其他渠道发放
+                                  </p>
+                                </li>
+                                <li>
+                                  通过公众号自定义菜单方式灵活投放：
+                                  <div class="copy mt5">
+                                    <button class="fr btn btn-primary btn-copy">复制链接</button>
+                                    <input type="text" class="block">
+                                  </div>
+                                </li>
+                              </ol>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td i="footer" class="ui-dialog-footer" style="display: none;">
+                        <div i="statusbar" class="ui-dialog-statusbar" style="display: none;"></div>
+                        <div i="button" class="ui-dialog-button"></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <h2 class="content-title">
+                    标签切换
+                </h2>
+          <div class="clearfix">
+            <div class="fr search-field">
+              <input type="search" class='ipt-search kw ipt-search-btn-text col2' title='输入电话、收货人或订单号查询' placeholder='电话、收货人、订单号'>
+              <button class="btn-search icon-search btn-search-text col2">筛选</button>
+            </div>
+            <div class="tab-switcher-horizontal mr10">
+              <div class="title"> <a href="javascript:;" class="item">待发货</a>
+                <a href="javascript:;" class="item on">待付款</a>
+                <a href="javascript:;" class="item">已发货</a>
+                <a href="javascript:;" class="item">已完成</a>
+                <a href="javascript:;" class="item">取消的订单</a>
+                <a href="javascript:;" class="item">全部订单</a></div>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="row">
+          <h3 class="content-title">
+                单复选框及动态切换
+            </h3>
+          <div>
+            <label class="radio">
+              <input type="radio" name="sex" id="" checked><span class="icon"></span>男</label>
+            <label class="radio">
+              <input type="radio" name="sex" id=""><span class="icon"></span>女</label>
+            <label class="checkbox">
+              <input type="checkbox" name="" id="" checked>设为默认<span class="icon"></span></label>
+            <label class="switcher">
+              <input type="checkbox">
+              <span class="icon"></span></label>
+          </div>
+        </div>
+        <div class="row">
+          <h3 class="content-title">
+                    下拉模拟
+                </h3>
+          <div class="arrow-down">
+            <div class="title">
+              你好啊
+              <input type="text">
+              <span class="icon"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+@using Abp.Timing
+<div class="page-header-inner">
+    <div class="page-logo">
+        <a href="@Url.Action("Index", "Home")" target="_blank">
+            <img src="~/Common/Images/logo.png" alt="logo" class="logo-default" width="168" height="33" />
+        </a>
+        <div class="menu-toggler sidebar-toggler">
+            <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+        </div>
+    </div>
+    <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+    </a>
+    <div class="page-top">
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+                <!-- BEGIN NOTIFICATION DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <!-- END NOTIFICATION DROPDOWN -->
+                <li class="separator hide"> </li>
+
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-user dropdown-dark">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" title="{{vm.isImpersonatedLogin ? '@L("YouCanBackToYourAccount")' : ''}}">
+                        <span class="username username-hide-on-mobile">
+                            <i ng-if="vm.isImpersonatedLogin" class="icon-action-undo font-red-sunglo"></i> {{vm.getShownUserName()}}
+                        </span>
+                        <img id="HeaderProfilePicture" alt="" class="img-circle" src="@Url.Action("GetProfilePicture", "Profile")?t=@Clock.Now.Ticks.ToString()" />
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default">
+                        <li ng-if="vm.isImpersonatedLogin">
+                            <a href="" ng-click="vm.backToMyAccount()"><i class="icon-action-undo"></i> <strong>@L("BackToMyAccount")</strong></a>
+                        </li>
+                        <li ng-if="vm.isImpersonatedLogin" class="divider"></li>
+                        <li>
+                            <a href="" ng-click="vm.changePassword()"><i class="icon-key"></i> @L("ChangePassword")</a>
+                        </li>
+                        <li>
+                            <a href="" ng-click="vm.showLoginAttempts()"><i class="icon-shield"></i> @L("LoginAttempts")</a>
+                        </li>
+                        <li>
+                            <a href="" ng-click="vm.changePicture()"><i class="icon-user"></i> @L("ChangeProfilePicture")</a>
+                        </li>
+                        <li>
+                            <a href="" ng-click="vm.editMySettings()"><i class="icon-settings"></i> @L("MySettings")</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="@Url.Action("Logout","Account")"><i class="icon-logout"></i> @L("Logout")</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

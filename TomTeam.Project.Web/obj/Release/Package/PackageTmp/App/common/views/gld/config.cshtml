@@ -1,0 +1,30 @@
+﻿<div ng-controller="common.views.gld.config as vm">
+    <form name="webSiteConfigtForm" role="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span>网站配置管理</span>
+            </h4>
+        </div>
+        <div class="modal-body" busy-if="vm.loading">
+            <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                <input class="form-control" ng-class="{'edited':vm.webconfig.webName}" type="text" name="webName" ng-model="vm.webconfig.webName" required maxlength="30">
+                <label>网站名称</label>
+            </div>
+
+            @*<div class="form-group form-md-line-input form-md-floating-label no-hint">
+                <input class="form-control" ng-class="{'edited':vm.webconfig.footerContent}" type="text" name="title" ng-model="vm.webconfig.footerContent" required>
+                <label>页脚信息</label>
+            </div>*@
+            <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                <label>活动介绍：</label>
+            </div>
+            <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                <textarea class="ceditor form-control" type="text" id="activityInfo" name="activityInfo" ng-model="vm.webconfig.activityInfo" k-editor></textarea>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="submit" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="webSiteConfigtForm.$invalid"><i class="fa fa-save"></i> <span>保存</span></button>
+        </div>
+    </form>
+</div>

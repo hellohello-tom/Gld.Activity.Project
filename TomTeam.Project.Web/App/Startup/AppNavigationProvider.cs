@@ -116,7 +116,14 @@ namespace TomTeam.Project.Web.App.Startup
                         L("ProvincialExamination"),
                         url: "pe",
                         icon: "icon-pencil",
-                        requiredPermissionName: AppPermissions.Pages_Activity_PalaceExamination
+                        requiredPermissionName: AppPermissions.Pages_Activity_ProvincialExamination
+                        )
+                    ).AddItem(new MenuItemDefinition(
+                        PageNames.Frontend.ProvincialExaminationCollect,
+                        L("ProvincialExaminationCollect"),
+                        url: "pecollect",
+                        icon: "icon-pencil",
+                        requiredPermissionName: AppPermissions.Pages_Activity_ProvincialExaminationCollect
                         )
                     ).AddItem(new MenuItemDefinition(
                         PageNames.Frontend.MetropolitanExamination,
@@ -130,7 +137,7 @@ namespace TomTeam.Project.Web.App.Startup
                         L("PalaceExamination"),
                         url: "palace",
                         icon: "icon-pencil",
-                        requiredPermissionName: AppPermissions.Pages_Activity_ProvincialExamination
+                        requiredPermissionName: AppPermissions.Pages_Activity_PalaceExamination
                         )
                     ).AddItem(new MenuItemDefinition(
                         PageNames.Frontend.UserInfo,

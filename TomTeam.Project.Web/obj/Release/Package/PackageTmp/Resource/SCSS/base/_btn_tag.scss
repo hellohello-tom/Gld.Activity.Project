@@ -1,0 +1,48 @@
+@import "variables";
+//按钮型标签
+.btn-tag{
+    @extend .btn;
+    position: relative;
+    margin-right: 4px;
+    margin-bottom: 6px;
+    +.btn-tag{
+        margin-left: 0;
+        padding: 0 0.5em;
+    }
+    +.btn{
+        margin-left: 0;
+    }
+    input[type=checkbox]{
+        position: absolute;
+        visibility: hidden;
+    }
+}
+
+
+@each $btn-tag,
+$btn-tag-color in (btn-tag-primary-o:$color-primary, btn-tag-info-o:$color-info, btn-tag-warning-o:$color-warning, btn-tag-danger-o:$color-danger) {
+    .#{$btn-tag} {
+        color: $btn-tag-color;
+        background: #fff;
+        border-color: darken($btn-tag-color, 4%);
+        &:visited {
+            color: $btn-tag-color;
+        }
+        &:hover {
+            background:inherit;
+            color: $btn-tag-color;
+        }
+    }
+}
+
+@each $btn-tag-each,
+$btn-tag-color in (btn-tag-info:$color-info, btn-tag-primary:$color-primary, btn-tag-ok:$color-ok, btn-tag-warning:$color-warning, btn-tag-danger:$color-danger) {
+    .#{$btn-tag-each}.on {
+        color: #fff;
+        background: $btn-tag-color;
+        border-color: darken($btn-tag-color, 4%);
+        &:visited {
+            color: #fff;
+        }
+    }
+}
