@@ -1,0 +1,29 @@
+﻿<div>
+    <form name="meCreateOrEditForm" role="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span>会试信息管理</span>
+            </h4>
+        </div>
+        <div class="modal-body" busy-if="vm.loading">
+            <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                <input class="form-control" ng-class="{'edited':vm.me.title}" type="text" name="title" ng-model="vm.me.title" required maxlength="20">
+                <label>工程标题</label>
+            </div>
+
+            <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                <textarea class="form-control" ng-class="{'edited':vm.me.content}" maxlength="500" type="text" name="content" ng-model="vm.me.content"></textarea>
+                <label>工程描述</label>
+            </div>
+
+            <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                <input class="form-control" ng-class="{'edited':vm.me.likeCount}" type="text" name="likeCount" ng-model="vm.me.likeCount" required maxlength="20">
+                <label>点赞数</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">取消</button>
+            <button type="submit" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="meCreateOrEditForm.$invalid"><i class="fa fa-save"></i> <span>保存</span></button>
+        </div>
+    </form>
+</div>

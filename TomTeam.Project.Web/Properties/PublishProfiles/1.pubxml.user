@@ -76,7 +76,7 @@
       <publishTime>06/23/2016 15:42:00</publishTime>
     </File>
     <File Include="App/app.js">
-      <publishTime>07/22/2016 11:30:09</publishTime>
+      <publishTime>07/22/2016 15:39:13</publishTime>
     </File>
     <File Include="App/app.less">
       <publishTime>06/23/2016 15:42:00</publishTime>
@@ -147,6 +147,12 @@
     <File Include="App/common/views/common/lookupModal.js">
       <publishTime>06/23/2016 15:42:01</publishTime>
     </File>
+    <File Include="App/common/views/exam/addme.cshtml">
+      <publishTime>07/22/2016 16:01:29</publishTime>
+    </File>
+    <File Include="App/common/views/exam/addme.js">
+      <publishTime>07/22/2016 16:02:12</publishTime>
+    </File>
     <File Include="App/common/views/exam/collect.cshtml">
       <publishTime>07/22/2016 13:15:37</publishTime>
     </File>
@@ -158,6 +164,12 @@
     </File>
     <File Include="App/common/views/exam/createOrUpdateProvincial.js">
       <publishTime>07/18/2016 10:39:40</publishTime>
+    </File>
+    <File Include="App/common/views/exam/me.cshtml">
+      <publishTime>07/22/2016 16:02:30</publishTime>
+    </File>
+    <File Include="App/common/views/exam/me.js">
+      <publishTime>07/22/2016 15:55:57</publishTime>
     </File>
     <File Include="App/common/views/exam/provincial.cshtml">
       <publishTime>07/15/2016 14:15:10</publishTime>
@@ -1177,7 +1189,7 @@
       <publishTime>01/28/2015 04:04:30</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.Application.dll">
-      <publishTime>07/22/2016 15:26:03</publishTime>
+      <publishTime>07/22/2016 16:13:17</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.Core.dll">
       <publishTime>07/22/2016 15:26:02</publishTime>
@@ -1186,10 +1198,10 @@
       <publishTime>07/22/2016 15:26:03</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.Web.dll">
-      <publishTime>07/22/2016 15:26:06</publishTime>
+      <publishTime>07/22/2016 16:13:19</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.WebApi.dll">
-      <publishTime>07/22/2016 15:26:04</publishTime>
+      <publishTime>07/22/2016 16:13:17</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>
@@ -6388,7 +6400,7 @@
       <publishTime>07/20/2016 08:44:36</publishTime>
     </File>
     <File Include="Resource/dist/CSS/lianda.css">
-      <publishTime>07/21/2016 14:59:40</publishTime>
+      <publishTime>07/22/2016 15:29:44</publishTime>
     </File>
     <File Include="Resource/dist/CSS/templateAdmin.css">
       <publishTime>07/18/2016 10:49:29</publishTime>
@@ -6841,7 +6853,7 @@
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
     <File Include="Resource/SCSS/lianda.scss">
-      <publishTime>07/21/2016 14:59:40</publishTime>
+      <publishTime>07/22/2016 15:29:44</publishTime>
     </File>
     <File Include="Resource/src/doc.js">
       <publishTime>07/18/2016 10:49:29</publishTime>

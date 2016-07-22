@@ -3401,7 +3401,9 @@
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Auth\ApplicationSignInManager.cs" />
     <Compile Include="Controllers\AttrFilesController.cs" />
+    <Compile Include="Controllers\MetropolitanController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\PersonalCenterController.cs" />
     <Compile Include="Controllers\ProvincialController.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -3627,8 +3629,10 @@
     <Content Include="Views\News\Detail.cshtml" />
     <Content Include="Views\Provincial\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Provincial\_Header.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\Metropolitan\Index.cshtml" />
+    <Content Include="Views\Metropolitan\UploadProject.cshtml" />
+    <Content Include="Views\PersonalCenter\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

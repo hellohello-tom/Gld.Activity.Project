@@ -144,6 +144,12 @@ appModule.config([
             templateUrl: '~/App/common/views/gld/userinfo.cshtml'
         });
 
+        //会试
+        $stateProvider.state('me', {
+            url: '/me',
+            templateUrl: '~/App/common/views/exam/me.cshtml'
+        });
+        
 
         $stateProvider.state('notifications', {
             url: '/notifications',

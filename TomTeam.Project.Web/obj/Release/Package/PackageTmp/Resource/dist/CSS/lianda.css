@@ -2137,6 +2137,10 @@ select {
   max-width: 100%;
 }
 
+.pagination {
+  margin-bottom: 40px;
+}
+
 .pagination > .item {
   display: inline-block;
   width: 40px;
