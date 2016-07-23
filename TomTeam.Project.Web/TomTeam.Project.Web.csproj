@@ -341,6 +341,7 @@
     <Content Include="App\common\views\gld\activityConfig.js" />
     <Content Include="App\common\views\gld\addnews.js" />
     <Content Include="App\common\views\gld\config.js" />
+    <Content Include="App\common\views\gld\updateuser.js" />
     <Content Include="App\common\views\gld\news.js" />
     <Content Include="App\common\views\gld\userInfo.js" />
     <Content Include="App\common\views\languages\editTextModal.js" />
@@ -2556,6 +2557,7 @@
     <Content Include="App\common\views\exam\collect.cshtml" />
     <Content Include="App\common\views\exam\me.cshtml" />
     <Content Include="App\common\views\exam\addme.cshtml" />
+    <Content Include="App\common\views\gld\updateuser.cshtml" />
     <None Include="Properties\PublishProfiles\1.pubxml" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />

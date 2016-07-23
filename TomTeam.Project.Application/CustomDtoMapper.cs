@@ -1,6 +1,7 @@
 using AutoMapper;
 using TomTeam.Project.Authorization.Users;
 using TomTeam.Project.Authorization.Users.Dto;
+using TomTeam.Project.Gld.Dto;
 
 namespace TomTeam.Project
 {
@@ -30,6 +31,11 @@ namespace TomTeam.Project
                 .ForMember(dto => dto.Password, options => options.Ignore())
                 .ReverseMap()
                 .ForMember(user => user.Password, options => options.Ignore());
+
+            Mapper.CreateMap<User, UpdateUserInput>()
+             .ForMember(dto => dto.Password, options => options.Ignore())
+             .ReverseMap()
+             .ForMember(user => user.Password, options => options.Ignore());
         }
     }
 }
