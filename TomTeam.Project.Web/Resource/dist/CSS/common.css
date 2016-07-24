@@ -1824,6 +1824,7 @@ select {
   text-align: center;
   margin-right: 5px;
   vertical-align: middle;
+  background: inherit;
 }
 
 .page-go .btn, .page-go .btn-switcher > .title > .item, .page-go .btn-tag {
@@ -1833,6 +1834,7 @@ select {
   padding: 0 8px;
   line-height: 30px;
   vertical-align: middle;
+  background: inherit;
   cursor: pointer;
   -webkit-border-radius: 4px !important;
   -moz-border-radius: 4px !important;
@@ -2061,6 +2063,7 @@ select {
   position: relative;
   overflow: hidden;
   line-height: inherit;
+  text-align: left;
 }
 
 .set > .item > .content .ipt-large {

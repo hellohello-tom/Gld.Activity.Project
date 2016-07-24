@@ -1751,6 +1751,7 @@ select {
   position: relative;
   overflow: hidden;
   line-height: inherit;
+  text-align: left;
 }
 
 .set > .item > .content .ipt-large {
@@ -1865,6 +1866,7 @@ select {
   text-align: center;
   margin-right: 5px;
   vertical-align: middle;
+  background: inherit;
 }
 
 .page-go .btn, .page-go .btn-switcher > .title > .item {
@@ -1874,6 +1876,7 @@ select {
   padding: 0 8px;
   line-height: 30px;
   vertical-align: middle;
+  background: inherit;
   cursor: pointer;
   -webkit-border-radius: 4px !important;
   -moz-border-radius: 4px !important;
@@ -1910,10 +1913,6 @@ select {
   margin: 0;
 }
 
-body {
-  min-width: 1400px;
-}
-
 .col2 > .item {
   float: left;
   width: 50%;
@@ -1946,7 +1945,6 @@ body {
 
 .wrapper > .inner {
   max-width: 1160px;
-  min-width: 1080px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -2056,6 +2054,7 @@ body {
 }
 
 .nav a.item {
+  height: 52px;
   color: #fff;
   text-decoration: none;
 }
@@ -2066,6 +2065,10 @@ body {
 
 .nav a.item.on {
   background: #E8003C;
+}
+
+.nav .wrapper .inner {
+  max-width: 1200px;
 }
 
 .btn-vote {
@@ -2154,8 +2157,14 @@ body {
   background: #F5F4F2;
 }
 
+@media screen and (min-width: 1400px) {
+  .main.home > .home {
+    padding: 0 100px;
+  }
+}
+
 .main > .title {
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   line-height: 60px;
 }
 
@@ -2197,10 +2206,11 @@ body {
 .main > .home .external-links {
   position: absolute;
   top: 110px;
-  right: -100px;
+  right: 0;
   width: 138px;
   height: 704px;
   background: url("../images/bgexl.png");
+  z-index: 5;
 }
 
 .main > .home .external-links .item {
@@ -2241,10 +2251,10 @@ body {
 
 .main > .home > .item > .inner .introduce {
   float: right;
-  width: 440px;
-  margin-right: 40px;
-  margin-right: 20px\0;
-  *margin-right: 20px;
+  width: 420px;
+  margin-right: 100px;
+  margin-right: 60px\0;
+  *margin-right: 60px;
   padding-right: 40px;
   color: #E9003C;
   font-weight: 700;
@@ -2263,12 +2273,36 @@ body {
 
 .main > .detail {
   max-width: 1200px;
+  background: #F5F4F2 url("../images/bgDetail.png") center top no-repeat;
   margin: 0 auto;
 }
 
 .main > .detail > .wrapper > .inner {
   overflow: hidden;
-  background: #F5F4F2;
+}
+
+.main > .tips {
+  height: 800px;
+  background: #F5F4F2 url("../images/bgTips.png") center top no-repeat;
+  overflow: hidden;
+}
+
+.main > .tips > .wrapper > .inner {
+  padding: 30px 60px;
+  margin-top: 250px;
+  margin-left: 610px;
+  min-height: 250px;
+  border-left: 1px #333 solid;
+  background: inherit;
+}
+
+.main > .tips > .wrapper > .inner .title {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.main > .tips > .wrapper > .inner > .content {
+  font-size: 16px;
 }
 
 .list {
@@ -2300,6 +2334,20 @@ body {
 .list li .time {
   position: absolute;
   right: 0;
+}
+
+.uc .num {
+  padding: 8px;
+  font-size: 24px;
+  color: #c09853;
+}
+
+.uc .q-type {
+  margin-top: 50px;
+}
+
+.uc .q-type:first-child {
+  margin-top: 0;
 }
 
 .news {
@@ -2615,8 +2663,21 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
+.go-upload {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+.upload .up-form {
+  display: inline-block;
+}
+
+.upload input[type=file] {
+  display: none;
+}
+
 .list-actor {
-  padding: 30px 0 40px 40px;
+  padding: 0 0 40px 40px;
   overflow: hidden;
 }
 
@@ -2779,9 +2840,8 @@ body {
 }
 
 .q .q-list {
-  max-width: 1130px;
   margin-top: 16px;
-  padding: 16px;
+  padding: 16px 20px;
   background: #f9f9f9;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
