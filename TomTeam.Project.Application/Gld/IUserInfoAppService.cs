@@ -16,5 +16,14 @@ namespace TomTeam.Project.Gld
         Task<PagedResultOutput<UserInfoListDto>> GetUsers(GetUserInfoInput input);
 
         Task<FileDto> GetUsersToExcel();
+
+        Task UpdateUserInfo(UpdateUserInput input);
+
+        /// <summary>
+        /// 获取用户信息
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<UpdateUserInput> GetUserInfo(IdInput input);
     }
 }
