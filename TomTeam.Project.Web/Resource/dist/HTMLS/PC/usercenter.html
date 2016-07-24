@@ -7,22 +7,41 @@
   <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
   <link rel="stylesheet" href="../../fonts/css/font-awesome.min.css" />
   <link rel="stylesheet" href="../../css/lianda.css">
-  <title>结果页</title>
+  <title>用户中心</title>
 </head>
 
 <body>
   <!--[if lte ie 7]>
-    <div style="position:fixed;left:0;right:0;text-align:center;z-index:5;background:#f00;color:#fff">
-      为了更好的体验本网站，请尽量在Chrome系如360等浏览器下浏览。
-    </div>
+                      <div style="position:fixed;left:0;right:0;text-align:center;z-index:5;background:#f00;color:#fff">
+                                为了更好的体验本网站，请尽量在Chrome系如360等浏览器下浏览。
+                      </div>
     <![endif]-->
+  <!-- <div class='header'>
+  <div class="top">
+    <div class="wrapper">
+      <div class="inner">
+        <div class="user">
+          欢迎您：XXXX
+          <a href="javascript:;" title="点击进入用户中心"><i class="fa fa-user"></i>用户中心</a>
+          <a href="javascript:;" title="点击登出"><i class="fa fa-sign-out"></i>退出</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper nav-box">
+      <div class="inner">
+        <div class="fr nav">
+          <a href="/">主页</a>
+          <a href="javascript:;" class="on">在线考试</a>
+        </div>
+        <a href="/" class="logo"><img src="/dist/images/logo.png" alt="logo"> </a>
+      </div>
+    </div>
+  </div>
+</div>
+ -->
   <div id="header">
     <div class="top divider wrapper">
       <div class="inner">
-        <div class="login fr">
-          <a href="javascript:;" class="signin  btn btn-primary" title="点击登录">登录</a>
-          <a href="javascript:;" class="reg  btn btn-primary" title="点击注册">注册</a>
-        </div>
         <div class="user fr">
           欢迎您：XXXX
           <a href="javascript:;" title="点击进入用户中心"><i class="fa fa-user"></i>用户中心</a>
@@ -37,70 +56,26 @@
     <div class="nav divider text-center ">
       <div class="wrapper">
         <div class="inner col5 clearfix">
-          <a href="javascript:;" class="item on">首页</a>
+          <a href="javascript:;" class="item">首页</a>
           <a href="javascript:;" class="item">乡试</a>
           <a href="javascript:;" class="item">会试</a>
           <a href="javascript:;" class="item">殿试</a>
-          <a href="javascript:;" class="item">个人中心</a>
+          <a href="javascript:;" class="item on">个人中心</a>
         </div>
       </div>
     </div>
   </div>
-  <div class="q a">
+  <div class="q">
     <div class="main">
-      <div class="body">
+      <div class="body uc">
         <div class="wrapper">
-          <div class="inner q-list">
-            <h1 class="title text-center">
-            成绩单
-            </h1>
-            <hr />
-            <div class="content">
-              <div class="a-statistics clearfix">
-                <div class="fl a-score ">
-                  93.00
-                </div>
-                <div class="a-info m10">
-                  <h4 class="title m10">详情:</h4>
-                  <div class="m10">题目名称：<span class="name">工程试题模拟</span><span class="statistics">总分<span class="num">100</span>分</span>
-                  </div>
-                  <table class="table table-bordered table-radian text-center table-hover">
-                    <thead>
-                      <tr>
-                        <th>
-                          题型
-                        </th>
-                        <th>总题数</th>
-                        <th>答对题数</th>
-                        <th>总分</th>
-                        <th>
-                          得分
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>单选</td>
-                        <td>50</td>
-                        <td>23</td>
-                        <td>100</td>
-                        <td>30</td>
-                      </tr>
-                      <tr>
-                        <td>多选</td>
-                        <td>50</td>
-                        <td>23</td>
-                        <td>100</td>
-                        <td>30</td>
-                      </tr>
-                      <tr>
-                        <td colspan=5>
-                          本次考试共<span class="num">65</span>道题，总分<span class="num">100</span>分，您做对<span class="num">1</span>道题，得到<span class="num">1.00</span>分
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+          <div class="inner">
+            <div class="item">
+              <h3 class="title">
+                乡试详情：
+              </h3>
+              <div class="content">
+                分数：
               </div>
             </div>
           </div>
@@ -142,6 +117,11 @@
       </div>
     </div>
   </div>
+  <script src="../../scripts/lib/jquery-1.11.3.js"></script>
+  <script src="../../scripts/lib/countdown.js"></script>
+  <script>
+  $('.q').find('.countdown').countdown();
+  </script>
 </body>
 
 </html>

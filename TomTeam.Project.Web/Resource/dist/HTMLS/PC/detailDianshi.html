@@ -11,16 +11,16 @@
 
 <body>
   <!--[if lte ie 7]>
-									<div style="position:fixed;left:0;right:0;text-align:center;z-index:5;background:#f00;color:#fff">
-													为了更好的体验本网站，请尽量在Chrome系如360等浏览器下浏览。
-									</div>
-		<![endif]-->
+                  <div style="position:fixed;left:0;right:0;text-align:center;z-index:5;background:#f00;color:#fff">
+                          为了更好的体验本网站，请尽量在Chrome系如360等浏览器下浏览。
+                  </div>
+    <![endif]-->
   <div id="header">
     <div class="top divider wrapper">
       <div class="inner">
         <div class="login fr">
-          <a href="javascript:;" class="signin  bg-group" title="点击登录">登录</a>
-          <a href="javascript:;" class="reg  bg-group" title="点击注册">注册</a>
+          <a href="javascript:;" class="signin btn btn-primary" title="点击登录">登录</a>
+          <a href="javascript:;" class="reg btn btn-primary" title="点击注册">注册</a>
         </div>
         <a href="/" class="logo"><img src="/dist/images/logo.png" alt="logo"> </a>
       </div>
@@ -44,8 +44,8 @@
     <div class="wrapper title">
       <div class="inner">
         <h1 class="content-title">
-  			殿试名单
-  		</h1>
+        殿试名单
+      </h1>
       </div>
     </div>
     <div class="body detail">
@@ -123,6 +123,8 @@
               </div>
             </li>
           </ul>
+          <div id="pagination" class="text-center">
+          </div>
         </div>
       </div>
     </div>
@@ -133,8 +135,8 @@
       <div class="item">
         <div class="inner">
           <h3 class="title">
-			互动沟通
-			</h3>
+      互动沟通
+      </h3>
           <div class="content">
             <p>电话&#12288;（0371）9980 9988</p>
             电子邮件&#12288; satanzlb@sohu.com
@@ -144,8 +146,8 @@
       <div class="item">
         <div class="inner">
           <h3 class="title">
-		互动沟通
-		</h3>
+    互动沟通
+    </h3>
           <div class="content">
             <p>电话&#12288;（0371）9980 9988</p>
             电子邮件&#12288; satanzlb@sohu.com
@@ -155,8 +157,8 @@
       <div class="item">
         <div class="inner">
           <h3 class="title">
-		互动沟通
-		</h3>
+    互动沟通
+    </h3>
           <div class="content">
             <p>电话&#12288;（0371）9980 9988</p>
             电子邮件&#12288; satanzlb@sohu.com
@@ -177,6 +179,19 @@
       </div>
     </div>
   </div>
+  <script src="../../scripts/lib/jquery-1.11.3.js"></script>
+  <script src="../../scripts/lib/jquery.twbsPagination.min.js"></script>
+  <script>
+  $('#pagination').twbsPagination({
+    totalPages: 15,
+    visiblePages: 5,
+    prev: '<',
+    next: '>',
+    onPageClick: function(event, page) {
+      $('#page-content').text('Page ' + page);
+    }
+  });
+  </script>
 </body>
 
 </html>
