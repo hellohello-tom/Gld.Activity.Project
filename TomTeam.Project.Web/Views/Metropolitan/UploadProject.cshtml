@@ -1,7 +1,86 @@
-﻿
-@{
-    ViewBag.Title = "UploadProject";
+﻿@{
+    ViewBag.CurrentPageName = "会试";
+    var examCollect = ViewBag.ExamInfo as TomTeam.Project.Gld.Exam.Dto.GetExamCollectOutput;
+    var activityConfig = ViewBag.ActivityConfig as TomTeam.Project.Config.ActivityConfig;
+}
+@model TomTeam.Project.Gld.Metropolitan.Dto.GetMetropolitanOutput
+@if (!ViewBag.IsLogin)
+{
+    @Html.Action("PageTips", "Home", new { message = "请先<a href=\"javascript:openLogin();\" title=\"点击登录\">登录</a>" })
+}
+else if (!activityConfig.MetropolitanState)
+{
+    @Html.Action("PageTips", "Home", new { message = "会试活动已关闭" })
+}
+else if (DateTime.Now > activityConfig.MetropolitanEndTime)
+{
+    @Html.Action("PageTips", "Home", new { message = "会试活动已结束" })
+}
+else if (DateTime.Now < activityConfig.MetropolitanStartTime)
+{
+    @Html.Action("PageTips", "Home", new { message = "会试活动未开始" })
 }
 
-<h2>UploadProject</h2>
+else if (examCollect.Id == 0 || !examCollect.IsMetropolitanStatus)
+{
+    @Html.Action("PageTips", "Home", new { message = "您没有参与会试的资格" })
+}
+else
+{
+    <div class="main">
+        <div class="body home detail event">
+            <div class="wrapper">
+                <div class="inner">
+                    <div class="news upload">
+                        <h1 class="title">
+                            上传工程
+                        </h1>
+                        <div class="content text-center">
+                            <form action="" class="up-form">
+                                <div class="set">
+                                    <dl class="item">
+                                        <dt class="title">名称：</dt>
+                                        <dd class="content">
+                                            @Html.TextBoxFor(x => x.Title, new { @class = "ipt-large" })
+                                        </dd>
+                                    </dl>
+                                    <dl class="item">
+                                        <dt class="title">描述：</dt>
+                                        <dd class="content">
+                                            @Html.TextBoxFor(x => x.Content, new { @class = "ipt-large" })
+                                        </dd>
+                                    </dl>
+                                    <dl class="item">
+                                        <dt class="title">示例图片：</dt>
+                                        <dd class="content">
+                                            <button type="button" class="btn btn-primary big btn-upload">上传</button>
+                                            <input type="file" class="file" />
+                                        </dd>
+                                    </dl>
+                                    <dl class="item">
+                                        <dt class="title">工程：</dt>
+                                        <dd class="content">
+                                            <button type="button" class="btn btn-primary big btn-upload">上传工程</button>
+                                            <input type="file" class="file" />
+                                        </dd>
+                                    </dl>
+                                    <dl class="item">
+                                        <dt class="title"></dt>
+                                        <dd class="content">
+                                            <button type="button" class="btn btn-primary">确定</button>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @section Scripts{
+        <script type="text/javascript">
 
+        </script>
+    }
+}

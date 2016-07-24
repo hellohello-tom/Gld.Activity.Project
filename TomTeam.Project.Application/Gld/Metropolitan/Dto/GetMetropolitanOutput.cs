@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace TomTeam.Project.Gld.Metropolitan.Dto
 {
     [AutoMapFrom(typeof(TomTeam.Project.Gld.Exam.Metropolitan))]
-    public class GetMetropolitanOutput : IOutputDto, IHasCreationTime
+    public class GetMetropolitanOutput : IOutputDto, ICreationAudited
     {
         public int Id { get; set; }
         
@@ -33,6 +33,13 @@ namespace TomTeam.Project.Gld.Metropolitan.Dto
         public bool IsShow { get; set; }
 
         public DateTime CreationTime
+        {
+            get;
+
+            set;
+        }
+
+        public long? CreatorUserId
         {
             get;
 

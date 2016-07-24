@@ -29,6 +29,5 @@ namespace TomTeam.Project.Gld.Dto
         /// </summary>        
         [StringLength(User.MaxPlainPasswordLength)]
         public string Password { get; set; }
-
     }
 }
