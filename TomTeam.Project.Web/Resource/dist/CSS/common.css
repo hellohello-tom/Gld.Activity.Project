@@ -1384,7 +1384,8 @@ input.ipt-small {
 
 .btn-switcher > .title > .item {
   position: relative;
-  line-height: 20px !important;
+  padding: 0 1.5em;
+  line-height: 26px !important;
   color: #666;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
