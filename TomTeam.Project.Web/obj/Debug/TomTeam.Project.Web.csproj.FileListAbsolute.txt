@@ -677,3 +677,4 @@ D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\bin\
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\bin\zh-Hans\System.Web.WebPages.resources.dll
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\bin\AutoMapper.Net4.dll

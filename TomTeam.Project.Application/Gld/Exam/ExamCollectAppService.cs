@@ -48,8 +48,6 @@ namespace TomTeam.Project.Gld.Exam
 
         public async Task<GetExamCollectOutput> GetUserExamCollect()
         {
-            if (!AbpSession.UserId.HasValue)
-                throw new UserFriendlyException("没有获取到登录用户信息！");
 
             var detail = await _examCollectRepository.FirstOrDefaultAsync(x => x.CreatorUserId == AbpSession.UserId.Value) ?? new ExamCollect();
 

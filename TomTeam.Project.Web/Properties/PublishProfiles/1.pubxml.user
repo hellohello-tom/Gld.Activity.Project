@@ -1189,7 +1189,7 @@
       <publishTime>01/28/2015 04:04:30</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.Application.dll">
-      <publishTime>07/22/2016 16:13:17</publishTime>
+      <publishTime>07/22/2016 16:43:14</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.Core.dll">
       <publishTime>07/22/2016 15:26:02</publishTime>
@@ -1198,10 +1198,10 @@
       <publishTime>07/22/2016 15:26:03</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.Web.dll">
-      <publishTime>07/22/2016 16:13:19</publishTime>
+      <publishTime>07/22/2016 16:43:16</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.WebApi.dll">
-      <publishTime>07/22/2016 16:13:17</publishTime>
+      <publishTime>07/22/2016 16:43:15</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>
@@ -9519,11 +9519,20 @@
     <File Include="Views/Layout/_PreFooter.cshtml">
       <publishTime>06/23/2016 15:44:02</publishTime>
     </File>
+    <File Include="Views/Metropolitan/Index.cshtml">
+      <publishTime>07/22/2016 16:27:59</publishTime>
+    </File>
+    <File Include="Views/Metropolitan/UploadProject.cshtml">
+      <publishTime>07/22/2016 16:29:54</publishTime>
+    </File>
     <File Include="Views/News/Detail.cshtml">
       <publishTime>07/21/2016 10:04:16</publishTime>
     </File>
     <File Include="Views/News/Index.cshtml">
       <publishTime>07/21/2016 09:58:59</publishTime>
+    </File>
+    <File Include="Views/PersonalCenter/Index.cshtml">
+      <publishTime>07/22/2016 16:32:05</publishTime>
     </File>
     <File Include="Views/Provincial/Index.cshtml">
       <publishTime>07/21/2016 17:18:04</publishTime>

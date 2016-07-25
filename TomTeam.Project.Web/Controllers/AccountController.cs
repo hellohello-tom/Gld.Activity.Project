@@ -328,7 +328,8 @@ namespace TomTeam.Project.Web.Controllers
                 CheckErrors(await _userManager.CreateAsync(user));
                 await _unitOfWorkManager.Current.SaveChangesAsync();
 
-                if (!user.IsEmailConfirmed)
+                //if (!user.IsEmailConfirmed)
+                if (false)
                 {
                     user.SetNewEmailConfirmationCode();
                     await _userEmailer.SendEmailActivationLinkAsync(user);
