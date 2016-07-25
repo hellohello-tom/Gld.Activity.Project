@@ -4,9 +4,7 @@
     var examList = ViewBag.ExamList as Abp.Application.Services.Dto.PagedResultOutput<TomTeam.Project.Gld.Exam.Dto.ExamListDto>;
     var examCollect = ViewBag.UserExamCollect as TomTeam.Project.Gld.Exam.Dto.GetExamCollectOutput;
 }
-
 @model TomTeam.Project.Config.ActivityConfig
-
 <!--[if lte ie 7]>
                     <div style="position:fixed;left:0;right:0;text-align:center;z-index:5;background:#f00;color:#fff">
                               为了更好的体验本网站，请尽量在Chrome系如360等浏览器下浏览。
@@ -14,7 +12,7 @@
   <![endif]-->
 @if (!isLogin)
 {
-    @Html.Action("PageTips", "Home", new { message= "请先<a href=\"javascript:openLogin();\" title=\"点击登录\">登录</a>"})
+    @Html.Action("PageTips", "Home", new { message = "请先<a href=\"javascript:openLogin();\" title=\"点击登录\">登录</a>" })
 }
 else if (!Model.ProvincialState)
 {
@@ -28,7 +26,6 @@ else if (DateTime.Now < Model.ProvincialStartTime)
 {
     @Html.Action("PageTips", "Home", new { message = "乡试活动未开始" })
 }
-
 else
 {
     if (examCollect.Id > 0)
@@ -45,18 +42,24 @@ else
         }
     }
 
-    <div class="q">
-        <div class="main">
-            <div class="body">
-                <div class="wrapper">
-                    <form class="inner q-list" onsubmit="return false;" id="examForm">
-                        <h1 class="title text-center">
-                            @Model.ExamTtile
-                        </h1>
-                        <ul class="content">
 
-                            @for (var i = 0; i < examList.Items.Count; i++)
-                            {
+    if (examCollect.Id == 0)
+    {
+        @Html.Action("PageTips", "Home", new { message = "<button type=\"submit\" onclick=\"beginExam()\" class=\"btn btn-primary big\">开始考试</button>" , isShowTitles =false})
+    }
+    else
+    {
+        <div class="q">
+            <div class="main">
+                <div class="body">
+                    <div class="wrapper">
+                        <form class="inner q-list" onsubmit="return false;" id="examForm">
+                            <h1 class="title text-center">
+                                @Model.ExamTtile
+                            </h1>
+                            <ul class="content">
+                                @for (var i = 0; i < examList.Items.Count; i++)
+                                {
                                 <li class="item">
                                     <div class="order">
                                         <span class="num"></span>
@@ -66,68 +69,68 @@ else
                                     </div>
                                     <ul class="content">
                                         @foreach (var options in examList.Items[i].Answers)
-                                        {
+                                            {
                                             <li>
                                                 @(options.Options + "、" + options.Content)
                                             </li>
-                                        }
+                                            }
                                     </ul>
                                     <p class="a options">
                                         @foreach (var options in examList.Items[i].Answers)
-                                        {
+                                            {
                                             <label>
                                                 <input type="radio" class="radioOptions" name="@examList.Items[i].Id" value="@options.Id" />@options.Options
                                             </label>
-                                        }
+                                            }
                                     </p>
                                 </li>
-                            }
-                        </ul>
-                    </form>
+                                }
+                            </ul>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="wrapper footer">
-            <div class="inner a-info">
-                <button type="submit" onclick="submitForm();" class="btn btn-primary big fr ">交卷</button>
-                <span class="time-remain">剩余时间：<span class="countdown" data-time="@(examCollect.Id > 0 && DateTime.Now < examCollect.CreationTime.AddMinutes(Model.ExamTime) ? (examCollect.CreationTime.AddMinutes(Model.ExamTime) - DateTime.Now).TotalMinutes : Model.ExamTime * 60)"></span></span>
-                <span class="statistics">
-                    共
-                    <span class="a-amount num">@examList.Items.Count </span>题 总分 <span class="a-score num">
-                        @(Model.EveryExamIntegral * Model.ExamCount)
-                    </span>分
-                </span>
+            <div class="wrapper footer">
+                <div class="inner a-info">
+                    <button type="submit" onclick="submitForm();" class="btn btn-primary big fr ">交卷</button>
+                    <span class="time-remain">剩余时间：<span class="countdown" data-time="@((examCollect.CreationTime.AddMinutes(Model.ExamTime) - DateTime.Now).TotalSeconds)"></span></span>
+                    <span class="statistics">
+                        共
+                        <span class="a-amount num">@examList.Items.Count </span>题 总分 <span class="a-score num">
+                            @(Model.EveryExamIntegral * Model.ExamCount)
+                        </span>分
+                    </span>
+                </div>
             </div>
+            }
         </div>
-    </div>
+    }
     @section Scripts{
         <script src="~/Resource/dist/scripts/lib/countdown.js"></script>
         @if (examCollect.Id <= 0)
         {
             <script type="text/javascript">
-                var d = dialog({
-                    skin: 'mini',
-                    width: 500,
-                    title: '提示',
-                    content: '您正在参加考试，考试一旦开始后不可结束，点击下方按钮进入考试',
-                    okValue: '知道了',
-                    ok: function () {
-                        $.post('/api/services/app/examCollect/InitExamInfo', {}, function (json) {
-                            if (json.success) {
-                                d.remove();
-                                $('.q').find('.countdown').countdown({
-                                    callback: function () {
-                                        window.location.href = "/PersonalCenter";
-                                    }
-                                });
-                            }
-                            else {
-                                alertMsg(json.error.message || json.error.detail);
-                            }
-                        });
-                    },
-                    cancel: false,
-                }).showModal();
+                function beginExam() {
+                    var d = dialog({
+                        skin: 'mini',
+                        width: 500,
+                        title: '提示',
+                        content: '您正在参加考试，考试一旦开始后不可结束，点击下方按钮进入考试',
+                        okValue: '知道了',
+                        ok: function () {
+                            $.post('/api/services/app/examCollect/InitExamInfo', {}, function (json) {
+                                if (json.success) {
+                                    d.remove();
+                                    window.location.href = window.location.href;
+                                }
+                                else {
+                                    alertMsg(json.error.message || json.error.detail);
+                                }
+                            });
+                        },
+                        cancel: false,
+                    }).showModal();
+                }
             </script>
         }
         else
@@ -139,74 +142,68 @@ else
                             window.location.href = window.location.href;
                         }
                     });
+                    $(window).bind('beforeunload', function () {
+                        return '您正在进行考试，确定离开后页面数据将丢失，是否继续？';
+                    });
                 });
+
+                function submitForm() {
+
+                    var errorCount = 0;
+                    var postData = [];
+                    $(".options").each(function (eq) {
+                        var checkLength = $(this).find("input:checked").length;
+                        if (checkLength == 0) {
+                            alertMsg("第" + (eq + 1) + "题尚未选择，请检查");
+                            var point = $(this).closest('.content').offset();
+                            window.scrollTo(0, point.top);
+                            errorCount++;
+                            return false;
+                        }
+                        else {
+                            postData.push({ topic: $(this).find("input:checked").attr("name"), answer: $(this).find("input:checked").val() });
+                        }
+                    });
+                    if (errorCount == 0) {
+
+                        var d = dialog({
+                            skin: 'mini',
+                            title: '确认提示',
+                            width: 400,
+                            content: '<div class="text-center">' + '提交后将不可修改，确认提交？' + '</div>',
+                            okValue: '确认',
+                            ok: function () {
+
+                                $.ajax({
+                                    type: 'POST',
+                                    processData: false,
+                                    contentType: "application/json",
+                                    url: '/api/services/app/examCollect/PostExamInfo',
+                                    data: JSON.stringify({ answers: postData }),
+                                    dataType: 'json',
+                                    cache: false,
+                                    success: function (json) {
+                                        if (json.success) {
+                                            $(window).unbind('beforeunload');
+                                            window.location.href = "/PersonalCenter";
+                                        }
+                                        else {
+                                            alertMsg(json.error.message || json.error.detail);
+                                        }
+                                    },
+                                    error: function () {
+                                    }
+                                });
+                            },
+                            cancelValue: '取消',
+                            cancel: function () {
+                                d.remove();
+                            }
+                        }).showModal();
+                    }
+                    return false;
+                }
             </script>
         }
-        <script type="text/javascript">
-
-            $(function () {
-
-                $(window).bind('beforeunload', function () {
-                    return '您正在进行考试，确定离开后页面数据将丢失，是否继续？';
-                });
-            });
-            function submitForm() {
-
-                var errorCount = 0;
-                var postData = [];
-                $(".options").each(function (eq) {
-                    var checkLength = $(this).find("input:checked").length;
-                    if (checkLength == 0) {
-                        alertMsg("第" + (eq + 1) + "题尚未选择，请检查");
-                        var point = $(this).closest('.content').offset();
-                        window.scrollTo(0, point.top);
-                        errorCount++;
-                        return false;
-                    }
-                    else {
-                        postData.push({ topic: $(this).find("input:checked").attr("name"), answer: $(this).find("input:checked").val() });
-                    }
-                });
-                if (errorCount == 0) {
-
-                    var d = dialog({
-                        skin: 'mini',
-                        title:  '确认提示',
-                        width:  400,
-                        content: '<div class="text-center">' + '提交后将不可修改，确认提交？' + '</div>',
-                        okValue:'确认',
-                        ok: function () {
-
-                            $.ajax({
-                                type: 'POST',
-                                processData :false,
-                                contentType: "application/json",
-                                url: '/api/services/app/examCollect/PostExamInfo',
-                                data: JSON.stringify({ answers: postData }),
-                                dataType: 'json',
-                                cache: false,
-                                success: function (json) {
-                                    if (json.success) {
-                                        $(window).unbind('beforeunload');
-                                        window.location.href = "/PersonalCenter";
-                                    }
-                                    else {
-                                        alertMsg(json.error.message || json.error.detail);
-                                    }
-                                },
-                                error: function () {
-                                }
-                            });
-                        },
-                        cancelValue: '取消',
-                        cancel: function () {
-                            d.remove();
-                        }
-                    }).showModal();
-                }
-                return false;
-            }
-        </script>
     }
-
 }

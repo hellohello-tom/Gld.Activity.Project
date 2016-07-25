@@ -30,26 +30,48 @@
                 {
                     <a href="javascript:openLogin();" class="btn btn-info big go-upload">上传我的工程文件</a>
                 }
-                <ul class="list-actor">
-                    @foreach (var item in Model.Items)
-                    {
-                        <li>
-                            <div class="inner">
-                                <img alt="" src="@item.ImgsPath" />
-                                <p class="info">@item.UserDisplayName</p>
-                                <p class="vote-num">
-                                    <span class="text-danger">@item.LikeCount</span>票
-                                </p>
-                                <button class="btn-vote" title="投票">投他一票</button>
-                            </div>
-                        </li>
-                    }
-                    
-                </ul>
+                @if (Model.Items.Count > 0)
+                {
+                    <ul class="list-actor">
+                        @foreach (var item in Model.Items)
+                        {
+                            <li>
+                                <div class="inner">
+                                    <img alt="" src="@item.ImgsPath" />
+                                    <p class="info">@item.UserDisplayName</p>
+                                    <p class="vote-num">
+                                        <span class="text-danger">@item.LikeCount</span>票
+                                    </p>
+                                    <button class="btn-vote" onclick="@(ViewBag.IsLogin ? "vote(" + item.Id + ");" : "openLogin();")" title="投票">投他一票</button>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+
+                }
+                else
+                {
+                    @Html.Action("PageTips", "Home", new { message = "暂无数据" })
+                }
                 <div id="pagination" class="text-center">
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+@section Scripts{
+    <script type="text/javascript">
+        //投票
+        function vote(id) {
+            $.post('/api/services/app/metropolitan/Vote', { id: id }, function (json) {
+                if (json.success) {
+                    alertMsg("投票成功", 3000);
+                    $('#voteNum').html(json.result);
+                }
+                else {
+                    alertMsg(json.error.message || json.error.detail);
+                }
+            });
+        }
+    </script>
+}

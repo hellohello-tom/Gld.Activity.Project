@@ -28,9 +28,10 @@ namespace TomTeam.Project.Web.Controllers
         }
 
         [ChildActionOnly]
-        public ActionResult PageTips(string message="")
+        public ActionResult PageTips(string message = "", bool isShowTitles = true)
         {
             ViewBag.Message = message;
+            ViewBag.IsShowTitle = isShowTitles;
             return View();
         }
 

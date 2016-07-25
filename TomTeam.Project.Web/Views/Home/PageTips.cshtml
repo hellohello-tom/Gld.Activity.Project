@@ -7,9 +7,12 @@
     <div class="body home event tips">
         <div class="wrapper">
             <div class="inner tips q-list">
+                @if (ViewBag.IsShowTitle)
+                {
                 <h1 class="title text-center">
                     提示
                 </h1>
+                }
                 <div class="content text-center">
                     @Html.Raw(ViewBag.Message)
                 </div>

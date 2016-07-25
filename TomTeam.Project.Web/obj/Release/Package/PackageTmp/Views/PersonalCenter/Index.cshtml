@@ -1,7 +1,92 @@
-﻿
-@{
-    ViewBag.Title = "Index";
+﻿@{ 
+    var user = ViewBag.UserInfo as TomTeam.Project.Authorization.Users.User;
+    var provinical = ViewBag.ExamCollect as TomTeam.Project.Gld.Exam.Dto.GetExamCollectOutput;
 }
+<div class="q">
+    <div class="main">
+        <div class="body uc">
+            <div class="wrapper">
+                <div class="inner q-list">
+                    <h3 class="q-type">
+                        个人信息：
+                    </h3>
+                    <div class="content">
+                        <div class="item">
+                            注册信息：
+                            <ul class="downlist">
+                                <li>
+                                    <p class="name">
+                                       姓名：@user.Name
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="name">
+                                        公司名称：@user.CompanyName
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="name">
+                                        专业：@user.Major
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="name">
+                                        手机号码：@user.Phone
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="name" style="color:red">
+                                     系统消息：@user.UserRemark
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    @if (provinical.Id > 0)
+                    {
+                    <h3 class=" q-type">
+                        乡试详情：
+                    </h3>
+                    <div class="content">
+                        <div class="item">
+                            <ul class="downlist">
+                                <li>
+                                    <p class="name">
+                                        总得分：
+                                        <em class="count num">95</em>分
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="name">
+                                        是否完成考试：
+                                        <em>@(provinical.IsCompleteProvincial ? "是" : "否")</em>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    }
+                    @*<h3 class=" q-type">
+                        会试详情：
+                    </h3>
+                    <div class="content">
+                        <p class="item">
+                            <span>答题总数：<em class="num">67</em>题</span>
+                            <span> 答对： <em class="num">35</em></span>
+                            <span>
+                                总得分：
+                                <em class="count num">95</em>分
+                            </span>
+                            <span>
+                                正确率：
+                                <em class="num">67%</em>
+                            </span>
+                        </p>
+                    </div>*@
 
-<h2>Index</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 

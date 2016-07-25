@@ -1,0 +1,160 @@
+﻿@{
+    ViewBag.CurrentPageName = "会试";
+}
+@model TomTeam.Project.Gld.Metropolitan.Dto.GetMetropolitanOutput
+@if (Model == null || Model.Id == 0)
+{
+    @Html.Action("PageTips", "Home", new { message = "没有获取到该工程数据" })
+}
+else
+{
+    <div class="main">
+        <div class="wrapper title">
+            <div class="inner show">
+                <div class="fr vote text-center">
+                    <b class="text-danger num" id="voteNum">@Model.LikeCount</b>票
+                    <p>
+                        <button class="btn-vote" onclick="@(ViewBag.IsLogin ? "vote();" : "openLogin();")">投他一票</button>
+                    </p>
+                </div>
+                <div class="info">
+                    <h1 class="name">
+                        @Model.Title
+                    </h1>
+                    <p class="meta">
+                        <span class="author">作者 @Model.UserDisplayName</span>
+                        <span class="area">地区 @Model.Region</span>
+                        <span class="pv"><i class="num">@Model.ViewCount</i>浏览</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="body home detail event">
+            <div class="wrapper">
+                <div class="inner">
+                    <div class="work-show js-slide">
+                        <div class="content">
+                            <ul class="lists">
+                                @{
+                                    var imgList = Model.ImgsPath == null ? new string[1] { "" } : Model.ImgsPath.Split(';');
+                                }
+                                @if (imgList.Length > 0 && !string.IsNullOrEmpty(imgList[0]))
+                                {
+                                    foreach (var item in imgList)
+                                    {
+                                        <li class="item">
+                                            <img src="@item" alt="" />
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                        <div class="operate">
+                            <span class="item prev"></span>
+                            <span class="item next"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="q">
+        <div class="main">
+            <div class="body uc">
+                <div class="wrapper">
+                    <div class="inner q-list">
+
+                        <h3 class="q-type">
+                            工程文件：
+                        </h3>
+                        <div class="content">
+                            <div class="item">
+                                工程下载：
+                                <ul class="downlist">
+                                    <li>
+                                        <p class="name">
+                                            2016030f工程文件.CAD
+                                            <button class="ml10 btn btn-ok">下载</button>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @section Scripts{
+        <script type="text/javascript">
+            //投票
+            function vote() {
+                $.post('/api/services/app/metropolitan/Vote', {id:@Model.Id}, function (json) {
+                    if (json.success) {
+                        alertMsg("投票成功",3000);
+                        $('#voteNum').html(json.result);
+                    }
+                    else {
+                        alertMsg(json.error.message || json.error.detail);
+                    }
+                });
+            }
+            $.fn.sliding = function () {
+                this.on('click', '.prev,.next', function () {
+                    var $t = $(this),
+                        $p = $t.closest('.js-slide'),
+                        $list = $p.find('.lists'),
+                        children = $list.children(),
+                        wChild = $(children[0]).outerWidth(),
+                        w = $list.width(),
+                        ratio = Math.ceil(w / wChild),
+                        cpr = Math.floor(children.length / ratio) - (children.length % ratio == 0 ? 1 : 0),
+                        l = parseInt($list.css('left')) || 0,
+                        absL = Math.abs(l);
+                    cpr = cpr < 0 ? 0 : cpr;
+                    if ($t.data('sliding')) {
+                        return;
+                    }
+                    $t.data('sliding', 1);
+                    if ($t.hasClass('next')) {
+                        if (Math.abs(cpr * w - absL) < 30) {
+                            $list.animate({
+                                left: l - 15
+                            }, 300);
+                            setTimeout(function () {
+                                $list.animate({
+                                    left: l
+                                }, 300, function () {
+                                    $t.data('sliding', 0);
+                                });
+                            }, 300);
+                            return;
+                        }
+                        l -= w;
+                    } else {
+                        if (absL < 30) {
+                            $list.animate({
+                                left: l + 15
+                            }, 300);
+                            setTimeout(function () {
+                                $list.animate({
+                                    left: 0
+                                }, 300, function () {
+                                    $t.data('sliding', 0);
+                                });
+                            }, 300);
+                            return;
+                        }
+                        l += w;
+                    }
+                    $list.animate({
+                        left: l
+                    }, function () {
+                        $t.data('sliding', 0);
+                    });
+                });
+                return this;
+            };
+        </script>
+    }
+                                    }

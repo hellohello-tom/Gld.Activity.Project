@@ -499,3 +499,4 @@ E:\Poject\gld\TomTeam.Project.WebApi\bin\Debug\zh-Hant\Microsoft.Spatial.resourc
 E:\Poject\gld\TomTeam.Project.WebApi\obj\Debug\TomTeam.Project.WebApi.csprojResolveAssemblyReference.cache
 E:\Poject\gld\TomTeam.Project.WebApi\obj\Debug\TomTeam.Project.WebApi.dll
 E:\Poject\gld\TomTeam.Project.WebApi\obj\Debug\TomTeam.Project.WebApi.pdb
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.WebApi\bin\Debug\AutoMapper.Net4.dll

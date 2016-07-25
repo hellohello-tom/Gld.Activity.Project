@@ -201,11 +201,17 @@
     <File Include="App/common/views/gld/news.js">
       <publishTime>07/18/2016 10:38:04</publishTime>
     </File>
+    <File Include="App/common/views/gld/updateuser.cshtml">
+      <publishTime>07/25/2016 08:32:35</publishTime>
+    </File>
+    <File Include="App/common/views/gld/updateuser.js">
+      <publishTime>07/25/2016 08:32:35</publishTime>
+    </File>
     <File Include="App/common/views/gld/userInfo.cshtml">
       <publishTime>07/20/2016 09:19:39</publishTime>
     </File>
     <File Include="App/common/views/gld/userInfo.js">
-      <publishTime>07/20/2016 09:54:55</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="App/common/views/languages/createOrEditModal.cshtml">
       <publishTime>06/23/2016 15:42:01</publishTime>
@@ -1189,19 +1195,19 @@
       <publishTime>01/28/2015 04:04:30</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.Application.dll">
-      <publishTime>07/22/2016 16:43:14</publishTime>
+      <publishTime>07/25/2016 08:48:07</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.Core.dll">
-      <publishTime>07/22/2016 15:26:02</publishTime>
+      <publishTime>07/25/2016 08:48:06</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.EntityFramework.dll">
-      <publishTime>07/22/2016 15:26:03</publishTime>
+      <publishTime>07/25/2016 08:48:08</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.Web.dll">
-      <publishTime>07/22/2016 16:43:16</publishTime>
+      <publishTime>07/25/2016 08:48:50</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.WebApi.dll">
-      <publishTime>07/22/2016 16:43:15</publishTime>
+      <publishTime>07/25/2016 08:48:08</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>
@@ -6397,10 +6403,10 @@
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
     <File Include="Resource/dist/CSS/common.css">
-      <publishTime>07/20/2016 08:44:36</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/dist/CSS/lianda.css">
-      <publishTime>07/22/2016 15:29:44</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/dist/CSS/templateAdmin.css">
       <publishTime>07/18/2016 10:49:29</publishTime>
@@ -6436,25 +6442,34 @@
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
     <File Include="Resource/dist/HTMLS/PC/a.html">
-      <publishTime>07/20/2016 08:44:36</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/dist/HTMLS/PC/detailDianshi.html">
-      <publishTime>07/19/2016 09:47:57</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/dist/HTMLS/PC/detailHuishi.html">
-      <publishTime>07/20/2016 08:44:36</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/dist/HTMLS/PC/detailSaishi.html">
-      <publishTime>07/21/2016 08:28:39</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/dist/HTMLS/PC/home.html">
-      <publishTime>07/21/2016 08:28:39</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/dist/HTMLS/PC/news.html">
-      <publishTime>07/21/2016 10:04:57</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
+    </File>
+    <File Include="Resource/dist/HTMLS/PC/pageTips.html">
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/dist/HTMLS/PC/q.html">
       <publishTime>07/21/2016 08:28:39</publishTime>
+    </File>
+    <File Include="Resource/dist/HTMLS/PC/upload.html">
+      <publishTime>07/25/2016 08:32:35</publishTime>
+    </File>
+    <File Include="Resource/dist/HTMLS/PC/usercenter.html">
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/dist/iconfonts/demo-files/demo.css">
       <publishTime>07/18/2016 10:49:29</publishTime>
@@ -6487,22 +6502,46 @@
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
     <File Include="Resource/dist/images/bgDetail.png">
-      <publishTime>07/18/2016 10:49:29</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/dist/images/bgDivider.jpg">
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
+    <File Include="Resource/dist/images/bgexl.png">
+      <publishTime>07/25/2016 08:32:35</publishTime>
+    </File>
     <File Include="Resource/dist/images/bgGroup.png">
       <publishTime>07/18/2016 10:49:29</publishTime>
+    </File>
+    <File Include="Resource/dist/images/bghomebody - 副本.png">
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/dist/images/bghomebody-Origin.png">
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
     <File Include="Resource/dist/images/bghomebody.png">
-      <publishTime>07/18/2016 10:49:29</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
+    </File>
+    <File Include="Resource/dist/images/bghomebody2_origin.png">
+      <publishTime>07/25/2016 08:32:35</publishTime>
+    </File>
+    <File Include="Resource/dist/images/bgTips.png">
+      <publishTime>07/25/2016 08:32:35</publishTime>
+    </File>
+    <File Include="Resource/dist/images/ex1.gif">
+      <publishTime>07/19/2016 09:47:57</publishTime>
+    </File>
+    <File Include="Resource/dist/images/ex1.jpg">
+      <publishTime>07/19/2016 09:47:57</publishTime>
     </File>
     <File Include="Resource/dist/images/group1.psd">
       <publishTime>07/18/2016 10:49:29</publishTime>
+    </File>
+    <File Include="Resource/dist/images/italy1.jpg">
+      <publishTime>07/19/2016 09:47:57</publishTime>
+    </File>
+    <File Include="Resource/dist/images/italy2.jpg">
+      <publishTime>07/19/2016 09:47:57</publishTime>
     </File>
     <File Include="Resource/dist/images/logo.png">
       <publishTime>07/18/2016 10:49:29</publishTime>
@@ -6513,17 +6552,20 @@
     <File Include="Resource/dist/images/QrcodeWeixin.png">
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
+    <File Include="Resource/dist/images/slogan1 - 副本.jpg">
+      <publishTime>07/25/2016 08:32:35</publishTime>
+    </File>
     <File Include="Resource/dist/images/slogan1.jpg">
-      <publishTime>07/18/2016 10:49:29</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/dist/images/slogan2.jpg">
-      <publishTime>07/18/2016 10:49:29</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/dist/scripts/API/simulateData.js">
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
     <File Include="Resource/dist/scripts/bundle/doc.bundle.js">
-      <publishTime>07/18/2016 10:49:29</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/dist/scripts/bundle/templateAdmin.bundle.js">
       <publishTime>07/18/2016 10:49:29</publishTime>
@@ -6610,7 +6652,7 @@
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
     <File Include="Resource/dist/scripts/lib/jquery.twbsPagination.js">
-      <publishTime>07/18/2016 10:49:29</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/dist/scripts/lib/jquery.twbsPagination.min - 副本.js">
       <publishTime>07/18/2016 10:49:29</publishTime>
@@ -6619,7 +6661,7 @@
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
     <File Include="Resource/dist/scripts/lib/jquery.twbsPagination.min.js">
-      <publishTime>07/18/2016 10:49:29</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/dist/scripts/lib/jquery.twbsPagination.min.js.bak">
       <publishTime>07/18/2016 10:49:29</publishTime>
@@ -6754,7 +6796,7 @@
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
     <File Include="Resource/SCSS/base/basePC.scss">
-      <publishTime>07/18/2016 10:49:29</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/SCSS/base/baseSCSS.scss">
       <publishTime>07/18/2016 10:49:29</publishTime>
@@ -6778,7 +6820,7 @@
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
     <File Include="Resource/SCSS/base/_btn.scss">
-      <publishTime>07/18/2016 10:49:29</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/SCSS/base/_btn_tag.scss">
       <publishTime>07/18/2016 10:49:29</publishTime>
@@ -6820,7 +6862,7 @@
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
     <File Include="Resource/SCSS/base/_variables.scss">
-      <publishTime>07/20/2016 08:44:36</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/SCSS/common.scss">
       <publishTime>07/18/2016 10:49:29</publishTime>
@@ -6832,7 +6874,7 @@
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
     <File Include="Resource/SCSS/common/_pagination.scss">
-      <publishTime>07/18/2016 10:49:29</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/SCSS/common/_progress.scss">
       <publishTime>07/18/2016 10:49:29</publishTime>
@@ -6841,7 +6883,7 @@
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
     <File Include="Resource/SCSS/common/_set.scss">
-      <publishTime>07/18/2016 10:49:29</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/SCSS/common/_swiper.scss">
       <publishTime>07/18/2016 10:49:29</publishTime>
@@ -6853,13 +6895,16 @@
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
     <File Include="Resource/SCSS/lianda.scss">
-      <publishTime>07/22/2016 15:29:44</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Resource/src/doc.js">
       <publishTime>07/18/2016 10:49:29</publishTime>
     </File>
     <File Include="Resource/src/HTMLS/PC/tmpl.html">
       <publishTime>07/18/2016 10:49:29</publishTime>
+    </File>
+    <File Include="Resource/src/lianda.js">
+      <publishTime>07/20/2016 08:44:36</publishTime>
     </File>
     <File Include="Resource/src/node/import.js">
       <publishTime>07/18/2016 10:49:29</publishTime>
@@ -6923,6 +6968,9 @@
     </File>
     <File Include="Resource/src/scripts/module/getUTFLength.js">
       <publishTime>07/18/2016 10:49:29</publishTime>
+    </File>
+    <File Include="Resource/src/scripts/module/jquerySliding.js">
+      <publishTime>07/20/2016 08:44:36</publishTime>
     </File>
     <File Include="Resource/src/scripts/module/loading.js">
       <publishTime>07/18/2016 10:49:29</publishTime>
@@ -9499,10 +9547,13 @@
       <publishTime>06/23/2016 15:44:01</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>07/21/2016 08:59:29</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Views/Home/Login.cshtml">
       <publishTime>07/20/2016 14:26:11</publishTime>
+    </File>
+    <File Include="Views/Home/PageTips.cshtml">
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Views/Layout/layout.css">
       <publishTime>06/23/2016 15:44:02</publishTime>
@@ -9511,31 +9562,34 @@
       <publishTime>07/21/2016 08:48:28</publishTime>
     </File>
     <File Include="Views/Layout/_Header.cshtml">
-      <publishTime>07/22/2016 09:29:06</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Views/Layout/_Layout.cshtml">
-      <publishTime>07/21/2016 15:41:11</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Views/Layout/_PreFooter.cshtml">
       <publishTime>06/23/2016 15:44:02</publishTime>
     </File>
     <File Include="Views/Metropolitan/Index.cshtml">
-      <publishTime>07/22/2016 16:27:59</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Views/Metropolitan/UploadProject.cshtml">
-      <publishTime>07/22/2016 16:29:54</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Views/News/Detail.cshtml">
       <publishTime>07/21/2016 10:04:16</publishTime>
     </File>
     <File Include="Views/News/Index.cshtml">
-      <publishTime>07/21/2016 09:58:59</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
+    </File>
+    <File Include="Views/Palace/Index.cshtml">
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Views/PersonalCenter/Index.cshtml">
-      <publishTime>07/22/2016 16:32:05</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Views/Provincial/Index.cshtml">
-      <publishTime>07/21/2016 17:18:04</publishTime>
+      <publishTime>07/25/2016 08:32:35</publishTime>
     </File>
     <File Include="Views/Provincial/_Header.cshtml">
       <publishTime>07/20/2016 17:10:46</publishTime>
@@ -9559,7 +9613,7 @@
       <publishTime>06/23/2016 15:44:02</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/22/2016 09:07:52</publishTime>
+      <publishTime>07/25/2016 08:48:12</publishTime>
     </File>
   </ItemGroup>
 </Project>

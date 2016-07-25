@@ -28,8 +28,21 @@ namespace TomTeam.Project.Gld.Metropolitan.Dto
 
         public string UserDisplayName { get; set; }
 
+        /// <summary>
+        /// 地区
+        /// </summary>
+        public string Region { get; set; }
+
+        /// <summary>
+        /// 点赞数
+        /// </summary>
         public int LikeCount { get; set; }
-        
+
+        /// <summary>
+        /// 浏览次数
+        /// </summary>
+        public int ViewCount { get; set; }
+
         public bool IsShow { get; set; }
 
         public DateTime CreationTime

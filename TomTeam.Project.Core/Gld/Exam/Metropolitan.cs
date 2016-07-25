@@ -18,15 +18,33 @@ namespace TomTeam.Project.Gld.Exam
         public string Content { get; set; }
 
         [Required]
+        public string DefaultImg { get; set; }
+
+        [Required]
         public string ImgsPath { get; set; }
 
         [Required]
         public string FilePath { get; set; }
         
+        /// <summary>
+        /// 用户名
+        /// </summary>
         public string UserDisplayName { get; set; }
 
+        /// <summary>
+        /// 地区
+        /// </summary>
+        public string Region { get; set; }
+
+        /// <summary>
+        /// 点赞数
+        /// </summary>
         public int LikeCount { get; set; }
 
+        /// <summary>
+        /// 浏览次数
+        /// </summary>
+        public int ViewCount { get; set; }
 
         public bool IsShow { get; set; }
     }

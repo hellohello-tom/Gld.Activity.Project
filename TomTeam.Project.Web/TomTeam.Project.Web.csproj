@@ -2181,7 +2181,6 @@
     <Content Include="Resource\dist\images\bgexl.png" />
     <Content Include="Resource\dist\images\bgGroup.png" />
     <Content Include="Resource\dist\images\bghomebody - 副本.png" />
-    <Content Include="Resource\dist\images\bghomebody-Origin.png" />
     <Content Include="Resource\dist\images\bghomebody.png" />
     <Content Include="Resource\dist\images\bghomebody2_origin.png" />
     <Content Include="Resource\dist\images\bgTips.png" />
@@ -2197,6 +2196,7 @@
     <Content Include="Resource\dist\images\slogan2.jpg" />
     <Content Include="Resource\dist\scripts\API\simulateData.js" />
     <Content Include="Resource\dist\scripts\bundle\doc.bundle.js" />
+    <Content Include="Resource\dist\scripts\bundle\lianda.bundle.js" />
     <Content Include="Resource\dist\scripts\bundle\templateAdmin.bundle.js" />
     <Content Include="Resource\dist\scripts\common.js" />
     <Content Include="Resource\dist\scripts\lib\artdialog\dist\dialog-min.js" />
@@ -3652,6 +3652,7 @@
     <Content Include="Views\PersonalCenter\Index.cshtml" />
     <Content Include="Views\Home\PageTips.cshtml" />
     <Content Include="Views\Palace\Index.cshtml" />
+    <Content Include="Views\Metropolitan\Detail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

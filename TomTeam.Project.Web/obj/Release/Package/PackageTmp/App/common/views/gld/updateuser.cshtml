@@ -1,0 +1,23 @@
+﻿<div ng-init="vm.user.password=''">
+    <form name="userEditForm" role="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span>用户信息管理</span>
+            </h4>
+        </div>
+        <div class="modal-body" busy-if="vm.loading">
+            <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                <input class="form-control" ng-class="{'edited':vm.user.userRemark}" type="text" name="userRemark" ng-model="vm.user.userRemark" required maxlength="20">
+                <label>信息备注</label>
+            </div>
+            <div class="form-group form-md-line-input form-md-floating-label no-hint" >
+                <input type="password" name="Password" class="form-control" ng-model="vm.user.password" maxlength="32" ng-minlength="6">
+                <label>密码</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button ng-disabled="vm.saving" type="button" class="btn btn-default" ng-click="vm.cancel()">取消</button>
+            <button type="submit" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="userEditForm.$invalid"><i class="fa fa-save"></i> <span>保存</span></button>
+        </div>
+    </form>
+</div>

@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.Runtime.Session;
 using System;
@@ -51,6 +52,20 @@ namespace TomTeam.Project.Web.Controllers
             return View(pagedList);
         }
 
+        public async Task<ActionResult> Detail(int id)
+        {
+            //增加一次浏览记录
+            var detail = await _metropolitanAppService.GetMetropolitanById(new NullableIdInput { Id = id });
+            if (detail.Id > 0)
+            {
+                detail.ViewCount = detail.ViewCount++;
+                var data = detail.MapTo<Metropolitan>();
+                await _metropolitanRepository.UpdateAsync(data);
+            }
+            ViewBag.IsLogin = AbpSession.UserId.HasValue;
+            return View(detail);
+        }
+
         /// <summary>
         /// 上传工程
         /// </summary>
@@ -58,7 +73,7 @@ namespace TomTeam.Project.Web.Controllers
         public async Task<ActionResult> UploadProject(NullableIdInput input)
         {
             var model = new GetMetropolitanOutput();
-            var activityConfig = await _activityConfigAppService.GetConfig(new Abp.Application.Services.Dto.NullableIdInput { Id = 0 });
+            var activityConfig = await _activityConfigAppService.GetConfig(new NullableIdInput { Id = 0 });
             if (activityConfig.ProvincialState)
             {
                 var examInfoModel = await _examColllectAppService.GetUserExamCollect();

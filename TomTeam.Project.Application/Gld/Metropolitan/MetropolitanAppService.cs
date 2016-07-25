@@ -14,12 +14,15 @@ using Abp.UI;
 using Abp.AutoMapper;
 using System.Data.Entity;
 using Abp.Linq.Extensions;
+using Abp.Domain.Uow;
 
 namespace TomTeam.Project.Gld.Metropolitan
 {
     public class MetropolitanAppService : TomAbpAppServiceBase, IMetropolitanAppService
     {
+        private static object objLock = new object();
         IRepository<Exam.Metropolitan> _metropolitanRepository;
+        IRepository<Exam.LikeInfo> _likeInfoRepository;
         public MetropolitanAppService(IRepository<Exam.Metropolitan> _metropolitanRepository)
         {
             this._metropolitanRepository = _metropolitanRepository;
@@ -30,9 +33,23 @@ namespace TomTeam.Project.Gld.Metropolitan
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public Task Vote(IdInput input)
+        [UnitOfWork]
+        public async Task<int> Vote(IdInput input)
         {
-            return null;
+            if (!AbpSession.UserId.HasValue) throw new UserFriendlyException("没有获取到当前登录用户信息");
+            var metropolitanModel = await _metropolitanRepository.FirstOrDefaultAsync(x => x.Id == input.Id);
+            if (metropolitanModel == null || metropolitanModel.Id == 0)
+                throw new UserFriendlyException("没有获取到该工程信息");
+            var voteHistory = await _likeInfoRepository.GetAllListAsync(x => x.CreatorUserId == AbpSession.UserId.Value && x.MetropolitanId == metropolitanModel.Id);
+            if (voteHistory.Count > 0)
+                throw new UserFriendlyException("您已投过票，不可重复");
+            await _likeInfoRepository.InsertAsync(new Exam.LikeInfo
+            {
+                MetropolitanId = metropolitanModel.Id
+            });
+            metropolitanModel.LikeCount = metropolitanModel.LikeCount++;
+            await _metropolitanRepository.UpdateAsync(metropolitanModel);
+            return metropolitanModel.LikeCount;
         }
 
         /// <summary>

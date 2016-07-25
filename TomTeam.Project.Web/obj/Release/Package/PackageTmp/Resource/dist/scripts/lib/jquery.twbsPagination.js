@@ -189,7 +189,7 @@ var pagination = function($, window, document, undefined) {
       if (type !== 'split') {
         $itemContainer.append($itemContent.attr('href', this.makeHref(page)).html(itemText));
       } else {
-        $itemContainer = $('<li class="split" style="padding:0;vertical-align:middle;"><a style="min-width:auto;padding:10px 0 0;border:0;margin:0 8px;line-height:1;color:#333;background:#fff">...</a></li>');
+        $itemContainer = $('<li class="split" style="padding:0;vertical-align:middle;"><span style="min-width:auto;padding:10px 0 0;border:0;margin:0 8px;line-height:1;color:#333;">...</span></li>');
         // $itemContainer.append(itemText);
       }
 

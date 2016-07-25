@@ -56,6 +56,6 @@ namespace TomTeam.Project.Gld.Metropolitan
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        Task Vote(IdInput input);
+        Task<int> Vote(IdInput input);
     }
 }

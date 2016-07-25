@@ -432,6 +432,7 @@ html {
   cursor: pointer;
   vertical-align: baseline;
   text-decoration: none !important;
+  box-sizing: border-box;
 }
 
 .btn:hover, .btn-switcher > .title > .item:hover, .btn-tag:hover {
@@ -526,8 +527,8 @@ button {
 
 .btn-warning {
   color: #fff;
-  background: #ff9402;
-  border-color: #ed8900;
+  background: #FF9C00;
+  border-color: #eb9000;
 }
 
 .btn-warning:visited {
@@ -536,8 +537,8 @@ button {
 
 .btn-warning:hover, .btn-warning:active, .btn-warning:focus, .btn-warning:active:focus {
   color: #fff;
-  background: #ed8900;
-  border-color: #ed8900;
+  background: #eb9000;
+  border-color: #eb9000;
   outline: 0;
 }
 
@@ -599,17 +600,17 @@ button {
 }
 
 .btn-warning-o {
-  color: #ff9402;
+  color: #FF9C00;
   background: #fff;
-  border-color: #ed8900;
+  border-color: #eb9000;
 }
 
 .btn-warning-o:visited {
-  color: #ff9402;
+  color: #FF9C00;
 }
 
 .btn-warning-o:hover {
-  background: #ff9402;
+  background: #FF9C00;
   color: #fff;
 }
 
@@ -712,7 +713,7 @@ button {
 }
 
 .text-warning {
-  color: #ff9402;
+  color: #FF9C00;
 }
 
 .text-danger {
@@ -832,7 +833,7 @@ a:active {
 }
 
 .content-title {
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 400;
   line-height: inherit;
 }
@@ -1732,7 +1733,6 @@ select {
 
 .pagination {
   display: inline-block;
-  margin: 30px 0;
 }
 
 .pagination > li {
@@ -1750,6 +1750,7 @@ select {
   text-align: center;
   color: #333;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 .pagination > li > a:hover {
@@ -1807,7 +1808,7 @@ select {
 }
 
 .pagination .disabled > a:hover {
-  background: #fff;
+  background: inherit;
 }
 
 .pagination .error {
@@ -1816,7 +1817,6 @@ select {
 
 .page-go {
   display: inline-block;
-  margin: 30px 0 30px 30px;
 }
 
 .page-go input {
@@ -1824,6 +1824,7 @@ select {
   text-align: center;
   margin-right: 5px;
   vertical-align: middle;
+  background: inherit;
 }
 
 .page-go .btn, .page-go .btn-switcher > .title > .item, .page-go .btn-tag {
@@ -1833,6 +1834,7 @@ select {
   padding: 0 8px;
   line-height: 30px;
   vertical-align: middle;
+  background: inherit;
   cursor: pointer;
   -webkit-border-radius: 4px !important;
   -moz-border-radius: 4px !important;
@@ -2061,6 +2063,7 @@ select {
   position: relative;
   overflow: hidden;
   line-height: inherit;
+  text-align: left;
 }
 
 .set > .item > .content .ipt-large {
@@ -2367,18 +2370,18 @@ select {
 }
 
 .btn-tag-warning-o {
-  color: #ff9402;
+  color: #FF9C00;
   background: #fff;
-  border-color: #ed8900;
+  border-color: #eb9000;
 }
 
 .btn-tag-warning-o:visited {
-  color: #ff9402;
+  color: #FF9C00;
 }
 
 .btn-tag-warning-o:hover {
   background: inherit;
-  color: #ff9402;
+  color: #FF9C00;
 }
 
 .btn-tag-danger-o {
@@ -2428,8 +2431,8 @@ select {
 
 .btn-tag-warning.on {
   color: #fff;
-  background: #ff9402;
-  border-color: #ed8900;
+  background: #FF9C00;
+  border-color: #eb9000;
 }
 
 .btn-tag-warning.on:visited {

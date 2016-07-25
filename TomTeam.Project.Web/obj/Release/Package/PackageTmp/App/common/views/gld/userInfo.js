@@ -1,8 +1,8 @@
 ﻿(function () {
 
     appModule.controller('common.views.gld.userInfo', [
-        '$scope', '$uibModal', '$stateParams', 'uiGridConstants', 'abp.services.app.userInfo',
-        function ($scope, $uibModal, $stateParams, uiGridConstants, userInfoService) {
+        '$scope', '$uibModal', '$stateParams', 'uiGridConstants', 'abp.services.app.userInfo','abp.services.app.user',
+        function ($scope, $uibModal, $stateParams, uiGridConstants, userInfoService,userService) {
             var vm = this;
 
             vm.loading = false;
@@ -23,21 +23,21 @@
                 useExternalSorting: true,
                 appScopeProvider: vm,
                 columnDefs: [
-                    //{
-                    //    name: app.localize('Actions'),
-                    //    enableSorting: false,
-                    //    width: 120,
-                    //    cellTemplate:
-                    //        '<div class=\"ui-grid-cell-contents\">' +
-                    //        '  <div class="btn-group dropdown" uib-dropdown="">' +
-                    //        '    <button class="btn btn-xs btn-primary blue" uib-dropdown-toggle="" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog"></i> ' + app.localize('Actions') + ' <span class="caret"></span></button>' +
-                    //        '    <ul uib-dropdown-menu>' +
-                    //        '      <li><a ng-click="grid.appScope.editNews(row.entity)">编辑</a></li>' +
-                    //        '      <li><a  ng-click="grid.appScope.deleteNews(row.entity)">删除</a></li>' +
-                    //        '    </ul>' +
-                    //        '  </div>' +
-                    //        '</div>'
-                    //},
+                     {
+                         name: app.localize('Actions'),
+                         enableSorting: false,
+                         width: 120,
+                         cellTemplate:
+                             '<div class=\"ui-grid-cell-contents\">' +
+                             '  <div class="btn-group dropdown" uib-dropdown="">' +
+                             '    <button class="btn btn-xs btn-primary blue" uib-dropdown-toggle="" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog"></i> ' + app.localize('Actions') + ' <span class="caret"></span></button>' +
+                             '    <ul uib-dropdown-menu>' +
+                             '      <li><a ng-click="grid.appScope.edit(row.entity)">编辑</a></li>' +
+                             '      <li><a  ng-click="grid.appScope.delete(row.entity)">删除</a></li>' +
+                             '    </ul>' +
+                             '  </div>' +
+                             '</div>'
+                     },
                     {
                         name: '姓名',
                         field: 'name',
@@ -99,6 +99,41 @@
                     });
             };
 
+            vm.edit = function (user) {
+                openCreateOrEditUserModal(user)
+            }
+
+            vm.delete = function (user) {
+
+                abp.message.confirm(
+                    app.localize('UserDeleteWarningMessage', user.userName),
+                    function (isConfirmed) {
+                        if (isConfirmed) {
+                            userService.deleteUser({
+                                id: user.id
+                            }).success(function () {
+                                vm.getUsers();
+                                abp.notify.success(app.localize('SuccessfullyDeleted'));
+                            });
+                        }
+                    }
+                );
+            }
+            function openCreateOrEditUserModal(user) {
+                var modalInstance = $uibModal.open({
+                    templateUrl: '~/App/common/views/gld/updateuser.cshtml',
+                    controller: 'common.views.gld.updateuser as vm',
+                    backdrop: 'static',
+                    resolve: {
+                        userId: function () {
+                            return user.id;
+                        }
+                    }
+                });
+                modalInstance.result.then(function (result) {
+                    vm.getUsers();
+                });
+            }
 
             vm.getUsers = function () {
                 vm.loading = true;
