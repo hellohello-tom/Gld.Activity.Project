@@ -48,7 +48,7 @@ namespace TomTeam.Project.Gld.Exam
 
         public async Task<GetExamCollectOutput> GetUserExamCollect()
         {
-
+         
             var detail = await _examCollectRepository.FirstOrDefaultAsync(x => x.CreatorUserId == AbpSession.UserId.Value) ?? new ExamCollect();
 
             return detail.MapTo<GetExamCollectOutput>();

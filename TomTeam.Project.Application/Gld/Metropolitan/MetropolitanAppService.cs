@@ -25,6 +25,21 @@ namespace TomTeam.Project.Gld.Metropolitan
             this._metropolitanRepository = _metropolitanRepository;
         }
 
+        /// <summary>
+        /// 投票
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public Task Vote(IdInput input)
+        {
+            return null;
+        }
+
+        /// <summary>
+        /// 上传工程
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public async Task AddMetropolitian(CreateOrUpdateMetropolitanInput input)
         {
             var model = new Exam.Metropolitan();
@@ -34,6 +49,12 @@ namespace TomTeam.Project.Gld.Metropolitan
             await _metropolitanRepository.InsertOrUpdateAndGetIdAsync(model);
         }
 
+        /// <summary>
+        /// 删除工程
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        [AbpAuthorize(AppPermissions.Pages_Activity_Manager)]
         public async Task DeleteMetropolitan(IdInput<int> input)
         {
             if (input.Id <= 0)
@@ -42,7 +63,11 @@ namespace TomTeam.Project.Gld.Metropolitan
             }
             await _metropolitanRepository.DeleteAsync(input.Id);
         }
-
+        /// <summary>
+        /// 获取工程信息
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public async Task<GetMetropolitanOutput> GetMetropolitanById(NullableIdInput input)
         {
             GetMetropolitanOutput newsDetail;
@@ -58,7 +83,11 @@ namespace TomTeam.Project.Gld.Metropolitan
             }
             return newsDetail;
         }
-        
+        /// <summary>
+        /// 获取工程信息列表
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public async Task<PagedResultOutput<GetMetropolitanOutput>> GetMetropolitanList(SearchMetropolitanInput input)
         {
             var query = _metropolitanRepository.GetAll().Where(news => !news.IsDeleted);
@@ -72,6 +101,11 @@ namespace TomTeam.Project.Gld.Metropolitan
             return new PagedResultOutput<GetMetropolitanOutput>(listCount, newsListDto);
         }
 
+        /// <summary>
+        /// 更新工程信息
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         [AbpAuthorize(AppPermissions.Pages_Activity_MetropolitanExamination)]
         public async Task<int> Update(UpdateMetropolitanForAdminInput input)
         {
@@ -80,6 +114,33 @@ namespace TomTeam.Project.Gld.Metropolitan
                 var newsModel = _metropolitanRepository.Get(input.Id);
                 input.MapTo(newsModel);
                 return await _metropolitanRepository.InsertOrUpdateAndGetIdAsync(newsModel);
+            }
+            else
+            {
+                throw new UserFriendlyException("数据传递错误");
+            }
+        }
+
+        /// <summary>
+        /// 更新工程信息
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public async Task<int> UpdateByUser(UpdateMetropolitanForAdminInput input)
+        {
+            if (input.Id > 0)
+            {
+
+                var newsModel = _metropolitanRepository.Get(input.Id);
+                if (newsModel.CreatorUserId == AbpSession.UserId.Value)
+                {
+                    input.MapTo(newsModel);
+                    return await _metropolitanRepository.InsertOrUpdateAndGetIdAsync(newsModel);
+                }
+                else
+                {
+                    throw new UserFriendlyException("您没有权限操作此工程");
+                }
             }
             else
             {

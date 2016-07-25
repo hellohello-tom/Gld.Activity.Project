@@ -23,6 +23,7 @@ using TomTeam.Project.Dto;
 using TomTeam.Project.Notifications;
 using TomTeam.Project.Gld.Dto;
 using TomTeam.Project.Gld;
+using System;
 
 namespace TomTeam.Project.Authorization.Users
 {
@@ -34,12 +35,12 @@ namespace TomTeam.Project.Authorization.Users
         private readonly IUserListExcelExporter _userListExcelExporter;
         private readonly INotificationSubscriptionManager _notificationSubscriptionManager;
         private readonly IAppNotifier _appNotifier;
-        
+
         public UserInfoAppService(
             RoleManager roleManager,
             IUserEmailer userEmailer,
             IUserListExcelExporter userListExcelExporter,
-            INotificationSubscriptionManager notificationSubscriptionManager, 
+            INotificationSubscriptionManager notificationSubscriptionManager,
             IAppNotifier appNotifier)
         {
             _roleManager = roleManager;
@@ -63,7 +64,7 @@ namespace TomTeam.Project.Authorization.Users
         public async Task<PagedResultOutput<UserInfoListDto>> GetUsers(GetUserInfoInput input)
         {
             var guestRole = await _roleManager.Roles.SingleOrDefaultAsync(x => x.DisplayName == "Guest");
-            
+
             if (guestRole == null) throw new UserFriendlyException("没有获取到注册用户角色信息");
             var query = UserManager.Users
              .Include(u => u.Roles)
@@ -74,8 +75,8 @@ namespace TomTeam.Project.Authorization.Users
                      u.CompanyName.Contains(input.SearchFilter) ||
                      u.Phone.Contains(input.SearchFilter) ||
                      u.Major.Contains(input.SearchFilter))
-             ).Where(x => x.Roles.All(o=>o.RoleId==guestRole.Id));
-            
+             ).Where(x => x.Roles.All(o => o.RoleId == guestRole.Id));
+
             var userCount = await query.CountAsync();
             var users = await query
                 .OrderBy(input.Sorting)
@@ -88,6 +89,36 @@ namespace TomTeam.Project.Authorization.Users
                 userCount,
                 userListDtos
                 );
+        }
+
+
+
+        /// <summary>
+        /// 更新用户信息
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public async Task UpdateUserInfo(UpdateUserInput input)
+        {
+            if (input.Id <= 0) throw new UserFriendlyException("没有获取到用户信息");
+            var user = await UserManager.FindByIdAsync(input.Id);
+
+            //Update user properties
+            input.MapTo(user); //Passwords is not mapped (see mapping configuration)
+            if (!input.Password.IsNullOrEmpty())
+            {
+                CheckErrors(await UserManager.ChangePasswordAsync(user, input.Password));
+            }
+            CheckErrors(await UserManager.UpdateAsync(user));
+        }
+
+        public async Task<UpdateUserInput> GetUserInfo(IdInput input)
+        {
+            if (input.Id <= 0) throw new UserFriendlyException("数据传入错误");
+            var user =  await UserManager.FindByIdAsync(input.Id);
+            var mapper= user.MapTo<UpdateUserInput>();
+            mapper.Password = "";
+            return mapper;
         }
     }
 }

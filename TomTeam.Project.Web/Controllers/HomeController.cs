@@ -27,5 +27,12 @@ namespace TomTeam.Project.Web.Controllers
             return View();
         }
 
+        [ChildActionOnly]
+        public ActionResult PageTips(string message="")
+        {
+            ViewBag.Message = message;
+            return View();
+        }
+
     }
 }

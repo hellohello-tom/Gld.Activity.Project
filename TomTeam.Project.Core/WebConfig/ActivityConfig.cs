@@ -76,6 +76,12 @@ namespace TomTeam.Project.Config
         public DateTime? MetropolitanEndTime { get; set; }
 
         /// <summary>
+        /// 每个可投票数
+        /// </summary>
+        [Required]
+        public int VoteCount { get; set; } 
+
+        /// <summary>
         /// 会试活动状态
         /// </summary>
         [Required(ErrorMessage = "请选择会试活动状态")]

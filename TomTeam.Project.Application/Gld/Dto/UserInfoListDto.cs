@@ -12,6 +12,8 @@ namespace TomTeam.Project.Gld.Dto
     [AutoMapFrom(typeof(User))]
     public class UserInfoListDto
     {
+
+        public long Id { get; set; }
         public string Name { get; set; }
 
         /// <summary>

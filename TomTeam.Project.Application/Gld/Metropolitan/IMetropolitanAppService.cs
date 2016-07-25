@@ -43,5 +43,19 @@ namespace TomTeam.Project.Gld.Metropolitan
         /// <param name="input"></param>
         /// <returns></returns>
         Task DeleteMetropolitan(IdInput<int> input);
+
+        /// <summary>
+        /// 用户更新自己的工程
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<int> UpdateByUser(UpdateMetropolitanForAdminInput input);
+
+        /// <summary>
+        /// 投票
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task Vote(IdInput input);
     }
 }

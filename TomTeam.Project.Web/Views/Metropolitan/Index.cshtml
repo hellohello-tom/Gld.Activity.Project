@@ -1,7 +1,55 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.CurrentPageName = "会试";
 }
-
-<h2>Index</h2>
+@model Abp.Application.Services.Dto.PagedResultOutput<TomTeam.Project.Gld.Metropolitan.Dto.GetMetropolitanOutput>
+<div class="main">
+    <div class="wrapper title">
+        <div class="inner">
+            <h1 class="content-title">
+                会试信息列表
+            </h1>
+        </div>
+    </div>
+    <div class="body detail">
+        <div class="wrapper">
+            <div class="inner">
+                @if (ViewBag.IsLogin)
+                {
+                    var userExamInfo = ViewBag.ExamCollectUserInfo as TomTeam.Project.Gld.Exam.Metropolitan;
+                    if (userExamInfo == null)
+                    {
+                        <a href="/Metropolitan/UploadProject" class="btn btn-info big go-upload">上传我的工程文件</a>
+                    }
+                    else
+                    {
+                        <a href="/Metropolitan/UploadProject?id=@userExamInfo.Id" class="btn btn-info big go-upload">重新上传</a>
+                    }
+                }
+                else
+                {
+                    <a href="javascript:openLogin();" class="btn btn-info big go-upload">上传我的工程文件</a>
+                }
+                <ul class="list-actor">
+                    @foreach (var item in Model.Items)
+                    {
+                        <li>
+                            <div class="inner">
+                                <img alt="" src="@item.ImgsPath" />
+                                <p class="info">@item.UserDisplayName</p>
+                                <p class="vote-num">
+                                    <span class="text-danger">@item.LikeCount</span>票
+                                </p>
+                                <button class="btn-vote" title="投票">投他一票</button>
+                            </div>
+                        </li>
+                    }
+                    
+                </ul>
+                <div id="pagination" class="text-center">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 

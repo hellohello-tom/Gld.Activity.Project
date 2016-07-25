@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace TomTeam.Project.Gld.Metropolitan.Dto
 {
     [AutoMap(typeof(Exam.Metropolitan))]
-    public class UpdateMetropolitanForAdminInput
+    public class UpdateMetropolitanForAdminInput: ICreationAudited
     {
         public int Id { get; set; }
 
@@ -30,5 +30,18 @@ namespace TomTeam.Project.Gld.Metropolitan.Dto
 
         public bool IsShow { get; set; }
 
+        public long? CreatorUserId
+        {
+            get;
+
+            set;
+        }
+
+        public DateTime CreationTime
+        {
+            get;
+
+            set;
+        }
     }
 }

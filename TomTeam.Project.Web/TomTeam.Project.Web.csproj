@@ -341,6 +341,7 @@
     <Content Include="App\common\views\gld\activityConfig.js" />
     <Content Include="App\common\views\gld\addnews.js" />
     <Content Include="App\common\views\gld\config.js" />
+    <Content Include="App\common\views\gld\updateuser.js" />
     <Content Include="App\common\views\gld\news.js" />
     <Content Include="App\common\views\gld\userInfo.js" />
     <Content Include="App\common\views\languages\editTextModal.js" />
@@ -2165,7 +2166,10 @@
     <Content Include="Resource\dist\HTMLS\PC\detailSaishi.html" />
     <Content Include="Resource\dist\HTMLS\PC\home.html" />
     <Content Include="Resource\dist\HTMLS\PC\news.html" />
+    <Content Include="Resource\dist\HTMLS\PC\pageTips.html" />
     <Content Include="Resource\dist\HTMLS\PC\q.html" />
+    <Content Include="Resource\dist\HTMLS\PC\upload.html" />
+    <Content Include="Resource\dist\HTMLS\PC\usercenter.html" />
     <Content Include="Resource\dist\iconfonts\demo-files\demo.css" />
     <Content Include="Resource\dist\iconfonts\demo-files\demo.js" />
     <Content Include="Resource\dist\iconfonts\demo.html" />
@@ -2174,12 +2178,21 @@
     <Content Include="Resource\dist\iconfonts\style.css" />
     <Content Include="Resource\dist\images\bgDetail.png" />
     <Content Include="Resource\dist\images\bgDivider.jpg" />
+    <Content Include="Resource\dist\images\bgexl.png" />
     <Content Include="Resource\dist\images\bgGroup.png" />
+    <Content Include="Resource\dist\images\bghomebody - 副本.png" />
     <Content Include="Resource\dist\images\bghomebody-Origin.png" />
     <Content Include="Resource\dist\images\bghomebody.png" />
+    <Content Include="Resource\dist\images\bghomebody2_origin.png" />
+    <Content Include="Resource\dist\images\bgTips.png" />
+    <Content Include="Resource\dist\images\ex1.gif" />
+    <Content Include="Resource\dist\images\ex1.jpg" />
+    <Content Include="Resource\dist\images\italy1.jpg" />
+    <Content Include="Resource\dist\images\italy2.jpg" />
     <Content Include="Resource\dist\images\logo.png" />
     <Content Include="Resource\dist\images\QrcodeWeibo.png" />
     <Content Include="Resource\dist\images\QrcodeWeixin.png" />
+    <Content Include="Resource\dist\images\slogan1 - 副本.jpg" />
     <Content Include="Resource\dist\images\slogan1.jpg" />
     <Content Include="Resource\dist\images\slogan2.jpg" />
     <Content Include="Resource\dist\scripts\API\simulateData.js" />
@@ -2251,6 +2264,7 @@
     <Content Include="Resource\SCSS\base\lib\dialog.css" />
     <Content Include="Resource\src\doc.js" />
     <Content Include="Resource\src\HTMLS\PC\tmpl.html" />
+    <Content Include="Resource\src\lianda.js" />
     <Content Include="Resource\src\node\import.js" />
     <Content Include="Resource\src\node\readfile.js" />
     <Content Include="Resource\src\node\rename.js" />
@@ -2272,6 +2286,7 @@
     <Content Include="Resource\src\scripts\module\getTargets.js" />
     <Content Include="Resource\src\scripts\module\getType.js" />
     <Content Include="Resource\src\scripts\module\getUTFLength.js" />
+    <Content Include="Resource\src\scripts\module\jquerySliding.js" />
     <Content Include="Resource\src\scripts\module\loading.js" />
     <Content Include="Resource\src\scripts\module\mergeObject.js" />
     <Content Include="Resource\src\scripts\module\popupMobile.js" />
@@ -2556,6 +2571,7 @@
     <Content Include="App\common\views\exam\collect.cshtml" />
     <Content Include="App\common\views\exam\me.cshtml" />
     <Content Include="App\common\views\exam\addme.cshtml" />
+    <Content Include="App\common\views\gld\updateuser.cshtml" />
     <None Include="Properties\PublishProfiles\1.pubxml" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
@@ -3403,6 +3419,7 @@
     <Compile Include="Controllers\AttrFilesController.cs" />
     <Compile Include="Controllers\MetropolitanController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\PalaceController.cs" />
     <Compile Include="Controllers\PersonalCenterController.cs" />
     <Compile Include="Controllers\ProvincialController.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
@@ -3633,6 +3650,8 @@
     <Content Include="Views\Metropolitan\Index.cshtml" />
     <Content Include="Views\Metropolitan\UploadProject.cshtml" />
     <Content Include="Views\PersonalCenter\Index.cshtml" />
+    <Content Include="Views\Home\PageTips.cshtml" />
+    <Content Include="Views\Palace\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -14,19 +14,19 @@
   <![endif]-->
 @if (!isLogin)
 {
-    <span>请先登录</span>
+    @Html.Action("PageTips", "Home", new { message= "请先<a href=\"javascript:openLogin();\" title=\"点击登录\">登录</a>"})
 }
 else if (!Model.ProvincialState)
 {
-    <span>乡试已关闭</span>
+    @Html.Action("PageTips", "Home", new { message = "乡试活动已关闭" })
 }
 else if (DateTime.Now > Model.ProvincialEndTime)
 {
-    <span>活动已结束</span>
+    @Html.Action("PageTips", "Home", new { message = "乡试活动已结束" })
 }
 else if (DateTime.Now < Model.ProvincialStartTime)
 {
-    <span>活动未开始</span>
+    @Html.Action("PageTips", "Home", new { message = "乡试活动未开始" })
 }
 
 else
@@ -35,12 +35,12 @@ else
     {
         if (examCollect.IsCompleteProvincial)
         {
-            <span>您已提交过试卷，不能重复提交，请到个人中心进行查看</span>
+            @Html.Action("PageTips", "Home", new { message = "您已提交过试卷，不能重复提交，请到<a href=\"PersonalCenter\" title=\"点击登录\">个人中心</a>进行查看" })
             return;
         }
         if (DateTime.Now > examCollect.CreationTime.AddMinutes(Model.ExamTime))
         {
-            <span>您的考试时间已过，不能再进行答题</span>
+            @Html.Action("PageTips", "Home", new { message = "您的考试时间已到，考试结束" })
             return;
         }
     }
@@ -115,7 +115,11 @@ else
                         $.post('/api/services/app/examCollect/InitExamInfo', {}, function (json) {
                             if (json.success) {
                                 d.remove();
-                                $('.q').find('.countdown').countdown();
+                                $('.q').find('.countdown').countdown({
+                                    callback: function () {
+                                        window.location.href = "/PersonalCenter";
+                                    }
+                                });
                             }
                             else {
                                 alertMsg(json.error.message || json.error.detail);
@@ -130,7 +134,11 @@ else
         {
             <script type="text/javascript">
                 $(function () {
-                    $('.q').find('.countdown').countdown();
+                    $('.q').find('.countdown').countdown({
+                        callback: function () {
+                            window.location.href = window.location.href;
+                        }
+                    });
                 });
             </script>
         }

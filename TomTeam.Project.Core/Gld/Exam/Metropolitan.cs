@@ -10,6 +10,7 @@ namespace TomTeam.Project.Gld.Exam
 {
     public class Metropolitan : FullAuditedEntity
     {
+
         [Required]
         public string Title { get; set; }
 
