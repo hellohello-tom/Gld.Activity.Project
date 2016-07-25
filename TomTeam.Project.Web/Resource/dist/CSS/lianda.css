@@ -1111,8 +1111,8 @@ a:active {
 }
 
 .img-list.upload .img-wrapper img {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
 }
 
 input.ipt-s,
@@ -2502,13 +2502,23 @@ select {
 }
 
 .work-show > .content > .lists > .item {
+  position: relative;
   display: inline-block;
   width: 100%;
   padding: 0;
   font-size: 26px;
+  padding-bottom: 40px;
   text-align: center;
   box-sizing: border-box;
   overflow: hidden;
+}
+
+.work-show > .content > .lists > .item .introduce {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 .work-show > .content > .lists > .item img {
