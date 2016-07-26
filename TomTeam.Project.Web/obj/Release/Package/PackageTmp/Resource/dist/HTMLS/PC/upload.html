@@ -59,14 +59,27 @@
                   <dl class="item">
                     <dt class="title">名称：</dt>
                     <dd class="content">
-                      <input type="text" class="ipt-large" />
+                      <textarea class="ipt-large" rows=3></textarea>
                     </dd>
                   </dl>
                   <dl class="item">
                     <dt class="title">作品上传：</dt>
                     <dd class="content">
-                      <button type="button" class="btn btn-primary big btn-upload">上传</button>
-                      <input type="file" class="file" />
+                      <button type="button" class="btn  btn-upload">上传</button>
+                      <input type="file" class="file" /><span class="text-muted">(最多上传5张)</span>
+                      <div class="img-list upload">
+                        <div class="img-wrapper">
+                          <img src="../../images/ex1.jpg" alt="" />
+                          <sup class="action delimg">x</sup>
+                        </div>
+                      </div>
+                    </dd>
+                  </dl>
+                  <dl class="item">
+                    <dt class="title">&nbsp;</dt>
+                    <dd class="content text-center">
+                      <button class="btn btn-ok big">确定</button>
+                      <button class="btn  big">取消</button>
                     </dd>
                   </dl>
                 </div>

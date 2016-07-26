@@ -48,8 +48,8 @@ namespace TomTeam.Project.Gld.Exam
 
         public async Task<GetExamCollectOutput> GetUserExamCollect()
         {
-         
-            var detail = await _examCollectRepository.FirstOrDefaultAsync(x => x.CreatorUserId == AbpSession.UserId.Value) ?? new ExamCollect();
+
+            var detail = await _examCollectRepository.FirstOrDefaultAsync(x => x.CreatorUserId == AbpSession.UserId.Value && !x.IsDeleted) ?? new ExamCollect();
 
             return detail.MapTo<GetExamCollectOutput>();
         }
@@ -58,7 +58,7 @@ namespace TomTeam.Project.Gld.Exam
         {
             if (!AbpSession.UserId.HasValue)
                 throw new UserFriendlyException("没有获取到登录用户信息！");
-            var userInit = await _examCollectRepository.FirstOrDefaultAsync(x => x.CreatorUserId == AbpSession.UserId.Value)??new ExamCollect();
+            var userInit = await _examCollectRepository.FirstOrDefaultAsync(x => x.CreatorUserId == AbpSession.UserId.Value) ?? new ExamCollect();
             if (userInit.Id > 0)
                 throw new UserFriendlyException("您已初始化过考试信息，请直接进行考试！");
             var user = await UserManager.GetUserByIdAsync(AbpSession.UserId.Value);
@@ -76,7 +76,7 @@ namespace TomTeam.Project.Gld.Exam
 
         public async Task PostExamInfo(ProvincialInput input)
         {
-            
+
             if (!AbpSession.UserId.HasValue)
                 throw new UserFriendlyException("没有获取到登录用户信息！");
             var activityConfig = await _activityConfigRepository.GetConfig(new NullableIdInput { Id = 0 });
@@ -88,8 +88,8 @@ namespace TomTeam.Project.Gld.Exam
                 throw new UserFriendlyException("乡试活动未开始！");
             if (DateTime.Now > activityConfig.ProvincialEndTime)
                 throw new UserFriendlyException("乡试活动已结束！");
-            var userCollect = await _examCollectRepository.FirstOrDefaultAsync(x => x.UserId == AbpSession.UserId)?? new ExamCollect();
-            if (userCollect.Id<=0)
+            var userCollect = await _examCollectRepository.FirstOrDefaultAsync(x => x.UserId == AbpSession.UserId) ?? new ExamCollect();
+            if (userCollect.Id <= 0)
                 throw new UserFriendlyException("您还没有初始化数据！");
             if (DateTime.Now > userCollect.CreationTime.AddMinutes(activityConfig.ExamTime))
                 throw new UserFriendlyException("您的考试时间已过，数据无效！");
@@ -129,6 +129,17 @@ namespace TomTeam.Project.Gld.Exam
             }
             updateCollectInput.MapTo(model);
             return await _examCollectRepository.UpdateAsync(model);
+        }
+
+
+        [AbpAuthorize(AppPermissions.Pages_Activity_ProvincialExaminationCollect)]
+        public async Task DeleteCollect(IdInput input)
+        {
+            if (input.Id <= 0)
+            {
+                throw new UserFriendlyException("请传入正确的数值！");
+            }
+            await _examCollectRepository.DeleteAsync(input.Id);
         }
     }
 }

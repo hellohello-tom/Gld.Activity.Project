@@ -33,6 +33,7 @@
                             '    <button class="btn btn-xs btn-primary blue" uib-dropdown-toggle="" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog"></i> ' + app.localize('Actions') + ' <span class="caret"></span></button>' +
                             '    <ul uib-dropdown-menu>' +
                             '      <li><a ng-click="grid.appScope.save(row.entity)">保存</a></li>' +
+                            '      <li><a ng-click="grid.appScope.delete(row.entity)">删除</a></li>' +
                             '    </ul>' +
                             '  </div>' +
                             '</div>'
@@ -103,10 +104,21 @@
             };
 
             vm.save = function (entity) {
+                vm.loading = true;
                 examCollectService.update(entity).success(function () {
                     abp.notify.info(app.localize('SavedSuccessfully'));
                     vm.getExamCollectList();
                 }).finally(function () {
+                    vm.loading = false;
+                });
+            }
+
+            vm.delete = function (entity) {
+                vm.loading = true;
+                examCollectService.deleteCollect({ id: entity.id }).success(function () {
+                    vm.getExamCollectList();
+                }).finally(function () {
+                    vm.loading = false;
                 });
             }
 

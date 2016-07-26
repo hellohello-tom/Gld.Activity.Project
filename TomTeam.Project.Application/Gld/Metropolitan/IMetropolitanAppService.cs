@@ -15,7 +15,7 @@ namespace TomTeam.Project.Gld.Metropolitan
         /// 添加工程
         /// </summary>
         /// <returns></returns>
-        Task AddMetropolitian(CreateOrUpdateMetropolitanInput input);
+        Task AddOrUpdateMetropolitian(CreateOrUpdateMetropolitanInput input);
 
         /// <summary>
         /// 获取用户上传的工程列表
@@ -43,13 +43,6 @@ namespace TomTeam.Project.Gld.Metropolitan
         /// <param name="input"></param>
         /// <returns></returns>
         Task DeleteMetropolitan(IdInput<int> input);
-
-        /// <summary>
-        /// 用户更新自己的工程
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        Task<int> UpdateByUser(UpdateMetropolitanForAdminInput input);
 
         /// <summary>
         /// 投票

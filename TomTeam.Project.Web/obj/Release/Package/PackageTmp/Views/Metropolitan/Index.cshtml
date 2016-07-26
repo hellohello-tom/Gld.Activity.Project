@@ -14,6 +14,12 @@
     <div class="body detail">
         <div class="wrapper">
             <div class="inner">
+                <span class="btn-switcher js-switcher dis-inline-block fr">
+                    <span class="title">
+                        <a href="/Metropolitan/Index?sortName=CreationTime" class="@(ViewBag.SortName=="CreationTime"?"item on":"item")">创建时间</a>
+                        <a href="Metropolitan/Index?sortName=LikeCount" class="@(ViewBag.SortName=="LikeCount"?"item on":"item")">投票数</a>
+                    </span>
+                </span>
                 @if (ViewBag.IsLogin)
                 {
                     var userExamInfo = ViewBag.ExamCollectUserInfo as TomTeam.Project.Gld.Exam.Metropolitan;
@@ -30,26 +36,58 @@
                 {
                     <a href="javascript:openLogin();" class="btn btn-info big go-upload">上传我的工程文件</a>
                 }
-                <ul class="list-actor">
-                    @foreach (var item in Model.Items)
-                    {
-                        <li>
-                            <div class="inner">
-                                <img alt="" src="@item.ImgsPath" />
-                                <p class="info">@item.UserDisplayName</p>
-                                <p class="vote-num">
-                                    <span class="text-danger">@item.LikeCount</span>票
-                                </p>
-                                <button class="btn-vote" title="投票">投他一票</button>
-                            </div>
-                        </li>
-                    }
-                    
-                </ul>
+                @if (Model.Items.Count > 0)
+                {
+                    <ul class="list-actor">
+                        @foreach (var item in Model.Items)
+                        {
+                            <li>
+                                    <div class="inner">
+                                        <img alt="" src="@item.DefaultImg" onclick="window.location.href = '/Metropolitan/Detail/@item.Id'"/>
+                                        <p class="info">@item.UserDisplayName</p>
+                                        <p class="vote-num">
+                                            <span class="text-danger">@item.LikeCount</span>票
+                                        </p>
+                                        <button class="btn-vote" onclick="@(ViewBag.IsLogin ? "vote(" + item.Id + ",this);" : "openLogin();")" title="投票">投他一票</button>
+                                    </div>
+                            </li>
+                        }
+                    </ul>
+
+                }
+                else
+                {
+                    @Html.Action("PageTips", "Home", new { message = "暂无数据" })
+                }
                 <div id="pagination" class="text-center">
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+@section Scripts{
+    <script type="text/javascript">
+        //投票
+        function vote(id,e) {
+            $.ajax({
+                type: 'POST',
+                contentType: "application/json",
+                url: '/api/services/app/metropolitan/vote',
+                data: JSON.stringify({id:id}),
+                dataType: 'json',
+                cache: false,
+                success: function (json) {
+                    if (json.success) {
+                        alertMsg("投票成功", 3000);
+                        $(e).prev('p').find('.text-danger').html(json.result);
+                    }
+                    else {
+                        alertMsg(json.error.message || json.error.detail);
+                    }
+                },
+                error: function () {
+                }
+            });
+        }
+    </script>
+}

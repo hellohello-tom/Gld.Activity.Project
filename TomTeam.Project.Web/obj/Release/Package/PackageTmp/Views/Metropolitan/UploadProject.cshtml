@@ -27,47 +27,90 @@ else if (examCollect.Id == 0 || !examCollect.IsMetropolitanStatus)
 }
 else
 {
+    var imgList = Model.ImgsPath == null ? new string[1] { "" } : Model.ImgsPath.Split(';');
     <div class="main">
         <div class="body home detail event">
             <div class="wrapper">
                 <div class="inner">
                     <div class="news upload">
                         <h1 class="title">
-                            上传工程
+                            上传专区
                         </h1>
                         <div class="content text-center">
-                            <form action="" class="up-form">
+                            <form action="" class="up-form" id="uploadForm">
+                                <input type="hidden" name="Id" value="@Model.Id"/>
                                 <div class="set">
                                     <dl class="item">
-                                        <dt class="title">名称：</dt>
+                                        <dt class="title">标题：</dt>
                                         <dd class="content">
-                                            @Html.TextBoxFor(x => x.Title, new { @class = "ipt-large" })
+                                            <input name="title" class="ipt-large" maxlength=50 required value="@Model.Title"/>
+                                        </dd>
+                                    </dl>
+                                    <dl class="item">
+                                        <dt class="title">地区：</dt>
+                                        <dd class="content">
+                                            <input name="region" class="ipt-large" maxlength=50 required value="@Model.Region"/>
                                         </dd>
                                     </dl>
                                     <dl class="item">
                                         <dt class="title">描述：</dt>
                                         <dd class="content">
-                                            @Html.TextBoxFor(x => x.Content, new { @class = "ipt-large" })
+                                            <textarea name="content" class="ipt-large" rows = "3" maxlength="500">@Model.Content</textarea>
                                         </dd>
                                     </dl>
                                     <dl class="item">
-                                        <dt class="title">示例图片：</dt>
+                                        <dt class="title">图片上传：</dt>
                                         <dd class="content">
-                                            <button type="button" class="btn btn-primary big btn-upload">上传</button>
-                                            <input type="file" class="file" />
+                                            <div class='upload-wrapper'>
+                                                <div id="btnUpload">
+                                                    <span class="btn">
+                                                        上传
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="imgsPath" class="hidden-simple" readonly="readonly" value="@Model.ImgsPath"/>
+                                            <input type="hidden" name="defaultImg" value="@Model.DefaultImg"/>
+                                              <span class="text-muted">(最多上传5张图片，大小1M以内，支持jpg,jpeg,gif,png格式)</span>
+                                                <div class="img-list upload">
+                                                    @if (imgList.Length > 0 && !string.IsNullOrEmpty(imgList[0]))
+                                                    {
+                                                        foreach (var item in imgList)
+                                                        {
+                                                            <div class="img-wrapper">
+                                                                <img src="@item">
+                                                                <sup class="action delimg" title="删除">X</sup>
+                                                            </div>
+                                                        }
+                                                    }
+                                                </div>
+</dd>
+                                    </dl>
+                                    <dl class="item">
+                                        <dt class="title">作品上传：</dt>
+                                        <dd class="content">
+                                            <div class='upload-wrapper'>
+                                                <div id="btnUploadProject">
+                                                    <span class="btn">
+                                                        上传
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="filePath" class="hidden-simple" readonly="readonly" value="@Model.FilePath" />
+                                            <input type="hidden" name="fileName" value="@Model.FileName" />
+                                            <span class="text-muted">(大小10M以内，支持zip压缩格式)</span>
+                                            <div id="process"></div>
+                                            <div class="upload" id="projectDiv">
+                                                @if (!string.IsNullOrEmpty(Model.FilePath))
+                                                {
+                                                <a href="">@Model.FileName</a><a style="margin-left:10px" href="javascript:deleteFile();">删除</a>
+                                                }
+                                            </div>
                                         </dd>
                                     </dl>
                                     <dl class="item">
-                                        <dt class="title">工程：</dt>
-                                        <dd class="content">
-                                            <button type="button" class="btn btn-primary big btn-upload">上传工程</button>
-                                            <input type="file" class="file" />
-                                        </dd>
-                                    </dl>
-                                    <dl class="item">
-                                        <dt class="title"></dt>
-                                        <dd class="content">
-                                            <button type="button" class="btn btn-primary">确定</button>
+                                        <dt class="title">&nbsp;</dt>
+                                        <dd class="content text-center">
+                                            <button type="submit" class="btn btn-ok big">确定</button>
                                         </dd>
                                     </dl>
                                 </div>
@@ -79,7 +122,292 @@ else
         </div>
     </div>
     @section Scripts{
+        <script src="~/libs/webuploader-0.1.5/webuploader.min.js"></script>
         <script type="text/javascript">
+            $.fn.serializeObject = function () {
+                var o = {};
+                var a = this.serializeArray();
+                $.each(a, function () {
+                    if (o[this.name] !== undefined) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+                return o;
+            };
+            $(function () {
+                var imgArr = [], errorCount = 0, $imgList = $('.img-list');
+                @if (!string.IsNullOrEmpty(imgList[0]))
+                {
+                    @:imgArr = ['@Html.Raw(string.Join("','", imgList))'];//据对路径地址
+                                }
+                //图片上传
+                var uploader = WebUploader.create({
+                    // 选完文件后，是否自动上传。
+                    auto: true,
+                    // swf文件路径
+                    swf: '@Url.Content("~/libs/webuploader-0.1.5/Uploader.swf")',
+                    resize: false,
+                    // 文件接收服务端。
+                    server: '@Url.Action("Upload", "AttrFiles")',
+                    // 选择文件的按钮。可选。
+                    // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+                    pick: '#btnUpload',
+                    multiple: true,
+                    fileNumLimit: 5,
+                    duplicate: true,
+                    fileSizeLimit: 5 * 1024 * 1024,
+                    fileSingleSizeLimit: 1 * 1024 * 1024,
+                    // 只允许选择图片文件。
+                    accept: {
+                        title: 'Images',
+                        extensions: 'gif,jpg,jpeg,png',
+                        mimeTypes: 'image/*'
+                    }
+                });
+
+                uploader.onFilesQueued = function (files) {
+                    var uploader = this;
+                    if (files.length + imgArr.length > 5) {
+                        alertMsg("最多上传不能超过5个！");
+                        //移除多余的file
+                        for (var i = files.length; i > 5 - imgArr.length; i--) {
+                            uploader.removeFile(files[i - 1]);
+                        }
+                        return false;
+                    }
+                }
+
+                uploader.onError = function (code) {
+                    if (code == 'F_EXCEED_SIZE') {
+                        alertMsg("上传的图片不能超过1M大小！");
+                    } else if (code == 'Q_EXCEED_SIZE_LIMIT') {
+                        alertMsg("上传文件过大！");
+                    } else if (code == 'F_DUPLICATE') {
+                        //alertMsg("您已经选择过该图片");
+                    } else if (code == 'Q_EXCEED_NUM_LIMIT') {
+                        alertMsg("最多上传不能超过5个！");
+                    }
+                    else if (code == 'Q_TYPE_DENIED') {
+                        alertMsg("上传格式不正确！");
+                    }
+                    else {
+                        alertMsg('Error: ' + code);
+                    }
+                    return false;
+                }
+
+                uploader.onUploadAccept = function (object, json) {
+                    if (json.success) {
+                        var data = json.result;
+                        if (data[0].status == 1) {
+                            var d = data[0].data;
+                            var src = d.newFileName;
+                            var fileName = d.originalFileName.substr(0, d.originalFileName.lastIndexOf('.'));
+                            var html = '<div class="img-wrapper"><img src="' + src + '" title="' + fileName + '"/><sup class="action delimg" data-file-id="' + object.file.id + '" title="删除">X</sup></div>';
+                            imgArr.push(d.newFileName);
+                            $imgList.append(html);
+                            $('input[name=imgsPath]').val(imgArr.join(';')).keyup().blur();
+                            $('input[name=defaultImg]').val(imgArr[0]);
+                        }
+                        else {
+                            errorCount++;
+                        }
+                    }
+                    else {
+                        alertMsg(json.error.details || json.error.message);
+                    }
+                }
+
+                uploader.onStartUpload = function () {
+                    errorCount = 0;
+                }
+
+                uploader.onUploadFinished = function () {
+                    if (errorCount > 0) {
+                        alertMsg("共有" + errorCount + "个图片上传失败，请重新尝试！");
+                    }
+                }
+
+
+
+                //删除图片
+                $imgList.on('click', '.delimg', function () {
+                    var $t = $(this).closest('div.img-wrapper');
+                    var fileId = $(this).data("fileId");
+                    var $index = $t.index();
+                    imgArr.splice($index, 1);
+                    $('input[name=imgsPath]').val(imgArr.join(';')).keyup();
+                    if (fileId) {
+                        uploader.removeFile(fileId);
+                    }
+                    $t.remove();
+                    if (imgArr.length > 0) {
+                        $('input[name=defaultImg]').val(imgArr[0]);
+                    }
+                    else {
+                        $('input[name=defaultImg]').val('');
+                    }
+                });
+
+                var projectUploader = WebUploader.create({
+                    // 选完文件后，是否自动上传。
+                    auto: true,
+                    // swf文件路径
+                    swf: '@Url.Content("~/libs/webuploader-0.1.5/Uploader.swf")',
+                    resize: false,
+                    // 文件接收服务端。
+                    server: '@Url.Action("Upload", "AttrFiles")',
+                    // 选择文件的按钮。可选。
+                    // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+                    pick: '#btnUploadProject',
+                    multiple: false,
+                    duplicate: true,
+                    fileSingleSizeLimit: 10 * 1024 * 1024,
+                    // 只允许选择图片文件。
+                    accept: {
+                        title: '压缩文件',
+                        extensions: 'zip',
+                        mimeTypes: 'application/zip'
+                    }
+                });
+
+                projectUploader.onError = function (code) {
+                    if (code == 'F_EXCEED_SIZE') {
+                        alertMsg("上传的文件不能超过10M大小！");
+                    } else if (code == 'Q_EXCEED_SIZE_LIMIT') {
+                        alertMsg("上传文件过大！");
+                    } else if (code == 'F_DUPLICATE') {
+                        //alertMsg("您已经选择过该图片");
+                    } else if (code == 'Q_EXCEED_NUM_LIMIT') {
+                        alertMsg("最多上传不能超过1个！");
+                    }
+                    else if (code == 'Q_TYPE_DENIED') {
+                        alertMsg("上传格式不正确！");
+                    }
+                    else {
+                        alertMsg('Error: ' + code);
+                    }
+                    return false;
+                }
+
+                projectUploader.onUploadAccept = function (object, json) {
+                    $('#process').html('');
+                    if (json.success) {
+                        var data = json.result;
+                        if (data[0].status == 1) {
+                            var d = data[0].data;
+                            var src = d.newFileName;
+                            var html = '<a href="#">' + d.originalFileName + '</a><a style="margin-left:10px"  href="javascript:deleteFile();">删除</a>';
+                            $('#projectDiv').html(html);
+                            $('input[name=filePath]').val(src);
+                            $('input[name=fileName]').val(d.originalFileName);
+                        } else {
+                            dialog({
+                                title: '提示',
+                                width: 300,
+                                content: '哎呀，服务器开小差了，请稍候重试...'
+                            }).show();
+                        }
+                    }
+                    else {
+                        alertMsg(json.error.details || json.error.message);
+                    }
+                }
+
+                projectUploader.onUploadProgress = function (file, percentage) {
+                    var $div = $('#process');
+                    //$div.find('p.state').text('上传中');
+
+                    $div.html(parseInt(percentage * 100) + '%');
+                }
+
+                var $uploadForm = $('#uploadForm');
+
+                $uploadForm.validate({
+                    errorElement: 'span', //default input error message container
+                    errorClass: 'help-block', // default input error message class
+                    focusInvalid: false, // do not focus the last invalid input
+                    rules: {
+                        title: {
+                            required: true
+                        },
+                        region: {
+                            required: true
+                        },
+                        content: {
+                            required: true
+                        }
+                    },
+                    messages: {
+                        title: {
+                            required: "用户名必填"
+                        },
+                        region: {
+                            required: "地区必填",
+                        },
+                        content: {
+                            required: "描述必填"
+                        }
+                    },
+
+                    errorPlacement: function (error, element) {
+                        error.insertAfter(element).css('color', 'red');
+                    },
+
+                    submitHandler: function (form) {
+                        
+                    }
+                });
+
+                $uploadForm.submit(function (e) {
+                    if (!$uploadForm.valid()) {
+                        return false;
+                    }
+                    if (!$('input[name=imgsPath]').val().length) {
+                        alertMsg("请上传图片", 3000);
+                        return false;
+                    }
+                    if (!$('input[name=filePath]').val().length) {
+                        alertMsg("请上传工程文件", 3000);
+                        return false;
+                    }
+                    var button = $("button[type=submit]",$uploadForm);
+                    button.addClass("disabled");
+                    $.ajax({
+                        type: 'POST',
+                        contentType: "application/json",
+                        url: '/api/services/app/metropolitan/addOrUpdateMetropolitian',
+                        data: JSON.stringify($uploadForm.serializeObject()),
+                        dataType: 'json',
+                        cache: false,
+                        success: function (json) {
+                            if (json.success) {
+                                window.location.href="/Metropolitan";
+                            }
+                            else {
+                                alertMsg(json.error.details || json.error.message);
+                            }
+                            button.removeClass("disabled");
+                        },
+                        error: function () {
+                            button.removeClass("disabled");
+                        }
+                    });
+                    return false;
+                });
+
+            });
+
+            function deleteFile() {
+                $('#projectDiv').html('');
+                $('input[name=filePath]').val('');
+                $('input[name=fileName]').val('');
+            }
 
         </script>
     }

@@ -127,8 +127,7 @@ else
                                     alertMsg(json.error.message || json.error.detail);
                                 }
                             });
-                        },
-                        cancel: false,
+                        }
                     }).showModal();
                 }
             </script>
@@ -155,8 +154,9 @@ else
                         var checkLength = $(this).find("input:checked").length;
                         if (checkLength == 0) {
                             alertMsg("第" + (eq + 1) + "题尚未选择，请检查");
-                            var point = $(this).closest('.content').offset();
+                            var point = $(this).closest('.item').offset();
                             window.scrollTo(0, point.top);
+                            console.log(point.top);
                             errorCount++;
                             return false;
                         }

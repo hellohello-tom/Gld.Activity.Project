@@ -31,9 +31,9 @@
                 <p class="tips"></p>
                 <div>
                     <span class="text">用户名</span>
-                    <input type="text" name="usernameOrEmailAddress" maxlength="11" class="ipt required" />
+                    <input type="text" placeholder ="请输入注册使用的手机号" name="usernameOrEmailAddress" maxlength="11" class="ipt required" />
                     <span class="text">密码</span>
-                    <input type="password" name="password" class="ipt required" />
+                    <input type="password" placeholder ="请输入密码"  name="password" class="ipt required" />
                     <label>
                         <input type="checkbox" data-test="123" name="rememberMe" value="true" />记住我
                     </label>
@@ -135,7 +135,7 @@
                     },
 
                     errorPlacement: function (error, element) {
-                        $('.tips').html(error);
+                        $('.tips', $loginForm).html(error);
                     },
 
                     submitHandler: function (form) {
@@ -182,7 +182,6 @@
                     return false;
                 });
             });
-            
     </script>
     <a href="javascript:scrollTo(0,0);" class="gotop" title="滚到顶部" style="position: fixed;right: 20px;bottom: 40px;width: 46px;height: 46px;font-size: 40px;background: #666;background: rgba(100,100,100,.8);border-radius: 4px;color: #fff;text-align: center;display:none;">
         <script>

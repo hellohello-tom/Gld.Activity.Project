@@ -23,9 +23,10 @@ namespace TomTeam.Project.Gld.Metropolitan
         private static object objLock = new object();
         IRepository<Exam.Metropolitan> _metropolitanRepository;
         IRepository<Exam.LikeInfo> _likeInfoRepository;
-        public MetropolitanAppService(IRepository<Exam.Metropolitan> _metropolitanRepository)
+        public MetropolitanAppService(IRepository<Exam.Metropolitan> _metropolitanRepository, IRepository<Exam.LikeInfo> _likeInfoRepository)
         {
             this._metropolitanRepository = _metropolitanRepository;
+            this._likeInfoRepository = _likeInfoRepository;
         }
 
         /// <summary>
@@ -47,7 +48,7 @@ namespace TomTeam.Project.Gld.Metropolitan
             {
                 MetropolitanId = metropolitanModel.Id
             });
-            metropolitanModel.LikeCount = metropolitanModel.LikeCount++;
+            metropolitanModel.LikeCount = metropolitanModel.LikeCount + 1;
             await _metropolitanRepository.UpdateAsync(metropolitanModel);
             return metropolitanModel.LikeCount;
         }
@@ -57,13 +58,36 @@ namespace TomTeam.Project.Gld.Metropolitan
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public async Task AddMetropolitian(CreateOrUpdateMetropolitanInput input)
+        public async Task AddOrUpdateMetropolitian(CreateOrUpdateMetropolitanInput input)
         {
-            var model = new Exam.Metropolitan();
             if (!AbpSession.UserId.HasValue)
                 throw new UserFriendlyException("没有获取到当前登录用户信息");
-            input.MapTo(model);
-            await _metropolitanRepository.InsertOrUpdateAndGetIdAsync(model);
+            var model = new Exam.Metropolitan();
+            var selfMetropolitan = await _metropolitanRepository.FirstOrDefaultAsync(x => x.CreatorUserId == AbpSession.UserId.Value) ?? new Exam.Metropolitan();
+            if (input.Id > 0)
+            {
+                var newsModel = await _metropolitanRepository.GetAsync(input.Id);
+                if (newsModel.CreatorUserId == AbpSession.UserId.Value)
+                {
+                    input.MapTo(newsModel);
+                    await _metropolitanRepository.InsertOrUpdateAndGetIdAsync(newsModel);
+                }
+                else
+                {
+                    throw new UserFriendlyException("您没有权限操作此工程");
+                }
+            }
+            else
+            {
+                if (selfMetropolitan.Id > 0)
+                {
+                    throw new UserFriendlyException("您已上传过工程，请编辑您自己的工程");
+                }
+                input.MapTo(model);
+                var currentUserInfo = await UserManager.FindByIdAsync(AbpSession.UserId.Value);
+                model.UserDisplayName = currentUserInfo.Name;
+                await _metropolitanRepository.InsertOrUpdateAndGetIdAsync(model);
+            }
         }
 
         /// <summary>
@@ -138,31 +162,5 @@ namespace TomTeam.Project.Gld.Metropolitan
             }
         }
 
-        /// <summary>
-        /// 更新工程信息
-        /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
-        public async Task<int> UpdateByUser(UpdateMetropolitanForAdminInput input)
-        {
-            if (input.Id > 0)
-            {
-
-                var newsModel = _metropolitanRepository.Get(input.Id);
-                if (newsModel.CreatorUserId == AbpSession.UserId.Value)
-                {
-                    input.MapTo(newsModel);
-                    return await _metropolitanRepository.InsertOrUpdateAndGetIdAsync(newsModel);
-                }
-                else
-                {
-                    throw new UserFriendlyException("您没有权限操作此工程");
-                }
-            }
-            else
-            {
-                throw new UserFriendlyException("数据传递错误");
-            }
-        }
     }
 }

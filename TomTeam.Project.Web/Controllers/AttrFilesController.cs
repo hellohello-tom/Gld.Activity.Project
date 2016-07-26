@@ -150,14 +150,14 @@ namespace TomTeam.Project.Web.Controllers
                             string originalFileName = fileStream.FileName.Substring(fileStream.FileName.LastIndexOf(@"\") + 1); //取得文件原名
                             string fileName = Guid.NewGuid().ToString() + fileExt; //随机文件名
                             string dirPath = "/upload/"; //上传目录相对路径
-                            if (!IsImage(fileExt))
+                            if (!IsImage(fileExt) && !".zip".Contains(fileExt))
                             {
                                 callback.msg = "对不起，仅允许上传图片文件！";
                                 callbackList.Add(callback);
                                 continue;
                             }
                             //检查文件大小是否合法
-                            if (fileStream.ContentLength >= 1 * 1024 * 1024)
+                            if (fileStream.ContentLength >= 1 * 1024 * 1024&& !".zip".Contains(fileExt))
                             {
                                 callback.msg = "文件超过限制的大小啦，1M以内！";
                                 callbackList.Add(callback);
@@ -225,6 +225,8 @@ namespace TomTeam.Project.Web.Controllers
                                     fileFirstModel.FileName = callback.data.originalFileName.Substring(0, callback.data.originalFileName.LastIndexOf('.'));
                                     await _fileAttrRepository.InsertOrUpdateAndGetIdAsync(fileFirstModel);
                                     DeleteFile(filePath);
+                                    callback.data.newFileName = callback.data.thumbnailFileName = fileFirstModel.FilePath;
+                                    callback.data.originalFileName = fileFirstModel.FileName + fileFirstModel.FileExt;
                                 }
                             }
                             else

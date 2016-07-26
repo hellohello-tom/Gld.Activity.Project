@@ -25,5 +25,7 @@ namespace TomTeam.Project.Gld.Exam
 
 
         Task<PagedResultOutput<GetExamCollectOutput>> GetExamCollectList(SearchExamCollectInput input);
+
+        Task DeleteCollect(IdInput input);
     }
 }

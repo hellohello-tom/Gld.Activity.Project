@@ -21,10 +21,19 @@ namespace TomTeam.Project.Gld.Metropolitan.Dto
         public string Content { get; set; }
 
 
+
+        public string DefaultImg { get; set; }
+
+
         public string ImgsPath { get; set; }
 
 
         public string FilePath { get; set; }
+
+        /// <summary>
+        /// 文件名
+        /// </summary>
+        public string FileName { get; set; }
 
         public string UserDisplayName { get; set; }
 

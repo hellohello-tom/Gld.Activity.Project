@@ -222,4 +222,3 @@ E:\Poject\gld\TomTeam.Project.Application\bin\Debug\System.Web.Http.xml
 E:\Poject\gld\TomTeam.Project.Application\obj\Debug\TomTeam.Project.Application.csprojResolveAssemblyReference.cache
 E:\Poject\gld\TomTeam.Project.Application\obj\Debug\TomTeam.Project.Application.dll
 E:\Poject\gld\TomTeam.Project.Application\obj\Debug\TomTeam.Project.Application.pdb
-D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Debug\AutoMapper.Net4.dll

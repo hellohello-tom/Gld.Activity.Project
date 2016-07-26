@@ -221,7 +221,8 @@
     >.item {
       @extend .btn;
       position: relative;
-      line-height: 20px!important;
+      padding: 0 1.5em;
+      line-height: 26px!important;
       color: $color-table-thead-th;
       +.item {
         margin-left: -1px;

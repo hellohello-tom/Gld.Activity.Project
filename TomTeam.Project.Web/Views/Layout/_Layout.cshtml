@@ -135,7 +135,7 @@
                     },
 
                     errorPlacement: function (error, element) {
-                        $('.tips').html(error);
+                        $('.tips', $loginForm).html(error);
                     },
 
                     submitHandler: function (form) {

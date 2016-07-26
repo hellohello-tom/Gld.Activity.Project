@@ -1,6 +1,7 @@
 ﻿@{ 
     var user = ViewBag.UserInfo as TomTeam.Project.Authorization.Users.User;
     var provinical = ViewBag.ExamCollect as TomTeam.Project.Gld.Exam.Dto.GetExamCollectOutput;
+    var metropolitan = ViewBag.Metropolitan as TomTeam.Project.Gld.Exam.Metropolitan;
 }
 <div class="q">
     <div class="main">
@@ -12,7 +13,6 @@
                     </h3>
                     <div class="content">
                         <div class="item">
-                            注册信息：
                             <ul class="downlist">
                                 <li>
                                     <p class="name">
@@ -53,7 +53,7 @@
                                 <li>
                                     <p class="name">
                                         总得分：
-                                        <em class="count num">95</em>分
+                                        <em class="count num">@provinical.ProvincialIntegral</em>分
                                     </p>
                                 </li>
                                 <li>
@@ -66,24 +66,40 @@
                         </div>
                     </div>
                     }
-                    @*<h3 class=" q-type">
+                    @if (metropolitan.Id > 0)
+                    {
+                    <h3 class="q-type">
                         会试详情：
                     </h3>
                     <div class="content">
-                        <p class="item">
-                            <span>答题总数：<em class="num">67</em>题</span>
-                            <span> 答对： <em class="num">35</em></span>
-                            <span>
-                                总得分：
-                                <em class="count num">95</em>分
-                            </span>
-                            <span>
-                                正确率：
-                                <em class="num">67%</em>
-                            </span>
-                        </p>
-                    </div>*@
-
+                        <div class="item">
+                            <ul class="downlist">
+                                <li>
+                                    <p class="name">
+                                        标题：@metropolitan.Title
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="name">
+                                        地区：@metropolitan.Region
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="name">
+                                        描述：@metropolitan.Content
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="name">
+                                        工程文件：@metropolitan.FileName
+                                        <a target="_blank" href="/Metropolitan/DownLoad?id=@metropolitan.Id" class="ml10 btn btn-ok">下载</a>
+                                        <a href="/Metropolitan/UploadProject?id=@metropolitan.Id" class="ml10 btn btn-edit">修改</a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    }
                 </div>
             </div>
         </div>

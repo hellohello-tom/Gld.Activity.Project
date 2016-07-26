@@ -27,6 +27,11 @@ namespace TomTeam.Project.Gld.Exam
         public string FilePath { get; set; }
         
         /// <summary>
+        /// 文件名
+        /// </summary>
+        public string FileName { get; set; }
+
+        /// <summary>
         /// 用户名
         /// </summary>
         public string UserDisplayName { get; set; }
