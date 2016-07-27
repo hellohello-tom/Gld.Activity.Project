@@ -26,7 +26,7 @@ namespace TomTeam.Project.Web.Controllers
             var pageList =await _newsAppService.GetNewsList(new Gld.Dto.SearchNewsInput
             {
                 MaxResultCount = pageSize,
-                SkipCount = pageIndex - 1,
+                SkipCount = (pageIndex - 1)*pageSize,
                 SearchTitle = searchTitle
             });
             return View(pageList);

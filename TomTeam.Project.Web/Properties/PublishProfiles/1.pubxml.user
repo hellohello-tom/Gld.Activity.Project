@@ -1204,7 +1204,7 @@
       <publishTime>07/27/2016 16:38:45</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.Web.dll">
-      <publishTime>07/27/2016 16:38:47</publishTime>
+      <publishTime>07/27/2016 17:17:30</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.WebApi.dll">
       <publishTime>07/27/2016 16:38:45</publishTime>
@@ -9604,7 +9604,7 @@
       <publishTime>06/23/2016 15:44:01</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>07/27/2016 16:28:52</publishTime>
+      <publishTime>07/27/2016 16:51:24</publishTime>
     </File>
     <File Include="Views/Home/Login.cshtml">
       <publishTime>07/20/2016 14:26:11</publishTime>
@@ -9637,10 +9637,10 @@
       <publishTime>07/26/2016 11:27:08</publishTime>
     </File>
     <File Include="Views/News/Detail.cshtml">
-      <publishTime>07/21/2016 10:04:16</publishTime>
+      <publishTime>07/27/2016 16:43:45</publishTime>
     </File>
     <File Include="Views/News/Index.cshtml">
-      <publishTime>07/27/2016 09:20:37</publishTime>
+      <publishTime>07/27/2016 17:16:20</publishTime>
     </File>
     <File Include="Views/Palace/Index.cshtml">
       <publishTime>07/25/2016 08:32:35</publishTime>

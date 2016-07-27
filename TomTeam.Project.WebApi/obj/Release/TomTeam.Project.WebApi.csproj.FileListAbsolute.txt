@@ -98,4 +98,3 @@ D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.WebApi\b
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.WebApi\obj\Release\TomTeam.Project.WebApi.csprojResolveAssemblyReference.cache
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.WebApi\obj\Release\TomTeam.Project.WebApi.dll
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.WebApi\obj\Release\TomTeam.Project.WebApi.pdb
-D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.WebApi\bin\Release\AutoMapper.Net4.dll

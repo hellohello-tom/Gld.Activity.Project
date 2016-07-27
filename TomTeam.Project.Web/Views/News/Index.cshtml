@@ -24,7 +24,7 @@
                 </ul>
                 <div class="text-center pagination">
                     <a href="@(ViewBag.PageIndex == 1 ? "javascript:;" : "/News/Index?pageIndex="+((int)ViewBag.PageIndex - 1))" class="@(ViewBag.PageIndex == 1 ? "prev item disabled" : "prev item")"><i class="fa fa-angle-left icon"></i></a>
-                    <a href="@(ViewBag.PageIndex == Math.Ceiling((double)(Model.TotalCount / ViewBag.PageSize)) ? "javascript:;" : "/News/Index?pageIndex="+((int)ViewBag.PageIndex + 1))" class="@(ViewBag.PageIndex == Math.Ceiling((double)(Model.TotalCount / ViewBag.PageSize)) ? "next item disabled" : "next item")"><i class="fa fa-angle-right icon"></i></a>
+                    <a href="@(ViewBag.PageIndex == Math.Ceiling((decimal)Model.TotalCount/ViewBag.PageSize) ? "javascript:;" : "/News/Index?pageIndex="+((int)ViewBag.PageIndex + 1))" class="@(ViewBag.PageIndex == Math.Ceiling((decimal)Model.TotalCount/ViewBag.PageSize)  ? "next item disabled" : "next item")"><i class="fa fa-angle-right icon"></i></a>
                 </div>
             </div>
         </div>

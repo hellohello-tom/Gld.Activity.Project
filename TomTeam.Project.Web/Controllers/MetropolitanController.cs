@@ -46,7 +46,7 @@ namespace TomTeam.Project.Web.Controllers
             {
                 Sorting = sortName,
                 MaxResultCount = pageSize,
-                SkipCount = pageIndex - 1
+                SkipCount = (pageIndex - 1) * pageSize
             });
             if (AbpSession.UserId.HasValue)
             {
