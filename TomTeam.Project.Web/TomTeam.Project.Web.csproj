@@ -609,6 +609,7 @@
     <Content Include="App\common\views\layout\sidebar.cshtml" />
     <Content Include="App\tenant\views\settings\index.js" />
     <Content Include="Common\Scripts\jquery-custom.js" />
+    <Content Include="Common\Scripts\jquery.twbsPagination.min.js" />
     <Content Include="Common\Scripts\librarySettings.js" />
     <Content Include="Common\Scripts\ModalManager.js" />
     <Content Include="Common\Scripts\utils.js" />

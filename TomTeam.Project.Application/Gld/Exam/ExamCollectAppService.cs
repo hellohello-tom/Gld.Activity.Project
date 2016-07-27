@@ -66,7 +66,7 @@ namespace TomTeam.Project.Gld.Exam
             {
                 IsCompleteProvincial = false,
                 MetropolitanFile = "",
-                IsMetropolitanStatus = false,
+                IsMetropolitanStatus = true,
                 MetropolitanImg = "",
                 UserId = Convert.ToInt32(AbpSession.UserId.Value),
                 ProvincialIntegral = 0,

@@ -29,21 +29,21 @@
             <div class="inner">
                 <div class="item report">
                     <h2 class="title">
-                        赛事播报
+                        干货和新闻
                     </h2>
                     <div class="content">
                         <ul class="list">
                             @foreach (var item in list.Items)
-                    {
-                            <li>
-                                <span class="text">
-                                    <a href="@Url.Action("Detail","News", new { id = item.Id })">@item.Title</a>
-                                </span>
-                                <span class="time">
-                                    @string.Format("{0:yyyy-MM-dd HH:mm}", item.CreationTime)
-                                </span>
-                            </li>
-                    }
+                            {
+                                <li>
+                                    <span class="text">
+                                        <a href="@Url.Action("Detail","News", new { id = item.Id })">@item.Title</a>
+                                    </span>
+                                    <span class="time">
+                                        @string.Format("{0:yyyy-MM-dd HH:mm}", item.CreationTime)
+                                    </span>
+                                </li>
+                            }
                         </ul>
                     </div>
                 </div>
@@ -55,121 +55,53 @@
                     <h2 class="title">赛事进度</h2>
                     <div class="content">
                         <div class="date time">
-                            7<b>月</b>
+                            8<b>月</b>
                         </div>
                         <ul class="clearfix col4 content-list">
                             <li class="item">
                                 <dl class="detail">
-                                    <dt class="time">07.12</dt>
-                                    <dd class="content">
-                                        <div>
-                                            2016-07-12 14:20:05
-                                        </div>
+                                    <dt class="time">8月1日</dt>
+                                    <dd class="content" style="font-size:16px">
                                         <p class="text">
-                                            比赛跟踪
+                                            8月1日 - 8月31日
                                         </p>
-                                    </dd>
-                                    <dd class="content">
-                                        <div>
-                                            2016-07-12 14:20:05
-                                        </div>
                                         <p class="text">
-                                            比赛跟踪
+                                            乡试 
                                         </p>
-                                    </dd>
-                                    <dd class="content">
-                                        <div>
-                                            2016-07-12 14:20:05
-                                        </div>
                                         <p class="text">
-                                            比赛跟踪
+                                            每天都有干货分享
+                                        </p>
+                                    </dd>   
+                                </dl>
+                            </li>
+                            <li class="item">
+                                <dl class="detail">
+                                    <dt class="time">9月1日</dt>
+                                    <dd class="content"  style="font-size:16px">
+                                        <p class="text">
+                                            9月1日 - 9月30日
+                                        </p>
+                                        <p class="text">
+                                            会试
+                                        </p>
+                                        <p class="text">
+                                            周周都有礼品相送
                                         </p>
                                     </dd>
                                 </dl>
                             </li>
                             <li class="item">
                                 <dl class="detail">
-                                    <dt class="time">07.12</dt>
-                                    <dd class="content">
-                                        <div>
-                                            2016-07-12 14:20:05
-                                        </div>
+                                    <dt class="time">10月14日</dt>
+                                    <dd class="content"   style="font-size:16px">
                                         <p class="text">
-                                            比赛跟踪
+                                            10月14日 - 10月21日
                                         </p>
-                                    </dd>
-                                    <dd class="content">
-                                        <div>
-                                            2016-07-12 14:20:05
-                                        </div>
                                         <p class="text">
-                                            比赛跟踪
+                                            殿试
                                         </p>
-                                    </dd>
-                                    <dd class="content">
-                                        <div>
-                                            2016-07-12 14:20:05
-                                        </div>
                                         <p class="text">
-                                            比赛跟踪
-                                        </p>
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li class="item">
-                                <dl class="detail">
-                                    <dt class="time">07.12</dt>
-                                    <dd class="content">
-                                        <div>
-                                            2016-07-12 14:20:05
-                                        </div>
-                                        <p class="text">
-                                            比赛跟踪
-                                        </p>
-                                    </dd>
-                                    <dd class="content">
-                                        <div>
-                                            2016-07-12 14:20:05
-                                        </div>
-                                        <p class="text">
-                                            比赛跟踪
-                                        </p>
-                                    </dd>
-                                    <dd class="content">
-                                        <div>
-                                            2016-07-12 14:20:05
-                                        </div>
-                                        <p class="text">
-                                            比赛跟踪
-                                        </p>
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li class="item">
-                                <dl class="detail">
-                                    <dt class="time">07.12</dt>
-                                    <dd class="content">
-                                        <div>
-                                            2016-07-12 14:20:05
-                                        </div>
-                                        <p class="text">
-                                            比赛跟踪
-                                        </p>
-                                    </dd>
-                                    <dd class="content">
-                                        <div>
-                                            2016-07-12 14:20:05
-                                        </div>
-                                        <p class="text">
-                                            比赛跟踪
-                                        </p>
-                                    </dd>
-                                    <dd class="content">
-                                        <div>
-                                            2016-07-12 14:20:05
-                                        </div>
-                                        <p class="text">
-                                            比赛跟踪
+                                            最终大奖等你拿
                                         </p>
                                     </dd>
                                 </dl>

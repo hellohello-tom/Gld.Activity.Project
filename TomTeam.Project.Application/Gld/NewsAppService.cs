@@ -57,7 +57,7 @@ namespace TomTeam.Project.Gld
                 query = query.Where(news => news.Title.Contains(searchInput.SearchTitle));
             }
             var listCount = await query.CountAsync();
-            var list = await query.OrderByDescending(x => x.CreationTime).PageBy(searchInput).ToListAsync();
+            var list = await query.OrderByDescending(x => x.IsTop).ThenBy(x => x.CreationTime).PageBy(searchInput).ToListAsync();
             var newsListDto = list.MapTo<List<GetNewsListOutput>>();
             return new PagedResultOutput<GetNewsListOutput>(listCount, newsListDto);
         }

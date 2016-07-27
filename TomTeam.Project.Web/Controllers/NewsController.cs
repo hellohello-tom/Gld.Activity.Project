@@ -25,7 +25,7 @@ namespace TomTeam.Project.Web.Controllers
             ViewBag.PageSize = pageSize;
             var pageList =await _newsAppService.GetNewsList(new Gld.Dto.SearchNewsInput
             {
-                MaxResultCount = 10,
+                MaxResultCount = pageSize,
                 SkipCount = pageIndex - 1,
                 SearchTitle = searchTitle
             });

@@ -184,7 +184,7 @@
       <publishTime>07/14/2016 16:05:40</publishTime>
     </File>
     <File Include="App/common/views/gld/addnews.cshtml">
-      <publishTime>07/13/2016 14:01:02</publishTime>
+      <publishTime>07/27/2016 16:10:25</publishTime>
     </File>
     <File Include="App/common/views/gld/addnews.js">
       <publishTime>07/13/2016 14:08:02</publishTime>
@@ -199,7 +199,7 @@
       <publishTime>07/13/2016 08:50:11</publishTime>
     </File>
     <File Include="App/common/views/gld/news.js">
-      <publishTime>07/18/2016 10:38:04</publishTime>
+      <publishTime>07/27/2016 16:08:39</publishTime>
     </File>
     <File Include="App/common/views/gld/updateuser.cshtml">
       <publishTime>07/25/2016 08:32:35</publishTime>
@@ -1195,19 +1195,19 @@
       <publishTime>01/28/2015 04:04:30</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.Application.dll">
-      <publishTime>07/26/2016 14:04:48</publishTime>
+      <publishTime>07/27/2016 16:38:45</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.Core.dll">
-      <publishTime>07/26/2016 14:04:47</publishTime>
+      <publishTime>07/27/2016 16:38:44</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.EntityFramework.dll">
-      <publishTime>07/26/2016 14:04:49</publishTime>
+      <publishTime>07/27/2016 16:38:45</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.Web.dll">
-      <publishTime>07/26/2016 14:04:51</publishTime>
+      <publishTime>07/27/2016 16:38:47</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.WebApi.dll">
-      <publishTime>07/26/2016 14:04:49</publishTime>
+      <publishTime>07/27/2016 16:38:45</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>
@@ -1304,6 +1304,9 @@
     </File>
     <File Include="Common/Scripts/jquery-custom.js">
       <publishTime>06/23/2016 15:42:17</publishTime>
+    </File>
+    <File Include="Common/Scripts/jquery.twbsPagination.min.js">
+      <publishTime>02/22/2016 15:48:35</publishTime>
     </File>
     <File Include="Common/Scripts/librarySettings.js">
       <publishTime>06/23/2016 15:42:17</publishTime>
@@ -9601,7 +9604,7 @@
       <publishTime>06/23/2016 15:44:01</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>07/26/2016 08:40:59</publishTime>
+      <publishTime>07/27/2016 16:28:52</publishTime>
     </File>
     <File Include="Views/Home/Login.cshtml">
       <publishTime>07/20/2016 14:26:11</publishTime>
@@ -9628,7 +9631,7 @@
       <publishTime>07/26/2016 14:36:16</publishTime>
     </File>
     <File Include="Views/Metropolitan/Index.cshtml">
-      <publishTime>07/26/2016 13:56:45</publishTime>
+      <publishTime>07/27/2016 10:32:43</publishTime>
     </File>
     <File Include="Views/Metropolitan/UploadProject.cshtml">
       <publishTime>07/26/2016 11:27:08</publishTime>
@@ -9637,7 +9640,7 @@
       <publishTime>07/21/2016 10:04:16</publishTime>
     </File>
     <File Include="Views/News/Index.cshtml">
-      <publishTime>07/25/2016 08:32:35</publishTime>
+      <publishTime>07/27/2016 09:20:37</publishTime>
     </File>
     <File Include="Views/Palace/Index.cshtml">
       <publishTime>07/25/2016 08:32:35</publishTime>

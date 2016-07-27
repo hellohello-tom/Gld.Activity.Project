@@ -19,6 +19,11 @@ namespace TomTeam.Project.Gld.Dto
 
         public  string Content { get; set; }
 
+        /// <summary>
+        /// 置顶
+        /// </summary>
+        public virtual bool IsTop { get; set; }
+
         public DateTime CreationTime
         {
             get;

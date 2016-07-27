@@ -52,7 +52,8 @@ namespace TomTeam.Project.Web.Controllers
             {
                 ViewBag.ExamCollectUserInfo = await _metropolitanRepository.FirstOrDefaultAsync(x => x.CreatorUserId == AbpSession.UserId);
             }
-
+            ViewBag.PageSize = pageSize;
+            ViewBag.PageIndex = pageIndex;
             return View(pagedList);
         }
 

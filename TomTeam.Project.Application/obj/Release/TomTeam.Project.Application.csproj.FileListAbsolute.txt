@@ -45,3 +45,4 @@ D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Applicat
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\obj\Release\TomTeam.Project.Application.csprojResolveAssemblyReference.cache
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\obj\Release\TomTeam.Project.Application.dll
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\obj\Release\TomTeam.Project.Application.pdb
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Release\AutoMapper.Net4.dll

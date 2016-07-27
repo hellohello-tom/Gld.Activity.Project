@@ -66,7 +66,28 @@
     </div>
 </div>
 @section Scripts{
+<script src="~/Common/Scripts/jquery.twbsPagination.min.js"></script>
     <script type="text/javascript">
+        $(function(){
+            var isFirst=true;
+            $('#pagination').twbsPagination({
+                totalPages: @(Convert.ToInt32(Math.Ceiling((double)((Model.TotalCount * 1.0) / ((double)ViewBag.PageSize))))),
+                visiblePages: 5,
+                prev: '<',
+                next: '>',
+                first :"首页",
+                last:"尾页",
+                startPage:@ViewBag.PageIndex,
+                onPageClick: function (event, page) {
+                    if(!isFirst){
+                        window.location.href = "/Metropolitan/Index?pageIndex=" + page;
+                    }
+                    else{
+                        isFirst=false;
+                    }
+                }
+            });
+        });
         //投票
         function vote(id,e) {
             $.ajax({

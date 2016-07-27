@@ -851,3 +851,4 @@ E:\Poject\gld\TomTeam.Project.Web\bin\zh-Hans\System.Web.WebPages.Razor.resource
 E:\Poject\gld\TomTeam.Project.Web\obj\Debug\TomTeam.Project.Web.csprojResolveAssemblyReference.cache
 E:\Poject\gld\TomTeam.Project.Web\obj\Debug\TomTeam.Project.Web.dll
 E:\Poject\gld\TomTeam.Project.Web\obj\Debug\TomTeam.Project.Web.pdb
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Web\bin\AutoMapper.Net4.dll

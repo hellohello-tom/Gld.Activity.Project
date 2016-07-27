@@ -15,5 +15,10 @@ namespace TomTeam.Project.News
         public virtual string Title { get; set; }
 
         public virtual string Content { get; set; }
+
+        /// <summary>
+        /// 置顶
+        /// </summary>
+        public virtual bool IsTop { get; set; }
     }
 }

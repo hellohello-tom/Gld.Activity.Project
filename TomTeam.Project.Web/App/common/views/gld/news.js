@@ -44,6 +44,12 @@
                         minWidth: 120
                     },
                     {
+                        name: '是否置顶',
+                        field: 'isTop',
+                        minWidth: 120,
+                        cellTemplate: '<input type="checkbox" readonly disabled ng-model="row.entity.isTop">'
+                    },
+                    {
                         name: '创建时间',
                         field: 'creationTime',
                         cellFilter:'date:\'yyyy年MM月dd日 HH:mm\'',
