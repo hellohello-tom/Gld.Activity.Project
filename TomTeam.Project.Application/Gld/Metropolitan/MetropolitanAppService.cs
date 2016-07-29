@@ -14,6 +14,7 @@ using Abp.UI;
 using Abp.AutoMapper;
 using System.Data.Entity;
 using Abp.Linq.Extensions;
+using System.Linq.Dynamic;
 using Abp.Domain.Uow;
 
 namespace TomTeam.Project.Gld.Metropolitan
@@ -137,7 +138,7 @@ namespace TomTeam.Project.Gld.Metropolitan
                 query = query.Where(news => news.Title.Contains(input.SearchTitle));
             }
             var listCount = await query.CountAsync();
-            var list = await query.OrderByDescending(x => x.CreationTime).PageBy(input).ToListAsync();
+            var list = await query.OrderBy(input.Sorting).PageBy(input).ToListAsync();
             var newsListDto = list.MapTo<List<GetMetropolitanOutput>>();
             return new PagedResultOutput<GetMetropolitanOutput>(listCount, newsListDto);
         }

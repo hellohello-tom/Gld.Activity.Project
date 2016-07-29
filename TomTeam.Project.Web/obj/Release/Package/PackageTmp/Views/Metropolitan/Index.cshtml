@@ -17,7 +17,7 @@
                 <span class="btn-switcher js-switcher dis-inline-block fr">
                     <span class="title">
                         <a href="/Metropolitan/Index?sortName=CreationTime" class="@(ViewBag.SortName=="CreationTime"?"item on":"item")">创建时间</a>
-                        <a href="Metropolitan/Index?sortName=LikeCount" class="@(ViewBag.SortName=="LikeCount"?"item on":"item")">投票数</a>
+                        <a href="/Metropolitan/Index?sortName=LikeCount" class="@(ViewBag.SortName=="LikeCount"?"item on":"item")">投票数</a>
                     </span>
                 </span>
                 @if (ViewBag.IsLogin)
@@ -43,7 +43,7 @@
                         {
                             <li>
                                     <div class="inner">
-                                        <img alt="" src="@item.DefaultImg" onclick="window.location.href = '/Metropolitan/Detail/@item.Id'"/>
+                                        <img alt="" style="cursor:pointer" src="@item.DefaultImg" onclick="window.location.href = '/Metropolitan/Detail/@item.Id'"/>
                                         <p class="info">@item.UserDisplayName</p>
                                         <p class="vote-num">
                                             <span class="text-danger">@item.LikeCount</span>票

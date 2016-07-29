@@ -42,6 +42,14 @@ namespace TomTeam.Project.Config
         public int ExamTime { get; set; }
 
         /// <summary>
+        /// 考试次数
+        /// </summary>
+        [Required(ErrorMessage = "考试次数必填")]
+        [Range(1, 100, ErrorMessage = "考试次数1~100")]
+        [RegularExpression(@"^\d+$", ErrorMessage = "考试次数请输入正整数")]
+        public int ExaminationCount { get; set; }
+
+        /// <summary>
         /// 随机出题的数目
         /// </summary>
         [Required(ErrorMessage = "乡试考试随机题数必填")]

@@ -8,6 +8,7 @@ using TomTeam.Project.Storage;
 using TomTeam.Project.Config;
 using TomTeam.Project.Gld.Exam;
 using TomTeam.Project.Gld;
+using TomTeam.Project.News;
 
 namespace TomTeam.Project.EntityFramework
 {
@@ -26,8 +27,14 @@ namespace TomTeam.Project.EntityFramework
         public virtual IDbSet<Metropolitan> MetropolitanDbSet { get; set; }
         
         public virtual IDbSet<LikeInfo> LikeInfoDbSet { get; set; }
+
         public virtual IDbSet<FileAttr> FileAttrDbSet { get; set; }
+
+        public virtual IDbSet<ExamHistory> ExamHistoryDbSet { get; set; }
+
+        public virtual IDbSet<Comment> CommentDbSet { get; set; }
         
+
 
         /* Setting "Default" to base class helps us when working migration commands on Package Manager Console.
          * But it may cause problems when working Migrate.exe of EF. ABP works either way.         * 

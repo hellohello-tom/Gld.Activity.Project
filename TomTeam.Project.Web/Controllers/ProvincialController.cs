@@ -1,10 +1,12 @@
 ﻿using Abp.Application.Navigation;
 using Abp.Configuration.Startup;
+using Abp.Domain.Repositories;
 using Abp.Runtime.Session;
 using Abp.Threading;
 using Abp.Web.Mvc.Authorization;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -23,12 +25,14 @@ namespace TomTeam.Project.Web.Controllers
         private IProvincialExamAppService _provincialExamAppService;
         private IActivityConfigAppService _activityConfigAppService;
         private IExamCollectAppService _examCollectAppService;
-        public ProvincialController(IProvincialExamAppService _provincialExamAppService, IActivityConfigAppService _activityConfigAppService, IExamCollectAppService _examCollectAppService)
+        private IRepository<ExamHistory> _examHistoryAppService;
+        public ProvincialController(IProvincialExamAppService _provincialExamAppService, IActivityConfigAppService _activityConfigAppService, IExamCollectAppService _examCollectAppService, IRepository<ExamHistory> _examHistoryAppService)
         {
             
             this._provincialExamAppService = _provincialExamAppService;
             this._activityConfigAppService = _activityConfigAppService;
             this._examCollectAppService = _examCollectAppService;
+            this._examHistoryAppService = _examHistoryAppService;
         }
 
         // GET: Provincial
@@ -44,6 +48,7 @@ namespace TomTeam.Project.Web.Controllers
                     MaxResultCount = activityConfig.ExamCount,
                 });
             }
+            ViewBag.UserExamHistory = await _examHistoryAppService.GetAllListAsync(x => x.CreatorUserId == AbpSession.UserId.Value) ?? new List<ExamHistory>();
             ViewBag.UserExamCollect = await _examCollectAppService.GetUserExamCollect();
             return View(activityConfig);
         }

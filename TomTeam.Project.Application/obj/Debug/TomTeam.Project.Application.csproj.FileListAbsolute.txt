@@ -222,3 +222,10 @@ E:\Poject\gld\TomTeam.Project.Application\bin\Debug\System.Web.Http.xml
 E:\Poject\gld\TomTeam.Project.Application\obj\Debug\TomTeam.Project.Application.csprojResolveAssemblyReference.cache
 E:\Poject\gld\TomTeam.Project.Application\obj\Debug\TomTeam.Project.Application.dll
 E:\Poject\gld\TomTeam.Project.Application\obj\Debug\TomTeam.Project.Application.pdb
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Debug\TomTeam.Project.EntityFramework.dll
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Debug\Abp.Zero.EntityFramework.dll
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Debug\Abp.EntityFramework.dll
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Debug\EntityFramework.DynamicFilters.dll
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Debug\TomTeam.Project.EntityFramework.pdb
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Debug\Abp.Zero.EntityFramework.xml
+D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Debug\Abp.EntityFramework.xml

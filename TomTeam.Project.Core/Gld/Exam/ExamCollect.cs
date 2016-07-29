@@ -18,12 +18,12 @@ namespace TomTeam.Project.Gld.Exam
         public int UserId { get; set; }
 
         /// <summary>
-        /// 乡试得分
+        /// 乡试总得分
         /// </summary>
         public int ProvincialIntegral { get; set; }
 
         /// <summary>
-        /// 用户是否手动提交结束考试
+        /// 用户是否完成考试
         /// </summary>
         public bool IsCompleteProvincial { get; set; }
 
@@ -33,19 +33,10 @@ namespace TomTeam.Project.Gld.Exam
         public bool IsMetropolitanStatus { get; set; }
 
         /// <summary>
-        /// 会试图片
-        /// </summary>
-        public string MetropolitanImg { get; set; }
-
-        /// <summary>
-        /// 会试文件
-        /// </summary>
-        public string MetropolitanFile { get; set; }
-
-        /// <summary>
         /// 用户名
         /// </summary>
         public string UserDisplayName { get; set; }
 
+        public List<ExamHistory> ExamHistory { get; set; }
     }
 }

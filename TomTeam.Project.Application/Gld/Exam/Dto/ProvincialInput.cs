@@ -10,6 +10,7 @@ namespace TomTeam.Project.Gld.Exam.Dto
 {
     public class ProvincialInput : IInputDto
     {
+        public int ExamHistoryId { get; set; }
 
         public List<TempExamDto> Answers { get; set; }
         

@@ -20,5 +20,7 @@ namespace TomTeam.Project.News
         /// 置顶
         /// </summary>
         public virtual bool IsTop { get; set; }
+
+        public virtual List<Comment> Comments { get; set; }
     }
 }

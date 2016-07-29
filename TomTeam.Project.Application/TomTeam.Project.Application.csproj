@@ -130,6 +130,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gld\CommentAppService.cs" />
+    <Compile Include="Gld\Dto\CommentInput.cs" />
     <Compile Include="Gld\Dto\CreateOrUpdateNews.cs" />
     <Compile Include="Gld\Dto\GetNewsListOutput.cs" />
     <Compile Include="Gld\Dto\GetUserDto.cs" />
@@ -155,6 +157,7 @@
     <Compile Include="Gld\Exam\ProvincialExamAppService.cs" />
     <Compile Include="Gld\Exam\TempExamDto.cs" />
     <Compile Include="Gld\IActivityConfigAppService.cs" />
+    <Compile Include="Gld\ICommentAppService.cs" />
     <Compile Include="Gld\INewsAppService.cs" />
     <Compile Include="Gld\IUserInfoAppService.cs" />
     <Compile Include="Gld\IWebConfigAppService.cs" />
@@ -315,6 +318,10 @@
     <ProjectReference Include="..\TomTeam.Project.Core\TomTeam.Project.Core.csproj">
       <Project>{17298EA0-AF73-4F30-B6F1-2066100D7D74}</Project>
       <Name>TomTeam.Project.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TomTeam.Project.EntityFramework\TomTeam.Project.EntityFramework.csproj">
+      <Project>{3979F157-DEB0-4878-AB1D-4CEF6B5A1300}</Project>
+      <Name>TomTeam.Project.EntityFramework</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

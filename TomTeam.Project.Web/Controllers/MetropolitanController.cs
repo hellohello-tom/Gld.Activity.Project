@@ -44,7 +44,7 @@ namespace TomTeam.Project.Web.Controllers
             ViewBag.SortName = sortName;
             var pagedList = await _metropolitanAppService.GetMetropolitanList(new Gld.Metropolitan.Dto.SearchMetropolitanInput
             {
-                Sorting = sortName,
+                Sorting = sortName + " DESC",
                 MaxResultCount = pageSize,
                 SkipCount = (pageIndex - 1) * pageSize
             });

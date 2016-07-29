@@ -31,7 +31,6 @@ namespace TomTeam.Project.WebApi
             DynamicApiControllerBuilder
                 .ForAll<IApplicationService>(typeof(TomAbpApplicationModule).Assembly, "app")
                 .Build();
-
             //Configuration.Modules.AbpWebApi().HttpConfiguration.SuppressDefaultHostAuthentication();
 
             Configuration.Modules.AbpWebApi().HttpConfiguration.Filters.Add(new HostAuthenticationFilter("Bearer"));
