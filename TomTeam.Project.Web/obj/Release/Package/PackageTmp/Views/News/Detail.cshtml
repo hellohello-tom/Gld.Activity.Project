@@ -3,12 +3,14 @@
     var list = ViewBag.NewsList as TomTeam.Project.Gld.Dto.GetNewsListOutput;
 }
 @model TomTeam.Project.Gld.Dto.GetNewsListOutput
-
+@section Styles{
+    <style type="text/css">
+    </style>
+}
 <div class="main">
     <div class="body home detail event">
         <div class="wrapper">
             <div class="inner">
-
                 <div class="news">
                     @if (Model != null)
                     {
@@ -19,6 +21,9 @@
                         <div class="content">
                             @Html.Raw(Model.Content)
                         </div>
+                        <div id="commentDiv">
+                            @Html.Action("_Comment", "News", new { id = Model.Id })
+                        </div>
                     }
                     else
                     {
@@ -27,8 +32,92 @@
                         </h1>
                     }
                 </div>
-
             </div>
         </div>
     </div>
-</div>
+    @section Scripts{
+        <script type="text/javascript">
+            function prevComment(e) {
+                var $ul = $(e).closest(".operate").prevAll('ul');
+                if ($ul.data("isshow")) {
+                    $ul.hide().data('isshow', false);
+                    $(e).text('查看回复');
+                }
+                else {
+                    $ul.show().data('isshow', true);
+                    $(e).text('收起回复');
+                }
+            }
+
+            //回复
+            function replyComment(e) {
+
+                var $replyTxt = $(e).closest(".operate").nextAll('.ipt-area');
+                if ($replyTxt.data("isshow")) {
+                    $replyTxt.hide().data('isshow', false);
+                    $(e).text('回复');
+                }
+                else {
+                    $replyTxt.show().data('isshow', true);
+                    $(e).text('收起');
+                }
+            }
+
+            //回复内容
+            function postContent(commentId, e) {
+                var content = $(e).prev('textarea').val();
+                if(!content.trim().length){
+                    alertMsg("请输入回复的内容");
+                    return false;
+                }
+                $.ajax({
+                    type: 'POST',
+                    processData: false,
+                    contentType: "application/json",
+                    url: '/api/services/app/comment/postComment',
+                    data: JSON.stringify({NewsId: @Model.Id ,ParentId: commentId,Content:content }),
+                    dataType: 'json',
+                    cache: false,
+                    success: function (json) {
+                        if (json.success) {
+                            loadMoreComment(1,6);
+                        }
+                        else {
+                            alertMsg(json.error.message || json.error.detail);
+                        }
+                    },
+                    error: function () {
+                    }
+                });
+            }
+
+            ///查看更多
+            function loadMoreComment(pageindex,pagesize){
+                $('#commentDiv').load('/News/_Comment',{"id":"@Model.Id","pageSize":pagesize,"pageIndex":pageindex},function(html){
+                    $('#commentDiv').html(html);
+                });
+            }
+
+            function deleteComment(commentId){
+                $.ajax({
+                    type: 'POST',
+                    processData: false,
+                    contentType: "application/json",
+                    url: '/api/services/app/comment/deleteComment',
+                    data: JSON.stringify({id: commentId }),
+                    dataType: 'json',
+                    cache: false,
+                    success: function (json) {
+                        if (json.success) {
+                            loadMoreComment(1,6);
+                        }
+                        else {
+                            alertMsg(json.error.message || json.error.detail);
+                        }
+                    },
+                    error: function () {
+                    }
+                });
+            }
+        </script>        
+        }

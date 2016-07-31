@@ -1,0 +1,88 @@
+﻿@{ 
+    Layout = null;
+}
+
+@model Abp.Application.Services.Dto.PagedResultOutput<TomTeam.Project.Gld.Dto.GetCommentOutput>
+<div class="comment">
+    <span class="fr text-muted amount">共 @Model.TotalCount 条</span>
+    <h2 class="intro">
+        网友评论
+    </h2>
+    <div class="ipt-area">
+        <textarea name="" id="" rows="5" class="ipt" maxlength="500" placeholder="500字以内"></textarea>
+        @if (ViewBag.IsLogin)
+        {
+
+            <button class="btn btn-primary big" onclick="postContent(0,this);">提交回复</button>
+        }
+        else
+        {
+            <button class="btn btn-primary big" onclick="openLogin();">登录</button>
+        }
+        @*<a href="javascript:;" class="fr emoticon fa"></a>*@
+    </div>
+    <ul class="content">
+        @foreach (var item in Model.Items)
+        {
+            <li class="item">
+                <p class="meta"><span class="date">发表于：@string.Format("{0:yyyy-MM-dd HH:mm}", item.CreationTime)</span><a href="javascript:;" class="name">@item.UserName</a></p>
+                @if (item.ChildItems.Count > 0)
+                {
+                    <ul data-isshow="true">
+                        @foreach (var childItem in item.ChildItems)
+                        {
+                            <li>
+                                <p class="meta">
+                                    <span class="date">发表于：@string.Format("{0:yyyy-MM-dd HH:mm}", childItem.CreationTime)</span><a href="javascript:;" class="name">@item.UserName</a>
+                                </p>
+                                <div class="content">
+                                    @childItem.Content
+                                </div>
+                                <div class="operate">
+                                    @if (IsGranted("Pages.Activity.Manager"))
+                                    {
+                                        <a href="javascript:;" class="item" onclick="deleteComment(@childItem.Id);">删除</a>
+                                    }
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                }
+                <div class="content">
+                    @item.Content
+                </div>
+                <div class="operate">
+                    @if (IsGranted("Pages.Activity.Manager"))
+                    {
+                        <a href="javascript:;" onclick="deleteComment(@item.Id);" class="item">删除</a>
+                    }
+                    <a href="javascript:;" onclick="replyComment(this);"  class="item reply fa">回复</a>
+                    <a href="javascript:;" onclick="prevComment(this);" class="item">收起回复</a>
+                </div>
+                <div class="ipt-area" style="display:none">
+                    <textarea class="ipt" rows="5" data-isshow="true" maxlength="500" placeholder="500字以内"></textarea>
+                    @if (ViewBag.IsLogin)
+                    {
+                    <button class="btn btn-primary big" onclick="postContent(@item.Id,this);">提交回复</button>
+                    }
+                    else
+                    {
+                        <button class="btn btn-primary big" onclick="openLogin();">登录</button>
+                    }
+                </div>
+            </li>
+        }
+    </ul>
+    @if (((double)Model.TotalCount / (ViewBag.PageIndex * ViewBag.PageSize)) > 1)
+    {
+    <p>
+        <a href="javascript:;" class="loadmore" onclick="loadMoreComment(@(ViewBag.PageIndex+1),@ViewBag.PageSize);">加载更多</a>
+    </p>
+    }
+    else
+    {
+        <p>
+            <a href="javascript:;" class="loadmore">没有更多了</a>
+        </p>
+    }
+</div>

@@ -9517,3 +9517,345 @@ System.Web.Http.HttpResponseException: Processing of the HTTP request resulted i
    在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
    在 System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+DEBUG 2016-07-31 20:54:30,708 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-07-31 20:54:37,136 [1    ] Abp.Modules.AbpModuleManager             - Found 19 ABP modules in total.
+DEBUG 2016-07-31 20:54:37,145 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,148 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,149 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,149 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,149 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,149 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Runtime.Caching.Redis.AbpRedisCacheModule, Abp.RedisCache, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,150 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,150 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.OData.AbpWebApiODataModule, Abp.Web.Api.OData, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,150 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,150 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,150 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,150 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,151 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,151 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.Ldap.AbpZeroLdapModule, Abp.Zero.Ldap, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,151 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TomTeam.Project.TomAbpApplicationModule, TomTeam.Project.Application, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,151 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TomTeam.Project.TomAbpCoreModule, TomTeam.Project.Core, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,167 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TomTeam.Project.TomAbpDataModule, TomTeam.Project.EntityFramework, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,167 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TomTeam.Project.Web.TomAbpWebModule, TomTeam.Project.Web, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,167 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TomTeam.Project.WebApi.TomAbpWebApiModule, TomTeam.Project.WebApi, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:54:37,175 [1    ] Abp.Modules.AbpModuleManager             - 19 modules loaded.
+DEBUG 2016-07-31 20:54:37,914 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-31 20:54:37,914 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-31 20:54:37,914 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-31 20:54:37,914 [1    ] o.Configuration.LanguageManagementConfig - Converted TomAbp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-31 20:54:44,953 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-07-31 20:54:44,963 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-07-31 20:54:44,965 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-07-31 20:54:44,973 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-07-31 20:54:45,022 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: TomAbp
+DEBUG 2016-07-31 20:54:45,186 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-07-31 20:54:46,933 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 43 classes defines auto mapping attributes
+DEBUG 2016-07-31 20:54:46,934 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-07-31 20:54:46,974 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-07-31 20:54:46,975 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Organizations.Dto.OrganizationUnitDto
+DEBUG 2016-07-31 20:54:46,978 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Organizations.Dto.OrganizationUnitUserListDto
+DEBUG 2016-07-31 20:54:46,981 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Notifications.Dto.NotificationSubscriptionWithDisplayNameDto
+DEBUG 2016-07-31 20:54:46,982 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-07-31 20:54:46,984 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.MultiTenancy.Dto.TenantEditDto
+DEBUG 2016-07-31 20:54:46,989 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Localization.Dto.ApplicationLanguageEditDto
+DEBUG 2016-07-31 20:54:46,991 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Localization.Dto.ApplicationLanguageListDto
+DEBUG 2016-07-31 20:54:46,993 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Editions.Dto.EditionEditDto
+DEBUG 2016-07-31 20:54:46,994 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Editions.Dto.FlatFeatureDto
+DEBUG 2016-07-31 20:54:46,997 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Editions.Dto.EditionListDto
+DEBUG 2016-07-31 20:54:46,998 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Auditing.Dto.AuditLogListDto
+DEBUG 2016-07-31 20:54:47,001 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Roles.Dto.RoleListDto
+DEBUG 2016-07-31 20:54:47,007 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Roles.Dto.RoleEditDto
+DEBUG 2016-07-31 20:54:47,009 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Dto.FlatPermissionDto
+DEBUG 2016-07-31 20:54:47,010 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Users.Profile.Dto.CurrentUserProfileEditDto
+DEBUG 2016-07-31 20:54:47,015 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Users.Dto.UserLoginAttemptDto
+DEBUG 2016-07-31 20:54:47,018 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Users.Dto.UserListDto
+DEBUG 2016-07-31 20:54:47,021 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Metropolitan.Dto.CreateOrUpdateMetropolitanInput
+DEBUG 2016-07-31 20:54:47,025 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Metropolitan.Dto.GetMetropolitanOutput
+DEBUG 2016-07-31 20:54:47,026 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Metropolitan.Dto.UpdateMetropolitanForAdminInput
+DEBUG 2016-07-31 20:54:47,030 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Exam.Dto.AnswerDto
+DEBUG 2016-07-31 20:54:47,034 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Exam.Dto.CreateOrUpdateExamCollectInput
+DEBUG 2016-07-31 20:54:47,040 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Exam.Dto.ExamListDto
+DEBUG 2016-07-31 20:54:47,044 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Exam.Dto.ExamTopicDto
+DEBUG 2016-07-31 20:54:47,047 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Exam.Dto.GetExamCollectOutput
+DEBUG 2016-07-31 20:54:47,049 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.CommentInput
+DEBUG 2016-07-31 20:54:47,059 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.CreateOrUpdateNewsInput
+DEBUG 2016-07-31 20:54:47,061 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.GetCommentOutput
+DEBUG 2016-07-31 20:54:47,063 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.GetNewsListOutput
+DEBUG 2016-07-31 20:54:47,064 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.UpdateUserInput
+DEBUG 2016-07-31 20:54:47,065 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.UserInfoListDto
+DEBUG 2016-07-31 20:54:47,066 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Users.Dto.UserListDto+UserListRoleDto
+DEBUG 2016-07-31 20:54:47,069 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Users.UserPermissionsEditViewModel
+DEBUG 2016-07-31 20:54:47,070 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Users.CreateOrEditUserModalViewModel
+DEBUG 2016-07-31 20:54:47,071 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Roles.CreateOrEditRoleModalViewModel
+DEBUG 2016-07-31 20:54:47,072 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Profile.MySettingsViewModel
+DEBUG 2016-07-31 20:54:47,080 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Editions.CreateOrEditEditionModalViewModel
+DEBUG 2016-07-31 20:54:47,082 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Tenants.TenantFeaturesEditViewModel
+DEBUG 2016-07-31 20:54:47,083 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.OrganizationUnits.EditOrganizationUnitModalViewModel
+DEBUG 2016-07-31 20:54:47,085 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Languages.CreateOrEditLanguageModalViewModel
+DEBUG 2016-07-31 20:54:47,085 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-07-31 20:54:47,099 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'MyCompanyName.AbpZeroTemplate.Product.IProductAppService' with service name 'app/product'.
+DEBUG 2016-07-31 20:54:47,102 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Timing.ITimingAppService' with service name 'app/timing'.
+DEBUG 2016-07-31 20:54:47,106 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Tenants.Dashboard.ITenantDashboardAppService' with service name 'app/tenantDashboard'.
+DEBUG 2016-07-31 20:54:47,110 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-07-31 20:54:47,113 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Organizations.IOrganizationUnitAppService' with service name 'app/organizationUnit'.
+DEBUG 2016-07-31 20:54:47,116 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Notifications.INotificationAppService' with service name 'app/notification'.
+DEBUG 2016-07-31 20:54:47,118 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-07-31 20:54:47,120 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Logging.IWebLogAppService' with service name 'app/webLog'.
+DEBUG 2016-07-31 20:54:47,122 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Localization.ILanguageAppService' with service name 'app/language'.
+DEBUG 2016-07-31 20:54:47,123 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Editions.IEditionAppService' with service name 'app/edition'.
+DEBUG 2016-07-31 20:54:47,125 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Configuration.Tenants.ITenantSettingsAppService' with service name 'app/tenantSettings'.
+DEBUG 2016-07-31 20:54:47,127 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Configuration.Host.IHostSettingsAppService' with service name 'app/hostSettings'.
+DEBUG 2016-07-31 20:54:47,129 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Common.ICommonLookupAppService' with service name 'app/commonLookup'.
+DEBUG 2016-07-31 20:54:47,131 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Caching.ICachingAppService' with service name 'app/caching'.
+DEBUG 2016-07-31 20:54:47,132 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Auditing.IAuditLogAppService' with service name 'app/auditLog'.
+DEBUG 2016-07-31 20:54:47,135 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Authorization.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-07-31 20:54:47,137 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Authorization.Users.IUserLinkAppService' with service name 'app/userLink'.
+DEBUG 2016-07-31 20:54:47,138 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Authorization.Users.IUserLoginAppService' with service name 'app/userLogin'.
+DEBUG 2016-07-31 20:54:47,140 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Authorization.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-07-31 20:54:47,142 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Authorization.Users.Profile.IProfileAppService' with service name 'app/profile'.
+DEBUG 2016-07-31 20:54:47,145 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.IActivityConfigAppService' with service name 'app/activityConfig'.
+DEBUG 2016-07-31 20:54:47,147 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.ICommentAppService' with service name 'app/comment'.
+DEBUG 2016-07-31 20:54:47,149 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.INewsAppService' with service name 'app/news'.
+DEBUG 2016-07-31 20:54:47,151 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.IUserInfoAppService' with service name 'app/userInfo'.
+DEBUG 2016-07-31 20:54:47,153 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.IWebConfigAppService' with service name 'app/webConfig'.
+DEBUG 2016-07-31 20:54:47,155 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.Metropolitan.IMetropolitanAppService' with service name 'app/metropolitan'.
+DEBUG 2016-07-31 20:54:47,157 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.Exam.IExamCollectAppService' with service name 'app/examCollect'.
+DEBUG 2016-07-31 20:54:47,159 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.Exam.IProvincialExamAppService' with service name 'app/provincialExam'.
+ERROR 2016-07-31 20:55:42,472 [6    ] t.Web.Controllers.MetropolitanController - 未将对象引用设置到对象的实例。
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ASP._Page_Views_Metropolitan_Index_cshtml.Execute() 位置 e:\Poject\gld\TomTeam.Project.Web\Views\Metropolitan\Index.cshtml:行号 7
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.StartPage.RunPage()
+   在 System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+DEBUG 2016-07-31 20:57:06,868 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-07-31 20:57:09,678 [1    ] Abp.Modules.AbpModuleManager             - Found 19 ABP modules in total.
+DEBUG 2016-07-31 20:57:09,687 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,689 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,690 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,690 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,690 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Owin.AbpOwinModule, Abp.Owin, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,690 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Runtime.Caching.Redis.AbpRedisCacheModule, Abp.RedisCache, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,690 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,691 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.OData.AbpWebApiODataModule, Abp.Web.Api.OData, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,691 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,691 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,691 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,691 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,691 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,691 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.Ldap.AbpZeroLdapModule, Abp.Zero.Ldap, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,692 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TomTeam.Project.TomAbpApplicationModule, TomTeam.Project.Application, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,692 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TomTeam.Project.TomAbpCoreModule, TomTeam.Project.Core, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,706 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TomTeam.Project.TomAbpDataModule, TomTeam.Project.EntityFramework, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,706 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TomTeam.Project.Web.TomAbpWebModule, TomTeam.Project.Web, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,706 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TomTeam.Project.WebApi.TomAbpWebApiModule, TomTeam.Project.WebApi, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 20:57:09,715 [1    ] Abp.Modules.AbpModuleManager             - 19 modules loaded.
+DEBUG 2016-07-31 20:57:10,004 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-31 20:57:10,005 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-31 20:57:10,005 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-31 20:57:10,005 [1    ] o.Configuration.LanguageManagementConfig - Converted TomAbp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-31 20:57:13,567 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-07-31 20:57:13,578 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-07-31 20:57:13,579 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-07-31 20:57:13,587 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-07-31 20:57:13,626 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: TomAbp
+DEBUG 2016-07-31 20:57:13,793 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-07-31 20:57:15,038 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 43 classes defines auto mapping attributes
+DEBUG 2016-07-31 20:57:15,038 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-07-31 20:57:15,051 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-07-31 20:57:15,053 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Organizations.Dto.OrganizationUnitDto
+DEBUG 2016-07-31 20:57:15,056 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Organizations.Dto.OrganizationUnitUserListDto
+DEBUG 2016-07-31 20:57:15,059 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Notifications.Dto.NotificationSubscriptionWithDisplayNameDto
+DEBUG 2016-07-31 20:57:15,060 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-07-31 20:57:15,061 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.MultiTenancy.Dto.TenantEditDto
+DEBUG 2016-07-31 20:57:15,068 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Localization.Dto.ApplicationLanguageEditDto
+DEBUG 2016-07-31 20:57:15,070 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Localization.Dto.ApplicationLanguageListDto
+DEBUG 2016-07-31 20:57:15,071 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Editions.Dto.EditionEditDto
+DEBUG 2016-07-31 20:57:15,073 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Editions.Dto.FlatFeatureDto
+DEBUG 2016-07-31 20:57:15,075 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Editions.Dto.EditionListDto
+DEBUG 2016-07-31 20:57:15,077 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Auditing.Dto.AuditLogListDto
+DEBUG 2016-07-31 20:57:15,080 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Roles.Dto.RoleListDto
+DEBUG 2016-07-31 20:57:15,085 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Roles.Dto.RoleEditDto
+DEBUG 2016-07-31 20:57:15,087 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Dto.FlatPermissionDto
+DEBUG 2016-07-31 20:57:15,088 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Users.Profile.Dto.CurrentUserProfileEditDto
+DEBUG 2016-07-31 20:57:15,093 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Users.Dto.UserLoginAttemptDto
+DEBUG 2016-07-31 20:57:15,097 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Users.Dto.UserListDto
+DEBUG 2016-07-31 20:57:15,099 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Metropolitan.Dto.CreateOrUpdateMetropolitanInput
+DEBUG 2016-07-31 20:57:15,103 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Metropolitan.Dto.GetMetropolitanOutput
+DEBUG 2016-07-31 20:57:15,104 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Metropolitan.Dto.UpdateMetropolitanForAdminInput
+DEBUG 2016-07-31 20:57:15,107 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Exam.Dto.AnswerDto
+DEBUG 2016-07-31 20:57:15,111 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Exam.Dto.CreateOrUpdateExamCollectInput
+DEBUG 2016-07-31 20:57:15,113 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Exam.Dto.ExamListDto
+DEBUG 2016-07-31 20:57:15,115 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Exam.Dto.ExamTopicDto
+DEBUG 2016-07-31 20:57:15,116 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Exam.Dto.GetExamCollectOutput
+DEBUG 2016-07-31 20:57:15,118 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.CommentInput
+DEBUG 2016-07-31 20:57:15,122 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.CreateOrUpdateNewsInput
+DEBUG 2016-07-31 20:57:15,124 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.GetCommentOutput
+DEBUG 2016-07-31 20:57:15,125 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.GetNewsListOutput
+DEBUG 2016-07-31 20:57:15,126 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.UpdateUserInput
+DEBUG 2016-07-31 20:57:15,127 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.UserInfoListDto
+DEBUG 2016-07-31 20:57:15,128 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Users.Dto.UserListDto+UserListRoleDto
+DEBUG 2016-07-31 20:57:15,130 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Users.UserPermissionsEditViewModel
+DEBUG 2016-07-31 20:57:15,131 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Users.CreateOrEditUserModalViewModel
+DEBUG 2016-07-31 20:57:15,132 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Roles.CreateOrEditRoleModalViewModel
+DEBUG 2016-07-31 20:57:15,133 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Profile.MySettingsViewModel
+DEBUG 2016-07-31 20:57:15,140 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Editions.CreateOrEditEditionModalViewModel
+DEBUG 2016-07-31 20:57:15,142 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Tenants.TenantFeaturesEditViewModel
+DEBUG 2016-07-31 20:57:15,143 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.OrganizationUnits.EditOrganizationUnitModalViewModel
+DEBUG 2016-07-31 20:57:15,143 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Languages.CreateOrEditLanguageModalViewModel
+DEBUG 2016-07-31 20:57:15,144 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-07-31 20:57:15,156 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'MyCompanyName.AbpZeroTemplate.Product.IProductAppService' with service name 'app/product'.
+DEBUG 2016-07-31 20:57:15,158 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Timing.ITimingAppService' with service name 'app/timing'.
+DEBUG 2016-07-31 20:57:15,160 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Tenants.Dashboard.ITenantDashboardAppService' with service name 'app/tenantDashboard'.
+DEBUG 2016-07-31 20:57:15,163 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-07-31 20:57:15,165 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Organizations.IOrganizationUnitAppService' with service name 'app/organizationUnit'.
+DEBUG 2016-07-31 20:57:15,167 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Notifications.INotificationAppService' with service name 'app/notification'.
+DEBUG 2016-07-31 20:57:15,168 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-07-31 20:57:15,170 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Logging.IWebLogAppService' with service name 'app/webLog'.
+DEBUG 2016-07-31 20:57:15,172 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Localization.ILanguageAppService' with service name 'app/language'.
+DEBUG 2016-07-31 20:57:15,174 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Editions.IEditionAppService' with service name 'app/edition'.
+DEBUG 2016-07-31 20:57:15,175 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Configuration.Tenants.ITenantSettingsAppService' with service name 'app/tenantSettings'.
+DEBUG 2016-07-31 20:57:15,177 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Configuration.Host.IHostSettingsAppService' with service name 'app/hostSettings'.
+DEBUG 2016-07-31 20:57:15,179 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Common.ICommonLookupAppService' with service name 'app/commonLookup'.
+DEBUG 2016-07-31 20:57:15,181 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Caching.ICachingAppService' with service name 'app/caching'.
+DEBUG 2016-07-31 20:57:15,183 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Auditing.IAuditLogAppService' with service name 'app/auditLog'.
+DEBUG 2016-07-31 20:57:15,186 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Authorization.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-07-31 20:57:15,188 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Authorization.Users.IUserLinkAppService' with service name 'app/userLink'.
+DEBUG 2016-07-31 20:57:15,190 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Authorization.Users.IUserLoginAppService' with service name 'app/userLogin'.
+DEBUG 2016-07-31 20:57:15,192 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Authorization.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-07-31 20:57:15,194 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Authorization.Users.Profile.IProfileAppService' with service name 'app/profile'.
+DEBUG 2016-07-31 20:57:15,196 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.IActivityConfigAppService' with service name 'app/activityConfig'.
+DEBUG 2016-07-31 20:57:15,198 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.ICommentAppService' with service name 'app/comment'.
+DEBUG 2016-07-31 20:57:15,200 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.INewsAppService' with service name 'app/news'.
+DEBUG 2016-07-31 20:57:15,203 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.IUserInfoAppService' with service name 'app/userInfo'.
+DEBUG 2016-07-31 20:57:15,206 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.IWebConfigAppService' with service name 'app/webConfig'.
+DEBUG 2016-07-31 20:57:15,210 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.Metropolitan.IMetropolitanAppService' with service name 'app/metropolitan'.
+DEBUG 2016-07-31 20:57:15,213 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.Exam.IExamCollectAppService' with service name 'app/examCollect'.
+DEBUG 2016-07-31 20:57:15,216 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.Exam.IProvincialExamAppService' with service name 'app/provincialExam'.
+DEBUG 2016-07-31 21:09:09,779 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2016-07-31 21:09:14,807 [1    ] Abp.Modules.AbpModuleManager             - Found 18 ABP modules in total.
+DEBUG 2016-07-31 21:09:14,815 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TomTeam.Project.Web.TomAbpWebModule, TomTeam.Project.Web, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,818 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,818 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,819 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,819 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TomTeam.Project.TomAbpDataModule, TomTeam.Project.EntityFramework, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,819 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,820 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,820 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,820 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TomTeam.Project.TomAbpCoreModule, TomTeam.Project.Core, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,821 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.Ldap.AbpZeroLdapModule, Abp.Zero.Ldap, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,821 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,821 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TomTeam.Project.TomAbpApplicationModule, TomTeam.Project.Application, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,822 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TomTeam.Project.WebApi.TomAbpWebApiModule, TomTeam.Project.WebApi, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,822 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,822 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.OData.AbpWebApiODataModule, Abp.Web.Api.OData, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,823 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,823 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Runtime.Caching.Redis.AbpRedisCacheModule, Abp.RedisCache, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:14,823 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Hangfire.AbpHangfireModule, Abp.HangFire, Version=0.9.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2016-07-31 21:09:19,380 [1    ] Abp.Modules.AbpModuleManager             - 18 modules loaded.
+DEBUG 2016-07-31 21:09:20,229 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-31 21:09:20,230 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-31 21:09:20,230 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-31 21:09:20,230 [1    ] o.Configuration.LanguageManagementConfig - Converted TomAbp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2016-07-31 21:09:25,484 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2016-07-31 21:09:25,556 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2016-07-31 21:09:25,558 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2016-07-31 21:09:25,565 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2016-07-31 21:09:25,614 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: TomAbp
+DEBUG 2016-07-31 21:09:25,778 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2016-07-31 21:09:27,521 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 43 classes defines auto mapping attributes
+DEBUG 2016-07-31 21:09:27,521 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Users.UserPermissionsEditViewModel
+DEBUG 2016-07-31 21:09:27,527 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Users.CreateOrEditUserModalViewModel
+DEBUG 2016-07-31 21:09:27,528 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Roles.CreateOrEditRoleModalViewModel
+DEBUG 2016-07-31 21:09:27,529 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Profile.MySettingsViewModel
+DEBUG 2016-07-31 21:09:27,541 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Editions.CreateOrEditEditionModalViewModel
+DEBUG 2016-07-31 21:09:27,542 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Tenants.TenantFeaturesEditViewModel
+DEBUG 2016-07-31 21:09:27,543 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.OrganizationUnits.EditOrganizationUnitModalViewModel
+DEBUG 2016-07-31 21:09:27,545 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Areas.Mpa.Models.Languages.CreateOrEditLanguageModalViewModel
+DEBUG 2016-07-31 21:09:27,546 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2016-07-31 21:09:27,564 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2016-07-31 21:09:27,568 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Sessions.Dto.UserLoginInfoDto
+DEBUG 2016-07-31 21:09:27,569 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Organizations.Dto.OrganizationUnitDto
+DEBUG 2016-07-31 21:09:27,572 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Organizations.Dto.OrganizationUnitUserListDto
+DEBUG 2016-07-31 21:09:27,574 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Notifications.Dto.NotificationSubscriptionWithDisplayNameDto
+DEBUG 2016-07-31 21:09:27,575 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.MultiTenancy.Dto.TenantListDto
+DEBUG 2016-07-31 21:09:27,577 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.MultiTenancy.Dto.TenantEditDto
+DEBUG 2016-07-31 21:09:27,581 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Localization.Dto.ApplicationLanguageEditDto
+DEBUG 2016-07-31 21:09:27,583 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Localization.Dto.ApplicationLanguageListDto
+DEBUG 2016-07-31 21:09:27,585 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Editions.Dto.EditionEditDto
+DEBUG 2016-07-31 21:09:27,586 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Editions.Dto.FlatFeatureDto
+DEBUG 2016-07-31 21:09:27,599 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Editions.Dto.EditionListDto
+DEBUG 2016-07-31 21:09:27,601 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Auditing.Dto.AuditLogListDto
+DEBUG 2016-07-31 21:09:27,604 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Roles.Dto.RoleListDto
+DEBUG 2016-07-31 21:09:27,609 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Roles.Dto.RoleEditDto
+DEBUG 2016-07-31 21:09:27,613 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Dto.FlatPermissionDto
+DEBUG 2016-07-31 21:09:27,614 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Users.Profile.Dto.CurrentUserProfileEditDto
+DEBUG 2016-07-31 21:09:27,618 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Users.Dto.UserLoginAttemptDto
+DEBUG 2016-07-31 21:09:27,622 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Users.Dto.UserListDto
+DEBUG 2016-07-31 21:09:27,623 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Metropolitan.Dto.CreateOrUpdateMetropolitanInput
+DEBUG 2016-07-31 21:09:27,629 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Metropolitan.Dto.GetMetropolitanOutput
+DEBUG 2016-07-31 21:09:27,629 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Metropolitan.Dto.UpdateMetropolitanForAdminInput
+DEBUG 2016-07-31 21:09:27,647 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Exam.Dto.AnswerDto
+DEBUG 2016-07-31 21:09:27,650 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Exam.Dto.CreateOrUpdateExamCollectInput
+DEBUG 2016-07-31 21:09:27,722 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Exam.Dto.ExamListDto
+DEBUG 2016-07-31 21:09:27,725 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Exam.Dto.ExamTopicDto
+DEBUG 2016-07-31 21:09:27,728 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Exam.Dto.GetExamCollectOutput
+DEBUG 2016-07-31 21:09:27,731 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.CommentInput
+DEBUG 2016-07-31 21:09:27,737 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.CreateOrUpdateNewsInput
+DEBUG 2016-07-31 21:09:27,741 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.GetCommentOutput
+DEBUG 2016-07-31 21:09:27,743 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.GetNewsListOutput
+DEBUG 2016-07-31 21:09:27,745 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.UpdateUserInput
+DEBUG 2016-07-31 21:09:27,746 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Gld.Dto.UserInfoListDto
+DEBUG 2016-07-31 21:09:27,747 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - TomTeam.Project.Authorization.Users.Dto.UserListDto+UserListRoleDto
+DEBUG 2016-07-31 21:09:27,773 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'MyCompanyName.AbpZeroTemplate.Product.IProductAppService' with service name 'app/product'.
+DEBUG 2016-07-31 21:09:27,776 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Timing.ITimingAppService' with service name 'app/timing'.
+DEBUG 2016-07-31 21:09:27,780 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Tenants.Dashboard.ITenantDashboardAppService' with service name 'app/tenantDashboard'.
+DEBUG 2016-07-31 21:09:27,782 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2016-07-31 21:09:27,784 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Organizations.IOrganizationUnitAppService' with service name 'app/organizationUnit'.
+DEBUG 2016-07-31 21:09:27,785 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Notifications.INotificationAppService' with service name 'app/notification'.
+DEBUG 2016-07-31 21:09:27,787 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2016-07-31 21:09:27,788 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Logging.IWebLogAppService' with service name 'app/webLog'.
+DEBUG 2016-07-31 21:09:27,790 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Localization.ILanguageAppService' with service name 'app/language'.
+DEBUG 2016-07-31 21:09:27,791 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Editions.IEditionAppService' with service name 'app/edition'.
+DEBUG 2016-07-31 21:09:27,794 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Configuration.Tenants.ITenantSettingsAppService' with service name 'app/tenantSettings'.
+DEBUG 2016-07-31 21:09:27,795 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Configuration.Host.IHostSettingsAppService' with service name 'app/hostSettings'.
+DEBUG 2016-07-31 21:09:27,797 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Common.ICommonLookupAppService' with service name 'app/commonLookup'.
+DEBUG 2016-07-31 21:09:27,799 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Caching.ICachingAppService' with service name 'app/caching'.
+DEBUG 2016-07-31 21:09:27,800 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Auditing.IAuditLogAppService' with service name 'app/auditLog'.
+DEBUG 2016-07-31 21:09:27,802 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Authorization.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2016-07-31 21:09:27,803 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Authorization.Users.IUserLinkAppService' with service name 'app/userLink'.
+DEBUG 2016-07-31 21:09:27,806 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Authorization.Users.IUserLoginAppService' with service name 'app/userLogin'.
+DEBUG 2016-07-31 21:09:27,809 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Authorization.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2016-07-31 21:09:27,811 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Authorization.Users.Profile.IProfileAppService' with service name 'app/profile'.
+DEBUG 2016-07-31 21:09:27,814 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.IActivityConfigAppService' with service name 'app/activityConfig'.
+DEBUG 2016-07-31 21:09:27,816 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.ICommentAppService' with service name 'app/comment'.
+DEBUG 2016-07-31 21:09:27,817 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.INewsAppService' with service name 'app/news'.
+DEBUG 2016-07-31 21:09:27,819 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.IUserInfoAppService' with service name 'app/userInfo'.
+DEBUG 2016-07-31 21:09:27,821 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.IWebConfigAppService' with service name 'app/webConfig'.
+DEBUG 2016-07-31 21:09:27,823 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.Metropolitan.IMetropolitanAppService' with service name 'app/metropolitan'.
+DEBUG 2016-07-31 21:09:27,824 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.Exam.IExamCollectAppService' with service name 'app/examCollect'.
+DEBUG 2016-07-31 21:09:27,827 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'TomTeam.Project.Gld.Exam.IProvincialExamAppService' with service name 'app/provincialExam'.
+WARN  2016-07-31 21:11:15,804 [20   ] Abp.Logging.LogHelper                    - Can not find 'OrganizationUnits' in localization source 'TomAbp'!
+WARN  2016-07-31 21:11:15,843 [20   ] Abp.Logging.LogHelper                    - Can not find 'OrganizationUnits' in localization source 'TomAbp'!
+WARN  2016-07-31 21:11:24,693 [12   ] Abp.Logging.LogHelper                    - Can not find 'YouCanBackToYourAccount' in localization source 'TomAbp'!
+WARN  2016-07-31 21:11:24,697 [12   ] Abp.Logging.LogHelper                    - Can not find 'BackToMyAccount' in localization source 'TomAbp'!
+DEBUG 2016-07-31 21:11:31,460 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"0a3d6e56-be84-4e17-a343-4582ce40a98f","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-07-31T21:11:31.4426343+08:00","Properties":{}}
+DEBUG 2016-07-31 21:11:34,227 [23   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 0a3d6e56-be84-4e17-a343-4582ce40a98f
+DEBUG 2016-07-31 21:13:35,648 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 0a3d6e56-be84-4e17-a343-4582ce40a98f
+WARN  2016-07-31 21:16:01,285 [7    ] Abp.Logging.LogHelper                    - Can not find 'OrganizationUnits' in localization source 'TomAbp'!
+WARN  2016-07-31 21:16:01,378 [7    ] Abp.Logging.LogHelper                    - Can not find 'OrganizationUnits' in localization source 'TomAbp'!
+WARN  2016-07-31 21:16:07,187 [33   ] Abp.Logging.LogHelper                    - Can not find 'YouCanBackToYourAccount' in localization source 'TomAbp'!
+WARN  2016-07-31 21:16:07,189 [33   ] Abp.Logging.LogHelper                    - Can not find 'BackToMyAccount' in localization source 'TomAbp'!
+DEBUG 2016-07-31 21:16:12,359 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"4c37d655-3523-42d1-a1fe-adf193fc07ce","IpAddress":"::1","TenantId":1,"UserId":2,"ConnectTime":"2016-07-31T21:16:12.358247+08:00","Properties":{}}
+DEBUG 2016-07-31 21:16:12,655 [35   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 4c37d655-3523-42d1-a1fe-adf193fc07ce
+DEBUG 2016-07-31 21:17:44,944 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 4c37d655-3523-42d1-a1fe-adf193fc07ce

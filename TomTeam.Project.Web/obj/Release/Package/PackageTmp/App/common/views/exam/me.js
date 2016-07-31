@@ -102,16 +102,16 @@
                     }
                 });
                 modalInstance.result.then(function (result) {
-                    vm.getNewsList();
+                    vm.getMetropolitanList();
                 });
             }
 
             vm.delete = function (me) {
                 vm.loading = true;
-                newsService.delete({
+                metropolitanService.deleteMetropolitan({
                     id: me.id
                 }).success(function (result) {
-                    vm.getNewsList();
+                    vm.getMetropolitanList();
                 }).finally(function () {
                     vm.loading = false;
                 });

@@ -487,6 +487,136 @@ $color-title:#E9003C;
   }
 }
 
+textarea {
+  box-sizing: border-box;
+}
+
+.comment {
+  // padding: 0 30px;
+  margin: 30px 0;
+  line-height: 2;
+  .intro {
+    margin-bottom: -10px;
+  }
+  .amount {
+    position: relative;
+    top: 10px;
+  }
+  ul {
+    margin-top: 5px;
+    li {
+      ul {
+        li {
+          border-style: dashed;
+          .meta {
+            .date {
+              display: none;
+            }
+          }
+          .operate {
+            visibility: hidden;
+          }
+          &:hover {
+            .meta {
+              .date {
+                display: block;
+              }
+            }
+            .operate {
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+  }
+  .ipt-area {
+    overflow: hidden;
+    .ipt {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .btn {
+      float: right;
+      margin: 5px 0;
+    }
+    .emoticon {
+      line-height: 46px;
+      margin-right: 16px;
+      color: #999;
+      text-decoration: none;
+      &:hover {
+        color: $color-primary;
+      }
+      &:before {
+        content: "\f118";
+        font-family: FontAwesome;
+        font-size: 22px;
+      }
+    }
+  }
+  .meta {
+    overflow: hidden;
+    .date {
+      float: right;
+      color: #999;
+    }
+    .name {
+      // color: #555;
+    }
+  }
+  li {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 6px 10px;
+    border: 1px #ccc solid;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+  }
+  .operate {
+    text-align: right;
+    >.item {
+      margin-left: 16px;
+      line-height: 2;
+      color: #999;
+      text-decoration: none;
+      font-family: 'Microsoft Yahei', fontawesome;
+      &:hover {
+        color: #555;
+        &:before {
+          color: $color-primary;
+        }
+      }
+      &:before {
+        margin-right: 4px;
+      }
+      &.reply {
+        &:before {
+          content: "\f064";
+        }
+      }
+      &.like {
+        &:before {
+          content: "\f164";
+        }
+      }
+    }
+  }
+  .loadmore {
+    display: block;
+    color: #555;
+    padding: 2px;
+    background: #ddd;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    &:hover {
+      background: #ccc;
+    }
+  }
+}
+
 .js-slide {
   position: relative;
   .operate {

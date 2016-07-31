@@ -49,12 +49,6 @@
                         minWidth: 120
                     },
                     {
-                        name: '是否完成考试',
-                        field: 'isCompleteProvincial',
-                        minWidth: 120,
-                        cellTemplate: '<input type="checkbox" readonly disabled ng-model="row.entity.isCompleteProvincial">'
-                    },
-                    {
                         name: '参加会试资格',
                         field: 'isMetropolitanStatus',
                         minWidth: 120,

@@ -60,6 +60,15 @@
                 }).on("ajaxStop", function () {
                     PCwaiting.hide();
                 });
+                var $win = $(window), $goTop = $('.gotop');
+                $win.on('scroll', function () {
+                    var winH = $win.scrollTop();
+                    if ($win.scrollTop() > winH / 2) {
+                        $goTop.css("opacity", 0.6);
+                    } else {
+                        $goTop.css("opacity", 0);
+                    }
+                });
             });
             function alertMsg(msg, time, noMask, justNotice) {
                 var d = dialog;
@@ -183,18 +192,7 @@
                 });
             });
     </script>
-    <a href="javascript:scrollTo(0,0);" class="gotop" title="滚到顶部" style="position: fixed;right: 20px;bottom: 40px;width: 46px;height: 46px;font-size: 40px;background: #666;background: rgba(100,100,100,.8);border-radius: 4px;color: #fff;text-align: center;display:none;">
-        <script>
-            window.addEventListener('scroll', function () {
-                var box = document.querySelector('.gotop');
-                var st = document.documentElement.scrollTop || document.body.scrollTop;
-                if (st > 500) {
-                    box.style.display = 'block';
-                } else {
-                    box.style.display = 'none';
-                }
-            });
-        </script>
+    <a href="javascript:scrollTo(0,0);" class="gotop" title="滚到顶部" style="position: fixed;right: 20px;bottom: 40px;width: 46px;height: 46px;line-height:1;font-size: 40px;background: #666;background: rgba(0,0,0,1);border-radius: 4px;color: #fff;text-align: center;opacity:0.6;transition: opacity 0.3s ease;">
         <i class="fa fa-angle-up"></i>
     </a>
 </body>

@@ -3,6 +3,8 @@
     ViewBag.CurrentPageName = "乡试";
     var examList = ViewBag.ExamList as Abp.Application.Services.Dto.PagedResultOutput<TomTeam.Project.Gld.Exam.Dto.ExamListDto>;
     var examCollect = ViewBag.UserExamCollect as TomTeam.Project.Gld.Exam.Dto.GetExamCollectOutput;
+    var userExamHistoryList = (ViewBag.UserExamHistory as List<TomTeam.Project.Gld.Exam.ExamHistory>).OrderByDescending(x => x.CreationTime).ToList();
+    var userExamDetail = userExamHistoryList.FirstOrDefault() ?? new TomTeam.Project.Gld.Exam.ExamHistory();
 }
 @model TomTeam.Project.Config.ActivityConfig
 <!--[if lte ie 7]>
@@ -28,38 +30,29 @@ else if (DateTime.Now < Model.ProvincialStartTime)
 }
 else
 {
-    if (examCollect.Id > 0)
+    if (examCollect.IsCompleteProvincial|| (userExamHistoryList.Count>=Model.ExaminationCount&& DateTime.Now > userExamDetail.CreationTime.AddMinutes(Model.ExamTime)))
     {
-        if (examCollect.IsCompleteProvincial)
-        {
-            @Html.Action("PageTips", "Home", new { message = "您已提交过试卷，不能重复提交，请到<a href=\"PersonalCenter\" title=\"点击登录\">个人中心</a>进行查看" })
-            return;
-        }
-        if (DateTime.Now > examCollect.CreationTime.AddMinutes(Model.ExamTime))
-        {
-            @Html.Action("PageTips", "Home", new { message = "您的考试时间已到，考试结束" })
-            return;
-        }
+        @Html.Action("PageTips", "Home", new { message = "您的考试已结束，请到<a href=\"PersonalCenter\" title=\"点击登录\">个人中心</a>进行查看" })
+        return;
     }
 
-
-    if (examCollect.Id == 0)
+    if (examCollect.Id == 0 || userExamHistoryList.Count == 0 || userExamDetail.IsCompleteProvincial || DateTime.Now > userExamDetail.CreationTime.AddMinutes(Model.ExamTime))
     {
-        @Html.Action("PageTips", "Home", new { message = "<button type=\"submit\" onclick=\"beginExam()\" class=\"btn btn-primary big\">开始考试</button>" , isShowTitles =false})
+        @Html.Action("PageTips", "Home", new { message = "<button type=\"submit\" onclick=\"beginExam()\" class=\"btn btn-primary big\">开始考试</button><br/><p>还剩余" + (Model.ExaminationCount - userExamHistoryList.Count) + "次，记得要经常回来哦</p>", isShowTitles = false })
     }
     else
     {
         <div class="q">
-            <div class="main">
-                <div class="body">
-                    <div class="wrapper">
-                        <form class="inner q-list" onsubmit="return false;" id="examForm">
-                            <h1 class="title text-center">
-                                @Model.ExamTtile
-                            </h1>
-                            <ul class="content">
-                                @for (var i = 0; i < examList.Items.Count; i++)
-                                {
+        <div class="main">
+            <div class="body">
+                <div class="wrapper">
+                    <form class="inner q-list" onsubmit="return false;" id="examForm">
+                        <h1 class="title text-center">
+                            @Model.ExamTtile
+                        </h1>
+                        <ul class="content">
+                            @for (var i = 0; i < examList.Items.Count; i++)
+                            {
                                 <li class="item">
                                     <div class="order">
                                         <span class="num"></span>
@@ -69,45 +62,45 @@ else
                                     </div>
                                     <ul class="content">
                                         @foreach (var options in examList.Items[i].Answers)
-                                            {
+                                        {
                                             <li>
                                                 @(options.Options + "、" + options.Content)
                                             </li>
-                                            }
+                                        }
                                     </ul>
                                     <p class="a options">
                                         @foreach (var options in examList.Items[i].Answers)
-                                            {
+                                        {
                                             <label>
                                                 <input type="radio" class="radioOptions" name="@examList.Items[i].Id" value="@options.Id" />@options.Options
                                             </label>
-                                            }
+                                        }
                                     </p>
                                 </li>
-                                }
-                            </ul>
-                        </form>
-                    </div>
+                            }
+                        </ul>
+                    </form>
                 </div>
             </div>
-            <div class="wrapper footer">
-                <div class="inner a-info">
-                    <button type="submit" onclick="submitForm();" class="btn btn-primary big fr ">交卷</button>
-                    <span class="time-remain">剩余时间：<span class="countdown" data-time="@((examCollect.CreationTime.AddMinutes(Model.ExamTime) - DateTime.Now).TotalSeconds)"></span></span>
-                    <span class="statistics">
-                        共
-                        <span class="a-amount num">@examList.Items.Count </span>题 总分 <span class="a-score num">
-                            @(Model.EveryExamIntegral * Model.ExamCount)
-                        </span>分
-                    </span>
-                </div>
+        </div>
+        <div class="wrapper footer">
+            <div class="inner a-info">
+                <button type="submit" onclick="submitForm();" class="btn btn-primary big fr ">交卷</button>
+                <span class="time-remain">剩余时间：<span class="countdown" data-time="@((userExamDetail.CreationTime.AddMinutes(Model.ExamTime) - DateTime.Now).TotalSeconds)"></span></span>
+                <span class="statistics">
+                    共
+                    <span class="a-amount num">@examList.Items.Count </span>题 总分 <span class="a-score num">
+                        @(Model.EveryExamIntegral * Model.ExamCount)
+                    </span>分
+                </span>
             </div>
-            }
+        </div>
+        }
         </div>
     }
     @section Scripts{
         <script src="~/Resource/dist/scripts/lib/countdown.js"></script>
-        @if (examCollect.Id <= 0)
+        @if (examCollect.Id == 0 || userExamHistoryList.Count == 0 || userExamDetail.IsCompleteProvincial || DateTime.Now > userExamDetail.CreationTime.AddMinutes(Model.ExamTime))
         {
             <script type="text/javascript">
                 function beginExam() {
@@ -137,7 +130,8 @@ else
             <script type="text/javascript">
                 $(function () {
                     $('.q').find('.countdown').countdown({
-                        callback: function () {
+                        callBack: function () {
+                            alert(1);
                             window.location.href = window.location.href;
                         }
                     });
@@ -179,7 +173,7 @@ else
                                     processData: false,
                                     contentType: "application/json",
                                     url: '/api/services/app/examCollect/PostExamInfo',
-                                    data: JSON.stringify({ answers: postData }),
+                                    data: JSON.stringify({examHistoryId:@userExamDetail.Id ,answers: postData }),
                                     dataType: 'json',
                                     cache: false,
                                     success: function (json) {

@@ -2411,6 +2411,144 @@ select {
   line-height: inherit;
 }
 
+textarea {
+  box-sizing: border-box;
+}
+
+.comment {
+  margin: 30px 0;
+  line-height: 2;
+}
+
+.comment .intro {
+  margin-bottom: -10px;
+}
+
+.comment .amount {
+  position: relative;
+  top: 10px;
+}
+
+.comment ul {
+  margin-top: 5px;
+}
+
+.comment ul li ul li {
+  border-style: dashed;
+}
+
+.comment ul li ul li .meta .date {
+  display: none;
+}
+
+.comment ul li ul li .operate {
+  visibility: hidden;
+}
+
+.comment ul li ul li:hover .meta .date {
+  display: block;
+}
+
+.comment ul li ul li:hover .operate {
+  visibility: visible;
+}
+
+.comment .ipt-area {
+  overflow: hidden;
+}
+
+.comment .ipt-area .ipt {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.comment .ipt-area .btn, .comment .ipt-area .btn-switcher > .title > .item {
+  float: right;
+  margin: 5px 0;
+}
+
+.comment .ipt-area .emoticon {
+  line-height: 46px;
+  margin-right: 16px;
+  color: #999;
+  text-decoration: none;
+}
+
+.comment .ipt-area .emoticon:hover {
+  color: #2897DF;
+}
+
+.comment .ipt-area .emoticon:before {
+  content: "\f118";
+  font-family: FontAwesome;
+  font-size: 22px;
+}
+
+.comment .meta {
+  overflow: hidden;
+}
+
+.comment .meta .date {
+  float: right;
+  color: #999;
+}
+
+.comment li {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding: 6px 10px;
+  border: 1px #ccc solid;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.comment .operate {
+  text-align: right;
+}
+
+.comment .operate > .item {
+  margin-left: 16px;
+  line-height: 2;
+  color: #999;
+  text-decoration: none;
+  font-family: 'Microsoft Yahei', fontawesome;
+}
+
+.comment .operate > .item:hover {
+  color: #555;
+}
+
+.comment .operate > .item:hover:before {
+  color: #2897DF;
+}
+
+.comment .operate > .item:before {
+  margin-right: 4px;
+}
+
+.comment .operate > .item.reply:before {
+  content: "\f064";
+}
+
+.comment .operate > .item.like:before {
+  content: "\f164";
+}
+
+.comment .loadmore {
+  display: block;
+  color: #555;
+  padding: 2px;
+  background: #ddd;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.comment .loadmore:hover {
+  background: #ccc;
+}
+
 .js-slide {
   position: relative;
 }

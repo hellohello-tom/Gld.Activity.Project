@@ -1,7 +1,10 @@
-﻿@{ 
+﻿@{
     var user = ViewBag.UserInfo as TomTeam.Project.Authorization.Users.User;
     var provinical = ViewBag.ExamCollect as TomTeam.Project.Gld.Exam.Dto.GetExamCollectOutput;
     var metropolitan = ViewBag.Metropolitan as TomTeam.Project.Gld.Exam.Metropolitan;
+    var acitvityConfig = ViewBag.ActivityConfigHistory as TomTeam.Project.Config.ActivityConfig;
+    var userExamHistoryList = (ViewBag.UserExamHistory as List<TomTeam.Project.Gld.Exam.ExamHistory>).OrderByDescending(x => x.CreationTime).ToList();
+    var userExamDetail = userExamHistoryList.FirstOrDefault() ?? new TomTeam.Project.Gld.Exam.ExamHistory();
 }
 <div class="q">
     <div class="main">
@@ -16,7 +19,7 @@
                             <ul class="downlist">
                                 <li>
                                     <p class="name">
-                                       姓名：@user.Name
+                                        姓名：@user.Name
                                     </p>
                                 </li>
                                 <li>
@@ -34,75 +37,111 @@
                                         手机号码：@user.Phone
                                     </p>
                                 </li>
-                                <li>
-                                    <p class="name" style="color:red">
-                                     系统消息：@user.UserRemark
-                                    </p>
-                                </li>
+                                @if (!string.IsNullOrEmpty(user.UserRemark))
+                                {
+                                    <li>
+                                        <p class="name" style="color:red">
+                                            系统消息：@user.UserRemark
+                                        </p>
+                                    </li>
+                                }
                             </ul>
                         </div>
                     </div>
                     @if (provinical.Id > 0)
                     {
-                    <h3 class=" q-type">
-                        乡试详情：
-                    </h3>
-                    <div class="content">
-                        <div class="item">
-                            <ul class="downlist">
-                                <li>
-                                    <p class="name">
-                                        总得分：
-                                        <em class="count num">@provinical.ProvincialIntegral</em>分
-                                    </p>
-                                </li>
-                                <li>
-                                    <p class="name">
-                                        是否完成考试：
-                                        <em>@(provinical.IsCompleteProvincial ? "是" : "否")</em>
-                                    </p>
-                                </li>
-                            </ul>
+                        <h3 class=" q-type">
+                            乡试详情：
+                        </h3>
+                        <div class="content">
+                            <div class="item">
+                                <ul class="downlist">
+                                    <li>
+                                        <p class="name">
+                                            总得分：
+                                            <em class="count num">@provinical.ProvincialIntegral</em>分
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="name">
+                                            剩余次数：
+                                            <em class="count num">@(acitvityConfig.ExaminationCount - userExamHistoryList.Count)</em>次
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="name">
+                                            是否完成考试：
+                                            <em>@(provinical.IsCompleteProvincial || (userExamHistoryList.Count >= acitvityConfig.ExaminationCount && DateTime.Now > userExamDetail.CreationTime.AddMinutes(acitvityConfig.ExamTime)) ? "是" : "否")</em>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="name">
+                                            历史成绩：
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>考试时间</th>
+                                                        <th>考试得分</th>
+                                                        <th>是否完成考试</th>
+                                                    </tr>
+                                                </thead>
+                                                @foreach (var item in userExamHistoryList)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            @string.Format("{0:yyyy-MM-dd HH:mm}", item.CreationTime)
+                                                        </td>
+                                                        <td>
+                                                            @item.Score 分
+                                                        </td>
+                                                        <td>
+                                                            @(item.IsCompleteProvincial ? "是" : "否")
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </table>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
                     }
                     @if (metropolitan.Id > 0)
                     {
-                    <h3 class="q-type">
-                        会试详情：
-                    </h3>
-                    <div class="content">
-                        <div class="item">
-                            <ul class="downlist">
-                                <li>
-                                    <p class="name">
-                                        标题：@metropolitan.Title
-                                    </p>
-                                </li>
-                                <li>
-                                    <p class="name">
-                                        地区：@metropolitan.Region
-                                    </p>
-                                </li>
-                                <li>
-                                    <p class="name">
-                                        描述：@metropolitan.Content
-                                    </p>
-                                </li>
-                                <li>
-                                    <p class="name">
-                                        工程文件：@metropolitan.FileName
-                                        <a target="_blank" href="/Metropolitan/DownLoad?id=@metropolitan.Id" class="ml10 btn btn-ok">下载</a>
-                                        <a href="/Metropolitan/UploadProject?id=@metropolitan.Id" class="ml10 btn btn-edit">修改</a>
-                                    </p>
-                                </li>
-                            </ul>
+                        <h3 class="q-type">
+                            会试详情：
+                        </h3>
+                        <div class="content">
+                            <div class="item">
+                                <ul class="downlist">
+                                    <li>
+                                        <p class="name">
+                                            标题：@metropolitan.Title
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="name">
+                                            地区：@metropolitan.Region
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="name">
+                                            描述：@metropolitan.Content
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="name">
+                                            工程文件：@metropolitan.FileName
+                                            <a target="_blank" href="/Metropolitan/DownLoad?id=@metropolitan.Id" class="ml10 btn btn-ok">下载</a>
+                                            <a href="/Metropolitan/UploadProject?id=@metropolitan.Id" class="ml10 btn btn-edit">修改</a>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
                     }
                 </div>
             </div>
         </div>
     </div>
 </div>
-
