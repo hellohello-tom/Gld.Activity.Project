@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services.Dto;
+using Abp.Threading;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,15 @@ using TomTeam.Project.Gld;
 
 namespace TomTeam.Project.Web.Controllers
 {
-    public class NewsController : Controller
+    public class NewsController : TomAbpControllerBase
     {
 
         private INewsAppService _newsAppService;
-        public NewsController(INewsAppService _newsAppService)
+        private ICommentAppService _commentAppService;
+        public NewsController(INewsAppService _newsAppService, ICommentAppService _commentAppService)
         {
             this._newsAppService = _newsAppService;
+            this._commentAppService = _commentAppService;
         }
 
         // GET: News
@@ -34,8 +37,27 @@ namespace TomTeam.Project.Web.Controllers
 
         public async virtual Task<ActionResult> Detail(int id)
         {
+            ViewBag.IsLogin = AbpSession.UserId.HasValue;
             var detail = await _newsAppService.GetNews(new NullableIdInput { Id = id }) ?? new Gld.Dto.GetNewsListOutput();
             return View(detail);
+        }
+
+        /// <summary>
+        /// 评论列表
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult _Comment(int id, int pageSize=6,int pageIndex=1)
+        {
+            ViewBag.IsLogin = AbpSession.UserId.HasValue;
+            ViewBag.PageIndex = pageIndex;
+            ViewBag.PageSize = pageSize;
+            var commentList = AsyncHelper.RunSync(() => _commentAppService.GetCommentPageList(new Gld.Dto.SearchCommentInput
+            {
+                NewsId = id,
+                SkipCount = 0,
+                MaxResultCount = pageSize * pageIndex
+            }));
+            return View(commentList);
         }
     }
 }

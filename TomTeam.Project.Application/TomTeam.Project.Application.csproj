@@ -133,10 +133,12 @@
     <Compile Include="Gld\CommentAppService.cs" />
     <Compile Include="Gld\Dto\CommentInput.cs" />
     <Compile Include="Gld\Dto\CreateOrUpdateNews.cs" />
+    <Compile Include="Gld\Dto\GetCommentOutput.cs" />
     <Compile Include="Gld\Dto\GetNewsListOutput.cs" />
     <Compile Include="Gld\Dto\GetUserDto.cs" />
     <Compile Include="Gld\Dto\GetUserInfoInput.cs" />
     <Compile Include="Gld\Dto\NewsInput.cs" />
+    <Compile Include="Gld\Dto\SearchCommentInput.cs" />
     <Compile Include="Gld\Dto\SearchNewsInput.cs" />
     <Compile Include="Gld\ActivityConfigAppService.cs" />
     <Compile Include="Gld\Dto\UpdateUser.cs" />

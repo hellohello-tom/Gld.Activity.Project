@@ -3671,6 +3671,7 @@
     <Content Include="Views\Home\PageTips.cshtml" />
     <Content Include="Views\Palace\Index.cshtml" />
     <Content Include="Views\Metropolitan\Detail.cshtml" />
+    <Content Include="Views\News\_Comment.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

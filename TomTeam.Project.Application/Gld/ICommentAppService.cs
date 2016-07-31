@@ -24,5 +24,12 @@ namespace TomTeam.Project.Gld
         /// <param name="input"></param>
         /// <returns></returns>
         Task DeleteComment(IdInput input);
+
+        /// <summary>
+        /// 获取评论的内容列表
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<PagedResultOutput<GetCommentOutput>> GetCommentPageList(SearchCommentInput input);
     }
 }

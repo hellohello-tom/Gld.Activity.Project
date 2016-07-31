@@ -229,3 +229,10 @@ D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Applicat
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Debug\TomTeam.Project.EntityFramework.pdb
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Debug\Abp.Zero.EntityFramework.xml
 D:\GitHub\Gld.Activity.Project.git\Gld.Activity.Project\TomTeam.Project.Application\bin\Debug\Abp.EntityFramework.xml
+E:\Poject\gld\TomTeam.Project.Application\bin\Debug\TomTeam.Project.EntityFramework.dll
+E:\Poject\gld\TomTeam.Project.Application\bin\Debug\Abp.Zero.EntityFramework.dll
+E:\Poject\gld\TomTeam.Project.Application\bin\Debug\Abp.EntityFramework.dll
+E:\Poject\gld\TomTeam.Project.Application\bin\Debug\EntityFramework.DynamicFilters.dll
+E:\Poject\gld\TomTeam.Project.Application\bin\Debug\TomTeam.Project.EntityFramework.pdb
+E:\Poject\gld\TomTeam.Project.Application\bin\Debug\Abp.Zero.EntityFramework.xml
+E:\Poject\gld\TomTeam.Project.Application\bin\Debug\Abp.EntityFramework.xml
