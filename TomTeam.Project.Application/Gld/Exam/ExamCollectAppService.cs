@@ -8,11 +8,13 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Dynamic;
 using System.Text;
 using System.Threading.Tasks;
 using TomTeam.Project.Authorization;
 using TomTeam.Project.Config;
 using TomTeam.Project.Gld.Exam.Dto;
+
 
 namespace TomTeam.Project.Gld.Exam
 {
@@ -39,7 +41,7 @@ namespace TomTeam.Project.Gld.Exam
                 query = query.Where(collect => collect.UserDisplayName.Contains(searchInput.SearchTitle));
             }
             var listCount = await query.CountAsync();
-            var list = await query.OrderByDescending(x => x.CreationTime).PageBy(searchInput).ToListAsync();
+            var list = await query.OrderBy(searchInput.Sorting).PageBy(searchInput).ToListAsync();
             var newsListDto = list.MapTo<List<GetExamCollectOutput>>();
             return new PagedResultOutput<GetExamCollectOutput>(listCount, newsListDto);
         }
@@ -109,7 +111,7 @@ namespace TomTeam.Project.Gld.Exam
             var userExamHistoryList = await _examHistoryRepository.GetAll().Where(x => x.CreatorUserId == AbpSession.UserId.Value).OrderByDescending(X => X.CreationTime).ToListAsync();
             if (userExamHistoryList == null || userExamHistoryList.Count == 0)
                 throw new UserFriendlyException("您还没有初始化数据，请在页面点击开始考试！");
-            if (userExamHistoryList.Count >= activityConfig.ExaminationCount)
+            if (userExamHistoryList.Count > activityConfig.ExaminationCount)
                 throw new UserFriendlyException("您的考试次数已用完！");
 
             var historyDetail = userExamHistoryList.FirstOrDefault();
