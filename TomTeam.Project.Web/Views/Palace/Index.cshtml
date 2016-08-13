@@ -1,4 +1,32 @@
 ﻿@{
     ViewBag.CurrentPageName = "殿试";
 }
-@Html.Action("PageTips", "Home", new { message = "活动暂未开放，敬请期待" })
+@model TomTeam.Project.Config.ActivityConfig
+@if (!Model.PalaceState)
+{
+    @Html.Action("PageTips", "Home", new { message = "殿试活动已关闭" })
+}
+else if (DateTime.Now > Model.PalaceEndTime)
+{
+    @Html.Action("PageTips", "Home", new { message = "殿试活动已结束" })
+}
+else if (DateTime.Now < Model.PalaceStartTime)
+{
+    @Html.Action("PageTips", "Home", new { message = "殿试活动未开始" })
+}
+else
+{
+<div class="main">
+    <div class="body home detail event">
+        <div class="wrapper">
+            <div class="inner">
+                <div class="news">
+                    <div class="content">
+                        @Html.Raw(Model.PalaceContent)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
