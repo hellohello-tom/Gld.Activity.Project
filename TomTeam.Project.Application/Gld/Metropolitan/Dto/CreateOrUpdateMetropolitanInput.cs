@@ -42,5 +42,10 @@ namespace TomTeam.Project.Gld.Metropolitan.Dto
         
 
         public bool IsShow { get; set; }
+
+        /// <summary>
+        /// 考试试题路径
+        /// </summary>
+        public string ExamPath { get; set; }
     }
 }

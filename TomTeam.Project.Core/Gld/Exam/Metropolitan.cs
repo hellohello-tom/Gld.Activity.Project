@@ -10,20 +10,15 @@ namespace TomTeam.Project.Gld.Exam
 {
     public class Metropolitan : FullAuditedEntity
     {
-
-        [Required]
+        
         public string Title { get; set; }
-
-        [Required]
+        
         public string Content { get; set; }
-
-        [Required]
+        
         public string DefaultImg { get; set; }
-
-        [Required]
+        
         public string ImgsPath { get; set; }
-
-        [Required]
+        
         public string FilePath { get; set; }
         
         /// <summary>
@@ -52,5 +47,30 @@ namespace TomTeam.Project.Gld.Exam
         public int ViewCount { get; set; }
 
         public bool IsShow { get; set; }
+
+        /// <summary>
+        /// 开始下载时间
+        /// </summary>
+        public DateTime? DownLoadFileTime { get; set; }
+
+        /// <summary>
+        /// 是否上传考试文件
+        /// </summary>
+        public bool IsUploadFile { get; set; }
+
+        /// <summary>
+        /// 是否超时
+        /// </summary>
+        public bool IsTimeOut { get; set; }
+
+        /// <summary>
+        /// 考试试题路径
+        /// </summary>
+        public string ExamPath { get; set; }
+
+        /// <summary>
+        /// 得分
+        /// </summary>
+        public int Score { get; set; }
     }
 }

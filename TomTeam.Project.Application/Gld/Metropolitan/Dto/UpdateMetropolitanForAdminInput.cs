@@ -45,6 +45,10 @@ namespace TomTeam.Project.Gld.Metropolitan.Dto
         [RegularExpression(@"^\d+$", ErrorMessage = "点赞的数目请输入正整数")]
         public int LikeCount { get; set; }
 
+        [Required(ErrorMessage = "请输入考试得分")]
+        [Range(1, 100000, ErrorMessage = "1~10万")]
+        [RegularExpression(@"^\d+$", ErrorMessage = "考试得分请输入正整数")]
+        public int Score { get; set; }
 
         public bool IsShow { get; set; }
 

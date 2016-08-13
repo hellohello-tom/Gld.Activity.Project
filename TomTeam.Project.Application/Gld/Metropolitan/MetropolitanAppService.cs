@@ -24,10 +24,12 @@ namespace TomTeam.Project.Gld.Metropolitan
         private static object objLock = new object();
         IRepository<Exam.Metropolitan> _metropolitanRepository;
         IRepository<Exam.LikeInfo> _likeInfoRepository;
-        public MetropolitanAppService(IRepository<Exam.Metropolitan> _metropolitanRepository, IRepository<Exam.LikeInfo> _likeInfoRepository)
+        ActivityConfigAppService _activityConfigService;
+        public MetropolitanAppService(IRepository<Exam.Metropolitan> _metropolitanRepository, IRepository<Exam.LikeInfo> _likeInfoRepository, ActivityConfigAppService _activityConfigService)
         {
             this._metropolitanRepository = _metropolitanRepository;
             this._likeInfoRepository = _likeInfoRepository;
+            this._activityConfigService = _activityConfigService;
         }
 
         /// <summary>
@@ -71,6 +73,16 @@ namespace TomTeam.Project.Gld.Metropolitan
                 if (newsModel.CreatorUserId == AbpSession.UserId.Value)
                 {
                     input.MapTo(newsModel);
+                    if (!selfMetropolitan.IsUploadFile)
+                    {
+                        var config = await _activityConfigService.GetConfig(new NullableIdInput());
+                        newsModel.IsUploadFile = true;
+                        if (DateTime.Now > selfMetropolitan.DownLoadFileTime.Value.AddMinutes(config.MetropolitanUploadExamTime))
+                        {
+                            newsModel.IsTimeOut = true;
+                        }
+                    }
+                   
                     await _metropolitanRepository.InsertOrUpdateAndGetIdAsync(newsModel);
                 }
                 else
@@ -80,15 +92,43 @@ namespace TomTeam.Project.Gld.Metropolitan
             }
             else
             {
-                if (selfMetropolitan.Id > 0)
-                {
-                    throw new UserFriendlyException("您已上传过工程，请编辑您自己的工程");
-                }
-                input.MapTo(model);
-                var currentUserInfo = await UserManager.FindByIdAsync(AbpSession.UserId.Value);
-                model.UserDisplayName = currentUserInfo.Name;
-                await _metropolitanRepository.InsertOrUpdateAndGetIdAsync(model);
+                throw new UserFriendlyException("请先下载考试卷，以便于初始化您的会试数据");
+                //if (selfMetropolitan.Id > 0)
+                //{
+                //    throw new UserFriendlyException("您已上传过工程，请编辑您自己的工程");
+                //}
+                //var config = await _activityConfigService.GetConfig(new NullableIdInput());
+
+                //input.MapTo(model);
+                //var currentUserInfo = await UserManager.FindByIdAsync(AbpSession.UserId.Value);
+                //model.UserDisplayName = currentUserInfo.Name;
+                //await _metropolitanRepository.InsertOrUpdateAndGetIdAsync(model);
             }
+        }
+
+        /// <summary>
+        /// 初始化会试用户数据，并下载
+        /// </summary>
+        /// <returns></returns>
+        public async Task<int> InitMetropolitanData()
+        {
+            if (!AbpSession.UserId.HasValue) throw new UserFriendlyException("没有获取到当前登录用户信息");
+            var selfMetropolitan = await _metropolitanRepository.FirstOrDefaultAsync(x => x.CreatorUserId == AbpSession.UserId.Value) ?? new Exam.Metropolitan();
+            if (selfMetropolitan.Id == 0)
+            {
+                var currentUserInfo = await UserManager.FindByIdAsync(AbpSession.UserId.Value);
+                return await _metropolitanRepository.InsertOrUpdateAndGetIdAsync(new Exam.Metropolitan
+                {
+                    LikeCount = 0,
+                    IsShow = true,
+                    Score = 0,
+                    DownLoadFileTime = DateTime.Now,
+                    IsUploadFile = false,
+                    IsTimeOut = false,
+                    UserDisplayName = currentUserInfo.Name
+                });
+            }
+            return 1;
         }
 
         /// <summary>
@@ -132,7 +172,7 @@ namespace TomTeam.Project.Gld.Metropolitan
         /// <returns></returns>
         public async Task<PagedResultOutput<GetMetropolitanOutput>> GetMetropolitanList(SearchMetropolitanInput input)
         {
-            var query = _metropolitanRepository.GetAll().Where(news => !news.IsDeleted);
+            var query = _metropolitanRepository.GetAll().Where(news => !news.IsDeleted && news.IsUploadFile);
             if (!string.IsNullOrEmpty(input.SearchTitle))
             {
                 query = query.Where(news => news.Title.Contains(input.SearchTitle));

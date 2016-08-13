@@ -50,6 +50,10 @@
                         <label class="control-label">会试活动开始至结束时间</label>
                         <input date-range-picker type="text" id="datemetropolitan" options="vm.metropolitan_dateRangeOptions" min="vm.metropolitan_dateRangeOptions.min" max="vm.metropolitan_dateRangeOptions.max" class="form-control date-picker" ng-model="vm.metropolitan_dateRangeModel" />
                     </div>
+                    <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                        <input class="form-control edited" type="text" name="metropolitanUploadExamTime" ng-model="vm.activity.metropolitanUploadExamTime" maxlength="3" required>
+                        <label>会试截止上传试卷时长（分钟）</label>
+                    </div>
                     <div class="md-checkbox-list">
                         <div class="md-checkbox">
                             <input id="MetropolitanState" name="MetropolitanState"  class="md-check" type="checkbox" ng-model="vm.activity.metropolitanState">

@@ -50,5 +50,11 @@ namespace TomTeam.Project.Gld.Metropolitan
         /// <param name="input"></param>
         /// <returns></returns>
         Task<int> Vote(IdInput input);
+
+        /// <summary>
+        /// 初始化会试考试数据
+        /// </summary>
+        /// <returns></returns>
+        Task<int> InitMetropolitanData();
     }
 }

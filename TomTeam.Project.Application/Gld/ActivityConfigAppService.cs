@@ -42,5 +42,12 @@ namespace TomTeam.Project.Gld
             }
             return configDetail;
         }
+
+        public async Task SetPalaceContent(string content)
+        {
+            var config = await _activityConfigRepository.GetAsync(0);
+            config.PalaceContent = content;
+            await _activityConfigRepository.UpdateAsync(config);
+        }
     }
 }

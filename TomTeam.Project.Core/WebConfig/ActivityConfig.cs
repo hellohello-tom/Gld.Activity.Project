@@ -78,6 +78,12 @@ namespace TomTeam.Project.Config
         public DateTime? MetropolitanStartTime { get; set; }
 
         /// <summary>
+        /// 会试试卷上传截止时间
+        /// </summary>
+        [Required(ErrorMessage = "会试试卷上传截止时间必填")]
+        public int MetropolitanUploadExamTime { get; set; }
+
+        /// <summary>
         /// 会试结束时间
         /// </summary>
         [Required(ErrorMessage = "会试结束时间必填")]
@@ -112,5 +118,8 @@ namespace TomTeam.Project.Config
         /// </summary>
         [Required(ErrorMessage = "请选择殿试活动状态")]
         public bool PalaceState { get; set; }
+
+
+        public string PalaceContent { get; set; }
     }
 }

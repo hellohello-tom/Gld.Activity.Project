@@ -54,6 +54,21 @@ namespace TomTeam.Project.Gld.Metropolitan.Dto
 
         public bool IsShow { get; set; }
 
+        /// <summary>
+        /// 考试试题路径
+        /// </summary>
+        public string ExamPath { get; set; }
+
+        /// <summary>
+        /// 是否上传考试文件
+        /// </summary>
+        public bool IsUploadFile { get; set; }
+
+        /// <summary>
+        /// 得分
+        /// </summary>
+        public int Score { get; set; }
+
         public DateTime CreationTime
         {
             get;

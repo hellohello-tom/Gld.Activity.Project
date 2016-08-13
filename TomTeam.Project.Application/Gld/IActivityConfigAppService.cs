@@ -24,5 +24,12 @@ namespace TomTeam.Project.Gld
         /// <param name="input"></param>
         /// <returns></returns>
         Task<ActivityConfig> GetConfig(NullableIdInput input);
+        
+        /// <summary>
+        /// 设置殿试活动内容
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
+        Task SetPalaceContent(string content);
     }
 }

@@ -54,6 +54,24 @@
                         minWidth: 120
                     },
                     {
+                        name: '应得分数',
+                        field: 'score',
+                        minWidth: 120
+                    },
+
+                    {
+                        name: '是否超时',
+                        field: 'isTimeout',
+                        minWidth: 120,
+                        cellTemplate: '<span>{{row.entity.isTimeout?"是":"否"}}</span>'
+                    },
+                    {
+                        name: '试卷',
+                        field: 'examPath',
+                        minWidth: 120,
+                        cellTemplate: '<a href="{{row.entity.examPath}}" target="_blank">点击下载</a>'
+                    },
+                    {
                         name: '上传时间',
                         field: 'creationTime',
                         cellFilter: 'date:\'yyyy年MM月dd日 HH:mm\'',
