@@ -8,7 +8,6 @@
 }
 else
 {
-
     <div class="main">
         <div class="wrapper title">
             <div class="inner show">
@@ -33,7 +32,7 @@ else
                         else
                         {
                             <span class="disabled">登录后可下载工程</span>
-                        }
+}
                     </p>
                 </div>
             </div>
@@ -88,7 +87,7 @@ else
                                         <p class="name">
                                             工程文件：@Model.FileName
                                             @if (ViewBag.IsLogin)
-                                            {
+{
                                                 <a target="_blank" href="/Metropolitan/DownLoad?id=@Model.Id" class="ml10 btn btn-ok">下载</a>
                                             }
                                         </p>
@@ -105,31 +104,31 @@ else
         <script type="text/javascript">
             $(function(){
                 $('.js-slide').sliding();
-            });
-            function vote() {
+    });
+    function vote() {
                 $.ajax({
-                    type: 'POST',
+            type: 'POST',
                     contentType: "application/json",
                     url: '/api/services/app/metropolitan/vote',
                     data: JSON.stringify({id:@Model.Id}),
                     dataType: 'json',
                     cache: false,
                     success: function (json) {
-                        if (json.success) {
-                            alertMsg("投票成功",3000);
+                if (json.success) {
+                    alertMsg("投票成功",3000);
                             $('#voteNum').html(json.result);
-                        }
-                        else {
-                            alertMsg(json.error.message || json.error.detail);
-                        }
-                    },
+                }
+                else {
+                    alertMsg(json.error.message || json.error.detail);
+                }
+            },
                     error: function () {
-                    }
-                });
             }
+        });
+    }
             $.fn.sliding = function () {
-                this.on('click', '.prev,.next', function () {
-                    var $t = $(this),
+        this.on('click', '.prev,.next', function () {
+            var $t = $(this),
                         $p = $t.closest('.js-slide'),
                         $list = $p.find('.lists'),
                         children = $list.children(),
@@ -139,50 +138,50 @@ else
                         cpr = Math.floor(children.length / ratio) - (children.length % ratio == 0 ? 1 : 0),
                         l = parseInt($list.css('left')) || 0,
                         absL = Math.abs(l);
-                    cpr = cpr < 0 ? 0 : cpr;
-                    if ($t.data('sliding')) {
-                        return;
-                    }
+            cpr = cpr < 0 ? 0 : cpr;
+            if ($t.data('sliding')) {
+                return;
+            }
                     $t.data('sliding', 1);
-                    if ($t.hasClass('next')) {
-                        if (Math.abs(cpr * w - absL) < 30) {
+            if ($t.hasClass('next')) {
+                if (Math.abs(cpr * w - absL) < 30) {
                             $list.animate({
-                                left: l - 15
+                        left: l - 15
                             }, 300);
-                            setTimeout(function () {
+                    setTimeout(function () {
                                 $list.animate({
-                                    left: l
+                            left: l
                                 }, 300, function () {
                                     $t.data('sliding', 0);
-                                });
-                            }, 300);
-                            return;
-                        }
-                        l -= w;
-                    } else {
-                        if (absL < 30) {
+                        });
+                    }, 300);
+                    return;
+                }
+                l -= w;
+            } else {
+                if (absL < 30) {
                             $list.animate({
-                                left: l + 15
+                        left: l + 15
                             }, 300);
-                            setTimeout(function () {
+                    setTimeout(function () {
                                 $list.animate({
-                                    left: 0
+                            left: 0
                                 }, 300, function () {
                                     $t.data('sliding', 0);
-                                });
-                            }, 300);
-                            return;
-                        }
-                        l += w;
-                    }
+                        });
+                    }, 300);
+                    return;
+                }
+                l += w;
+            }
                     $list.animate({
-                        left: l
+                left: l
                     }, function () {
                         $t.data('sliding', 0);
-                    });
-                });
-                return this;
-            };
+            });
+        });
+        return this;
+    };
         </script>
     }
                                     }

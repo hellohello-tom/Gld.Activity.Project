@@ -1,0 +1,15 @@
+﻿<div ng-controller="common.views.gld.palaceConfig as vm">
+    <form name="activityConfigForm" activity="form" novalidate class="form-validation">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <span>殿试管理</span>
+            </h4>
+        </div>
+        <div class="form-group form-md-line-input form-md-floating-label no-hint">
+            <textarea class="ceditor form-control" type="text" name="palaceContent" ng-model="vm.activity.palaceContent" k-editor></textarea>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" button-busy="vm.saving" busy-text="@L("SavingWithThreeDot")" class="btn btn-primary blue" ng-click="vm.save()" ng-disabled="activityConfigForm.$invalid"><i class="fa fa-save"></i> <span>保存</span></button>
+        </div>
+    </form>
+</div>

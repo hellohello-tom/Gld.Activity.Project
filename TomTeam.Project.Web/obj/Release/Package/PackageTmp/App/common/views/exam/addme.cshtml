@@ -17,8 +17,13 @@
             </div>
 
             <div class="form-group form-md-line-input form-md-floating-label no-hint">
-                <input class="form-control" ng-class="{'edited':vm.me.likeCount}" type="text" name="likeCount" ng-model="vm.me.likeCount" required maxlength="20">
+                <input class="form-control edited" type="text" name="likeCount" ng-model="vm.me.likeCount" required maxlength="20">
                 <label>点赞数</label>
+            </div>
+
+            <div class="form-group form-md-line-input form-md-floating-label no-hint">
+                <input class="form-control edited" type="text" name="score" ng-model="vm.me.score" required maxlength="20">
+                <label>考试得分</label>
             </div>
         </div>
         <div class="modal-footer">

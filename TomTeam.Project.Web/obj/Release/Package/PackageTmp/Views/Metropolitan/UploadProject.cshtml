@@ -25,6 +25,10 @@ else if (examCollect.Id == 0 || !examCollect.IsMetropolitanStatus)
 {
     @Html.Action("PageTips", "Home", new { message = "您没有参与会试的资格" })
 }
+else if (Model.Id <= 0)
+{
+    @Html.Action("PageTips", "Home", new { message = "请您先下载考试试卷，<a href='/Metropolitan'>返回</a>！" })
+}
 else
 {
     var imgList = Model.ImgsPath == null ? new string[1] { "" } : Model.ImgsPath.Split(';');
@@ -38,24 +42,25 @@ else
                         </h1>
                         <div class="content text-center">
                             <form action="" class="up-form" id="uploadForm">
-                                <input type="hidden" name="Id" value="@Model.Id"/>
+                                <input type="hidden" name="Id" value="@Model.Id" />
+                                <input type="hidden" name="examPath" value="@Model.ExamPath" />
                                 <div class="set">
                                     <dl class="item">
                                         <dt class="title">标题：</dt>
                                         <dd class="content">
-                                            <input name="title" class="ipt-large" maxlength=50 required value="@Model.Title"/>
+                                            <input name="title" class="ipt-large" maxlength=50 required value="@Model.Title" />
                                         </dd>
                                     </dl>
                                     <dl class="item">
                                         <dt class="title">地区：</dt>
                                         <dd class="content">
-                                            <input name="region" class="ipt-large" maxlength=50 required value="@Model.Region"/>
+                                            <input name="region" class="ipt-large" maxlength=50 required value="@Model.Region" />
                                         </dd>
                                     </dl>
                                     <dl class="item">
                                         <dt class="title">描述：</dt>
                                         <dd class="content">
-                                            <textarea name="content" class="ipt-large" rows = "3" maxlength="500">@Model.Content</textarea>
+                                            <textarea name="content" class="ipt-large" rows="3" maxlength="500">@Model.Content</textarea>
                                         </dd>
                                     </dl>
                                     <dl class="item">
@@ -68,23 +73,43 @@ else
                                                     </span>
                                                 </div>
                                             </div>
-                                            <input type="hidden" name="imgsPath" class="hidden-simple" readonly="readonly" value="@Model.ImgsPath"/>
-                                            <input type="hidden" name="defaultImg" value="@Model.DefaultImg"/>
-                                              <span class="text-muted">(最多上传5张图片，大小1M以内，支持jpg,jpeg,gif,png格式)</span>
-                                                <div class="img-list upload">
-                                                    @if (imgList.Length > 0 && !string.IsNullOrEmpty(imgList[0]))
+                                            <input type="hidden" name="imgsPath" class="hidden-simple" readonly="readonly" value="@Model.ImgsPath" />
+                                            <input type="hidden" name="defaultImg" value="@Model.DefaultImg" />
+                                            <span class="text-muted">(最多上传5张图片，大小1M以内，支持jpg,jpeg,gif,png格式)</span>
+                                            <div class="img-list upload">
+                                                @if (imgList.Length > 0 && !string.IsNullOrEmpty(imgList[0]))
+                                                {
+                                                    foreach (var item in imgList)
                                                     {
-                                                        foreach (var item in imgList)
-                                                        {
-                                                            <div class="img-wrapper">
-                                                                <img src="@item">
-                                                                <sup class="action delimg" title="删除">X</sup>
-                                                            </div>
-                                                        }
+                                                        <div class="img-wrapper">
+                                                            <img src="@item">
+                                                            <sup class="action delimg" title="删除">X</sup>
+                                                        </div>
                                                     }
-                                                </div>
-</dd>
+                                                }
+                                            </div>
+                                        </dd>
                                     </dl>
+                                    @if (Model.Id == 0 || !Model.IsUploadFile)
+                                    {
+                                        <dl class="item">
+                                            <dt class="title">试卷上传：</dt>
+                                            <dd class="content">
+                                                <div class='upload-wrapper'>
+                                                    <div id="btnExamUploadProject">
+                                                        <span class="btn">
+                                                            上传
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <span class="text-muted">(大小5M以内，支持zip格式)</span>
+                                                <div id="examprocess"></div>
+                                                <div class="upload" id="examDiv">
+
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    }
                                     <dl class="item">
                                         <dt class="title">作品上传：</dt>
                                         <dd class="content">
@@ -102,7 +127,7 @@ else
                                             <div class="upload" id="projectDiv">
                                                 @if (!string.IsNullOrEmpty(Model.FilePath))
                                                 {
-                                                <a href="">@Model.FileName</a><a style="margin-left:10px" href="javascript:deleteFile();">删除</a>
+                                                    <a href="">@Model.FileName</a><a style="margin-left:10px" href="javascript:deleteFile();">删除</a>
                                                 }
                                             </div>
                                         </dd>
@@ -144,7 +169,7 @@ else
                 @if (!string.IsNullOrEmpty(imgList[0]))
                 {
                     @:imgArr = ['@Html.Raw(string.Join("','", imgList))'];//据对路径地址
-                                }
+                                                                                                }
                 //图片上传
                 var uploader = WebUploader.create({
                     // 选完文件后，是否自动上传。
@@ -326,6 +351,77 @@ else
                     $div.html(parseInt(percentage * 100) + '%');
                 }
 
+
+                var examUploader = WebUploader.create({
+                    // 选完文件后，是否自动上传。
+                    auto: true,
+                    // swf文件路径
+                    swf: '@Url.Content("~/libs/webuploader-0.1.5/Uploader.swf")',
+                    resize: false,
+                    // 文件接收服务端。
+                    server: '@Url.Action("Upload", "AttrFiles")',
+                    // 选择文件的按钮。可选。
+                    // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+                    pick: '#btnExamUploadProject',
+                    multiple: false,
+                    duplicate: true,
+                    fileSingleSizeLimit: 5 * 1024 * 1024,
+                    // 只允许选择图片文件。
+                    accept: {
+                        title: '压缩文件',
+                        extensions: 'zip',
+                        mimeTypes: 'application/zip'
+                    }
+                });
+
+                examUploader.onError = function (code) {
+                    if (code == 'F_EXCEED_SIZE') {
+                        alertMsg("上传的文件不能超过5M大小！");
+                    } else if (code == 'Q_EXCEED_SIZE_LIMIT') {
+                        alertMsg("上传文件过大！");
+                    } else if (code == 'F_DUPLICATE') {
+                        //alertMsg("您已经选择过该图片");
+                    } else if (code == 'Q_EXCEED_NUM_LIMIT') {
+                        alertMsg("最多上传不能超过1个！");
+                    }
+                    else if (code == 'Q_TYPE_DENIED') {
+                        alertMsg("上传格式不正确！");
+                    }
+                    else {
+                        alertMsg('Error: ' + code);
+                    }
+                    return false;
+                }
+
+                examUploader.onUploadAccept = function (object, json) {
+                    if (json.success) {
+                        var data = json.result;
+                        if (data[0].status == 1) {
+                            var d = data[0].data;
+                            var src = d.newFileName;
+                            var html = '<a href="#">' + d.originalFileName + '</a>';
+                            $('#examDiv').html(html);
+                            $('input[name=examPath]').val(src);
+                        } else {
+                            dialog({
+                                title: '提示',
+                                width: 300,
+                                content: '哎呀，服务器开小差了，请稍候重试...'
+                            }).show();
+                        }
+                    }
+                    else {
+                        alertMsg(json.error.details || json.error.message);
+                    }
+                }
+
+                examUploader.onUploadProgress = function (file, percentage) {
+                    var $div = $('#examprocess');
+                    //$div.find('p.state').text('上传中');
+
+                    $div.html(parseInt(percentage * 100) + '%');
+                }
+
                 var $uploadForm = $('#uploadForm');
 
                 $uploadForm.validate({
@@ -360,7 +456,7 @@ else
                     },
 
                     submitHandler: function (form) {
-                        
+
                     }
                 });
 
@@ -376,7 +472,14 @@ else
                         alertMsg("请上传工程文件", 3000);
                         return false;
                     }
-                    var button = $("button[type=submit]",$uploadForm);
+                    @if (Model.Id == 0 || !Model.IsUploadFile)
+                                {
+                                    @:if (!$('input[name=examPath]').val().length) {
+                                                                                                        @:alertMsg("请上传您的答题试卷", 3000);
+                                                                                @:return false;
+                                                    @:}
+                    }
+                    var button = $("button[type=submit]", $uploadForm);
                     button.addClass("disabled");
                     $.ajax({
                         type: 'POST',
@@ -387,7 +490,7 @@ else
                         cache: false,
                         success: function (json) {
                             if (json.success) {
-                                window.location.href="/Metropolitan";
+                                window.location.href = "/Metropolitan";
                             }
                             else {
                                 alertMsg(json.error.details || json.error.message);

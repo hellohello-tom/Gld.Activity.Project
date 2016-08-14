@@ -38,21 +38,26 @@ else
                     @if (ViewBag.IsLogin)
                     {
                         var userExamInfo = ViewBag.ExamCollectUserInfo as TomTeam.Project.Gld.Exam.Metropolitan;
-                        if (userExamInfo == null||!userExamInfo.IsUploadFile)
+                        if (userExamInfo == null)
                         {
-                            <a href="/Metropolitan/UploadProject/@userExamInfo.Id" class="btn btn-info big go-upload">上传我的工程文件</a>
+                            <a id="uploadProject" href="/Metropolitan/UploadProject" class="btn btn-info big go-upload">上传我的工程文件</a>
+                        }
+                        else if (!userExamInfo.IsUploadFile)
+                        {
+                            <a id="uploadProject" href="/Metropolitan/UploadProject/@userExamInfo.Id" class="btn btn-info big go-upload">上传我的工程文件</a>
                         }
                         else
                         {
-                            <a href="/Metropolitan/UploadProject?id=@userExamInfo.Id" class="btn btn-info big go-upload">重新上传</a>
+                            <a id="uploadProject" href="/Metropolitan/UploadProject?id=@userExamInfo.Id" class="btn btn-info big go-upload">重新上传</a>
                         }
+
+                        <a href="javascript:;" onclick="downLoadTemplete();" class="btn btn-info big go-upload">下载考试文件模板</a>
                     }
                     else
                     {
                         <a href="javascript:openLogin();" class="btn btn-info big go-upload">上传我的工程文件</a>
                     }
 
-                    <a href="javascript:;" onclick="downLoadTemplete();" class="btn btn-info big go-upload">下载考试文件模板</a>
 
                     @if (Model.Items.Count > 0)
                     {
@@ -145,13 +150,14 @@ else
                     content: '下载试卷后请在 @activityConfig.MetropolitanUploadExamTime 分内上传您的工程文件！',
                     okValue: '知道了',
                     ok: function () {
-                        $.post("/api/services/app/metropolitan/initMetropolitanData",{},function(){
+                        $.post("/api/services/app/metropolitan/initMetropolitanData",{},function(json){
+                            if(json.success&&json.result>0){
+                                $('#uploadProject').attr("href","/Metropolitan/UploadProject/"+json.result);
+                            }
                             window.open("www.baidu.com","_target");
                         });
                     }
                 }).showModal();
-
-
             }
         </script>
     }

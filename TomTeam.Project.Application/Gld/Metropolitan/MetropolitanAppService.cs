@@ -128,7 +128,7 @@ namespace TomTeam.Project.Gld.Metropolitan
                     UserDisplayName = currentUserInfo.Name
                 });
             }
-            return 1;
+            return 0;
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace TomTeam.Project.Gld.Metropolitan
             GetMetropolitanOutput newsDetail;
             if (input.Id.HasValue)
             {
-                var news = await _metropolitanRepository.GetAsync(input.Id.Value);
+                var news = await _metropolitanRepository.GetAll().FirstOrDefaultAsync(x => x.Id == input.Id.Value) ?? new Exam.Metropolitan();
                 newsDetail = news.MapTo<GetMetropolitanOutput>();
             }
 

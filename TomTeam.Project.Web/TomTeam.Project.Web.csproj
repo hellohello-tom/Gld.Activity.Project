@@ -615,6 +615,7 @@
     <Content Include="Common\Scripts\ModalManager.js" />
     <Content Include="Common\Scripts\utils.js" />
     <Content Include="Common\Scripts\waiting.js" />
+    <Content Include="Common\Styles\animate.css" />
     <Content Include="Common\Styles\core.css">
       <DependentUpon>core.less</DependentUpon>
     </Content>

@@ -64,6 +64,11 @@ namespace TomTeam.Project.Gld.Metropolitan.Dto
         /// </summary>
         public bool IsUploadFile { get; set; }
 
+        /// 是否上传考试文件
+        /// </summary>
+        public bool IsTimeOut { get; set; }
+
+
         /// <summary>
         /// 得分
         /// </summary>

@@ -43,6 +43,7 @@ else
                         <div class="content text-center">
                             <form action="" class="up-form" id="uploadForm">
                                 <input type="hidden" name="Id" value="@Model.Id" />
+                                <input type="hidden" name="examPath" value="@Model.ExamPath" />
                                 <div class="set">
                                     <dl class="item">
                                         <dt class="title">标题：</dt>
@@ -101,7 +102,6 @@ else
                                                         </span>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" name="examPath" class="hidden-simple" readonly="readonly" value="" />
                                                 <span class="text-muted">(大小5M以内，支持zip格式)</span>
                                                 <div id="examprocess"></div>
                                                 <div class="upload" id="examDiv">

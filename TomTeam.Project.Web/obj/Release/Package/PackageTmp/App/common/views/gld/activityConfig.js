@@ -70,8 +70,6 @@
                 });
             };
 
-
-
             function init() {
                 vm.loading = true;
                 activityService.getConfig({

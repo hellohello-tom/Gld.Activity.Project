@@ -15,6 +15,12 @@
     <link rel="shortcut icon" href="~/favicon.ico">
     <link rel="stylesheet" href="~/Resource/dist/fonts/css/font-awesome.min.css" />
     <link href="~/Resource/dist/CSS/lianda.css" rel="stylesheet" />
+    <link href="~/Common/Styles/animate.css" rel="stylesheet" />
+    <style type="text/css">
+        #login-div {
+            animation-duration: 0.2s;
+        }
+    </style>
     @RenderSection("Styles", false)
 </head>
 <body>
@@ -115,10 +121,14 @@
             $('#login-div').find("input").each(function () {
                 $(this).val('');
             });
-            $('#login-div').show();
+            $('#login-div').show().addClass('animated fadeInUp');
+            $('#login-div').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                $(this).removeClass("fadeInUp animated");
+            });
             $('input[name=usernameOrEmailAddress]').focus();
             $('input[name=rememberMe]').val(true);
         }
+
         function closeLogin() {
             $('#login-div').hide();
         }

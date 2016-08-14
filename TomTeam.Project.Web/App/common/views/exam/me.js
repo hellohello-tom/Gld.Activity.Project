@@ -61,9 +61,9 @@
 
                     {
                         name: '是否超时',
-                        field: 'isTimeout',
+                        field: 'isTimeOut',
                         minWidth: 120,
-                        cellTemplate: '<span>{{row.entity.isTimeout?"是":"否"}}</span>'
+                        cellTemplate: '<span>{{row.entity.isTimeOut?"是":"否"}}</span>'
                     },
                     {
                         name: '试卷',

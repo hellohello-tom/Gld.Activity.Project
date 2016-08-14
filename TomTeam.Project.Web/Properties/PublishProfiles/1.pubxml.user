@@ -76,7 +76,7 @@
       <publishTime>07/30/2016 12:37:24</publishTime>
     </File>
     <File Include="App/app.js">
-      <publishTime>07/30/2016 12:37:24</publishTime>
+      <publishTime>08/13/2016 21:14:34</publishTime>
     </File>
     <File Include="App/app.less">
       <publishTime>07/30/2016 12:37:24</publishTime>
@@ -148,7 +148,7 @@
       <publishTime>07/30/2016 12:37:24</publishTime>
     </File>
     <File Include="App/common/views/exam/addme.cshtml">
-      <publishTime>07/30/2016 12:37:24</publishTime>
+      <publishTime>08/13/2016 22:56:29</publishTime>
     </File>
     <File Include="App/common/views/exam/addme.js">
       <publishTime>07/30/2016 12:37:24</publishTime>
@@ -169,7 +169,7 @@
       <publishTime>07/30/2016 12:37:24</publishTime>
     </File>
     <File Include="App/common/views/exam/me.js">
-      <publishTime>07/31/2016 21:13:27</publishTime>
+      <publishTime>08/14/2016 15:50:49</publishTime>
     </File>
     <File Include="App/common/views/exam/provincial.cshtml">
       <publishTime>07/30/2016 12:37:24</publishTime>
@@ -178,10 +178,10 @@
       <publishTime>07/30/2016 12:37:24</publishTime>
     </File>
     <File Include="App/common/views/gld/activityConfig.cshtml">
-      <publishTime>07/30/2016 12:37:24</publishTime>
+      <publishTime>08/13/2016 20:46:26</publishTime>
     </File>
     <File Include="App/common/views/gld/activityConfig.js">
-      <publishTime>07/30/2016 12:37:24</publishTime>
+      <publishTime>08/13/2016 20:54:02</publishTime>
     </File>
     <File Include="App/common/views/gld/addnews.cshtml">
       <publishTime>07/30/2016 12:37:24</publishTime>
@@ -200,6 +200,12 @@
     </File>
     <File Include="App/common/views/gld/news.js">
       <publishTime>07/30/2016 12:37:24</publishTime>
+    </File>
+    <File Include="App/common/views/gld/palace.cshtml">
+      <publishTime>08/13/2016 21:15:43</publishTime>
+    </File>
+    <File Include="App/common/views/gld/palace.js">
+      <publishTime>08/13/2016 21:26:07</publishTime>
     </File>
     <File Include="App/common/views/gld/updateuser.cshtml">
       <publishTime>07/30/2016 12:37:24</publishTime>
@@ -1195,19 +1201,19 @@
       <publishTime>07/30/2016 12:36:56</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.Application.dll">
-      <publishTime>07/31/2016 21:20:42</publishTime>
+      <publishTime>08/14/2016 16:11:04</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.Core.dll">
-      <publishTime>07/31/2016 21:20:32</publishTime>
+      <publishTime>08/14/2016 16:10:57</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.EntityFramework.dll">
-      <publishTime>07/31/2016 21:20:37</publishTime>
+      <publishTime>08/14/2016 16:11:00</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.Web.dll">
-      <publishTime>07/31/2016 21:20:55</publishTime>
+      <publishTime>08/14/2016 16:11:10</publishTime>
     </File>
     <File Include="bin/TomTeam.Project.WebApi.dll">
-      <publishTime>07/31/2016 21:20:45</publishTime>
+      <publishTime>08/14/2016 16:11:06</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>07/30/2016 12:37:10</publishTime>
@@ -1319,6 +1325,9 @@
     </File>
     <File Include="Common/Scripts/waiting.js">
       <publishTime>07/30/2016 12:37:36</publishTime>
+    </File>
+    <File Include="Common/Styles/animate.css">
+      <publishTime>08/14/2016 08:52:16</publishTime>
     </File>
     <File Include="Common/Styles/core.css">
       <publishTime>07/30/2016 12:37:36</publishTime>
@@ -9622,19 +9631,19 @@
       <publishTime>07/30/2016 12:38:56</publishTime>
     </File>
     <File Include="Views/Layout/_Layout.cshtml">
-      <publishTime>07/30/2016 12:38:56</publishTime>
+      <publishTime>08/14/2016 09:18:00</publishTime>
     </File>
     <File Include="Views/Layout/_PreFooter.cshtml">
       <publishTime>07/30/2016 12:38:56</publishTime>
     </File>
     <File Include="Views/Metropolitan/Detail.cshtml">
-      <publishTime>07/30/2016 12:38:56</publishTime>
+      <publishTime>08/14/2016 15:11:33</publishTime>
     </File>
     <File Include="Views/Metropolitan/Index.cshtml">
-      <publishTime>07/31/2016 20:52:02</publishTime>
+      <publishTime>08/14/2016 15:25:30</publishTime>
     </File>
     <File Include="Views/Metropolitan/UploadProject.cshtml">
-      <publishTime>07/30/2016 12:38:56</publishTime>
+      <publishTime>08/14/2016 15:03:17</publishTime>
     </File>
     <File Include="Views/News/Detail.cshtml">
       <publishTime>07/31/2016 14:03:45</publishTime>
@@ -9643,13 +9652,13 @@
       <publishTime>07/30/2016 12:38:56</publishTime>
     </File>
     <File Include="Views/News/_Comment.cshtml">
-      <publishTime>07/31/2016 13:56:38</publishTime>
+      <publishTime>08/13/2016 20:09:04</publishTime>
     </File>
     <File Include="Views/Palace/Index.cshtml">
-      <publishTime>07/30/2016 12:38:56</publishTime>
+      <publishTime>08/13/2016 23:27:25</publishTime>
     </File>
     <File Include="Views/PersonalCenter/Index.cshtml">
-      <publishTime>07/30/2016 12:38:56</publishTime>
+      <publishTime>08/13/2016 22:58:58</publishTime>
     </File>
     <File Include="Views/Provincial/Index.cshtml">
       <publishTime>07/30/2016 12:38:56</publishTime>

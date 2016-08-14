@@ -150,6 +150,11 @@ appModule.config([
             templateUrl: '~/App/common/views/exam/me.cshtml'
         });
         
+         //殿试
+        $stateProvider.state('palace', {
+            url: '/palace',
+            templateUrl: '~/App/common/views/gld/palace.cshtml'
+        });
 
         $stateProvider.state('notifications', {
             url: '/notifications',

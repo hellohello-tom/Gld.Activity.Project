@@ -58,11 +58,11 @@ namespace TomTeam.Project.Web.Controllers
             return View(pagedList);
         }
 
-        public async Task<ActionResult> Detail(int id)
+        public async Task<ActionResult> Detail(int id=0)
         {
             //增加一次浏览记录
-            var detail = await _metropolitanRepository.FirstOrDefaultAsync(x => x.Id == id);
-            if (detail.Id > 0)
+            var detail = await _metropolitanRepository.FirstOrDefaultAsync(x => x.Id == id) ?? new Metropolitan();
+            if (detail != null && detail.Id > 0)
             {
                 detail.ViewCount = detail.ViewCount + 1;
                 await _metropolitanRepository.UpdateAsync(detail);
@@ -95,14 +95,11 @@ namespace TomTeam.Project.Web.Controllers
         {
             var model = new GetMetropolitanOutput();
             var activityConfig = await _activityConfigAppService.GetConfig(new NullableIdInput { Id = 0 });
-            if (activityConfig.ProvincialState)
-            {
-                var examInfoModel = await _examColllectAppService.GetUserExamCollect();
-                model = await _metropolitanAppService.GetMetropolitanById(input);
-                ViewBag.ExamInfo = examInfoModel;
+            var examInfoModel = await _examColllectAppService.GetUserExamCollect();
+            model = await _metropolitanAppService.GetMetropolitanById(input);
+            ViewBag.ExamInfo = examInfoModel;
 
-                ViewBag.IsLogin = AbpSession.UserId.HasValue;
-            }
+            ViewBag.IsLogin = AbpSession.UserId.HasValue;
             ViewBag.ActivityConfig = activityConfig;
             return View(model);
         }
